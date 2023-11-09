@@ -28,6 +28,10 @@ class NTLKService():
 
         no_stopwords = list(set(unique_words_list) - set(cachedStopwords))
         
-        clean_list = [self.wnl.lemmatize(item).lower() for item in no_stopwords]
+        try:
+            clean_list = [self.wnl.lemmatize(item).lower() for item in no_stopwords]
+        except LookupError:
+            self.download_resources()
+            clean_list = [self.wnl.lemmatize(item).lower() for item in no_stopwords]
 
         return clean_list
