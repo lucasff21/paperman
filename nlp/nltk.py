@@ -7,6 +7,13 @@ from nltk.corpus import stopwords
 class NTLKService():
     def __init__(self) -> None:
         self.wnl = WordNetLemmatizer()
+    
+    
+    @staticmethod
+    def download_resources() -> None:
+        download('stopwords')
+        download('wordnet')
+
 
     def clean(self, target: List[str]) -> List[str]:       
         combined_text = ' '.join(target)
@@ -16,7 +23,7 @@ class NTLKService():
         try:
             cachedStopwords = stopwords.words('portuguese') + stopwords.words('english')
         except LookupError:
-            download('stopwords')
+            self.download_resources()
             cachedStopwords = stopwords.words('portuguese') + stopwords.words('english')
 
         no_stopwords = list(set(unique_words_list) - set(cachedStopwords))
