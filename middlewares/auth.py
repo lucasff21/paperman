@@ -16,7 +16,8 @@ class AuthMiddleware(BaseHTTPMiddleware):
         
         skip_prefixes = [
             "/user",
-            "/venue"
+            "/venue",
+            "/docs"
         ]
 
         if request.url.path in skip_routes and request.method == "POST" or request.url.path in skip_prefixes:
