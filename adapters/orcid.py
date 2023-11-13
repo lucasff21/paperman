@@ -49,16 +49,25 @@ class ORCIDAdapter:
         education_affiliations = public_records['activities-summary']['educations']['affiliation-group']
         for affiliation in education_affiliations:
             for index in affiliation['summaries']:
-                subjects.append(index['education-summary']['department-name'])
+                data = index['education-summary']['department-name']
+
+                if data:
+                    subjects.append(data)
                 
         employment_affiliations = public_records['activities-summary']['employments']['affiliation-group']
         for affiliation in employment_affiliations:
             for index in affiliation['summaries']:
-                subjects.append(index['employment-summary']['role-title'])
+                data = index['employment-summary']['role-title']
+
+                if data:
+                    subjects.append(data)
 
         work_affiliations = public_records['activities-summary']['works']['group']
         for affiliation in work_affiliations:
             for index in affiliation['work-summary']:
-                subjects.append(index['title']['title']['value'])
+                data = index['title']['title']['value']
+
+                if data:
+                    subjects.append(data)
         
         return subjects
