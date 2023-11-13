@@ -1,3 +1,4 @@
+from typing import Optional
 from pydantic import BaseModel
 
 
@@ -12,3 +13,4 @@ class Venue(BaseModel):
     id: int
     info: VenueInfo
     url: str
+    query: Optional[str] = None

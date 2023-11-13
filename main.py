@@ -5,7 +5,7 @@ from fastapi.middleware.cors import CORSMiddleware
 
 from middlewares.auth import AuthMiddleware
 from middlewares.exception import ExceptionHandlerMiddleware
-from routers import auth, publications, users, qualis
+from routers import auth, publications, qualis, users, venues
 from word_embedding.gensim import init_model
 
 app = FastAPI()
@@ -27,6 +27,7 @@ app.include_router(auth.router)
 app.include_router(publications.router)
 app.include_router(users.router)
 app.include_router(qualis.router)
+app.include_router(venues.router)
 
 init_model()
 

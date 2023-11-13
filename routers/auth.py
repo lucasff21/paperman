@@ -3,7 +3,7 @@ from http import HTTPStatus
 from fastapi import APIRouter, Request
 from fastapi.responses import JSONResponse
 
-from services.auth_service import AuthService
+from services.auth import AuthService
 
 router = APIRouter(prefix="/auth")
 

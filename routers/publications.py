@@ -3,7 +3,7 @@ from http import HTTPStatus
 from fastapi import APIRouter, Request
 from fastapi.responses import JSONResponse
 
-from services.publication_service import PublicationService
+from services.publication import PublicationService
 
 router = APIRouter(prefix="/publications")
 

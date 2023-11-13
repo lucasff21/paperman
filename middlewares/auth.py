@@ -1,7 +1,7 @@
 from fastapi.responses import JSONResponse
 from starlette.middleware.base import BaseHTTPMiddleware
 
-from services.auth_service import AuthService
+from services.auth import AuthService
 
 auth_service = AuthService()
 
@@ -13,8 +13,13 @@ class AuthMiddleware(BaseHTTPMiddleware):
             "/auth/validate_token",
             "/qualis/update_spreadsheets"
         ]
+        
+        skip_prefixes = [
+            "/user",
+            "/venue"
+        ]
 
-        if request.url.path in skip_routes and request.method == "POST" or request.url.path == "/user":
+        if request.url.path in skip_routes and request.method == "POST" or request.url.path in skip_prefixes:
             return await call_next(request)
         
         auth_token = request.headers.get('Authorization')

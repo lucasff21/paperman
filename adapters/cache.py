@@ -80,3 +80,23 @@ class Cache():
             raise DependencyException(dependency="cache", status_code=HTTPStatus.FAILED_DEPENDENCY)
         
         return None if not object else object.decode()
+    
+    
+    def set_venue(self, query: str, data: Dict) -> None:
+        key = f"venue:{query}"
+        
+        try:
+            self.conn.set(name=key, value=json.dumps(data), ex=Time.DAY)
+        except ConnectionError:
+            raise DependencyException(dependency="cache", status_code=HTTPStatus.FAILED_DEPENDENCY)
+        
+    
+    def get_venue(self, query: str) -> str | None:
+        key = f"venue:{query}"
+        
+        try:
+            object = self.conn.get(key)
+        except ConnectionError:
+            raise DependencyException(dependency="cache", status_code=HTTPStatus.FAILED_DEPENDENCY)
+        
+        return None if not object else json.loads(object)

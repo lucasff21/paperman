@@ -5,7 +5,7 @@ from adapters.dblp import DBLPAdapter
 from adapters.orcid import ORCIDAdapter
 from nlp.nltk import NTLKService
 from schemas.publication import Publication
-from services.user_service import UserService
+from services.user import UserService
 from word_embedding.gensim import apply_word_embedding, extract_best_match
 
 

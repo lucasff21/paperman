@@ -1,7 +1,7 @@
 from uuid import uuid4
 
 from adapters.cache import cache_factory
-from services.user_service import UserService
+from services.user import UserService
 
 
 class AuthService():
