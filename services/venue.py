@@ -34,7 +34,7 @@ class VenueService:
         if not venue:
             raise BusinessException('Venue not found', status_code=HTTPStatus.NOT_FOUND) 
         
-        venue.pop('_id')
+        venue.pop('_id', None)
         self.cache.set_venue(venue['query'], venue)
         return Venue(**venue)
     
