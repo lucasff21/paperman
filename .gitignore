@@ -8,3 +8,5 @@ cbow_s100
 cbow_s100.vectors.npy
 
 resources/
+
+newrelic.ini
