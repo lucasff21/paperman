@@ -77,11 +77,19 @@ def extract_best_match(publications: List[Publication], subject: str) -> Publica
 def get_venue_score(publication: Publication) -> float:
     dblp = DBLPAdapter()
     
-    key = findall(r"^[A-Za-z]+/[A-Za-z]+", publication.key)[0]
+    key = findall(r"^[A-Za-z]+/[A-Za-z]+", publication.key)
+    if not key:
+        return 0
     
-    type = key.split('/')[0]
+    key = key[0]
+    
+    type = key.split('/')
+    if not type:
+        return 0
+    
+    type = type[0]
+    
     venue = dblp.get_venue(key)
-    
     if not venue:
         return 0
     

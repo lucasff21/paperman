@@ -9,6 +9,8 @@ from pymongo.collection import Collection
 from pymongo.errors import ServerSelectionTimeoutError
 
 from exceptions import DependencyException
+from schemas.publication import Publication
+from schemas.user import User
 from schemas.venue import Venue
 
 
@@ -27,7 +29,8 @@ class DB():
 
     def create_user(self, sources: List[Dict]) -> str:
         data = {
-            "sources": sources
+            "sources": sources,
+            "recommendations": []
         }
         
         try:
@@ -38,7 +41,7 @@ class DB():
         return str(user.inserted_id)
         
     
-    def get_user(self, id: str)-> (Dict | None):
+    def get_user(self, id: str) -> (Dict | None):
         try:
             return self.users.find_one({"_id": ObjectId(id)})
         except ServerSelectionTimeoutError:
@@ -48,8 +51,10 @@ class DB():
     def edit_user_sources(self, id: str, sources: List[Dict]) -> bool:
         try:
             result = self.users.update_one(
-                {"id": id}, 
-                {"sources": sources}
+                {"_id": ObjectId(id)},
+                {"$set": {
+                    "sources": sources
+                }}
             )
         except ServerSelectionTimeoutError:
             raise DependencyException(dependency="db-timeout", status_code=HTTPStatus.FAILED_DEPENDENCY)
@@ -67,18 +72,32 @@ class DB():
             raise DependencyException(dependency="db-timeout", status_code=HTTPStatus.FAILED_DEPENDENCY)
         
     
-    def get_venue(self, query: str)-> (Dict | None):
+    def get_venue(self, query: str) -> (Dict | None):
         try:
             return self.venues.find_one({"query": query}, {'_id': False})
         except ServerSelectionTimeoutError:
             raise DependencyException(dependency="db-timeout", status_code=HTTPStatus.FAILED_DEPENDENCY)
 
     
-    def update_venue(self, data: Dict)-> (Dict | None):
+    def update_venue(self, data: Dict) -> (Dict | None):
         try:
             return self.venues.replace_one(
                 {"query": data['query']},
                 data
+            )
+        except ServerSelectionTimeoutError:
+            raise DependencyException(dependency="db-timeout", status_code=HTTPStatus.FAILED_DEPENDENCY)
+        
+        
+    def update_recommendations(self, id: str, recommendations: List[str]) -> None:
+        try: 
+            self.users.update_one(
+                {"_id": ObjectId(id)},
+                {"$addToSet": {
+                    "recommendations": {
+                        "$each": recommendations
+                    }
+                }}
             )
         except ServerSelectionTimeoutError:
             raise DependencyException(dependency="db-timeout", status_code=HTTPStatus.FAILED_DEPENDENCY)

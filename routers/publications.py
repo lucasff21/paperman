@@ -4,10 +4,12 @@ from fastapi import APIRouter, Request
 from fastapi.responses import JSONResponse
 
 from services.publication import PublicationService
+from services.user import UserService
 
 router = APIRouter(prefix="/publications")
 
 publication_service = PublicationService()
+user_service = UserService()
 
 
 @router.get("")
@@ -18,6 +20,7 @@ def get_publications(request: Request):
         return JSONResponse({"message": "Missing data on payload"}, status_code=HTTPStatus.UNPROCESSABLE_ENTITY)
     
     publications = publication_service.get_publications(user)
+    user_service.update_recommendations(user, publications)
     
     return JSONResponse({"publications": [item.model_dump() for item in publications]})
 

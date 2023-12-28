@@ -27,6 +27,7 @@ class DBLPAdapter():
         query = query.replace(" ", "+")
         params = {
             "format": "json",
+            "h": 20,
             "query": query
         }
         

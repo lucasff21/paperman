@@ -57,7 +57,7 @@ class Cache():
         try:
             object = self.conn.get(key)
         except ConnectionError:
-            raise DependencyException(dependency="cache", status_code=HTTPStatus.FAILED_DEPENDENCY)
+            return None
         
         return None if not object else json.loads(object)
     
@@ -66,7 +66,7 @@ class Cache():
         key = f"auth-token:{user_id}"
         
         try:
-            self.conn.set(name=key, value=token, ex=Time.DAY)
+            self.conn.set(name=key, value=token, ex=Time.THREE_HOURS)
         except ConnectionError:
             raise DependencyException(dependency="cache", status_code=HTTPStatus.FAILED_DEPENDENCY)
         
@@ -86,7 +86,7 @@ class Cache():
         key = f"venue:{query}"
         
         try:
-            self.conn.set(name=key, value=json.dumps(data), ex=Time.DAY)
+            self.conn.set(name=key, value=json.dumps(data), ex=Time.WEEK)
         except ConnectionError:
             raise DependencyException(dependency="cache", status_code=HTTPStatus.FAILED_DEPENDENCY)
         

@@ -5,6 +5,7 @@ from adapters.dblp import DBLPAdapter
 from adapters.orcid import ORCIDAdapter
 from nlp.nltk import NTLKService
 from schemas.publication import Publication
+from schemas.user import User
 from services.user import UserService
 from word_embedding.gensim import apply_word_embedding, extract_best_match
 
@@ -37,21 +38,23 @@ class PublicationService():
             best_publication = None
             
             if subject_publications:
-                best_publication = self.get_best_match(subject_publications, subject)
+                best_publication = self.get_best_match(subject_publications, subject, user)
 
             if best_publication:
                 publications.append(best_publication)
+                
+            if len(publications) == 3:
+                return publications
             
         return publications
     
     
-    @staticmethod
-    def get_best_match(publications: List[Publication], subject: str) -> Publication:
+    def get_best_match(self, publications: List[Publication], subject: str, user: User) -> Publication:
         now = datetime.now()
         first_result = publications.pop(0)
         
         for publication in publications:
-            if publication.year < (now.year - 5):
+            if publication.year < (now.year - 5) or self.publication_already_recommended(user, publication):
                 publications.remove(publication)
         
         if len(publications) == 0:
@@ -61,3 +64,8 @@ class PublicationService():
             publications.append(first_result)
             
         return extract_best_match(publications, subject)
+
+
+    @staticmethod
+    def publication_already_recommended(user: User, publication: Publication) -> bool:
+        return f"{publication.title}:{publication.year}" in user.recommendations

@@ -3,6 +3,7 @@ from typing import Dict, List
 
 from adapters.db import db_factory
 from exceptions import BusinessException
+from schemas.publication import Publication
 from schemas.user import User
 
 
@@ -30,3 +31,12 @@ class UserService:
 
         if not edit:
             raise BusinessException('Unable to edit provided user sources')
+        
+
+    def update_recommendations(self, id: str, recommendations: List[Publication]) -> None:
+        user = self.get_user(id)
+
+        recommendations = [f"{recommendation.title}:{recommendation.year}" for recommendation in recommendations]        
+        unique_recommendations = list(set(user.recommendations + recommendations))
+        
+        self.db.update_recommendations(user.id, unique_recommendations)

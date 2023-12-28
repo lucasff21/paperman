@@ -1,5 +1,6 @@
 from typing import List
 
+from lingua import Language, LanguageDetectorBuilder
 from nltk import download, WordNetLemmatizer
 from nltk.corpus import stopwords
 
@@ -7,6 +8,8 @@ from nltk.corpus import stopwords
 class NTLKService():
     def __init__(self) -> None:
         self.wnl = WordNetLemmatizer()
+        self.languages = [Language.PORTUGUESE, Language.ENGLISH]
+        self.language_detector = LanguageDetectorBuilder.from_all_languages().build()
     
     
     @staticmethod
@@ -34,4 +37,8 @@ class NTLKService():
             self.download_resources()
             clean_list = [self.wnl.lemmatize(item).lower() for item in no_stopwords]
 
-        return clean_list
+        return self.clean_query_subject_languages(clean_list)
+    
+    
+    def clean_query_subject_languages(self, query_subjects: List[str]) -> List[str]:
+        return [subject for subject in query_subjects if self.language_detector.detect_language_of(subject) in self.languages]
