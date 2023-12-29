@@ -57,10 +57,10 @@ class PublicationService():
             if publication.year < (now.year - 5) or self.publication_already_recommended(user, publication):
                 publications.remove(publication)
         
-        if len(publications) == 0:
+        if len(publications) == 0 and not self.publication_already_recommended(user, first_result):
             return first_result
         
-        if first_result.year > (now.year - 5):
+        if first_result.year > (now.year - 5) and not self.publication_already_recommended(user, first_result):
             publications.append(first_result)
             
         return extract_best_match(publications, subject)

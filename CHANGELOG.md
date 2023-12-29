@@ -1,3 +1,6 @@
+# v0.4.1 - 28/12/2023
+- Validation on first result in best publication match method
+
 # v0.4.0 - 28/12/2023
 - Adding validation on venue score retrieval to avoid flow break
 - Reduction of processing unused words by checking query subject languages
