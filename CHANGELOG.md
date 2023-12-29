@@ -1,3 +1,6 @@
+# v0.4.4 - 29/12/2023
+- Reducing number of results per DBLP query
+
 # v0.4.3 - 29/12/2023
 - Changing condition priority on validation method for recommendations
 
