@@ -53,7 +53,7 @@ class PublicationService():
         now = datetime.now()
         
         for publication in publications:
-            if publication.year < (now.year - 5) or self.publication_already_recommended(user, publication):
+            if self.publication_already_recommended(user, publication) or publication.year < (now.year - 5):
                 publications.remove(publication)
         
         if publications:

@@ -1,3 +1,6 @@
+# v0.4.3 - 29/12/2023
+- Changing condition priority on validation method for recommendations
+
 # v0.4.2 - 29/12/2023
 - Fixing validation method for recommendations
 
