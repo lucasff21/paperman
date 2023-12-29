@@ -1,3 +1,6 @@
+# v0.4.2 - 29/12/2023
+- Fixing validation method for recommendations
+
 # v0.4.1 - 28/12/2023
 - Validation on first result in best publication match method
 

@@ -1,5 +1,5 @@
 from datetime import datetime
-from typing import List
+from typing import List, Union
 
 from adapters.dblp import DBLPAdapter
 from adapters.orcid import ORCIDAdapter
@@ -49,21 +49,17 @@ class PublicationService():
         return publications
     
     
-    def get_best_match(self, publications: List[Publication], subject: str, user: User) -> Publication:
+    def get_best_match(self, publications: List[Publication], subject: str, user: User) -> Union[Publication, None]:
         now = datetime.now()
-        first_result = publications.pop(0)
         
         for publication in publications:
             if publication.year < (now.year - 5) or self.publication_already_recommended(user, publication):
                 publications.remove(publication)
         
-        if len(publications) == 0 and not self.publication_already_recommended(user, first_result):
-            return first_result
-        
-        if first_result.year > (now.year - 5) and not self.publication_already_recommended(user, first_result):
-            publications.append(first_result)
-            
-        return extract_best_match(publications, subject)
+        if publications:
+            return extract_best_match(publications, subject)
+
+        return None
 
 
     @staticmethod

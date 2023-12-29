@@ -37,7 +37,7 @@ class Cache():
         try:
             object = self.conn.get(key)
         except ConnectionError:
-            raise DependencyException(dependency="cache", status_code=HTTPStatus.FAILED_DEPENDENCY)
+            return None
         
         return None if not object else json.loads(object)
     
@@ -97,6 +97,6 @@ class Cache():
         try:
             object = self.conn.get(key)
         except ConnectionError:
-            raise DependencyException(dependency="cache", status_code=HTTPStatus.FAILED_DEPENDENCY)
+            return None
         
         return None if not object else json.loads(object)
