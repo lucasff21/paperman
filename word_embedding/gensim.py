@@ -4,12 +4,12 @@ from typing import List
 from gensim.models import KeyedVectors
 from numpy import dot
 from numpy.linalg import norm
+from multi_rake import Rake
 
 from adapters.dblp import DBLPAdapter
 from nlp.nltk import NTLKService
 from schemas.publication import Publication
-from utils.qualis import get_conference_score, get_periodic_score, load_sheets
-
+from utils.qualis import get_conference_score, get_periodic_score
 
 def init_model() -> None:
     try:
@@ -52,6 +52,13 @@ def apply_word_embedding(word) -> str:
     return most_similar[0]
 
 
+def build_search_query(subject: str):
+    rake = Rake()
+    keywords = rake.apply(subject)
+
+    return [item[0] for item in keywords]
+
+
 def extract_best_match(publications: List[Publication], subject: str) -> Publication:
     ntlk_service = NTLKService()
     model = load_model()
@@ -64,12 +71,13 @@ def extract_best_match(publications: List[Publication], subject: str) -> Publica
         
         title_similarity = 0
         
-        for word in ntlk_service.clean(publication.title.split(' ')):
+        for word in ntlk_service.clean_publication_title(publication.title):
             try:
                 title_similarity += cosine_similarity(model[subject], model[word])
             except KeyError:
                 pass
-            publication.score = publication.year + venue_score + title_similarity
+        
+        publication.score = publication.year + venue_score + title_similarity
         
     return max(publications, key=lambda x: x.score)
 

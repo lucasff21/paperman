@@ -1,3 +1,8 @@
+# v0.5.0 - 26/01/2024
+- Improving performance
+- Refining recommendation process
+- Implementing demo route
+
 # v0.4.4 - 29/12/2023
 - Reducing number of results per DBLP query
 

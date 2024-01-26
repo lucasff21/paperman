@@ -12,8 +12,8 @@ publication_service = PublicationService()
 user_service = UserService()
 
 
-@router.get("")
-def get_publications(request: Request):
+@router.post("")
+def publications(request: Request):
     user = request.headers.get('UserId')
     
     if not user:
@@ -24,3 +24,15 @@ def get_publications(request: Request):
     
     return JSONResponse({"publications": [item.model_dump() for item in publications]})
 
+
+@router.post("/demo")
+async def demo(request: Request):
+    data = await request.json()
+    
+    orcid = data.get('orcid')
+    
+    if not orcid:
+        return JSONResponse({"message": "Missing data on payload"}, status_code=HTTPStatus.UNPROCESSABLE_ENTITY)
+    
+    return publication_service.demo(orcid)
+    

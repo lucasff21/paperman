@@ -1,9 +1,9 @@
 from typing import List
 
 from lingua import Language, LanguageDetectorBuilder
-from nltk import download, WordNetLemmatizer
+from nltk import download, WordNetLemmatizer, word_tokenize
 from nltk.corpus import stopwords
-
+from re import compile
 
 class NTLKService():
     def __init__(self) -> None:
@@ -18,27 +18,49 @@ class NTLKService():
         download('wordnet')
 
 
-    def clean(self, target: List[str]) -> List[str]:       
-        combined_text = ' '.join(target)
-        words = combined_text.replace("/", " ").split()
-        unique_words_list = list(set(words))
+    def clean_subject(self, target: str) -> str:
+        target = word_tokenize(target)
+        unique_words_list = list({word.lower():"" for word in target})
 
         try:
-            cachedStopwords = stopwords.words('portuguese') + stopwords.words('english')
+            cached_stopwords = stopwords.words('portuguese') + stopwords.words('english')
         except LookupError:
             self.download_resources()
-            cachedStopwords = stopwords.words('portuguese') + stopwords.words('english')
+            cached_stopwords = stopwords.words('portuguese') + stopwords.words('english')
 
-        no_stopwords = list(set(unique_words_list) - set(cachedStopwords))
+        no_stopwords = [word for word in unique_words_list if word not in cached_stopwords]
+        
+        symbol_pattern = compile(r'[^a-zA-Z0-9\s]')
+        no_symbols = [word for word in no_stopwords if not symbol_pattern.search(word)]
         
         try:
-            clean_list = [self.wnl.lemmatize(item).lower() for item in no_stopwords]
+            lemmatized_list = [self.wnl.lemmatize(item).lower() for item in no_symbols]
         except LookupError:
             self.download_resources()
-            clean_list = [self.wnl.lemmatize(item).lower() for item in no_stopwords]
+            lemmatized_list = [self.wnl.lemmatize(item).lower() for item in no_symbols]
+        
+        return ' '.join([word for word in lemmatized_list if self.language_detector.detect_language_of(word) in self.languages])
+    
+    
+    def clean_publication_title(self, target: str) -> List[str]:       
+        target = word_tokenize(target)
+        unique_words_list = list({word.lower():"" for word in target})
 
-        return self.clean_query_subject_languages(clean_list)
-    
-    
-    def clean_query_subject_languages(self, query_subjects: List[str]) -> List[str]:
-        return [subject for subject in query_subjects if self.language_detector.detect_language_of(subject) in self.languages]
+        try:
+            cached_stopwords = stopwords.words('portuguese') + stopwords.words('english')
+        except LookupError:
+            self.download_resources()
+            cached_stopwords = stopwords.words('portuguese') + stopwords.words('english')
+
+        no_stopwords = [word for word in unique_words_list if word not in cached_stopwords]
+        
+        symbol_pattern = compile(r'[^a-zA-Z0-9\s]')
+        no_symbols = [word for word in no_stopwords if not symbol_pattern.search(word)]
+        
+        try:
+            clean_list = [self.wnl.lemmatize(item).lower() for item in no_symbols]
+        except LookupError:
+            self.download_resources()
+            clean_list = [self.wnl.lemmatize(item).lower() for item in no_symbols]
+
+        return [word for word in clean_list if self.language_detector.detect_language_of(word) in self.languages]

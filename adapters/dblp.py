@@ -35,8 +35,11 @@ class DBLPAdapter():
         response = cached_response
 
         if not cached_response:
-            response = requests.get(self.publication_url, params=params)
-            
+            try:
+                response = requests.get(self.publication_url, params=params)
+            except requests.ConnectTimeout:
+                raise DependencyException(dependency=f"dblp-publication timeout", status_code=HTTPStatus.FAILED_DEPENDENCY)
+                
             if response.status_code != 200:
                 raise DependencyException(dependency=f"dblp-publication (status code {response.status_code})", status_code=HTTPStatus.FAILED_DEPENDENCY)
             

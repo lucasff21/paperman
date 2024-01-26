@@ -11,6 +11,7 @@ class AuthMiddleware(BaseHTTPMiddleware):
         skip_routes = [
             "/auth/generate_token",
             "/auth/validate_token",
+            "/publications/demo",
             "/qualis/update_spreadsheets"
         ]
         
@@ -21,7 +22,7 @@ class AuthMiddleware(BaseHTTPMiddleware):
             "/openapi.json"
         ]
 
-        if request.url.path in skip_routes and request.method == "POST" or request.url.path in skip_prefixes:
+        if request.url.path in skip_routes or request.url.path in skip_prefixes:
             return await call_next(request)
         
         auth_token = request.headers.get('Authorization')

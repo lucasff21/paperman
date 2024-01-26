@@ -1,7 +1,7 @@
 from csv import DictReader
 from os import path
 from re import sub
-from typing import Dict, List, Tuple
+from typing import Dict, List
 
 from pandas import read_csv
 
@@ -21,19 +21,9 @@ def update_files() -> None:
     periodics_df.to_csv(path.join(output_folder, "periodics.csv"), index=False)
 
 
-def load_sheets() -> Tuple[Dict, Dict]:
-    output_folder = "./resources/qualis/"
-    
-    with open(path.join(output_folder, "conferences.csv")) as conferences, open(path.join(output_folder, "periodics.csv")) as periodics:
-        conferences_reader = [item for item in DictReader(conferences)]
-        periodics_reader = [item for item in DictReader(periodics)]
-        
-    return conferences_reader, periodics_reader
-
-
 def load_conferences() -> List[Dict]:
     with open("./resources/qualis/conferences.csv") as conferences:
-        conferences_reader = [item for item in DictReader(conferences)]
+        conferences_reader = list(DictReader(conferences))
         
     return conferences_reader
 
@@ -51,7 +41,7 @@ def get_conference_score(conference_name: str) -> float:
 
 def load_periodics() -> List[Dict]:
     with open("./resources/qualis/periodics.csv") as periodics:
-        periodics_reader = [item for item in DictReader(periodics)]
+        periodics_reader = list(DictReader(periodics))
         
     return periodics_reader
 
