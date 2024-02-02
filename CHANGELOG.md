@@ -1,3 +1,6 @@
+# v0.5.1 - 01/02/2024
+- Adding missing NLTK download call
+
 # v0.5.0 - 26/01/2024
 - Improving performance
 - Refining recommendation process
