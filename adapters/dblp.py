@@ -3,12 +3,9 @@ import requests
 from http import HTTPStatus
 from typing import Dict, List
 
-from lingua import Language, LanguageDetectorBuilder
-
 from adapters.cache import cache_factory
 from adapters.db import db_factory
 from exceptions import DependencyException
-from schemas.publication import Publication
 from schemas.venue import Venue
 
 
@@ -19,11 +16,9 @@ class DBLPAdapter():
         self.venue_url = "https://dblp.org/search/venue/api"
         self.cache = cache_factory()
         self.db = db_factory()
-        self.languages = [Language.PORTUGUESE, Language.ENGLISH]
-        self.language_detector = LanguageDetectorBuilder.from_all_languages().build()
         
         
-    def get_publications(self, query: str) -> List[Publication]:
+    def get_publications(self, query: str) -> List[Dict]:
         query = query.replace(" ", "+")
         params = {
             "format": "json",
@@ -50,43 +45,7 @@ class DBLPAdapter():
         if 'hit' not in response['result']['hits']:
             return []
 
-        result = response['result']['hits']['hit']
-        publications = self.sanitize_publications(result)
-        
-        if len(publications) == 0:
-            return []
-        
-        return publications
-        
-    
-    def sanitize_publications(self, publications: List[Dict]) -> List[Publication]:
-        sanitized_publications = []
-        
-        for publication in publications:
-            if self.language_detector.detect_language_of(publication["info"]["title"]) in self.languages:
-                if "authors" in publication['info']:
-                    author = publication['info']['authors']['author']
-                    
-                    if isinstance(author, Dict):
-                        author['pid'] = author['@pid']
-                        author['name'] = author['text'] 
-                        authors = publication['info']['authors']
-                        publication['info']['authors'] = [authors['author']]
-                    elif isinstance(author, List):
-                        for author in publication['info']['authors']['author']:
-                            author['pid'] = author['@pid']
-                            author['name'] = author['text']
-                    
-                    if "author" in publication['info']['authors']:
-                        publication['info']['authors'] = publication['info']['authors']['author']
-                else:
-                    publication['info']['authors'] = []
-                
-                if 'venue' in publication['info'] and not type(publication['info']['venue']) == str:
-                    publication['info']['venue'] = '; '.join(publication['info']['venue'])
-                sanitized_publications.append(Publication(**publication['info']))
-
-        return sanitized_publications
+        return response['result']['hits']['hit']
 
     
     def get_venue(self, query: str) -> Venue | None:

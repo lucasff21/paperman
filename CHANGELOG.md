@@ -1,3 +1,7 @@
+# v0.6.0 - 07/02/2024
+- Improving performance
+- Refactoring sanitizing logic and moving it to publication service
+
 # v0.5.1 - 01/02/2024
 - Adding missing NLTK download call
 
