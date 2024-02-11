@@ -1,3 +1,6 @@
+# v0.6.1 - 11/02/2024
+- Updating library
+
 # v0.6.0 - 07/02/2024
 - Improving performance
 - Refactoring sanitizing logic and moving it to publication service
