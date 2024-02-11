@@ -1,3 +1,6 @@
+# v0.6.2 - 11/02/2024
+- Fixing validation method for recommendations
+
 # v0.6.1 - 11/02/2024
 - Updating library
 

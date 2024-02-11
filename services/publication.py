@@ -59,9 +59,7 @@ class PublicationService():
 	def get_best_match(self, publications: List[Publication], subject: str, user: User) -> Union[Publication, None]:
 		now = datetime.now()
 
-		for publication in publications:
-			if self.publication_already_recommended(user, publication) or publication.year < (now.year - 5):
-				publications.remove(publication)
+		publications = [publication for publication in publications if not self.publication_already_recommended(user, publication) and publication.year > (now.year - 5)]
 
 		if publications:
 			return extract_best_match(publications, subject)
