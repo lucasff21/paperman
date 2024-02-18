@@ -18,15 +18,15 @@ class DBLPAdapter():
         self.db = db_factory()
         
         
-    def get_publications(self, query: str) -> List[Dict]:
+    async def get_publications(self, query: str) -> List[Dict]:
         query = query.replace(" ", "+")
         params = {
             "format": "json",
-            "h": 5,
+            "h": 15,
             "query": query
         }
         
-        cached_response = self.cache.get_dblp_query(query)
+        cached_response = await self.cache.get_dblp_query(query)
         response = cached_response
 
         if not cached_response:
@@ -38,7 +38,7 @@ class DBLPAdapter():
             if response.status_code != 200:
                 raise DependencyException(dependency=f"dblp-publication (status code {response.status_code})", status_code=HTTPStatus.FAILED_DEPENDENCY)
             
-            self.cache.set_dblp_query(query, response.json())
+            await self.cache.set_dblp_query(query, response.json())
             
             response = response.json()
         
@@ -48,13 +48,13 @@ class DBLPAdapter():
         return response['result']['hits']['hit']
 
     
-    def get_venue(self, query: str) -> Venue | None:
+    async def get_venue(self, query: str) -> Venue | None:
         params = {
             "format": "json",
             "query": query
         }
         
-        cached_response = self.cache.get_venue(query)
+        cached_response = await self.cache.get_venue(query)
         response = cached_response
         
         if cached_response:
@@ -63,7 +63,7 @@ class DBLPAdapter():
         db_venue = self.db.get_venue(query)
         
         if db_venue:
-            self.cache.set_venue(query, db_venue)
+            await self.cache.set_venue(query, db_venue)
             return Venue(**db_venue)
         
         response = requests.get(self.venue_url, params=params)
@@ -89,6 +89,6 @@ class DBLPAdapter():
         venue = Venue(**result)
         
         self.db.create_venue(venue)
-        self.cache.set_venue(query, venue.model_dump())
+        await self.cache.set_venue(query, venue.model_dump())
         
         return venue

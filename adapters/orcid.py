@@ -17,14 +17,14 @@ class ORCIDAdapter:
         self.cache = Cache()
         
     
-    def get_public_records(self, id: str):
+    async def get_public_records(self, id: str):
         url = self.ORCID_API_URL.replace(':id', id)
         headers = {
             "Authorization": self.ORCID_TOKEN,
             "Content-Type": "application/orcid+json"
         }
         
-        public_records = self.cache.get_orcid_public_records(id)
+        public_records = await self.cache.get_orcid_public_records(id)
         
         if not public_records:
             r = requests.get(
@@ -33,7 +33,7 @@ class ORCIDAdapter:
             )
             
             if r.status_code == 200:
-                self.cache.set_orcid_public_records(id, r.text)
+                await self.cache.set_orcid_public_records(id, r.text)
                 return r.json()
 
             raise DependencyException(f"orcid (status code {r.status_code})", status_code=HTTPStatus.FAILED_DEPENDENCY)
@@ -41,8 +41,8 @@ class ORCIDAdapter:
         return public_records
     
     
-    def get_user_summary(self, id: str):
-        public_records = self.get_public_records(id)
+    async def get_user_summary(self, id: str):
+        public_records = await self.get_public_records(id)
         
         subjects = []
 

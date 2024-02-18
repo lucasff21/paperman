@@ -10,8 +10,8 @@ class AuthService():
         self.user_service = UserService()
     
     
-    def validate_token(self, user_id: str, token: str) -> bool:
-        cached_token = self.cache.get_auth_token(user_id)
+    async def validate_token(self, user_id: str, token: str) -> bool:
+        cached_token = await self.cache.get_auth_token(user_id)
         
         if cached_token and cached_token == token:
             return True
@@ -19,8 +19,8 @@ class AuthService():
         return False
 
 
-    def generate_token(self, user_id: str) -> str:
+    async def generate_token(self, user_id: str) -> str:
         token = str(uuid4())
         
-        self.cache.set_auth_token(user_id, token)
+        await self.cache.set_auth_token(user_id, token)
         return token

@@ -1,3 +1,7 @@
+# v0.7.0 - 18/02/2024
+- Implementing async structure for transactions
+- Increasing DBLP article request number from 5 to 15
+
 # v0.6.2 - 11/02/2024
 - Fixing validation method for recommendations
 

@@ -59,7 +59,7 @@ def build_search_query(subject: str):
     return [item[0] for item in keywords]
 
 
-def extract_best_match(publications: List[Publication], subject: str) -> Publication:
+async def extract_best_match(publications: List[Publication], subject: str) -> Publication:
     ntlk_service = NTLKService()
     model = load_model()
 
@@ -67,7 +67,7 @@ def extract_best_match(publications: List[Publication], subject: str) -> Publica
         venue_score = 0
         
         if publication.venue:
-            venue_score = get_venue_score(publication)
+            venue_score = await get_venue_score(publication)
         
         title_similarity = 0
         
@@ -82,7 +82,7 @@ def extract_best_match(publications: List[Publication], subject: str) -> Publica
     return max(publications, key=lambda x: x.score)
 
 
-def get_venue_score(publication: Publication) -> float:
+async def get_venue_score(publication: Publication) -> float:
     dblp = DBLPAdapter()
     
     key = findall(r"^[A-Za-z]+/[A-Za-z]+", publication.key)
@@ -97,7 +97,7 @@ def get_venue_score(publication: Publication) -> float:
     
     type = type[0]
     
-    venue = dblp.get_venue(key)
+    venue = await dblp.get_venue(key)
     if not venue:
         return 0
     

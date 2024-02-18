@@ -22,7 +22,7 @@ class PublicationService():
 		self.language_detector = LanguageDetectorBuilder.from_all_languages().build()
 
 
-	def get_publications(self, id: str) -> List[Publication]:
+	async def get_publications(self, id: str) -> List[Publication]:
 		user = self.user_service.get_user(id)
 
 		summary = None
@@ -30,7 +30,7 @@ class PublicationService():
 
 		for source in user.sources:
 			if source.service == "orcid":
-				summary = self.orcid_adapter.get_user_summary(source.url)
+				summary = await self.orcid_adapter.get_user_summary(source.url)
 
 		if summary:
 			for subject in summary:
@@ -38,14 +38,15 @@ class PublicationService():
 				subject_publications = []
 
 				for topic in subject_topics:
-					subject_publications.extend(self.dblp_adapter.get_publications(topic))
+					topic_publications = await self.dblp_adapter.get_publications(topic)
+					subject_publications.extend(topic_publications)
 
 				subject_publications = self.sanitize_publications(subject_publications)
 
 				best_publication = None
 
 				if subject_publications:
-					best_publication = self.get_best_match(subject_publications, subject, user)
+					best_publication = await self.get_best_match(subject_publications, subject, user)
 
 				if best_publication:
 					publications.append(best_publication)
@@ -56,13 +57,13 @@ class PublicationService():
 		return publications
 
 
-	def get_best_match(self, publications: List[Publication], subject: str, user: User) -> Union[Publication, None]:
+	async def get_best_match(self, publications: List[Publication], subject: str, user: User) -> Union[Publication, None]:
 		now = datetime.now()
 
 		publications = [publication for publication in publications if not self.publication_already_recommended(user, publication) and publication.year > (now.year - 5)]
 
 		if publications:
-			return extract_best_match(publications, subject)
+			return await extract_best_match(publications, subject)
 
 		return None
 
@@ -72,12 +73,12 @@ class PublicationService():
 		return f"{publication.title}:{publication.year}" in user.recommendations
 
 
-	def demo(self, orcid: str) -> List[Publication]:
+	async def demo(self, orcid: str) -> List[Publication]:
 		now = datetime.now()
 
 		publications = []
 
-		summary = self.orcid_adapter.get_user_summary(orcid)
+		summary = await self.orcid_adapter.get_user_summary(orcid)
 
 		if summary:
 			for subject in summary:
@@ -85,7 +86,8 @@ class PublicationService():
 				subject_publications = []
 
 				for topic in subject_topics:
-					subject_publications.extend(self.dblp_adapter.get_publications(topic))
+					topic_publications = await self.dblp_adapter.get_publications(topic)
+					subject_publications.extend(topic_publications)
 
 				subject_publications = self.sanitize_publications(subject_publications)
 
@@ -94,7 +96,7 @@ class PublicationService():
 				if subject_publications:
 					subject_publications = [publication for publication in subject_publications if publication.year < (now.year - 5)]
 
-					best_publication = extract_best_match(subject_publications, subject)
+					best_publication = await extract_best_match(subject_publications, subject)
 
 				if best_publication:
 					publications.append(best_publication)

@@ -31,7 +31,7 @@ class AuthMiddleware(BaseHTTPMiddleware):
         if not auth_token:
             return JSONResponse(status_code=403, content={"message": "Authorization token missing"})
         
-        if not auth_service.validate_token(user_id, auth_token):
+        if not await auth_service.validate_token(user_id, auth_token):
             return JSONResponse(status_code=403, content={"message": "Authorization token invalid"})
         
         response = await call_next(request)

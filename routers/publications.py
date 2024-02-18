@@ -13,13 +13,13 @@ user_service = UserService()
 
 
 @router.post("")
-def publications(request: Request):
+async def publications(request: Request):
     user = request.headers.get('UserId')
     
     if not user:
         return JSONResponse({"message": "Missing data on payload"}, status_code=HTTPStatus.UNPROCESSABLE_ENTITY)
     
-    publications = publication_service.get_publications(user)
+    publications = await publication_service.get_publications(user)
     user_service.update_recommendations(user, publications)
     
     return JSONResponse({"publications": [item.model_dump() for item in publications]})
@@ -34,5 +34,5 @@ async def demo(request: Request):
     if not orcid:
         return JSONResponse({"message": "Missing data on payload"}, status_code=HTTPStatus.UNPROCESSABLE_ENTITY)
     
-    return publication_service.demo(orcid)
+    return await publication_service.demo(orcid)
     
