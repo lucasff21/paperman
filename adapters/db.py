@@ -59,7 +59,7 @@ class DB():
         except ServerSelectionTimeoutError:
             raise DependencyException(dependency="db-timeout", status_code=HTTPStatus.FAILED_DEPENDENCY)
         
-        if result.matched_count > 0 and result.modified_count > 0:
+        if result.matched_count > 0:
             return True
         
         return False

@@ -1,3 +1,6 @@
+# v0.7.1 - 28/02/2024
+- Changing conditions for user edition validation in db module
+
 # v0.7.0 - 18/02/2024
 - Implementing async structure for transactions
 - Increasing DBLP article request number from 5 to 15
