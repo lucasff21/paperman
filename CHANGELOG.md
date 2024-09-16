@@ -1,3 +1,6 @@
+# v0.8.0 - 16/09/2024
+- Implementing retry on DBLP adapter for rate limited responses
+
 # v0.7.1 - 28/02/2024
 - Changing conditions for user edition validation in db module
 

@@ -1,6 +1,7 @@
 import requests
 
 from http import HTTPStatus
+from time import sleep
 from typing import Dict, List
 
 from adapters.cache import cache_factory
@@ -34,9 +35,12 @@ class DBLPAdapter():
                 response = requests.get(self.publication_url, params=params)
             except requests.ConnectTimeout:
                 raise DependencyException(dependency=f"dblp-publication timeout", status_code=HTTPStatus.FAILED_DEPENDENCY)
-                
-            if response.status_code != 200:
+            
+            if response.status_code not in [200, 429]:
                 raise DependencyException(dependency=f"dblp-publication (status code {response.status_code})", status_code=HTTPStatus.FAILED_DEPENDENCY)
+            
+            if response.status_code == 429:
+                response = self.retry_request(self.publication_url, params)
             
             await self.cache.set_dblp_query(query, response.json())
             
@@ -68,9 +72,12 @@ class DBLPAdapter():
         
         response = requests.get(self.venue_url, params=params)
         
-        if response.status_code != 200:
+        if response.status_code not in [200, 429]:
             raise DependencyException(dependency=f"dblp-venue (status code {response.status_code})", status_code=HTTPStatus.FAILED_DEPENDENCY)
         
+        if response.status_code == 429:
+            response = self.retry_request(self.publication_url, params)
+
         response = response.json()
         
         if 'hit' not in response['result']['hits']:
@@ -92,3 +99,16 @@ class DBLPAdapter():
         await self.cache.set_venue(query, venue.model_dump())
         
         return venue
+
+
+    async def retry_request(self, url: str, params, response: requests.Response):
+        count = 1
+        retry_token = None
+
+        while response.status_code != 200:
+            sleep(count)
+            
+            response = requests.get(url, params=params)
+            count *= 2
+
+        return response, retry_token
