@@ -1,3 +1,6 @@
+# v0.8.1 - 16/09/2024
+- Updating libraries and nltk resources
+
 # v0.8.0 - 16/09/2024
 - Implementing retry on DBLP adapter for rate limited responses
 
