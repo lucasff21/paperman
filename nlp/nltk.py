@@ -17,6 +17,7 @@ class NTLKService():
         download('stopwords')
         download('wordnet')
         download('punkt')
+        download('punkt_tab')
 
 
     def clean_subject(self, target: str) -> str:
