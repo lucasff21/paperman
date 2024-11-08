@@ -55,3 +55,5 @@ def get_periodic_score(periodic_name: str) -> float:
         return QUALIS_SCORES[qualis]
     except IndexError:
         return 0
+    except KeyError:
+        return 0

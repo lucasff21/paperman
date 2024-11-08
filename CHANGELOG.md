@@ -1,3 +1,6 @@
+# v0.8.2 - 08/11/2024
+- Implementing catch for null qualis
+
 # v0.8.1 - 16/09/2024
 - Updating libraries and nltk resources
 
