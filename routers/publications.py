@@ -2,6 +2,7 @@ from http import HTTPStatus
 
 from fastapi import APIRouter, Request
 from fastapi.responses import JSONResponse
+from fastapi.templating import Jinja2Templates
 
 from services.publication import PublicationService
 from services.user import UserService
@@ -10,6 +11,8 @@ router = APIRouter(prefix="/publications")
 
 publication_service = PublicationService()
 user_service = UserService()
+
+templates = Jinja2Templates(directory="templates")
 
 
 @router.post("")
@@ -51,3 +54,10 @@ async def evaluation(request: Request):
     publication_service.evaluation(name, evaluations, comments)
     
     return JSONResponse({"message": "Evaluation completed successfully"}, status_code=HTTPStatus.OK)
+
+
+@router.get("/experiment")
+async def experiment(request: Request):
+    return templates.TemplateResponse(
+        request=request, name="experiment.html"
+    )
