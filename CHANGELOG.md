@@ -1,3 +1,6 @@
+# v0.10.2 - 14/11/2024
+- Fixing template lib version
+
 # v0.10.1 - 14/11/2024
 - Installing template lib
 
