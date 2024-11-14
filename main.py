@@ -2,6 +2,7 @@ import uvicorn
 
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
 
 from middlewares.auth import AuthMiddleware
 from middlewares.exception import ExceptionHandlerMiddleware
@@ -28,6 +29,8 @@ app.include_router(publications.router)
 app.include_router(users.router)
 app.include_router(qualis.router)
 app.include_router(venues.router)
+
+app.mount("/static", StaticFiles(directory="static"), name="static")
 
 init_model()
 

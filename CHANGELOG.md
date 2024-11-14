@@ -1,3 +1,6 @@
+# v0.10.0 - 14/11/2024
+- Experiment page for collecting user evaluations
+
 # v0.9.0 - 14/11/2024
 - Evaluation method for algorithm and recommendation system research
 
