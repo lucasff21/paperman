@@ -9,8 +9,6 @@ from pymongo.collection import Collection
 from pymongo.errors import ServerSelectionTimeoutError
 
 from exceptions import DependencyException
-from schemas.publication import Publication
-from schemas.user import User
 from schemas.venue import Venue
 
 
@@ -25,6 +23,7 @@ class DB():
         self.db = self.client['paperman']
         self.users: Collection = self.db.users
         self.venues: Collection = self.db.venues
+        self.evaluations: Collection = self.db.evaluations
 
 
     def create_user(self, sources: List[Dict]) -> str:
@@ -99,5 +98,12 @@ class DB():
                     }
                 }}
             )
+        except ServerSelectionTimeoutError:
+            raise DependencyException(dependency="db-timeout", status_code=HTTPStatus.FAILED_DEPENDENCY)
+
+
+    def set_evaluation(self, data) -> None:
+        try: 
+            self.evaluations.insert_one(data)
         except ServerSelectionTimeoutError:
             raise DependencyException(dependency="db-timeout", status_code=HTTPStatus.FAILED_DEPENDENCY)

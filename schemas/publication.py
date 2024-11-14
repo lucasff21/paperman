@@ -20,3 +20,9 @@ class Publication(BaseModel):
     url: str
     publisher: Optional[str] = None
     score: Optional[float] = Field(return_in_api=False, default=None)
+
+
+class Evaluation(BaseModel):
+    url: str
+    score: str
+    evaluation: str

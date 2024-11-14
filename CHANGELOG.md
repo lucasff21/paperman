@@ -1,3 +1,6 @@
+# v0.9.0 - 14/11/2024
+- Evaluation method for algorithm and recommendation system research
+
 # v0.8.2 - 08/11/2024
 - Implementing catch for null qualis
 

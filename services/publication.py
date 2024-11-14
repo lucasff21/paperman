@@ -1,12 +1,13 @@
 from datetime import datetime
-from typing import Dict, List, Union
+from typing import Dict, List, Optional, Union
 
 from lingua import Language, LanguageDetectorBuilder
 
+from adapters.db import db_factory
 from adapters.dblp import DBLPAdapter
 from adapters.orcid import ORCIDAdapter
 from nlp.nltk import NTLKService
-from schemas.publication import Publication
+from schemas.publication import Evaluation, Publication
 from schemas.user import User
 from services.user import UserService
 from word_embedding.gensim import build_search_query, extract_best_match
@@ -20,6 +21,7 @@ class PublicationService():
 		self.ntlk_service = NTLKService()
 		self.languages = [Language.PORTUGUESE, Language.ENGLISH]
 		self.language_detector = LanguageDetectorBuilder.from_all_languages().build()
+		self.db = db_factory()
 
 
 	async def get_publications(self, id: str) -> List[Publication]:
@@ -143,3 +145,13 @@ class PublicationService():
 			sanitized_publications.pop(index)
 
 		return sanitized_publications
+	
+
+	def evaluation(self, name: str, evaluations: List[Evaluation], comments: Optional[str]) -> None:
+		data = {
+			"name": name,
+			"evaluations": evaluations,
+			"comments": comments,
+		}
+
+		self.db.set_evaluation(data)

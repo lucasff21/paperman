@@ -35,4 +35,19 @@ async def demo(request: Request):
         return JSONResponse({"message": "Missing data on payload"}, status_code=HTTPStatus.UNPROCESSABLE_ENTITY)
     
     return await publication_service.demo(orcid)
+
+
+@router.post("/evaluation")
+async def evaluation(request: Request):
+    data = await request.json()
     
+    name = data.get('name')
+    evaluations = data.get('evaluations')
+    comments = data.get('comments')
+    
+    if not name or not evaluations:
+        return JSONResponse({"message": "Missing data on payload"}, status_code=HTTPStatus.UNPROCESSABLE_ENTITY)
+    
+    publication_service.evaluation(name, evaluations, comments)
+    
+    return JSONResponse({"message": "Evaluation completed successfully"}, status_code=HTTPStatus.OK)

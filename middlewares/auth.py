@@ -12,6 +12,7 @@ class AuthMiddleware(BaseHTTPMiddleware):
             "/auth/generate_token",
             "/auth/validate_token",
             "/publications/demo",
+            "/publications/evaluation",
             "/qualis/update_spreadsheets"
         ]
         
