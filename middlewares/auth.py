@@ -13,6 +13,7 @@ class AuthMiddleware(BaseHTTPMiddleware):
             "/auth/validate_token",
             "/publications/demo",
             "/publications/evaluation",
+            "/publications/experiment",
             "/qualis/update_spreadsheets"
         ]
         
@@ -23,7 +24,7 @@ class AuthMiddleware(BaseHTTPMiddleware):
             "/openapi.json"
         ]
 
-        if request.url.path in skip_routes or request.url.path in skip_prefixes:
+        if request.url.path in skip_routes or request.url.path in skip_prefixes or "static" in request.url.path:
             return await call_next(request)
         
         auth_token = request.headers.get('Authorization')

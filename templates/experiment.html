@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recommender System Evaluation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .loader {
+            border: 5px solid #f3f3f3;
+            border-top: 5px solid #3498db;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+            display: none;
+            margin: 20px auto;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .recommendation {
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+    <link id="favicon" rel="icon" type="image/x-icon" href="/static/icons/icon16.png">
+</head>
+<body>
+    <h1>Recommender System Evaluation</h1>
+    
+    <form id="orcidForm">
+        <label for="orcid">Enter ORCID:</label>
+        <input type="text" id="orcid" name="orcid" required>
+        <button type="submit">Get Recommendations</button>
+    </form>
+
+    <div id="loader" class="loader"></div>
+
+    <div id="recommendationsForm" class="hidden">
+        <h2>Evaluate Recommendations</h2>
+        <div id="recommendations"></div>
+        <label for="fullName">Full Name:</label>
+        <input type="text" id="fullName" name="fullName" required>
+        <label for="comments">Comments (optional):</label>
+        <textarea id="comments" name="comments"></textarea>
+        <button type="button" id="submitEvaluations">Submit Evaluations</button>
+    </div>
+
+    <script>
+        const orcidForm = document.getElementById('orcidForm');
+        const loader = document.getElementById('loader');
+        const recommendationsForm = document.getElementById('recommendationsForm');
+        const recommendationsDiv = document.getElementById('recommendations');
+        const submitEvaluationsButton = document.getElementById('submitEvaluations');
+
+        orcidForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const orcid = document.getElementById('orcid').value;
+            loader.style.display = 'block';
+            
+            try {
+                const response = await fetch('https://paperman.kieroth29.xyz/publications/demo', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ orcid }),
+                });
+                
+                const data = await response.json();
+                displayRecommendations(data);
+            } catch (error) {
+                console.error('Error:', error);
+                alert('An error occurred. Please try again.');
+            } finally {
+                loader.style.display = 'none';
+            }
+        });
+
+        function displayRecommendations(recommendations) {
+            recommendationsDiv.innerHTML = '';
+            recommendations.forEach((rec, index) => {
+                const div = document.createElement('div');
+                div.className = 'recommendation';
+                div.innerHTML = `
+                    <h3>${rec.title}</h3>
+                    <p>Authors: ${rec.authors.map(a => a.name).join(', ')}</p>
+                    <p>Venue: ${rec.venue}</p>
+                    <p>Year: ${rec.year}</p>
+                    <p>URL: ${rec.url}</p>
+                    <label for="rating${index}">Rating:</label>
+                    <select id="rating${index}" name="rating${index}" required>
+                        <option value="">Select a rating</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                `;
+                recommendationsDiv.appendChild(div);
+            });
+            recommendationsForm.classList.remove('hidden');
+        }
+
+        submitEvaluationsButton.addEventListener('click', async () => {
+            const fullName = document.getElementById('fullName').value;
+            const comments = document.getElementById('comments').value;
+            const evaluations = [];
+
+            document.querySelectorAll('.recommendation').forEach((rec, index) => {
+                const url = rec.querySelector('p:nth-child(5)').textContent.split(': ')[1];
+                const score = parseFloat(rec.querySelector('p:nth-child(4)').textContent.split(': ')[1]);
+                const evaluation = parseInt(document.getElementById(`rating${index}`).value);
+                
+                if (isNaN(evaluation)) {
+                    alert('Please provide a rating for all recommendations.');
+                    return;
+                }
+
+                evaluations.push({ url, score, evaluation });
+            });
+
+            if (!fullName) {
+                alert('Please provide your full name.');
+                return;
+            }
+
+            try {
+                const response = await fetch('https://paperman.kieroth29.xyz/publications/evaluation', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        name: fullName,
+                        evaluations,
+                        comments: comments || null,
+                    }),
+                });
+
+                if (response.ok) {
+                    alert('Evaluation submitted successfully!');
+                    recommendationsForm.classList.add('hidden');
+                    orcidForm.reset();
+                } else {
+                    alert('An error occurred while submitting the evaluation. Please try again.');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('An error occurred. Please try again.');
+            }
+        });
+    </script>
+</body>
+</html>
