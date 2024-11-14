@@ -1,3 +1,6 @@
+# v0.10.1 - 14/11/2024
+- Installing template lib
+
 # v0.10.0 - 14/11/2024
 - Experiment page for collecting user evaluations
 
