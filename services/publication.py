@@ -103,7 +103,7 @@ class PublicationService():
 				if best_publication:
 					publications.append(best_publication)
 
-				if len(publications) == 3:
+				if len(publications) == 5:
 					return publications
 
 		return publications

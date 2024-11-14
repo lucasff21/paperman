@@ -1,3 +1,6 @@
+# v0.11.0 - 14/11/2024
+- Increasing max number of recommendations for demo
+
 # v0.10.2 - 14/11/2024
 - Fixing template lib version
 
