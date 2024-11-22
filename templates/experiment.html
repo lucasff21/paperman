@@ -33,11 +33,43 @@
         .hidden {
             display: none;
         }
+        .instructions {
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+        .toggle-button {
+            cursor: pointer;
+            color: #3498db;
+            text-decoration: underline;
+        }
+        textarea {
+            width: 60%;
+            height: 60%;
+        }
     </style>
     <link id="favicon" rel="icon" type="image/x-icon" href="/static/icons/icon16.png">
 </head>
 <body>
     <h1>Recommender System Evaluation</h1>
+
+    <div class="instructions">
+        <span class="toggle-button" onclick="toggleInstructions()">Show Instructions</span>
+        <div id="instructionContent" class="hidden">
+            <h2>Instructions for Evaluation Process</h2>
+            <p>Follow these steps to evaluate the recommendations:</p>
+            <ol>
+                <li><strong>Enter your ORCID:</strong> In the first form, please provide your ORCID identifier.</li>
+                <li><strong>Get Recommendations:</strong> Click on the "Get Recommendations" button. This will fetch a list of recommendations based on your ORCID.</li>
+                <li><strong>Evaluate Recommendations:</strong> Once the recommendations are displayed, rate each one on a scale from 1 to 5.</li>
+                <li><strong>Provide Your Name:</strong> Enter your full name in the provided field.</li>
+                <li><strong>Add Comments (Optional):</strong> You can leave any comments regarding the recommendations if you wish.</li>
+                <li><strong>Submit Your Evaluations:</strong> Click on the "Submit Evaluations" button to send your feedback.</li>
+                <li><strong>Confirmation:</strong> You will receive a confirmation message once your evaluations are submitted successfully.</li>
+            </ol>
+        </div>
+    </div>
     
     <form id="orcidForm">
         <label for="orcid">Enter ORCID:</label>
@@ -52,8 +84,12 @@
         <div id="recommendations"></div>
         <label for="fullName">Full Name:</label>
         <input type="text" id="fullName" name="fullName" required>
+        
+        <br>
         <label for="comments">Comments (optional):</label>
         <textarea id="comments" name="comments"></textarea>
+        
+        <br>
         <button type="button" id="submitEvaluations">Submit Evaluations</button>
     </div>
 
@@ -169,6 +205,19 @@
                 alert('An error occurred. Please try again.');
             }
         });
+
+        function toggleInstructions() {
+            const instructionContent = document.getElementById("instructionContent");
+            instructionContent.classList.toggle("hidden");
+            
+            const toggleButton = document.querySelector(".toggle-button");
+            
+            if (instructionContent.classList.contains("hidden")) {
+                toggleButton.textContent = "Show Instructions";
+            } else {
+                toggleButton.textContent = "Hide Instructions";
+            }
+        }
     </script>
 </body>
 </html>
