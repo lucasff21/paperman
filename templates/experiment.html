@@ -94,7 +94,7 @@
                 const div = document.createElement('div');
                 div.className = 'recommendation';
                 div.innerHTML = `
-                    <h3><a href="${rec.url}">${rec.title}</a></h3>
+                    <h3><a href="${rec.ee}" target="_blank">${rec.title}</a></h3>
                     <p>Authors: ${rec.authors.length ? rec.authors.map(a => a.name).join(', ') : 'Not available'}</p>
                     <p>Venue: ${rec.venue}</p>
                     <p>Year: ${rec.year}</p>

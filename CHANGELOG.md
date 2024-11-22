@@ -1,3 +1,6 @@
+# v0.11.2 - 22/11/2024
+- Opening article in new window and setting DOI url in link
+
 # v0.11.1 - 22/11/2024
 - Adding validation for experiment ratings
 
