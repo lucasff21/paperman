@@ -94,11 +94,11 @@
                 const div = document.createElement('div');
                 div.className = 'recommendation';
                 div.innerHTML = `
-                    <h3>${rec.title}</h3>
-                    <p>Authors: ${rec.authors.map(a => a.name).join(', ')}</p>
+                    <h3><a href="${rec.url}">${rec.title}</a></h3>
+                    <p>Authors: ${rec.authors.length ? rec.authors.map(a => a.name).join(', ') : 'Not available'}</p>
                     <p>Venue: ${rec.venue}</p>
                     <p>Year: ${rec.year}</p>
-                    <p>URL: ${rec.url}</p>
+                    <p style="display: none;">URL: ${rec.url}</p>
                     <label for="rating${index}">Rating:</label>
                     <select id="rating${index}" name="rating${index}" required>
                         <option value="">Select a rating</option>
@@ -118,6 +118,8 @@
             const fullName = document.getElementById('fullName').value;
             const comments = document.getElementById('comments').value;
             const evaluations = [];
+            const nonNumberEvaluations = [];
+
 
             document.querySelectorAll('.recommendation').forEach((rec, index) => {
                 const url = rec.querySelector('p:nth-child(5)').textContent.split(': ')[1];
@@ -125,12 +127,17 @@
                 const evaluation = parseInt(document.getElementById(`rating${index}`).value);
                 
                 if (isNaN(evaluation)) {
-                    alert('Please provide a rating for all recommendations.');
+                    nonNumberEvaluations.push(evaluation);
                     return;
                 }
 
                 evaluations.push({ url, score, evaluation });
             });
+
+            if (nonNumberEvaluations.length) {
+                alert('Please provide a rating for all recommendations.');
+                return;
+            }
 
             if (!fullName) {
                 alert('Please provide your full name.');

@@ -1,3 +1,6 @@
+# v0.11.1 - 22/11/2024
+- Adding validation for experiment ratings
+
 # v0.11.0 - 14/11/2024
 - Increasing max number of recommendations for demo
 
