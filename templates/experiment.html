@@ -125,6 +125,13 @@
         });
 
         function displayRecommendations(recommendations) {
+            console.log(recommendations.length);
+            
+            if(recommendations.length <= 0) {
+                alert('The system could not produce recommendations due to the absence of publications associated to your ORCID. Thank you very much for volunteering.')
+                return
+            }
+
             recommendationsDiv.innerHTML = '';
             recommendations.forEach((rec, index) => {
                 const div = document.createElement('div');

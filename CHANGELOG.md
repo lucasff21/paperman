@@ -1,3 +1,6 @@
+# v0.11.5 - 28/11/2024
+- Experiment alert for ORCID profiles with no publications
+
 # v0.11.4 - 28/11/2024
 - Fixing unexpected behaviour when retrying requests
 
