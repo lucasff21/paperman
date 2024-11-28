@@ -1,3 +1,6 @@
+# v0.11.4 - 28/11/2024
+- Fixing unexpected behaviour when retrying requests
+
 # v0.11.3 - 22/11/2024
 - Adding instructions block and refactoring form structure
 

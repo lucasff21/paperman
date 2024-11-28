@@ -40,7 +40,7 @@ class DBLPAdapter():
                 raise DependencyException(dependency=f"dblp-publication (status code {response.status_code})", status_code=HTTPStatus.FAILED_DEPENDENCY)
             
             if response.status_code == 429:
-                response = self.retry_request(self.publication_url, params)
+                response = self.retry_request(self.publication_url, params, response)
             
             await self.cache.set_dblp_query(query, response.json())
             
@@ -76,7 +76,7 @@ class DBLPAdapter():
             raise DependencyException(dependency=f"dblp-venue (status code {response.status_code})", status_code=HTTPStatus.FAILED_DEPENDENCY)
         
         if response.status_code == 429:
-            response = self.retry_request(self.publication_url, params)
+            response = self.retry_request(self.publication_url, params, response)
 
         response = response.json()
         
