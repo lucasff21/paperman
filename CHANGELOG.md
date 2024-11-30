@@ -1,3 +1,6 @@
+# v0.11.6 - 30/11/2024
+- Changing experiment ORCID value to uppercase
+
 # v0.11.5 - 28/11/2024
 - Experiment alert for ORCID profiles with no publications
 

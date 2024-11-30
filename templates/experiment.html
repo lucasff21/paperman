@@ -102,7 +102,7 @@
 
         orcidForm.addEventListener('submit', async (e) => {
             e.preventDefault();
-            const orcid = document.getElementById('orcid').value;
+            const orcid = document.getElementById('orcid').value.toUpperCase();
             loader.style.display = 'block';
             
             try {
