@@ -1,3 +1,5 @@
+import logging
+
 import uvicorn
 
 from fastapi import FastAPI
@@ -8,6 +10,9 @@ from middlewares.auth import AuthMiddleware
 from middlewares.exception import ExceptionHandlerMiddleware
 from routers import auth, publications, qualis, users, venues
 from word_embedding.gensim import init_model
+
+logging.basicConfig(level=logging.INFO,
+                    format='%(asctime)s - %(levelname)s - %(message)s')
 
 app = FastAPI()
 

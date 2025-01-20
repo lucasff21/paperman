@@ -1,3 +1,6 @@
+# v0.11.9 - 20/01/2025
+- Logging implementation
+
 # v0.11.8 - 20/01/2025
 - Updating requirements to solve vulnerabilities
 

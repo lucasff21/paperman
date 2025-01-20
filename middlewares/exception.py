@@ -1,5 +1,6 @@
+import logging
+
 from http import HTTPStatus
-from traceback import print_exception
 
 from fastapi import Request
 from fastapi.responses import JSONResponse
@@ -13,7 +14,7 @@ class ExceptionHandlerMiddleware(BaseHTTPMiddleware):
         try:
             return await call_next(request)
         except BusinessException as e:
-            print_exception(e)
+            logging.error(e)
             return JSONResponse(
                 status_code=e.status_code, 
                 content={
@@ -22,7 +23,7 @@ class ExceptionHandlerMiddleware(BaseHTTPMiddleware):
                 }
             )
         except DependencyException as e:
-            print_exception(e)
+            logging.error(e)
             return JSONResponse(
                 status_code=e.status_code,
                 content={
@@ -31,7 +32,7 @@ class ExceptionHandlerMiddleware(BaseHTTPMiddleware):
                 }
             )
         except DatabaseTimeoutException as e:
-            print_exception(e)
+            logging.error(e)
             return JSONResponse(
                 status_code=HTTPStatus.FAILED_DEPENDENCY,
                 content={
@@ -40,7 +41,7 @@ class ExceptionHandlerMiddleware(BaseHTTPMiddleware):
                 }
             )
         except Exception as e:
-            print_exception(e)
+            logging.error(e)
             return JSONResponse(
                 status_code=500, 
                 content={
