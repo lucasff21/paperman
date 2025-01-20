@@ -1,5 +1,8 @@
+# v0.11.8 - 20/01/2025
+- Updating requirements to solve vulnerabilities
+
 # v0.11.7 - 24/12/2024
-- Updating requirements to solve vulnerability
+- Updating requirements to solve vulnerabilities
 
 # v0.11.6 - 30/11/2024
 - Changing experiment ORCID value to uppercase
