@@ -18,13 +18,8 @@ def cache_factory():
     return Cache()
 
 
-class Cache():
+class Cache:
     def __init__(self) -> None:
-        # self.conn = aioredis.from_url(
-        #     # rediss://[[username]:[password]]@localhost:6379/0
-        #     f"rediss://{config('CACHE_USER')}:{config('CACHE_PASS')}@{config('CACHE_HOST')}:{config('CACHE_PORT')}"
-        # )
-
         self.conn = aioredis(host=config('CACHE_HOST'), port=config('CACHE_PORT'), username=config('CACHE_USER'), password=config('CACHE_PASS'))
 
     

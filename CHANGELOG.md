@@ -1,3 +1,8 @@
+# v0.12.0 - 23/03/2025
+- Implementing base request adapter and inheriting it in existing classes (DBLPAdapter, ORCIDAdapter)
+- Exception scenario and handling for tokenization
+- Minor code quality fixes to comply with PEP8 standards
+
 # v0.11.9 - 20/01/2025
 - Logging implementation
 
