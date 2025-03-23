@@ -11,9 +11,8 @@ class BaseRequestAdapter:
         self.db = db_factory()
 
 
-    async def retry_request(self, url: str, params, response: requests.Response):
+    def retry_request(self, url: str, params, response: requests.Response):
         count = 1
-        retry_token = None
 
         while response.status_code != 200:
             sleep(count)
@@ -21,4 +20,4 @@ class BaseRequestAdapter:
             response = requests.get(url, params=params)
             count *= 2
 
-        return response, retry_token
+        return response

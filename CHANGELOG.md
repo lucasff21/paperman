@@ -1,3 +1,6 @@
+# v0.12.1 - 23/03/2025
+- Refactoring retry request method
+
 # v0.12.0 - 23/03/2025
 - Implementing base request adapter and inheriting it in existing classes (DBLPAdapter, ORCIDAdapter)
 - Exception scenario and handling for tokenization
