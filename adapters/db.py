@@ -17,7 +17,7 @@ def db_factory():
     return DB()
 
 
-class DB():
+class DB:
     def __init__(self) -> None:
         self.client = MongoClient(config('DB_URL'))
         self.db = self.client['paperman']
