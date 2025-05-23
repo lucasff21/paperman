@@ -17,7 +17,7 @@ class ORCIDAdapter(BaseRequestAdapter):
 
 
     async def get_public_records(self, id: str):
-        url = self.ORCID_API_URL.replace(':id', id)
+        url = self.ORCID_API_URL.replace(":id", id)
         headers = {
             "Authorization": self.ORCID_TOKEN,
             "Content-Type": "application/orcid+json"
@@ -45,10 +45,10 @@ class ORCIDAdapter(BaseRequestAdapter):
 
         subjects = []
 
-        work_affiliations = public_records['activities-summary']['works']['group']
+        work_affiliations = public_records["activities-summary"]["works"]["group"]
         for affiliation in work_affiliations:
-            for index in affiliation['work-summary']:
-                data = index['title']['title']['value']
+            for index in affiliation["work-summary"]:
+                data = index["title"]["title"]["value"]
 
                 if data:
                     subjects.append(data)

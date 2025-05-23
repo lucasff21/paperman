@@ -1,3 +1,9 @@
+# v1.0.0 - 22/05/2025
+- Recommendation rating retrieval, creation and update
+- Quote and tab formatting
+- Router tags
+- Logger with counter for retry request method
+
 # v0.12.1 - 23/03/2025
 - Refactoring retry request method
 

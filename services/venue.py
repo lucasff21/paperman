@@ -14,13 +14,13 @@ class VenueService:
     
     
     async def create_venue(self, data: Dict) -> None:
-        venue = self.db.get_venue(data['query'])
+        venue = self.db.get_venue(data["query"])
         
         if venue:
-            raise BusinessException('Venue already exists', status_code=HTTPStatus.CONFLICT)
+            raise BusinessException("Venue already exists", status_code=HTTPStatus.CONFLICT)
         
         self.db.create_venue(Venue(**data))
-        await self.cache.set_venue(data['query'], data)
+        await self.cache.set_venue(data["query"], data)
     
     
     async def get_venue(self, query: str) -> Venue:
@@ -32,18 +32,18 @@ class VenueService:
         venue = self.db.get_venue(query)
         
         if not venue:
-            raise BusinessException('Venue not found', status_code=HTTPStatus.NOT_FOUND) 
+            raise BusinessException("Venue not found", status_code=HTTPStatus.NOT_FOUND) 
         
-        venue.pop('_id', None)
-        await self.cache.set_venue(venue['query'], venue)
+        venue.pop("_id", None)
+        await self.cache.set_venue(venue["query"], venue)
         return Venue(**venue)
     
     
     async def update_venue(self, data: Dict) -> None:
-        venue = Venue(**self.db.get_venue(data['query']))
+        venue = Venue(**self.db.get_venue(data["query"]))
 
         if not venue:
-            raise BusinessException('Venue not found', status_code=HTTPStatus.NOT_FOUND)
+            raise BusinessException("Venue not found", status_code=HTTPStatus.NOT_FOUND)
         
         self.db.update_venue(data)
-        await self.cache.set_venue(data['query'], data)
+        await self.cache.set_venue(data["query"], data)

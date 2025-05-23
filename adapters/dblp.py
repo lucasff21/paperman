@@ -1,4 +1,5 @@
 import requests
+
 from http import HTTPStatus
 from typing import Dict, List
 
@@ -42,10 +43,10 @@ class DBLPAdapter(BaseRequestAdapter):
 
             response = response.json()
 
-        if 'hit' not in response['result']['hits']:
+        if "hit" not in response["result"]["hits"]:
             return []
 
-        return response['result']['hits']['hit']
+        return response["result"]["hits"]["hit"]
 
 
     async def get_venue(self, query: str) -> Venue | None:
@@ -76,18 +77,18 @@ class DBLPAdapter(BaseRequestAdapter):
 
         response = response.json()
 
-        if 'hit' not in response['result']['hits']:
+        if "hit" not in response["result"]["hits"]:
             return None
 
-        result = response['result']['hits']['hit']
+        result = response["result"]["hits"]["hit"]
 
         if not result:
             return None
 
         result = result[0]
-        result['score'] = result['@score']
-        result['id'] = result['@id']
-        result['query'] = query
+        result["score"] = result["@score"]
+        result["id"] = result["@id"]
+        result["query"] = query
 
         venue = Venue(**result)
 

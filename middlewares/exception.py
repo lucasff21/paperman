@@ -18,8 +18,8 @@ class ExceptionHandlerMiddleware(BaseHTTPMiddleware):
             return JSONResponse(
                 status_code=e.status_code, 
                 content={
-                    'error': e.__class__.__name__, 
-                    'message': e.message
+                    "error": e.__class__.__name__, 
+                    "message": e.message
                 }
             )
         except DependencyException as e:
@@ -27,8 +27,8 @@ class ExceptionHandlerMiddleware(BaseHTTPMiddleware):
             return JSONResponse(
                 status_code=e.status_code,
                 content={
-                    'error': e.__class__.__name__, 
-                    'message': e.message
+                    "error": e.__class__.__name__, 
+                    "message": e.message
                 }
             )
         except DatabaseTimeoutException as e:
@@ -36,8 +36,8 @@ class ExceptionHandlerMiddleware(BaseHTTPMiddleware):
             return JSONResponse(
                 status_code=HTTPStatus.FAILED_DEPENDENCY,
                 content={
-                    'error': e.__class__.__name__, 
-                    'message': e.message
+                    "error": e.__class__.__name__, 
+                    "message": e.message
                 }
             )
         except Exception as e:
@@ -45,7 +45,7 @@ class ExceptionHandlerMiddleware(BaseHTTPMiddleware):
             return JSONResponse(
                 status_code=500, 
                 content={
-                    'error': e.__class__.__name__, 
-                    'messages': e.args
+                    "error": e.__class__.__name__, 
+                    "messages": e.args
                 }
             )

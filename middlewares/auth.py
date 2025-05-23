@@ -27,8 +27,8 @@ class AuthMiddleware(BaseHTTPMiddleware):
         if request.url.path in skip_routes or request.url.path in skip_prefixes or "static" in request.url.path:
             return await call_next(request)
         
-        auth_token = request.headers.get('Authorization')
-        user_id = request.headers.get('UserId')
+        auth_token = request.headers.get("Authorization")
+        user_id = request.headers.get("UserId")
     
         if not auth_token:
             return JSONResponse(status_code=403, content={"message": "Authorization token missing"})

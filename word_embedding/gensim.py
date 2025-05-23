@@ -13,21 +13,21 @@ from utils.qualis import get_conference_score, get_periodic_score
 
 def init_model() -> None:
     try:
-        KeyedVectors.load('cbow_s100', mmap='r')
+        KeyedVectors.load("cbow_s100", mmap="r")
     except FileNotFoundError:
-        model = KeyedVectors.load_word2vec_format('./resources/word2vec/cbow_s100.txt')
+        model = KeyedVectors.load_word2vec_format("./resources/word2vec/cbow_s100.txt")
         model.init_sims(replace=True)
-        model.save('cbow_s100')
+        model.save("cbow_s100")
 
 
 def load_model():
     model = None
     
     try:
-        model = KeyedVectors.load('cbow_s100', mmap='r')
+        model = KeyedVectors.load("cbow_s100", mmap="r")
     except FileNotFoundError:
         init_model()
-        model = KeyedVectors.load('cbow_s100', mmap='r')
+        model = KeyedVectors.load("cbow_s100", mmap="r")
 
     return model
 
@@ -91,7 +91,7 @@ async def get_venue_score(publication: Publication) -> float:
     
     key = key[0]
     
-    type = key.split('/')
+    type = key.split("/")
     if not type:
         return 0
     

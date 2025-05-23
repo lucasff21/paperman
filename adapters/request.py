@@ -1,4 +1,6 @@
+import logging
 import requests
+
 from time import sleep
 
 from adapters.cache import cache_factory
@@ -15,6 +17,8 @@ class BaseRequestAdapter:
         count = 1
 
         while response.status_code != 200:
+            logging.warning(f"Retry #{count} to {url} (status code {response.status_code}) with params {params}")
+            
             sleep(count)
 
             response = requests.get(url, params=params)

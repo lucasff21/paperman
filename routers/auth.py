@@ -5,7 +5,7 @@ from fastapi.responses import JSONResponse
 
 from services.auth import AuthService
 
-router = APIRouter(prefix="/auth")
+router = APIRouter(prefix="/auth", tags=["auth"])
 
 auth_service = AuthService()
 
@@ -14,18 +14,18 @@ auth_service = AuthService()
 async def generate_auth_token(request: Request):
     data = await request.json()
     
-    if not data['user_id']:
+    if not data["user_id"]:
         return JSONResponse({"message": "User ID missing"}, status_code=HTTPStatus.UNPROCESSABLE_ENTITY)
     
-    return JSONResponse({"token": await auth_service.generate_token(data['user_id'])})
+    return JSONResponse({"token": await auth_service.generate_token(data["user_id"])})
 
 
 @router.post("/validate_token")
 async def validate_auth_token(request: Request):
     data = await request.json()
     
-    if not data['user'] or not data['token']:
+    if not data["user"] or not data["token"]:
         return JSONResponse({"message": "Missing data on payload"}, status_code=422)
     
-    return JSONResponse({"valid": await auth_service.validate_token(data['user'], data['token'])})
+    return JSONResponse({"valid": await auth_service.validate_token(data["user"], data["token"])})
 

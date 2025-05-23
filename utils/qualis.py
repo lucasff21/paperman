@@ -14,8 +14,8 @@ def update_files() -> None:
     
     output_folder = "./resources/qualis/"
     
-    conferences_df = read_csv(conferences_url, on_bad_lines='skip')
-    periodics_df = read_csv(periodics_url, on_bad_lines='skip')
+    conferences_df = read_csv(conferences_url, on_bad_lines="skip")
+    periodics_df = read_csv(periodics_url, on_bad_lines="skip")
     
     conferences_df.to_csv(path.join(output_folder, "conferences.csv"), index=False)
     periodics_df.to_csv(path.join(output_folder, "periodics.csv"), index=False)
@@ -51,7 +51,7 @@ def get_periodic_score(periodic_name: str) -> float:
     
     try:
         periodic = list(filter(lambda x: sub(r"\([^)]*\)", "", x.get("periodico", "")).lower().strip() == periodic_name.lower().strip(), periodics))[0]
-        qualis = periodic['Qualis_Final']
+        qualis = periodic["Qualis_Final"]
         return QUALIS_SCORES[qualis]
     except IndexError:
         return 0

@@ -23,14 +23,14 @@ class UserService:
         if user:
             return User(**user)
         
-        raise BusinessException('User not found', status_code=HTTPStatus.NOT_FOUND) 
+        raise BusinessException("User not found", status_code=HTTPStatus.NOT_FOUND) 
     
     
     def edit_user_sources(self, id: str, sources: List[Dict]) -> None:
         edit = self.db.edit_user_sources(id, sources)
 
         if not edit:
-            raise BusinessException('Unable to edit provided user sources')
+            raise BusinessException("Unable to edit provided user sources")
         
 
     def update_recommendations(self, id: str, recommendations: List[Publication]) -> None:

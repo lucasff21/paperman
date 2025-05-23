@@ -3,7 +3,7 @@ from fastapi.responses import JSONResponse
 
 from services.venue import VenueService
 
-router = APIRouter(prefix="/venue")
+router = APIRouter(prefix="/venue", tags=["venue"])
 
 venue_service = VenueService()
 

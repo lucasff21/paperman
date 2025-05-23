@@ -13,14 +13,14 @@ from enums import Time
 from exceptions import DependencyException
 
 
-@lru_cache(maxsize=config('CACHE_MAX_INSTANCES', cast=int))
+@lru_cache(maxsize=config("CACHE_MAX_INSTANCES", cast=int))
 def cache_factory():
     return Cache()
 
 
 class Cache:
     def __init__(self) -> None:
-        self.conn = aioredis(host=config('CACHE_HOST'), port=config('CACHE_PORT'), username=config('CACHE_USER'), password=config('CACHE_PASS'))
+        self.conn = aioredis(host=config("CACHE_HOST"), port=config("CACHE_PORT"), username=config("CACHE_USER"), password=config("CACHE_PASS"))
 
     
     async def set_dblp_query(self, query: str, response: Dict) -> None:

@@ -14,10 +14,10 @@ class NTLKService():
 
     @staticmethod
     def download_resources() -> None:
-        download('stopwords')
-        download('wordnet')
-        download('punkt')
-        download('punkt_tab')
+        download("stopwords")
+        download("wordnet")
+        download("punkt")
+        download("punkt_tab")
 
 
     def clean_subject(self, target: str) -> str:
@@ -30,14 +30,14 @@ class NTLKService():
         unique_words_list = list({word.lower():"" for word in target})
 
         try:
-            cached_stopwords = stopwords.words('portuguese') + stopwords.words('english')
+            cached_stopwords = stopwords.words("portuguese") + stopwords.words("english")
         except LookupError:
             self.download_resources()
-            cached_stopwords = stopwords.words('portuguese') + stopwords.words('english')
+            cached_stopwords = stopwords.words("portuguese") + stopwords.words("english")
 
         no_stopwords = [word for word in unique_words_list if word not in cached_stopwords]
 
-        symbol_pattern = compile(r'[^a-zA-Z0-9\s]')
+        symbol_pattern = compile(r"[^a-zA-Z0-9\s]")
         no_symbols = [word for word in no_stopwords if not symbol_pattern.search(word)]
 
         try:
@@ -46,7 +46,7 @@ class NTLKService():
             self.download_resources()
             lemmatized_list = [self.wnl.lemmatize(item).lower() for item in no_symbols]
 
-        return ' '.join([word for word in lemmatized_list if self.language_detector.detect_language_of(word) in self.languages])
+        return " ".join([word for word in lemmatized_list if self.language_detector.detect_language_of(word) in self.languages])
 
 
     def clean_publication_title(self, target: str) -> List[str]:
@@ -59,14 +59,14 @@ class NTLKService():
         unique_words_list = list({word.lower():"" for word in target})
 
         try:
-            cached_stopwords = stopwords.words('portuguese') + stopwords.words('english')
+            cached_stopwords = stopwords.words("portuguese") + stopwords.words("english")
         except LookupError:
             self.download_resources()
-            cached_stopwords = stopwords.words('portuguese') + stopwords.words('english')
+            cached_stopwords = stopwords.words("portuguese") + stopwords.words("english")
 
         no_stopwords = [word for word in unique_words_list if word not in cached_stopwords]
 
-        symbol_pattern = compile(r'[^a-zA-Z0-9\s]')
+        symbol_pattern = compile(r"[^a-zA-Z0-9\s]")
         no_symbols = [word for word in no_stopwords if not symbol_pattern.search(word)]
 
         try:
