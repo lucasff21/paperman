@@ -3,7 +3,7 @@ from fastapi.responses import JSONResponse
 
 from utils.qualis import update_files
 
-router = APIRouter(prefix="/qualis")
+router = APIRouter(prefix="/qualis", tags=["qualis"])
 
 
 @router.post("/update_spreadsheets")

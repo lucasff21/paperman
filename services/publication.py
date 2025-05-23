@@ -14,144 +14,167 @@ from word_embedding.gensim import build_search_query, extract_best_match
 
 
 class PublicationService():
-	def __init__(self) -> None:
-		self.dblp_adapter = DBLPAdapter()
-		self.orcid_adapter = ORCIDAdapter()
-		self.user_service = UserService()
-		self.ntlk_service = NTLKService()
-		self.languages = [Language.PORTUGUESE, Language.ENGLISH]
-		self.language_detector = LanguageDetectorBuilder.from_all_languages().build()
-		self.db = db_factory()
+    def __init__(self) -> None:
+        self.dblp_adapter = DBLPAdapter()
+        self.orcid_adapter = ORCIDAdapter()
+        self.user_service = UserService()
+        self.ntlk_service = NTLKService()
+        self.languages = [Language.PORTUGUESE, Language.ENGLISH]
+        self.language_detector = LanguageDetectorBuilder.from_all_languages().build()
+        self.db = db_factory()
 
+    async def get_publications(self, id: str) -> List[Publication]:
+        user = self.user_service.get_user(id)
 
-	async def get_publications(self, id: str) -> List[Publication]:
-		user = self.user_service.get_user(id)
+        summary = None
+        publications = []
 
-		summary = None
-		publications = []
+        for source in user.sources:
+            if source.service == "orcid":
+                summary = await self.orcid_adapter.get_user_summary(source.url)
 
-		for source in user.sources:
-			if source.service == "orcid":
-				summary = await self.orcid_adapter.get_user_summary(source.url)
+        if summary:
+            for subject in summary:
+                subject_topics = build_search_query(subject)
+                subject_publications = []
 
-		if summary:
-			for subject in summary:
-				subject_topics = build_search_query(subject)
-				subject_publications = []
+                for topic in subject_topics:
+                    topic_publications = await self.dblp_adapter.get_publications(topic)
+                    subject_publications.extend(topic_publications)
 
-				for topic in subject_topics:
-					topic_publications = await self.dblp_adapter.get_publications(topic)
-					subject_publications.extend(topic_publications)
+                subject_publications = self.sanitize_publications(
+                    subject_publications)
 
-				subject_publications = self.sanitize_publications(subject_publications)
+                best_publication = None
 
-				best_publication = None
+                if subject_publications:
+                    best_publication = await self.get_best_match(subject_publications, subject, user)
 
-				if subject_publications:
-					best_publication = await self.get_best_match(subject_publications, subject, user)
+                if best_publication:
+                    publications.append(best_publication)
 
-				if best_publication:
-					publications.append(best_publication)
+                if len(publications) == 3:
+                    return publications
 
-				if len(publications) == 3:
-					return publications
+        return publications
 
-		return publications
+    async def get_best_match(self, publications: List[Publication], subject: str, user: User) -> Union[Publication, None]:
+        now = datetime.now()
 
+        publications = [publication for publication in publications if not self.publication_already_recommended(
+            user, publication) and publication.year > (now.year - 5)]
 
-	async def get_best_match(self, publications: List[Publication], subject: str, user: User) -> Union[Publication, None]:
-		now = datetime.now()
+        if publications:
+            return await extract_best_match(publications, subject)
 
-		publications = [publication for publication in publications if not self.publication_already_recommended(user, publication) and publication.year > (now.year - 5)]
+        return None
 
-		if publications:
-			return await extract_best_match(publications, subject)
+    @staticmethod
+    def publication_already_recommended(user: User, publication: Publication) -> bool:
+        return f"{publication.title}:{publication.year}" in user.recommendations
 
-		return None
+    async def demo(self, orcid: str) -> List[Publication]:
+        now = datetime.now()
 
+        publications = []
 
-	@staticmethod
-	def publication_already_recommended(user: User, publication: Publication) -> bool:
-		return f"{publication.title}:{publication.year}" in user.recommendations
+        summary = await self.orcid_adapter.get_user_summary(orcid)
 
+        if summary:
+            for subject in summary:
+                subject_topics = build_search_query(subject)
+                subject_publications = []
 
-	async def demo(self, orcid: str) -> List[Publication]:
-		now = datetime.now()
+                for topic in subject_topics:
+                    topic_publications = await self.dblp_adapter.get_publications(topic)
+                    subject_publications.extend(topic_publications)
 
-		publications = []
+                subject_publications = self.sanitize_publications(
+                    subject_publications)
 
-		summary = await self.orcid_adapter.get_user_summary(orcid)
+                best_publication = None
 
-		if summary:
-			for subject in summary:
-				subject_topics = build_search_query(subject)
-				subject_publications = []
+                if subject_publications:
+                    recent_subject_publications = [publication for publication in subject_publications if (publication.year < (
+                        now.year - 5) and publication.title not in [publication.title for publication in publications])]
 
-				for topic in subject_topics:
-					topic_publications = await self.dblp_adapter.get_publications(topic)
-					subject_publications.extend(topic_publications)
+                    if recent_subject_publications:
+                        best_publication = await extract_best_match(recent_subject_publications, subject)
 
-				subject_publications = self.sanitize_publications(subject_publications)
+                if best_publication:
+                    publications.append(best_publication)
 
-				best_publication = None
+                if len(publications) == 5:
+                    return publications
 
-				if subject_publications:
-					subject_publications = [publication for publication in subject_publications if publication.year < (now.year - 5)]
+        return publications
 
-					best_publication = await extract_best_match(subject_publications, subject)
+    def sanitize_publications(self, publications: List[Dict]) -> List[Publication]:
+        sanitized_publications = []
 
-				if best_publication:
-					publications.append(best_publication)
+        for publication in publications:
+            if "authors" in publication["info"]:
+                author = publication["info"]["authors"]["author"]
 
-				if len(publications) == 5:
-					return publications
+                if isinstance(author, Dict):
+                    author["pid"] = author["@pid"]
+                    author["name"] = author["text"]
+                    authors = publication["info"]["authors"]
+                    publication["info"]["authors"] = [authors["author"]]
+                elif isinstance(author, List):
+                    for author in publication["info"]["authors"]["author"]:
+                        author["pid"] = author["@pid"]
+                        author["name"] = author["text"]
 
-		return publications
+                if "author" in publication["info"]["authors"]:
+                    publication["info"]["authors"] = publication["info"]["authors"]["author"]
+            else:
+                publication["info"]["authors"] = []
 
+            if "venue" in publication["info"] and not type(publication["info"]["venue"]) == str:
+                publication["info"]["venue"] = "; ".join(
+                    publication["info"]["venue"])
 
-	def sanitize_publications(self, publications: List[Dict]) -> List[Publication]:
-		sanitized_publications = []
+            sanitized_publications.append(Publication(**publication["info"]))
 
-		for publication in publications:
-			if 'authors' in publication['info']:
-				author = publication['info']['authors']['author']
+        publication_titles = [
+            publication.title for publication in sanitized_publications]
 
-				if isinstance(author, Dict):
-					author['pid'] = author['@pid']
-					author['name'] = author['text']
-					authors = publication['info']['authors']
-					publication['info']['authors'] = [authors['author']]
-				elif isinstance(author, List):
-					for author in publication['info']['authors']['author']:
-						author['pid'] = author['@pid']
-						author['name'] = author['text']
+        title_languages = self.language_detector.detect_languages_in_parallel_of(
+            publication_titles)
+        not_desired_languages = [index for index, item in enumerate(
+            title_languages) if item not in self.languages]
 
-				if 'author' in publication['info']['authors']:
-					publication['info']['authors'] = publication['info']['authors']['author']
-			else:
-				publication['info']['authors'] = []
+        for index in reversed(not_desired_languages):
+            sanitized_publications.pop(index)
 
-			if 'venue' in publication['info'] and not type(publication['info']['venue']) == str:
-				publication['info']['venue'] = '; '.join(publication['info']['venue'])
+        return sanitized_publications
 
-			sanitized_publications.append(Publication(**publication['info']))
+    def evaluation(self, name: str, evaluations: List[Evaluation], comments: Optional[str]) -> None:
+        data = {
+            "name": name,
+            "evaluations": evaluations,
+            "comments": comments,
+        }
 
-		publication_titles = [publication.title for publication in sanitized_publications]
+        self.db.set_evaluation(data)
 
-		title_languages = self.language_detector.detect_languages_in_parallel_of(publication_titles)
-		not_desired_languages = [index for index, item in enumerate(title_languages) if item not in self.languages]
-		
-		for index in reversed(not_desired_languages):
-			sanitized_publications.pop(index)
+    def rate(self, url: str, user_id: str, rating: int) -> None:
+        data = {
+            "url": url,
+            "rating": rating,
+            "user_id": user_id,
+        }
 
-		return sanitized_publications
-	
+        self.db.set_rating(data)
 
-	def evaluation(self, name: str, evaluations: List[Evaluation], comments: Optional[str]) -> None:
-		data = {
-			"name": name,
-			"evaluations": evaluations,
-			"comments": comments,
-		}
+    def get_rating(self, url: str, user_id: str) -> Optional[Dict]:
+        data = {
+            "url": url,
+            "user_id": user_id,
+        }
 
-		self.db.set_evaluation(data)
+        rating = self.db.get_rating(data)
+        rating.pop("_id")
+
+        return rating

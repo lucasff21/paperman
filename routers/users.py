@@ -4,14 +4,14 @@ from fastapi.responses import JSONResponse
 
 from services.user import UserService
 
-router = APIRouter(prefix="/user")
+router = APIRouter(prefix="/user", tags=["user"])
 
 user_service = UserService()
 
 
 @router.get("")
 def get_user(request: Request):
-    id = request.headers['UserId']
+    id = request.headers["UserId"]
     
     return JSONResponse({"user": user_service.get_user(id).model_dump()})
 
@@ -25,7 +25,7 @@ async def create_user(request: Request):
 
 @router.patch("")
 async def edit_user_sources(request: Request):
-    user = request.headers.get('UserId')
+    user = request.headers.get("UserId")
     
     if not user:
         return JSONResponse({"message": "Missing data on payload"}, status_code=HTTPStatus.UNPROCESSABLE_ENTITY)
