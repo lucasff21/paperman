@@ -1,4 +1,4 @@
-from re import findall
+from re import findall, sub
 from typing import List
 
 from gensim.models import KeyedVectors
@@ -53,6 +53,8 @@ def apply_word_embedding(word) -> str:
 
 
 def build_search_query(subject: str):
+    subject = sub(r'[^\x00-\x7f]', r'', subject)
+
     rake = Rake()
     keywords = rake.apply(subject)
 
