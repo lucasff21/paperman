@@ -48,6 +48,9 @@ class ORCIDAdapter(BaseRequestAdapter):
         work_affiliations = public_records["activities-summary"]["works"]["group"]
         for affiliation in work_affiliations:
             for index in affiliation["work-summary"]:
+                if not index.get("title"):
+                    continue
+
                 data = index["title"]["title"]["value"]
 
                 if data:
