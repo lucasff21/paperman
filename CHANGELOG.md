@@ -1,3 +1,10 @@
+# v1.0.1 - 06/07/2025
+- Publication sanitization improvements for experiment
+    - Normalizing year and venue if structured in list
+    - Title validation for entries in user work summary
+    - Removing non-printable unicode characters in search query method
+- Adding missing requirement (Pydantic)
+
 # v1.0.0 - 22/05/2025
 - Recommendation rating retrieval, creation and update
 - Quote and tab formatting

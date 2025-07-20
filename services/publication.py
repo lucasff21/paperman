@@ -134,6 +134,9 @@ class PublicationService():
             if "venue" in publication["info"] and not type(publication["info"]["venue"]) == str:
                 publication["info"]["venue"] = "; ".join(
                     publication["info"]["venue"])
+                
+            if isinstance(publication["info"]["year"], list):
+                publication["info"]["year"] = publication["info"]["year"][-1]
 
             sanitized_publications.append(Publication(**publication["info"]))
 
