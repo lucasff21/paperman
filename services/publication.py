@@ -76,7 +76,7 @@ class PublicationService():
     async def demo(self, orcid: str) -> List[Publication]:
         now = datetime.now()
 
-        publications = []
+        publications: List[Publication] = []
 
         summary = await self.orcid_adapter.get_user_summary(orcid)
 
