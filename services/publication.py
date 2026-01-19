@@ -26,16 +26,24 @@ class PublicationService():
     async def get_publications(self, id: str) -> List[Publication]:
         user = self.user_service.get_user(id)
 
-        summary = None
+        summary = []
         publications = []
 
         for source in user.sources:
             if source.service == "orcid":
-                summary = await self.orcid_adapter.get_user_summary(source.url)
+                orcid_summary = await self.orcid_adapter.get_user_summary(source.url)
+                print(f"[DEBUG] ORCID Summary de {source.url}: {orcid_summary}")
+                if orcid_summary:
+                    summary.extend(orcid_summary)
+
+        if user.interests:
+            summary.extend(user.interests)
+            print(f"[DEBUG] Interesses explícitos adicionados: {user.interests}")
 
         if summary:
             for subject in summary:
                 subject_topics = build_search_query(subject)
+                print(f"[DEBUG] Tópicos gerados para '{subject}': {subject_topics}")
                 subject_publications = []
 
                 for topic in subject_topics:
@@ -62,7 +70,7 @@ class PublicationService():
         now = datetime.now()
 
         publications = [publication for publication in publications if not self.publication_already_recommended(
-            user, publication) and publication.year > (now.year - 5)]
+user, publication) and publication.year > (now.year - 5)]
 
         if publications:
             return await extract_best_match(publications, subject)
@@ -79,10 +87,12 @@ class PublicationService():
         publications: List[Publication] = []
 
         summary = await self.orcid_adapter.get_user_summary(orcid)
+        print(f"[DEBUG] ORCID Summary (Demo) de {orcid}: {summary}")
 
         if summary:
             for subject in summary:
                 subject_topics = build_search_query(subject)
+                print(f"[DEBUG] Tópicos (Demo) gerados para '{subject}': {subject_topics}")
                 subject_publications = []
 
                 for topic in subject_topics:

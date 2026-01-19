@@ -22,7 +22,7 @@ def update_files() -> None:
 
 
 def load_conferences() -> List[Dict]:
-    with open("./resources/qualis/conferences.csv") as conferences:
+    with open("./resources/qualis/conferences.csv", encoding="utf-8") as conferences:
         conferences_reader = list(DictReader(conferences))
         
     return conferences_reader
@@ -40,7 +40,7 @@ def get_conference_score(conference_name: str) -> float:
 
 
 def load_periodics() -> List[Dict]:
-    with open("./resources/qualis/periodics.csv") as periodics:
+    with open("./resources/qualis/periodics.csv", encoding="utf-8") as periodics:
         periodics_reader = list(DictReader(periodics))
         
     return periodics_reader

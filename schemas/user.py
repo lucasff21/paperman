@@ -13,4 +13,5 @@ class Source(BaseModel):
 class User(BaseModel):
     id: Optional[PyObjectId] = Field(alias="_id", default=None)
     sources: List[Source]
+    interests: List[str] = []
     recommendations: List[str]

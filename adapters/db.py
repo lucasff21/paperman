@@ -26,9 +26,10 @@ class DB:
         self.evaluations: Collection = self.db.evaluations
         self.ratings: Collection = self.db.ratings
 
-    def create_user(self, sources: List[Dict]) -> str:
+    def create_user(self, sources: List[Dict], interests: List[str] = None) -> str:
         data = {
             "sources": sources,
+            "interests": interests if interests else [],
             "recommendations": []
         }
 
@@ -47,13 +48,17 @@ class DB:
             raise DependencyException(
                 dependency="db-timeout", status_code=HTTPStatus.FAILED_DEPENDENCY)
 
-    def edit_user_sources(self, id: str, sources: List[Dict]) -> bool:
+    def edit_user_data(self, id: str, sources: List[Dict] = None, interests: List[str] = None) -> bool:
+        update_fields = {}
+        if sources is not None:
+            update_fields["sources"] = sources
+        if interests is not None:
+            update_fields["interests"] = interests
+
         try:
             result = self.users.update_one(
                 {"_id": ObjectId(id)},
-                {"$set": {
-                    "sources": sources
-                }}
+                {"$set": update_fields}
             )
         except ServerSelectionTimeoutError:
             raise DependencyException(
