@@ -12,8 +12,8 @@ class UserService:
         self.db = db_factory()
     
     
-    def create_user(self, sources: List[Dict]) -> str:
-        user_id = self.db.create_user(sources)
+    def create_user(self, sources: List[Dict], interests: List[str] = None) -> str:
+        user_id = self.db.create_user(sources, interests)
         return user_id
     
     
@@ -26,8 +26,8 @@ class UserService:
         raise BusinessException("User not found", status_code=HTTPStatus.NOT_FOUND) 
     
     
-    def edit_user_sources(self, id: str, sources: List[Dict]) -> None:
-        edit = self.db.edit_user_sources(id, sources)
+    def edit_user_data(self, id: str, sources: List[Dict] = None, interests: List[str] = None) -> None:
+        edit = self.db.edit_user_data(id, sources, interests)
 
         if not edit:
             raise BusinessException("Unable to edit provided user sources")

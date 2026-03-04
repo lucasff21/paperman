@@ -18,19 +18,39 @@ def get_user(request: Request):
 
 @router.post("")
 async def create_user(request: Request):
-    sources = await request.json()
+    payload = await request.json()
     
-    return JSONResponse({"userId": user_service.create_user(sources)})
+    sources = []
+    interests = []
+
+    if isinstance(payload, list):
+        sources = payload
+    elif isinstance(payload, dict):
+        sources = payload.get("sources", [])
+        interests = payload.get("interests", [])
+    
+    return JSONResponse({"userId": user_service.create_user(sources, interests)})
 
 
 @router.patch("")
-async def edit_user_sources(request: Request):
+async def edit_user(request: Request):
     user = request.headers.get("UserId")
     
     if not user:
         return JSONResponse({"message": "Missing data on payload"}, status_code=HTTPStatus.UNPROCESSABLE_ENTITY)
     
-    sources = await request.json()
-    user_service.edit_user_sources(user, sources)
+    payload = await request.json()
+    sources = None
+    interests = None
+
+    if isinstance(payload, list):
+        # Legacy support: payload is directly the list of sources
+        sources = payload
+    elif isinstance(payload, dict):
+        # New format: payload is an object containing sources and/or interests
+        sources = payload.get("sources")
+        interests = payload.get("interests")
+
+    user_service.edit_user_data(user, sources, interests)
     
-    return JSONResponse({"message": "User sources updated successfully"})
+    return JSONResponse({"message": "User data updated successfully"})
