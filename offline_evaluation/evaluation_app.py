@@ -97,6 +97,9 @@ HTML_TEMPLATE = """
         .status-badge { display: inline-block; padding: 4px 8px; border-radius: 4px; font-size: 12px; font-weight: bold; margin-left: 10px; }
         .status-pendente { background: #f39c12; color: white; }
         .status-concluido { background: #27ae60; color: white; }
+        .abstract-box { display: none; background: #f8f9fa; border-left: 3px solid #aaa; padding: 8px 12px; margin: 8px 0; font-size: 13px; color: #444; border-radius: 3px; line-height: 1.6; }
+        .btn-abstract { background: none; border: 1px solid #aaa; border-radius: 4px; padding: 3px 10px; font-size: 12px; cursor: pointer; color: #555; margin-bottom: 8px; }
+        .btn-abstract:hover { background: #eee; }
         #success-msg { text-align: center; color: #27ae60; font-size: 18px; margin-top: 20px; display: none; }
     </style>
 </head>
@@ -177,12 +180,16 @@ HTML_TEMPLATE = """
                 const saved = savedEvals.find(ev => ev.rank === rec.rank) || {};
                 const nota = saved.nota || '';
                 const comentario = saved.comentario || '';
+                const abstractHtml = rec.abstract
+                    ? `<button type="button" class="btn-abstract" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block'; this.textContent = this.textContent === '▼ Ver resumo' ? '▲ Ocultar resumo' : '▼ Ver resumo';">▼ Ver resumo</button><div class="abstract-box">${rec.abstract}</div>`
+                    : '';
 
                 const div = document.createElement('div');
                 div.className = 'paper-card';
                 div.innerHTML = `
                     <h3>${rec.rank}. ${rec.title}</h3>
                     <p><strong>Autores:</strong> ${rec.authors.join(', ')} | <strong>Ano:</strong> ${rec.year} | <strong>Local:</strong> ${rec.venue || 'N/A'}</p>
+                    ${abstractHtml}
                     <p style="margin-bottom: 5px;"><strong>Qual a relevância deste artigo para o seu tema?</strong></p>
                     <div class="rating-group" data-rank="${rec.rank}">
                         ${[1, 2, 3, 4, 5].map(n => `
