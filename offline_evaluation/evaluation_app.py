@@ -202,6 +202,10 @@ HTML_TEMPLATE = """
 
         form.addEventListener('submit', async (e) => {
             e.preventDefault();
+            const submitBtn = form.querySelector('.submit-btn');
+            submitBtn.disabled = true;
+            submitBtn.textContent = '⏳ Salvando...';
+
             let authorName = input.value.replace(' [CONCLUÍDO]', '').trim();
             const authorData = data.find(a => a.author === authorName);
             
@@ -226,7 +230,9 @@ HTML_TEMPLATE = """
                 avaliacoes[authorName] = avaliacoes_enviadas;
                 input.value = `${authorName} [CONCLUÍDO]`;
             } else {
-                alert("Erro ao salvar avaliações.");
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Salvar Avaliações';
+                alert("Erro ao salvar avaliações. Por favor, tente novamente.");
             }
         });
     </script>
