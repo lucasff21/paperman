@@ -102,9 +102,18 @@ HTML_TEMPLATE = """
 </head>
 <body>
     <div class="container">
-        <h1>Avaliação Paperman</h1>
-        <p style="text-align:center;">Por favor, selecione seu nome abaixo para avaliar as recomendações para a sua pesquisa.</p>
-        
+        <h1>Avaliação do Sistema Paperman</h1>
+
+        <div style="background:#eaf4fb; border-left: 4px solid #3498db; padding: 15px 20px; border-radius: 4px; margin-bottom: 25px; font-size: 15px; line-height: 1.7;">
+            <strong>Prezado(a) pesquisador(a),</strong><br><br>
+            Você está participando de um estudo de avaliação do <strong>Paperman</strong>, um sistema de recomendação de artigos científicos desenvolvido como trabalho de dissertação de mestrado.<br><br>
+            O sistema analisou o título da sua pesquisa e gerou <strong>10 artigos científicos</strong> que considera relevantes para o seu tema. Sua tarefa é avaliar cada um desses artigos indicando o quanto ele é relevante para a sua área de pesquisa, em uma escala de <strong>1 (Totalmente Irrelevante)</strong> a <strong>5 (Muito Relevante)</strong>.<br><br>
+            Sua participação é fundamental para validar a qualidade das recomendações geradas. Os dados coletados serão utilizados exclusivamente para fins acadêmicos.<br><br>
+            <strong>Tempo estimado:</strong> 5 a 10 minutos. Obrigado pela colaboração! 🙏
+        </div>
+
+        <p style="text-align:center; font-size: 16px;">Selecione seu nome abaixo para começar:</p>
+
         <div class="search-box">
             <input list="author-list" id="author-input" placeholder="Comece a digitar seu nome..." autocomplete="off">
             <datalist id="author-list">
