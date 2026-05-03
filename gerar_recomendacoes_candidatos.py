@@ -70,6 +70,7 @@ def search_by_topic(query: str, df: pd.DataFrame) -> List[Dict]:
     for _, row in hits.iterrows():
         raw = str(row.get('authors', '[]'))
         names = [a.strip().strip("'\"") for a in re.sub(r"[\[\]]", "", raw).split(",") if a.strip()]
+        abstract_raw = str(row.get('abstract', '') or '')
         result.append({
             "title":          str(row['title']),
             "year":           int(row['year']),
@@ -78,6 +79,7 @@ def search_by_topic(query: str, df: pd.DataFrame) -> List[Dict]:
             "id":             str(row['id']),
             "n_citation":     int(row.get('n_citation', 0) or 0),
             "references_raw": str(row.get('references', '[]') or '[]'),
+            "abstract":       abstract_raw[:500] if abstract_raw != 'nan' else "",
         })
     return result
 
@@ -232,6 +234,7 @@ def run(qualis_mode: str = "modulated", random_mode: bool = False) -> None:
             for _, row in random_sample.iterrows():
                 raw = str(row.get('authors', '[]'))
                 names = [a.strip().strip("'\"") for a in re.sub(r"[\[\]]", "", raw).split(",") if a.strip()]
+                abstract_raw = str(row.get('abstract', '') or '')
                 pub = {
                     "title":          str(row['title']),
                     "year":           int(row['year']),
@@ -240,6 +243,7 @@ def run(qualis_mode: str = "modulated", random_mode: bool = False) -> None:
                     "id":             str(row['id']),
                     "n_citation":     int(row.get('n_citation', 0) or 0),
                     "references_raw": str(row.get('references', '[]') or '[]'),
+                    "abstract":       abstract_raw[:500] if abstract_raw != 'nan' else "",
                 }
                 fallback_candidates[pub["title"]] = pub
 
@@ -302,9 +306,10 @@ def run(qualis_mode: str = "modulated", random_mode: bool = False) -> None:
                     "venue":       r.get("venue", ""),
                     "authors":     r.get("authors", []),
                     "n_citation":  r.get("n_citation", 0),
+                    "abstract":    r.get("abstract", ""),
                     "scores":      r.get("_scores", {}),
                     # Campo para preenchimento pelo usuário na avaliação:
-                    "avaliacao_usuario": None,  # "relevante" | "parcialmente_relevante" | "irrelevante"
+                    "avaliacao_usuario": None,
                     "comentario":        None,
                 }
                 for i, r in enumerate(recommendations)
