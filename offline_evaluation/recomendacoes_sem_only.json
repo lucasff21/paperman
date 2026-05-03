@@ -1,0 +1,6270 @@
+[
+  {
+    "author": "José Gildásio de Lima Queiroz Júnior",
+    "base_title": "Containers Sofware Over-Specialization",
+    "qualis_mode": "sem_only",
+    "recommendations": [
+      {
+        "rank": 1,
+        "title": "Buffer management of multi-queue QoS switches with class segregation",
+        "year": 2015,
+        "venue": "Theoretical Computer Science",
+        "authors": [
+          "Toshiya Itoh",
+          "Seiji Yoshimoto"
+        ],
+        "n_citation": 0,
+        "scores": {
+          "score_total": 0.4986,
+          "score_sem": 0.4986,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.5
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 2,
+        "title": "Enhanced CSI feedback and update for downlink CoMP Joint Transmission",
+        "year": 2013,
+        "venue": "wireless personal multimedia communications",
+        "authors": [
+          "Xiang Yun",
+          "Yu Jiang",
+          "Lan Chen",
+          "Satoshi Nagata"
+        ],
+        "n_citation": 0,
+        "scores": {
+          "score_total": 0.4761,
+          "score_sem": 0.4761,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.875
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 3,
+        "title": "A Survey of Software Frameworks for Cluster-Based Large High-Resolution Displays",
+        "year": 2014,
+        "venue": "IEEE Transactions on Visualization and Computer Graphics",
+        "authors": [
+          "Haeyong Chung",
+          "Christopher Andrews",
+          "Chris North"
+        ],
+        "n_citation": 50,
+        "scores": {
+          "score_total": 0.4717,
+          "score_sem": 0.4717,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 1.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 4,
+        "title": "Replica Placement via Capacitated Vertex Cover",
+        "year": 2013,
+        "venue": "foundations of software technology and theoretical computer science",
+        "authors": [
+          "Sonika Arora",
+          "Venkatesan T. Chakaravarthy",
+          "Neelima Gupta",
+          "Koyel Mukherjee",
+          "Yogish Sabharwal"
+        ],
+        "n_citation": 2,
+        "scores": {
+          "score_total": 0.4116,
+          "score_sem": 0.4116,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 5,
+        "title": "TravelDashboard - a Framework for the Delivery of Personalized Mobility Services to Urban Travellers",
+        "year": 2013,
+        "venue": "Ercim News",
+        "authors": [
+          "Licia Capra",
+          "Pierre Châtel",
+          "Animesh Pathak",
+          "Roberto Speicys Cardoso"
+        ],
+        "n_citation": 0,
+        "scores": {
+          "score_total": 0.4088,
+          "score_sem": 0.4088,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 6,
+        "title": "Predictive control design on an embedded robust output-feedback compensator for wind turbine blade-pitch preview control",
+        "year": 2016,
+        "venue": "nan",
+        "authors": [
+          "Wai Hou Lio",
+          "J.A. Rossiter",
+          "Bryn Ll. Jones"
+        ],
+        "n_citation": 0,
+        "scores": {
+          "score_total": 0.3751,
+          "score_sem": 0.3751,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 7,
+        "title": "Frame Dispatcher: A Multi-frame Classification System for Social Movement by Using Microblogging Data",
+        "year": 2016,
+        "venue": "web intelligence",
+        "authors": [
+          "Hung-Min Hsu",
+          "Wei-Sheng Zeng",
+          "Chen-Shuo Hung",
+          "Dung-Sheng Chen",
+          "Ray-I Chang",
+          "Shian-Hua Lin",
+          "Jan-Ming Ho"
+        ],
+        "n_citation": 0,
+        "scores": {
+          "score_total": 0.3734,
+          "score_sem": 0.3734,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 8,
+        "title": "CORECLUSTER: a degeneracy based graph clustering framework",
+        "year": 2014,
+        "venue": "national conference on artificial intelligence",
+        "authors": [
+          "Christos Giatsidis",
+          "Fragkiskos D. Malliaros",
+          "Dimitrios M. Thilikos",
+          "Michalis Vazirgiannis"
+        ],
+        "n_citation": 13,
+        "scores": {
+          "score_total": 0.3594,
+          "score_sem": 0.3594,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.2
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 9,
+        "title": "Contract designs for energy-saving product development in a monopoly",
+        "year": 2016,
+        "venue": "European Journal of Operational Research",
+        "authors": [
+          "Wenhui Zhou",
+          "Weixiang Huang"
+        ],
+        "n_citation": 2,
+        "scores": {
+          "score_total": 0.3453,
+          "score_sem": 0.3453,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 1.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 10,
+        "title": "Computing Skylines over Encrypted Data in Cloud Environments.",
+        "year": 2016,
+        "venue": "nan",
+        "authors": [
+          "Suvarna Bothe",
+          "Alfredo Cuzzocrea",
+          "Panagiotis Karras",
+          "Akrivi Vlachou"
+        ],
+        "n_citation": 0,
+        "scores": {
+          "score_total": 0.3433,
+          "score_sem": 0.3433,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      }
+    ]
+  },
+  {
+    "author": "Stéfane Oliveira",
+    "base_title": "Fuzzy para adaptação de hiperparâmetros em Aprendizado Federado para Internet das Coisas",
+    "qualis_mode": "sem_only",
+    "recommendations": [
+      {
+        "rank": 1,
+        "title": "Navigating by audio-based probing and fuzzy routing",
+        "year": 2013,
+        "venue": "nan",
+        "authors": [
+          "Mikko Polojärvi",
+          "Timo Saloranta",
+          "Jukka Riekki"
+        ],
+        "n_citation": 0,
+        "scores": {
+          "score_total": 0.2816,
+          "score_sem": 0.2816,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 2,
+        "title": "Incremental Fuzzy Clustering With Multiple Medoids for Large Data",
+        "year": 2014,
+        "venue": "IEEE Transactions on Fuzzy Systems",
+        "authors": [
+          "Yangtao Wang",
+          "Li-Hui Chen",
+          "Jian-Ping Mei"
+        ],
+        "n_citation": 12,
+        "scores": {
+          "score_total": 0.2339,
+          "score_sem": 0.2339,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 1.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 3,
+        "title": "Fuzzy modeling, maximum likelihood estimation, and Kalman filtering for target tracking in NLOS scenarios",
+        "year": 2014,
+        "venue": "EURASIP Journal on Advances in Signal Processing",
+        "authors": [
+          "Jun Yan",
+          "Kegen Yu",
+          "Lenan Wu"
+        ],
+        "n_citation": 50,
+        "scores": {
+          "score_total": 0.2076,
+          "score_sem": 0.2076,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.75
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 4,
+        "title": "Multiclassifier System with Fuzzy Inference Method Applied to the Recognition of Biosignals in the Control of Bioprosthetic Hand",
+        "year": 2014,
+        "venue": "international symposium on neural networks",
+        "authors": [
+          "Marek Kurzynski",
+          "Andrzej Wolczowski"
+        ],
+        "n_citation": 0,
+        "scores": {
+          "score_total": 0.2063,
+          "score_sem": 0.2063,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.625
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 5,
+        "title": "Fuzzy logic approach and sensitivity analysis for agent-based crowd injury modeling",
+        "year": 2014,
+        "venue": "Simulation",
+        "authors": [
+          "Emin Kugu",
+          "Jiang Li",
+          "Frederic D. McKenzie",
+          "Ozgur Koray Sahingoz"
+        ],
+        "n_citation": 1,
+        "scores": {
+          "score_total": 0.2004,
+          "score_sem": 0.2004,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.75
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 6,
+        "title": "Fuzzy entropy-based framework for multi-faceted test case classification and selection: an empirical study",
+        "year": 2014,
+        "venue": "IET Software",
+        "authors": [
+          "Manoj Kumar",
+          "Arun Sharma",
+          "Rajesh Kumar"
+        ],
+        "n_citation": 5,
+        "scores": {
+          "score_total": 0.1975,
+          "score_sem": 0.1975,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.75
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 7,
+        "title": "Set-valued cooperative games with fuzzy payoffs. The fuzzy assignment game",
+        "year": 2013,
+        "venue": "European Journal of Operational Research",
+        "authors": [
+          "Luisa Monroy",
+          "Miguel A. Hinojosa",
+          "Amparo M. Mármol",
+          "Francisco R. Fernández"
+        ],
+        "n_citation": 3,
+        "scores": {
+          "score_total": 0.1937,
+          "score_sem": 0.1937,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 1.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 8,
+        "title": "A decision making model using soft set and rough set on fuzzy approximation spaces",
+        "year": 2014,
+        "venue": "International Journal of Intelligent Systems Technologies and Applications",
+        "authors": [
+          "T. K. Das",
+          "D. P. Acharjya"
+        ],
+        "n_citation": 10,
+        "scores": {
+          "score_total": 0.1702,
+          "score_sem": 0.1702,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.1
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 9,
+        "title": "Remote three-factor authentication scheme based on Fuzzy extractors",
+        "year": 2015,
+        "venue": "Security and Communication Networks",
+        "authors": [
+          "Min Zhang",
+          "Jiashu Zhang",
+          "Ying Zhang"
+        ],
+        "n_citation": 50,
+        "scores": {
+          "score_total": 0.1545,
+          "score_sem": 0.1545,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.625
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 10,
+        "title": "Systematic combination of fuzzy and grey numbers for supplier selection problem",
+        "year": 2015,
+        "venue": "nan",
+        "authors": [
+          "Shervin Zakeri",
+          "Mohammad Ali Keramati"
+        ],
+        "n_citation": 3,
+        "scores": {
+          "score_total": 0.1517,
+          "score_sem": 0.1517,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      }
+    ]
+  },
+  {
+    "author": "Marcio dos Santos Junior",
+    "base_title": "Pattern extraction and classification of APOL1 in high-resolution medical images via multiple instance learning",
+    "qualis_mode": "sem_only",
+    "recommendations": [
+      {
+        "rank": 1,
+        "title": "WaPUPS: Web access pattern extraction under user-defined pattern scoring",
+        "year": 2016,
+        "venue": "Journal of Information Science",
+        "authors": [
+          "Oznur Kirmemis Alkan",
+          "Pinar Karagoz"
+        ],
+        "n_citation": 2,
+        "scores": {
+          "score_total": 0.8113,
+          "score_sem": 0.8113,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 1.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 2,
+        "title": "Lip Print Pattern Extraction Using Top-Hat Transform",
+        "year": 2016,
+        "venue": "computer recognition systems",
+        "authors": [
+          "Lukasz Smacki",
+          "Jacek Luczak",
+          "Zygmunt Wróbel"
+        ],
+        "n_citation": 0,
+        "scores": {
+          "score_total": 0.8113,
+          "score_sem": 0.8113,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 3,
+        "title": "Spatio-temporal EEG pattern extraction using high-density scalp arrays.",
+        "year": 2016,
+        "venue": "international joint conference on neural network",
+        "authors": [
+          "Jeffery Jonathan Joshua Davis",
+          "Robert Kozma",
+          "Chin-Teng Lin",
+          "Walter J. Freeman"
+        ],
+        "n_citation": 1,
+        "scores": {
+          "score_total": 0.8113,
+          "score_sem": 0.8113,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 1.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 4,
+        "title": "Maritime Pattern Extraction from AIS Data Using a Genetic Algorithm",
+        "year": 2016,
+        "venue": "nan",
+        "authors": [
+          "Andrej Dobrkovic",
+          "Maria-Eugenia Iacob",
+          "Jos van Hillegersberg"
+        ],
+        "n_citation": 0,
+        "scores": {
+          "score_total": 0.8113,
+          "score_sem": 0.8113,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 5,
+        "title": "Ellipsoidal Multiple Instance Learning",
+        "year": 2013,
+        "venue": "international conference on machine learning",
+        "authors": [
+          "Gabriel Krummenacher",
+          "Cheng Soon Ong",
+          "Joachim M. Buhmann"
+        ],
+        "n_citation": 13,
+        "scores": {
+          "score_total": 0.8113,
+          "score_sem": 0.8113,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 1.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 6,
+        "title": "Classification of COPD with Multiple Instance Learning",
+        "year": 2014,
+        "venue": "international conference on pattern recognition",
+        "authors": [
+          "Veronika Cheplygina",
+          "Lauge Sørensen",
+          "David M. J. Tax",
+          "Jesper Holst Pedersen",
+          "Marco Loog",
+          "Marleen de Bruijne"
+        ],
+        "n_citation": 50,
+        "scores": {
+          "score_total": 0.8113,
+          "score_sem": 0.8113,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 1.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 7,
+        "title": "MILEAGE: Multiple Instance LEArning with Global Embedding",
+        "year": 2013,
+        "venue": "international conference on machine learning",
+        "authors": [
+          "Dan Zhang",
+          "Jingrui He",
+          "Luo Si",
+          "Richard D. Lawrence"
+        ],
+        "n_citation": 50,
+        "scores": {
+          "score_total": 0.8113,
+          "score_sem": 0.8113,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 1.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 8,
+        "title": "Dissimilarity-Based Ensembles for Multiple Instance Learning",
+        "year": 2016,
+        "venue": "IEEE Transactions on Neural Networks",
+        "authors": [
+          "Veronika Cheplygina",
+          "David M. J. Tax",
+          "Marco Loog"
+        ],
+        "n_citation": 50,
+        "scores": {
+          "score_total": 0.8113,
+          "score_sem": 0.8113,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 9,
+        "title": "Joint Clustering and Classification for Multiple Instance Learning.",
+        "year": 2015,
+        "venue": "british machine vision conference",
+        "authors": [
+          "Karan Sikka",
+          "Ritwik Giri",
+          "Marian Stewart Bartlett"
+        ],
+        "n_citation": 8,
+        "scores": {
+          "score_total": 0.8113,
+          "score_sem": 0.8113,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 1.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 10,
+        "title": "Multiple instance learning for model ensemble and meta data transfer",
+        "year": 2016,
+        "venue": "international conference on acoustics, speech, and signal processing",
+        "authors": [
+          "Yu Chen",
+          "Ling Cai",
+          "Yuming Zhao",
+          "Fuqiao Hu"
+        ],
+        "n_citation": 0,
+        "scores": {
+          "score_total": 0.8113,
+          "score_sem": 0.8113,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 1.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      }
+    ]
+  },
+  {
+    "author": "Isys Nogueira de Sant'Anna",
+    "base_title": "A Quantum Federated Learning Framework for Network Security",
+    "qualis_mode": "sem_only",
+    "recommendations": [
+      {
+        "rank": 1,
+        "title": "A Formal Framework for Network Security Design Synthesis",
+        "year": 2013,
+        "venue": "international conference on distributed computing systems",
+        "authors": [
+          "Mohammad Ashiqur Rahman",
+          "Ehab Al-Shaer"
+        ],
+        "n_citation": 16,
+        "scores": {
+          "score_total": 0.5622,
+          "score_sem": 0.5622,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 1.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 2,
+        "title": "Engineering a Distributed Full-Text Index",
+        "year": 2017,
+        "venue": "algorithm engineering and experimentation",
+        "authors": [
+          "Johannes Fischer",
+          "Florian Kurpicz",
+          "Peter Sanders"
+        ],
+        "n_citation": 0,
+        "scores": {
+          "score_total": 0.557,
+          "score_sem": 0.557,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 3,
+        "title": "A data flow-oriented specification method for analysing network security configurations",
+        "year": 2014,
+        "venue": "International Journal of Internet Protocol Technology",
+        "authors": [
+          "Hicham El-Khoury",
+          "Romain Laborde",
+          "François Barrère",
+          "Abdelmalek Benzekri",
+          "Maroun Chamoun"
+        ],
+        "n_citation": 0,
+        "scores": {
+          "score_total": 0.5503,
+          "score_sem": 0.5503,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 4,
+        "title": "Hazard control algorithms for heterogenous multi-agent cloud-enabled robotic network",
+        "year": 2013,
+        "venue": "nan",
+        "authors": [
+          "Siddharth Srivastava",
+          "Aritra Sarkar",
+          "B. S. Manoj"
+        ],
+        "n_citation": 50,
+        "scores": {
+          "score_total": 0.5463,
+          "score_sem": 0.5463,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 5,
+        "title": "Improving cloud network security using the Tree-Rule firewall",
+        "year": 2014,
+        "venue": "Future Generation Computer Systems",
+        "authors": [
+          "Xiangjian He",
+          "Thawatchai Chomsiri",
+          "Priyadarsi Nanda",
+          "Zhiyuan Tan"
+        ],
+        "n_citation": 33,
+        "scores": {
+          "score_total": 0.538,
+          "score_sem": 0.538,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 1.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 6,
+        "title": "Leakage current compensation technique of ESD protection circuit for CMOS operational amplifier",
+        "year": 2016,
+        "venue": "nan",
+        "authors": [
+          "Koken Chin",
+          "Hao San",
+          "Atsushi Kitajima",
+          "Yoshiaki Arai",
+          "Jun Yamashita",
+          "Hisashi Ito"
+        ],
+        "n_citation": 0,
+        "scores": {
+          "score_total": 0.5313,
+          "score_sem": 0.5313,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 7,
+        "title": "An Overview and Classification of Service Description Approaches in Automated Service Composition Research",
+        "year": 2017,
+        "venue": "IEEE Transactions on Services Computing",
+        "authors": [
+          "Yong-Yi Fanjiang",
+          "Yang Syu",
+          "Shang-Pin Ma",
+          "Jong-Yih Kuo"
+        ],
+        "n_citation": 50,
+        "scores": {
+          "score_total": 0.5,
+          "score_sem": 0.5,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 1.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 8,
+        "title": "Physical Layer Network Security in the Full-Duplex Relay System",
+        "year": 2015,
+        "venue": "IEEE Transactions on Information Forensics and Security",
+        "authors": [
+          "Gaojie Chen",
+          "Yu Gong",
+          "Pei Xiao",
+          "Jonathon A. Chambers"
+        ],
+        "n_citation": 96,
+        "scores": {
+          "score_total": 0.4963,
+          "score_sem": 0.4963,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 1.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 9,
+        "title": "Body Area Network Security: A Fuzzy Attribute-Based Signcryption Scheme",
+        "year": 2013,
+        "venue": "IEEE Journal on Selected Areas in Communications",
+        "authors": [
+          "Chunqiang Hu",
+          "Nan Zhang",
+          "Hongjuan Li",
+          "Xiuzhen Cheng",
+          "Xiaofeng Liao"
+        ],
+        "n_citation": 78,
+        "scores": {
+          "score_total": 0.4853,
+          "score_sem": 0.4853,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 1.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 10,
+        "title": "Application of biometric identification technology for network security in the network and information era, which will greatly change the life-style of people",
+        "year": 2015,
+        "venue": "international conference on networking, sensing and control",
+        "authors": [
+          "Xiaoxia Li"
+        ],
+        "n_citation": 1,
+        "scores": {
+          "score_total": 0.4593,
+          "score_sem": 0.4593,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.625
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      }
+    ]
+  },
+  {
+    "author": "Renan Santos Abreu de Barros",
+    "base_title": "Aprendizado por Reforço para apoio à decisão em cenários de risco de enchentes com base em variáveis hidrometeorológicas",
+    "qualis_mode": "sem_only",
+    "recommendations": [
+      {
+        "rank": 1,
+        "title": "Aplicação de Modelos de Aprendizado Semissupervisionado na Classificação de Imagens de Sensoriamento Remoto",
+        "year": 2013,
+        "venue": "Revista De Informática Teórica E Aplicada",
+        "authors": [
+          "Rogério Galante Negri",
+          "S.J.S. Sant'Anna",
+          "Luciano Vieira Dutra"
+        ],
+        "n_citation": 1,
+        "scores": {
+          "score_total": 0.3808,
+          "score_sem": 0.3808,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.05
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 2,
+        "title": "Algoritmos de Aprendizado de Máquina para Predição de Resultados de Lutas de MMA.",
+        "year": 2015,
+        "venue": "nan",
+        "authors": [
+          "Leandro Araújo Silva",
+          "Johnnatan Messias",
+          "Mirella M. Moro",
+          "Pedro O. S. Vaz de Melo",
+          "Fabrício Benevenuto"
+        ],
+        "n_citation": 0,
+        "scores": {
+          "score_total": 0.3017,
+          "score_sem": 0.3017,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 3,
+        "title": "Model-based MPI-IO tuning with Periscope tuning framework",
+        "year": 2016,
+        "venue": "Concurrency and Computation: Practice and Experience",
+        "authors": [
+          "Weifeng Liu",
+          "Michael Gerndt",
+          "Bin Gong"
+        ],
+        "n_citation": 1,
+        "scores": {
+          "score_total": 0.1532,
+          "score_sem": 0.1532,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.875
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 4,
+        "title": "Tuning OpenCL Applications with the Periscope Tuning Framework",
+        "year": 2016,
+        "venue": "hawaii international conference on system sciences",
+        "authors": [
+          "Enes Bajrovic",
+          "Robert Mijakovic",
+          "Jiri Dokulil",
+          "Siegfried Benkner",
+          "Michael Gerndt"
+        ],
+        "n_citation": 0,
+        "scores": {
+          "score_total": 0.1532,
+          "score_sem": 0.1532,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 1.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 5,
+        "title": "An architecture for flexible auto-tuning: The Periscope Tuning Framework 2.0",
+        "year": 2016,
+        "venue": "ieee international conference on high performance computing data and analytics",
+        "authors": [
+          "Robert Mijakovic",
+          "Michael Firbach",
+          "Michael Gerndt"
+        ],
+        "n_citation": 0,
+        "scores": {
+          "score_total": 0.1532,
+          "score_sem": 0.1532,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.75
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 6,
+        "title": "Mobile live streaming: Insights from the periscope service",
+        "year": 2016,
+        "venue": "multimedia signal processing",
+        "authors": [
+          "Leonardo Favario",
+          "Matti Siekkinen",
+          "Enrico Masala"
+        ],
+        "n_citation": 0,
+        "scores": {
+          "score_total": 0.1527,
+          "score_sem": 0.1527,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 7,
+        "title": "Learning analytics: entendendo e otimizando o aprendizado",
+        "year": 2014,
+        "venue": "human factors in computing systems",
+        "authors": [
+          "Barbara Moissa",
+          "Avanilde Kemczinski",
+          "Isabela Gasparini"
+        ],
+        "n_citation": 2,
+        "scores": {
+          "score_total": 0.1237,
+          "score_sem": 0.1237,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 8,
+        "title": "Periscope's Paradox: The promise and peril of uncensored live video.",
+        "year": 2016,
+        "venue": "IEEE Consumer Electronics Magazine",
+        "authors": [
+          "Ramona Pringle"
+        ],
+        "n_citation": 0,
+        "scores": {
+          "score_total": 0.1119,
+          "score_sem": 0.1119,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 1.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 9,
+        "title": "Anatomy of a Mobile Live Streaming Service: the Case of Periscope",
+        "year": 2016,
+        "venue": "arXiv: Multimedia",
+        "authors": [
+          "Matti Siekkinen",
+          "Enrico Masala",
+          "Teemu Kamarainen"
+        ],
+        "n_citation": 4,
+        "scores": {
+          "score_total": 0.1054,
+          "score_sem": 0.1054,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 10,
+        "title": "Meerkat and Periscope: I Stream, You Stream, Apps Stream for Live Streams",
+        "year": 2016,
+        "venue": "human factors in computing systems",
+        "authors": [
+          "John C. Tang",
+          "Gina Venolia",
+          "Kori Inkpen"
+        ],
+        "n_citation": 27,
+        "scores": {
+          "score_total": 0.0865,
+          "score_sem": 0.0865,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      }
+    ]
+  },
+  {
+    "author": "Maíra Matos Araujo",
+    "base_title": "Aprendizado por Reforço Aplicado à Mitigação de Fake News",
+    "qualis_mode": "sem_only",
+    "recommendations": [
+      {
+        "rank": 1,
+        "title": "PIWD: A Plugin-based Framework for Well-Designed SPARQL",
+        "year": 2016,
+        "venue": "arXiv: Databases",
+        "authors": [
+          "Xiaowang Zhang",
+          "Zhenyu Song",
+          "Zhiyong Feng",
+          "Xin Wang"
+        ],
+        "n_citation": 0,
+        "scores": {
+          "score_total": 0.3985,
+          "score_sem": 0.3985,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 2,
+        "title": "Modeling of miss-probability in content-centric networking",
+        "year": 2015,
+        "venue": "Science in China Series F: Information Sciences",
+        "authors": [
+          "Tao Huang",
+          "Guo-qing Wang",
+          "Chao Fang",
+          "F. Richard Yu",
+          "Yunjie Liu"
+        ],
+        "n_citation": 1,
+        "scores": {
+          "score_total": 0.3505,
+          "score_sem": 0.3505,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 3,
+        "title": "Context-Aware Workflow Execution Engine for E-Contract Enactment",
+        "year": 2016,
+        "venue": "international conference on conceptual modeling",
+        "authors": [
+          "Himanshu Jain",
+          "P. Radha Krishna",
+          "Kamalakar Karlapalem"
+        ],
+        "n_citation": 2,
+        "scores": {
+          "score_total": 0.3281,
+          "score_sem": 0.3281,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.75
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 4,
+        "title": "Opti-Speech: A real-time, 3D visual feedback system for speech training",
+        "year": 2014,
+        "venue": "conference of the international speech communication association",
+        "authors": [
+          "William F. Katz",
+          "Thomas F. Campbell",
+          "Jun Wang",
+          "Eric Farrar",
+          "J. Coleman Eubanks",
+          "Arvind Balasubramanian",
+          "Balakrishnan Prabhakaran",
+          "Rob Rennaker"
+        ],
+        "n_citation": 26,
+        "scores": {
+          "score_total": 0.2635,
+          "score_sem": 0.2635,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 1.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 5,
+        "title": "Merge Frame Design for Video Stream Switching Using Piecewise Constant Functions",
+        "year": 2016,
+        "venue": "IEEE Transactions on Image Processing",
+        "authors": [
+          "Wei Dai",
+          "Gene Cheung",
+          "Ngai-Man Cheung",
+          "Antonio Ortega",
+          "Oscar C. Au"
+        ],
+        "n_citation": 50,
+        "scores": {
+          "score_total": 0.2156,
+          "score_sem": 0.2156,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 1.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 6,
+        "title": "Analysis and detection of labeled cyberbullying instances in Vine, a video-based social network",
+        "year": 2016,
+        "venue": "nan",
+        "authors": [
+          "Rahat Ibn Rafiq",
+          "Homa Hosseinmardi",
+          "Sabrina Arredondo Mattson",
+          "Richard Han",
+          "Qin Lv",
+          "Shivakant Mishra"
+        ],
+        "n_citation": 1,
+        "scores": {
+          "score_total": 0.2029,
+          "score_sem": 0.2029,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 7,
+        "title": "Recovering background regions in videos of cluttered urban scenes",
+        "year": 2015,
+        "venue": "international conference on image processing",
+        "authors": [
+          "Iain Rodger",
+          "Barry Connor",
+          "Neil Robertson"
+        ],
+        "n_citation": 0,
+        "scores": {
+          "score_total": 0.185,
+          "score_sem": 0.185,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 1.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 8,
+        "title": "On Edge Intersection Graphs of Paths with 2 Bends",
+        "year": 2016,
+        "venue": "workshop on graph theoretic concepts in computer science",
+        "authors": [
+          "Martin Pergel",
+          "Paweł Rzążewski"
+        ],
+        "n_citation": 10,
+        "scores": {
+          "score_total": 0.1794,
+          "score_sem": 0.1794,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 9,
+        "title": "Recognising occluded multi-view actions using local nearest neighbour embedding",
+        "year": 2016,
+        "venue": "Computer Vision and Image Understanding",
+        "authors": [
+          "Yang Long",
+          "Fan Zhu",
+          "Ling Shao"
+        ],
+        "n_citation": 5,
+        "scores": {
+          "score_total": 0.1677,
+          "score_sem": 0.1677,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.875
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 10,
+        "title": "Visual Tracking Under Motion Blur",
+        "year": 2016,
+        "venue": "IEEE Transactions on Image Processing",
+        "authors": [
+          "Bo Ma",
+          "Lianghua Huang",
+          "Jianbing Shen",
+          "Ling Shao",
+          "Ming-Hsuan Yang",
+          "Fatih Porikli"
+        ],
+        "n_citation": 50,
+        "scores": {
+          "score_total": 0.1539,
+          "score_sem": 0.1539,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 1.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      }
+    ]
+  },
+  {
+    "author": "Fernanda Vitória Nascimento Lisboa",
+    "base_title": "Explainable AI for bias and unfairness in Large Language Models",
+    "qualis_mode": "sem_only",
+    "recommendations": [
+      {
+        "rank": 1,
+        "title": "Increased neural responses to unfairness in a loss context",
+        "year": 2013,
+        "venue": "NeuroImage",
+        "authors": [
+          "Xiuyan Guo",
+          "Li Zheng",
+          "Lei Zhu",
+          "Jianqi Li",
+          "Qianfeng Wang",
+          "Zoltan Dienes",
+          "Zhiliang Yang"
+        ],
+        "n_citation": 33,
+        "scores": {
+          "score_total": 0.4685,
+          "score_sem": 0.4685,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 1.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 2,
+        "title": "An empirical study of Unfairness and Oscillation in ETSI DCC",
+        "year": 2015,
+        "venue": "arXiv: Networking and Internet Architecture",
+        "authors": [
+          "Fatma Marzouk",
+          "Rachid Zagrouba",
+          "Anis Laouiti",
+          "Paul Muhlethaler"
+        ],
+        "n_citation": 3,
+        "scores": {
+          "score_total": 0.4659,
+          "score_sem": 0.4659,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 3,
+        "title": "Why Unbiased Computational Processes Can Lead to Discriminative Decision Procedures",
+        "year": 2013,
+        "venue": "nan",
+        "authors": [
+          "Toon Calders",
+          "Indre Zliobaite"
+        ],
+        "n_citation": 39,
+        "scores": {
+          "score_total": 0.4534,
+          "score_sem": 0.4534,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 4,
+        "title": "Respondent-driven sampling bias induced by clustering and community structure in social networks",
+        "year": 2015,
+        "venue": "arXiv: Applications",
+        "authors": [
+          "Luis E. C. Rocha",
+          "Anna Ekéus Thorson",
+          "Renaud Lambiotte",
+          "Fredrik Liljeros"
+        ],
+        "n_citation": 0,
+        "scores": {
+          "score_total": 0.4435,
+          "score_sem": 0.4435,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 5,
+        "title": "A Decentralized MAC Protocol for Unfairness Problems in Coexistent Heterogeneous Cognitive Radio Networks Scenarios With Collision-Based Primary Users",
+        "year": 2016,
+        "venue": "IEEE Systems Journal",
+        "authors": [
+          "Yu-Chun Cheng",
+          "Eric Hsiao-Kuang Wu",
+          "Gen-Huey Chen"
+        ],
+        "n_citation": 50,
+        "scores": {
+          "score_total": 0.438,
+          "score_sem": 0.438,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 1.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 6,
+        "title": "Researcher Bias: The Use of Machine Learning in Software Defect Prediction",
+        "year": 2014,
+        "venue": "IEEE Transactions on Software Engineering",
+        "authors": [
+          "Martin J. Shepperd",
+          "David Bowes",
+          "Tracy Hall"
+        ],
+        "n_citation": 102,
+        "scores": {
+          "score_total": 0.4138,
+          "score_sem": 0.4138,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 1.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 7,
+        "title": "Sampling bias in user attribute estimation of OSNs",
+        "year": 2013,
+        "venue": "international world wide web conferences",
+        "authors": [
+          "Hosung Park",
+          "Sue Moon"
+        ],
+        "n_citation": 50,
+        "scores": {
+          "score_total": 0.4133,
+          "score_sem": 0.4133,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 1.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 8,
+        "title": "Hybrid Approach for Unbiased Coherence Estimation for Multitemporal InSAR",
+        "year": 2014,
+        "venue": "IEEE Transactions on Geoscience and Remote Sensing",
+        "authors": [
+          "Mi Jiang",
+          "Xiaoli Ding",
+          "Zhiwei Li"
+        ],
+        "n_citation": 50,
+        "scores": {
+          "score_total": 0.4115,
+          "score_sem": 0.4115,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 1.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 9,
+        "title": "Finding the Best from the Second Bests - Inhibiting Subjective Bias in Evaluation of Visual Tracking Algorithms",
+        "year": 2013,
+        "venue": "international conference on computer vision",
+        "authors": [
+          "Yu Pang",
+          "Haibin Ling"
+        ],
+        "n_citation": 50,
+        "scores": {
+          "score_total": 0.4078,
+          "score_sem": 0.4078,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 1.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 10,
+        "title": "Variant detection sensitivity and biases in whole genome and exome sequencing",
+        "year": 2014,
+        "venue": "BMC Bioinformatics",
+        "authors": [
+          "Alison Meynert",
+          "Morad Ansari",
+          "David R. FitzPatrick",
+          "Martin S. Taylor"
+        ],
+        "n_citation": 78,
+        "scores": {
+          "score_total": 0.4041,
+          "score_sem": 0.4041,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 1.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      }
+    ]
+  },
+  {
+    "author": "David de Oliveira Lima",
+    "base_title": "Classification of images with spatial transcriptomics information",
+    "qualis_mode": "sem_only",
+    "recommendations": [
+      {
+        "rank": 1,
+        "title": "Using wordnet hypernyms and dependency features for phrasal-level event recognition and type classification",
+        "year": 2013,
+        "venue": "european conference on information retrieval",
+        "authors": [
+          "Yoonjae Jeong",
+          "Sung-Hyon Myaeng"
+        ],
+        "n_citation": 12,
+        "scores": {
+          "score_total": 0.0,
+          "score_sem": 0.0,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.875
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 2,
+        "title": "Epileptic EEG classification based on kernel sparse representation.",
+        "year": 2014,
+        "venue": "International Journal of Neural Systems",
+        "authors": [
+          "Qi Yuan",
+          "Weidong Zhou",
+          "Shasha Yuan",
+          "Xueli Li",
+          "Jiwen Wang",
+          "Guijuan Jia"
+        ],
+        "n_citation": 23,
+        "scores": {
+          "score_total": 0.0,
+          "score_sem": 0.0,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 1.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 3,
+        "title": "Availability of MudPIT data for classification of biological samples",
+        "year": 2013,
+        "venue": "Journal of Clinical Bioinformatics",
+        "authors": [
+          "Dario Di Silvestre",
+          "Italo Zoppis",
+          "Francesca Brambilla",
+          "Valeria Bellettato",
+          "Giancarlo Mauri",
+          "Pierluigi Mauri"
+        ],
+        "n_citation": 7,
+        "scores": {
+          "score_total": 0.0,
+          "score_sem": 0.0,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 4,
+        "title": "Fuzzy entropy-based framework for multi-faceted test case classification and selection: an empirical study",
+        "year": 2014,
+        "venue": "IET Software",
+        "authors": [
+          "Manoj Kumar",
+          "Arun Sharma",
+          "Rajesh Kumar"
+        ],
+        "n_citation": 5,
+        "scores": {
+          "score_total": 0.0,
+          "score_sem": 0.0,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.75
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 5,
+        "title": "Structural twin support vector machine for classification",
+        "year": 2013,
+        "venue": "Knowledge Based Systems",
+        "authors": [
+          "Zhiquan Qi",
+          "Yingjie Tian",
+          "Yong Shi"
+        ],
+        "n_citation": 96,
+        "scores": {
+          "score_total": 0.0,
+          "score_sem": 0.0,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 6,
+        "title": "Packet Classification Using Multi-iteration RFC",
+        "year": 2013,
+        "venue": "computer software and applications conference",
+        "authors": [
+          "Chun-Hui Tsai",
+          "Hung-Mao Chu",
+          "Pi-Chung Wang"
+        ],
+        "n_citation": 50,
+        "scores": {
+          "score_total": 0.0,
+          "score_sem": 0.0,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.875
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 7,
+        "title": "ICD Code Retrieval: Novel Approach for Assisted Disease Classification",
+        "year": 2015,
+        "venue": "data integration in the life sciences",
+        "authors": [
+          "Stefano Rizzo",
+          "Danilo Montesi",
+          "Andrea Fabbri",
+          "Giulio Marchesini"
+        ],
+        "n_citation": 5,
+        "scores": {
+          "score_total": 0.0,
+          "score_sem": 0.0,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 8,
+        "title": "Cross-Codebook Image Classification",
+        "year": 2013,
+        "venue": "advances in multimedia",
+        "authors": [
+          "Shuai Liao",
+          "Xirong Li",
+          "Xiaoyong Du"
+        ],
+        "n_citation": 1,
+        "scores": {
+          "score_total": 0.0,
+          "score_sem": 0.0,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 9,
+        "title": "Automatic exudate detection by fusing multiple active contours and regionwise classification",
+        "year": 2014,
+        "venue": "Computers in Biology and Medicine",
+        "authors": [
+          "Balazs Harangi",
+          "Andras Hajdu"
+        ],
+        "n_citation": 50,
+        "scores": {
+          "score_total": 0.0,
+          "score_sem": 0.0,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 1.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 10,
+        "title": "Parsimonious Gaussian Process Models for the Classification of Hyperspectral Remote Sensing Images",
+        "year": 2015,
+        "venue": "IEEE Geoscience and Remote Sensing Letters",
+        "authors": [
+          "Mathieu Fauvel",
+          "Charles Bouveyron",
+          "Stéphane Girard"
+        ],
+        "n_citation": 7,
+        "scores": {
+          "score_total": 0.0,
+          "score_sem": 0.0,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 1.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      }
+    ]
+  },
+  {
+    "author": "André Luiz de Souza Rocha",
+    "base_title": "Roadmap of Computer Science technologies applied to Urban Agriculture",
+    "qualis_mode": "sem_only",
+    "recommendations": [
+      {
+        "rank": 1,
+        "title": "Online Analysis of Security Risks in Elastic Cloud Applications",
+        "year": 2016,
+        "venue": "IEEE Cloud Computing",
+        "authors": [
+          "Athanasios Naskos",
+          "Anastasios Gounaris",
+          "Haralambos Mouratidis",
+          "Panagiotis Katsaros"
+        ],
+        "n_citation": 2,
+        "scores": {
+          "score_total": 0.6925,
+          "score_sem": 0.6925,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 1.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 2,
+        "title": "Geospatial Evaluation for Urban Agriculture Land Inventory: Roanoke, Virginia USA",
+        "year": 2017,
+        "venue": "International Journal of Applied Geospatial Research",
+        "authors": [
+          "Tammy E. Parece",
+          "James B. Campbell"
+        ],
+        "n_citation": 0,
+        "scores": {
+          "score_total": 0.6676,
+          "score_sem": 0.6676,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 3,
+        "title": "Analysis of Algorithms for Overlapping Resource Access Members in Cloud Computing",
+        "year": 2016,
+        "venue": "International Journal of Network Security",
+        "authors": [
+          "Amar Buchade",
+          "Rajesh Ingle"
+        ],
+        "n_citation": 0,
+        "scores": {
+          "score_total": 0.6479,
+          "score_sem": 0.6479,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.2
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 4,
+        "title": "Daemon Conversions in Distributed Self-stabilizing Algorithms",
+        "year": 2013,
+        "venue": "workshop on algorithms and computation",
+        "authors": [
+          "Wayne Goddard",
+          "Pradip K. Srimani"
+        ],
+        "n_citation": 50,
+        "scores": {
+          "score_total": 0.6354,
+          "score_sem": 0.6354,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 5,
+        "title": "Worldviews, Research Methods, and their Relationship to Validity in Empirical Software Engineering Research",
+        "year": 2013,
+        "venue": "nan",
+        "authors": [
+          "Kai Petersen",
+          "Cigdem Gencel"
+        ],
+        "n_citation": 50,
+        "scores": {
+          "score_total": 0.6105,
+          "score_sem": 0.6105,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 6,
+        "title": "Crowd-Sensing Meets Situation Awareness: A Research Roadmap for Crisis Management",
+        "year": 2015,
+        "venue": "hawaii international conference on system sciences",
+        "authors": [
+          "Andrea Salfinger",
+          "Sylva Girtelschmid",
+          "Birgit Pröll",
+          "Werner Retschitzegger",
+          "Wieland Schwinger"
+        ],
+        "n_citation": 12,
+        "scores": {
+          "score_total": 0.5957,
+          "score_sem": 0.5957,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 1.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 7,
+        "title": "A roadmap for traffic engineering in SDN-OpenFlow networks",
+        "year": 2014,
+        "venue": "Computer Networks",
+        "authors": [
+          "Ian F. Akyildiz",
+          "Ahyoung Lee",
+          "Pu Wang",
+          "Min Luo",
+          "Wu Chou"
+        ],
+        "n_citation": 294,
+        "scores": {
+          "score_total": 0.5733,
+          "score_sem": 0.5733,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.875
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 8,
+        "title": "Understanding the IoT connectivity landscape: a contemporary M2M radio technology roadmap",
+        "year": 2015,
+        "venue": "IEEE Communications Magazine",
+        "authors": [
+          "Sergey D. Andreev",
+          "Olga Galinina",
+          "Alexander Pyattaev",
+          "Mikhail Gerasimenko",
+          "Tuomas Tirronen",
+          "Johan Torsner",
+          "Joachim Sachs",
+          "Mischa Dohler",
+          "Yevgeni Koucheryavy"
+        ],
+        "n_citation": 114,
+        "scores": {
+          "score_total": 0.5047,
+          "score_sem": 0.5047,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 1.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 9,
+        "title": "A roadmap to multifactor dimensionality reduction methods",
+        "year": 2016,
+        "venue": "Briefings in Bioinformatics",
+        "authors": [
+          "Damian Gola",
+          "Jestinah Mahachie John",
+          "Kristel Van Steen",
+          "Inke R. König"
+        ],
+        "n_citation": 2,
+        "scores": {
+          "score_total": 0.3944,
+          "score_sem": 0.3944,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 1.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 10,
+        "title": "A roadmap to pervasive systems verification",
+        "year": 2015,
+        "venue": "Knowledge Engineering Review",
+        "authors": [
+          "Savas Konur",
+          "Michael Fisher"
+        ],
+        "n_citation": 2,
+        "scores": {
+          "score_total": 0.346,
+          "score_sem": 0.346,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.875
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      }
+    ]
+  },
+  {
+    "author": "Eduardo Santana Souza",
+    "base_title": "Explorando Amostras Observacionais para Geração de Tráfego de Rede Malicioso por Modelos Generativos Profundos",
+    "qualis_mode": "sem_only",
+    "recommendations": [
+      {
+        "rank": 1,
+        "title": "The steady states and robustness of fuzzy discrete dynamic systems",
+        "year": 2015,
+        "venue": "nan",
+        "authors": [
+          "Martin Gavalec",
+          "Ján Plavka"
+        ],
+        "n_citation": 0,
+        "scores": {
+          "score_total": 0.1186,
+          "score_sem": 0.1186,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 2,
+        "title": "Locking down insecure indirection with hardware-based control-data isolation",
+        "year": 2015,
+        "venue": "international symposium on microarchitecture",
+        "authors": [
+          "William Arthur",
+          "Sahil Madeka",
+          "Reetuparna Das",
+          "Todd M. Austin"
+        ],
+        "n_citation": 3,
+        "scores": {
+          "score_total": 0.1166,
+          "score_sem": 0.1166,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 1.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 3,
+        "title": "Improved fuzzy clustering algorithm with non-local information for image segmentation",
+        "year": 2016,
+        "venue": "Multimedia Tools and Applications",
+        "authors": [
+          "Xiaofeng Zhang",
+          "Yujuan Sun",
+          "Gang Wang",
+          "Qiang Guo",
+          "Caiming Zhang",
+          "Beijing Chen"
+        ],
+        "n_citation": 0,
+        "scores": {
+          "score_total": 0.1128,
+          "score_sem": 0.1128,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.875
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 4,
+        "title": "Preface: Brazilian Symposium on Programming Languages (SBLP 2011)",
+        "year": 2014,
+        "venue": "Science of Computer Programming",
+        "authors": [
+          "Christiano Braga",
+          "José Luiz Fiadeiro"
+        ],
+        "n_citation": 0,
+        "scores": {
+          "score_total": 0.0997,
+          "score_sem": 0.0997,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.75
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 5,
+        "title": "Calypso: a user-friendly web-server for mining and visualizing microbiome–environment interactions",
+        "year": 2016,
+        "venue": "Bioinformatics",
+        "authors": [
+          "Martha Zakrzewski",
+          "Carla Proietti",
+          "Jonathan J. Ellis",
+          "Shihab Hasan",
+          "Marie-Jo Brion",
+          "Bernard Berger",
+          "Lutz Krause"
+        ],
+        "n_citation": 50,
+        "scores": {
+          "score_total": 0.0943,
+          "score_sem": 0.0943,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 1.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 6,
+        "title": "Designing Cyber-Physical Systems for Smart Infrastructures: The Rainbow Platform.",
+        "year": 2014,
+        "venue": "Ercim News",
+        "authors": [
+          "Andrea Giordano",
+          "Giandomenico Spezzano",
+          "Andrea Vinci"
+        ],
+        "n_citation": 0,
+        "scores": {
+          "score_total": 0.0934,
+          "score_sem": 0.0934,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 7,
+        "title": "A new highly accurate workload model for campus email traffic",
+        "year": 2016,
+        "venue": "nan",
+        "authors": [
+          "Spyros Boukoros",
+          "Athina Kalampogia",
+          "Polychronis Koutsakis"
+        ],
+        "n_citation": 0,
+        "scores": {
+          "score_total": 0.085,
+          "score_sem": 0.085,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 8,
+        "title": "SOS Specifications of Probabilistic Systems by Uniformly Continuous Operators",
+        "year": 2015,
+        "venue": "international conference on concurrency theory",
+        "authors": [
+          "Daniel Gebler",
+          "Simone Tini"
+        ],
+        "n_citation": 14,
+        "scores": {
+          "score_total": 0.0752,
+          "score_sem": 0.0752,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.75
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 9,
+        "title": "Motion Planning for Marine Control Systems",
+        "year": 2015,
+        "venue": "nan",
+        "authors": [
+          "Andrea Caiti"
+        ],
+        "n_citation": 2,
+        "scores": {
+          "score_total": 0.0748,
+          "score_sem": 0.0748,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 10,
+        "title": "Fuzzy Optimization Models for Seaside Port Logistics.",
+        "year": 2013,
+        "venue": "nan",
+        "authors": [
+          "Belén Melián-Batista",
+          "Christopher Expósito Izquierdo",
+          "Eduardo Lalla-Ruiz",
+          "María Teresa Lamata",
+          "J. Marcos Moreno-Vega"
+        ],
+        "n_citation": 0,
+        "scores": {
+          "score_total": 0.0735,
+          "score_sem": 0.0735,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      }
+    ]
+  },
+  {
+    "author": "Lucas Sousa da Silva",
+    "base_title": "Generative Artificial Intelligence for Software Testing Education",
+    "qualis_mode": "sem_only",
+    "recommendations": [
+      {
+        "rank": 1,
+        "title": "Generative Artificial Intelligence",
+        "year": 2013,
+        "venue": "Spring",
+        "authors": [
+          "Tijn van der Zant",
+          "Matthijs Kouw",
+          "Lambert Schomaker"
+        ],
+        "n_citation": 0,
+        "scores": {
+          "score_total": 0.7521,
+          "score_sem": 0.7521,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 2,
+        "title": "Inference of Field-Dependent Cyclicity.",
+        "year": 2013,
+        "venue": "arXiv: Programming Languages",
+        "authors": [
+          "Damiano Zanardini",
+          "Samir Genaim"
+        ],
+        "n_citation": 0,
+        "scores": {
+          "score_total": 0.6065,
+          "score_sem": 0.6065,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 3,
+        "title": "Knowledge lost in translation: the role of knowledge brokers in knowledge transfer",
+        "year": 2013,
+        "venue": "International Journal of Information Technology and Management",
+        "authors": [
+          "Alexandre Perrin"
+        ],
+        "n_citation": 2,
+        "scores": {
+          "score_total": 0.5869,
+          "score_sem": 0.5869,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.75
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 4,
+        "title": "Using Soft Constraints in Joint Inference for Clinical Concept Recognition",
+        "year": 2013,
+        "venue": "empirical methods in natural language processing",
+        "authors": [
+          "Prateek Jindal",
+          "Dan Roth"
+        ],
+        "n_citation": 7,
+        "scores": {
+          "score_total": 0.5861,
+          "score_sem": 0.5861,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 1.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 5,
+        "title": "Unveiling smoke in social images with the SmokeBlock approach",
+        "year": 2016,
+        "venue": "acm symposium on applied computing",
+        "authors": [
+          "Mirela T. Cazzolato",
+          "Marcos Vinicius Naves Bedo",
+          "Alceu Ferraz Costa",
+          "Jéssica Andressa de Souza",
+          "Caetano Traina",
+          "José Fernando Rodrigues",
+          "Agma J. M. Traina"
+        ],
+        "n_citation": 3,
+        "scores": {
+          "score_total": 0.581,
+          "score_sem": 0.581,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.875
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 6,
+        "title": "Dynamic modeling of ultrafiltration membranes for whey separation processes",
+        "year": 2017,
+        "venue": "Computers & Chemical Engineering",
+        "authors": [
+          "M. Bahadır Saltık",
+          "Leyla L Özkan",
+          "Marc Jacobs",
+          "Albert van der Padt"
+        ],
+        "n_citation": 0,
+        "scores": {
+          "score_total": 0.5803,
+          "score_sem": 0.5803,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.875
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 7,
+        "title": "Symbol-Based Multigrid Methods for Galerkin B-Spline Isogeometric Analysis",
+        "year": 2017,
+        "venue": "SIAM Journal on Numerical Analysis",
+        "authors": [
+          "Marco Donatelli",
+          "Carlo Garoni",
+          "Carla Manni",
+          "Stefano Serra-Capizzano",
+          "Hendrik Speleers"
+        ],
+        "n_citation": 50,
+        "scores": {
+          "score_total": 0.5772,
+          "score_sem": 0.5772,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 8,
+        "title": "Small satellite developments",
+        "year": 2016,
+        "venue": "international geoscience and remote sensing symposium",
+        "authors": [
+          "Boon Lim"
+        ],
+        "n_citation": 0,
+        "scores": {
+          "score_total": 0.5739,
+          "score_sem": 0.5739,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.2
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 9,
+        "title": "An experimental card game for software testing: Development, design and evaluation of a physical card game to deepen the knowledge of students in academic software testing education",
+        "year": 2016,
+        "venue": "nan",
+        "authors": [
+          "Alexander Soska",
+          "Jürgen Mottok",
+          "Christian Wolff"
+        ],
+        "n_citation": 4,
+        "scores": {
+          "score_total": 0.5461,
+          "score_sem": 0.5461,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 10,
+        "title": "Experience report: Can software testing education lead to more reliable code?",
+        "year": 2015,
+        "venue": "international symposium on software reliability engineering",
+        "authors": [
+          "Otávio Augusto Lazzarini Lemos",
+          "Fabiano Cutigi Ferrari",
+          "Fábio Fagundes Silveira",
+          "Alessandro Garcia"
+        ],
+        "n_citation": 2,
+        "scores": {
+          "score_total": 0.525,
+          "score_sem": 0.525,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.75
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      }
+    ]
+  },
+  {
+    "author": "Sara Sales Souza",
+    "base_title": "Avaliando o Potencial de Privacy-Preserving Embeddings em Pipelines de Integração de Dados: Uma abordagem experimental",
+    "qualis_mode": "sem_only",
+    "recommendations": [
+      {
+        "rank": 1,
+        "title": "Distribuição de Bases de Dados de Proveniência na Nuvem.",
+        "year": 2013,
+        "venue": "nan",
+        "authors": [
+          "Edimar Santos",
+          "Vanessa Martins de Assis",
+          "Flavio Costa",
+          "Daniel de Oliveira 0001",
+          "Marta Mattoso"
+        ],
+        "n_citation": 0,
+        "scores": {
+          "score_total": 0.2639,
+          "score_sem": 0.2639,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 2,
+        "title": "Captura e Consulta a Dados de Proveniência Retrospectiva Implícita Intra-Atividade.",
+        "year": 2014,
+        "venue": "brazilian symposium on databases",
+        "authors": [
+          "Wellington Moreira de Oliveira",
+          "Vitor C. Neves",
+          "Kary A. C. S. Ocaña",
+          "Leonardo Murta",
+          "Daniel de Oliveira 0001",
+          "Vanessa Braganholo"
+        ],
+        "n_citation": 4,
+        "scores": {
+          "score_total": 0.2639,
+          "score_sem": 0.2639,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 3,
+        "title": "Aplicando análise estatística de dados de interação de larga escala no design centrado no usuário",
+        "year": 2014,
+        "venue": "human factors in computing systems",
+        "authors": [
+          "Paulo Urbano",
+          "Rodrigo Santa Cruz",
+          "Tâmara Duarte"
+        ],
+        "n_citation": 0,
+        "scores": {
+          "score_total": 0.2255,
+          "score_sem": 0.2255,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 4,
+        "title": "Uma Abordagem para Publicação de Dados de Proveniência de Workflows Científicos na Web Semântica.",
+        "year": 2015,
+        "venue": "nan",
+        "authors": [
+          "Rachel Goncalves de Castro",
+          "Renan Souza",
+          "Vítor Silva Sousa",
+          "Kary A. C. S. Ocaña",
+          "Daniel de Oliveira 0001",
+          "Marta Mattoso"
+        ],
+        "n_citation": 0,
+        "scores": {
+          "score_total": 0.218,
+          "score_sem": 0.218,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 5,
+        "title": "Análise de Estratégias de Acesso a Grandes Volumes de Dados.",
+        "year": 2014,
+        "venue": "brazilian symposium on databases",
+        "authors": [
+          "Douglas E. M. de Oliveira",
+          "Cristina Boeres",
+          "Fábio Porto"
+        ],
+        "n_citation": 2,
+        "scores": {
+          "score_total": 0.1967,
+          "score_sem": 0.1967,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 6,
+        "title": "oLinDa: Uma Abordagem para Decomposição de Consultas em Federações de Dados Interligados.",
+        "year": 2014,
+        "venue": "brazilian symposium on databases",
+        "authors": [
+          "Danusa R. B. Cunha",
+          "Bernadette Farias Lóscio"
+        ],
+        "n_citation": 0,
+        "scores": {
+          "score_total": 0.183,
+          "score_sem": 0.183,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 7,
+        "title": "Sistema de recomendação para apoiar a construção de gráficos com dados estatísticos",
+        "year": 2013,
+        "venue": "human factors in computing systems",
+        "authors": [
+          "Taissa Abdalla Filgueiras de Sousa",
+          "Simone Diniz Junqueira Barbosa"
+        ],
+        "n_citation": 1,
+        "scores": {
+          "score_total": 0.1644,
+          "score_sem": 0.1644,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 8,
+        "title": "Estudo Crítico da E-participação, Transparência e Dados Abertos na América do Sul.",
+        "year": 2016,
+        "venue": "nan",
+        "authors": [
+          "Jorge Lheureux-De-Freitas",
+          "Marie Anne Macadar",
+          "Gabriela Viale Pereira"
+        ],
+        "n_citation": 0,
+        "scores": {
+          "score_total": 0.1592,
+          "score_sem": 0.1592,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 9,
+        "title": "Avaliação da Localidade de Dados Intermediários na Execução Paralela de Workflows Bigdata.",
+        "year": 2015,
+        "venue": "brazilian symposium on databases",
+        "authors": [
+          "Douglas E. M. de Oliveira",
+          "Cristina Boeres",
+          "A. Fausti",
+          "Fábio Porto"
+        ],
+        "n_citation": 0,
+        "scores": {
+          "score_total": 0.1586,
+          "score_sem": 0.1586,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 10,
+        "title": "Técnicas de Filtragem para Persistência de Dados de Redes de Sensores Ópticos FBG.",
+        "year": 2013,
+        "venue": "nan",
+        "authors": [
+          "Adam Santos",
+          "Marco José de Sousa",
+          "Claudomiro de Souza de Sales Junior",
+          "M. F. M. Silva",
+          "Cindy Stella Fernandes",
+          "João Crisóstomo Weyl Albuquerque Costa"
+        ],
+        "n_citation": 0,
+        "scores": {
+          "score_total": 0.1583,
+          "score_sem": 0.1583,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      }
+    ]
+  },
+  {
+    "author": "Mayana Gitel Portnoi",
+    "base_title": "Avaliação experimental da qualidade e naturalidade de casos de teste gerados por modelos de Linguagem de Grande Escala (LLMs) em Java",
+    "qualis_mode": "sem_only",
+    "recommendations": [
+      {
+        "rank": 1,
+        "title": "Prolog: A Linguagem, A Máquina Abstrata de Warren e Implementações",
+        "year": 2013,
+        "venue": "Revista De Informática Teórica E Aplicada",
+        "authors": [
+          "George Souza Oliveira",
+          "Anderson Faustino da Silva"
+        ],
+        "n_citation": 0,
+        "scores": {
+          "score_total": 0.2888,
+          "score_sem": 0.2888,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.05
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 2,
+        "title": "Usabilidade, práticas de linguagem e dispositives móveis: um estudo preliminar",
+        "year": 2013,
+        "venue": "human factors in computing systems",
+        "authors": [
+          "Ana Carolina Marques de Goes",
+          "Fernanda Maria Pereira Freire",
+          "André Constantino da Silva"
+        ],
+        "n_citation": 0,
+        "scores": {
+          "score_total": 0.1965,
+          "score_sem": 0.1965,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 3,
+        "title": "Extração de casos de teste a partir de modelos de processos de negócio.",
+        "year": 2014,
+        "venue": "nan",
+        "authors": [
+          "Henrique Prado Sousa",
+          "André Luiz de Castro Leal",
+          "Arndt von Staa",
+          "Julio Cesar Sampaio do Prado Leite"
+        ],
+        "n_citation": 0,
+        "scores": {
+          "score_total": 0.1688,
+          "score_sem": 0.1688,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 4,
+        "title": "Reconhecimento de modelos 3D em realidade aumentada móvel",
+        "year": 2013,
+        "venue": "human factors in computing systems",
+        "authors": [
+          "Ana Regina Mizrahy Cuperschmid",
+          "Regina Coeli Ruschel",
+          "Ana Maria Reis de Goes Monteiro"
+        ],
+        "n_citation": 3,
+        "scores": {
+          "score_total": 0.1632,
+          "score_sem": 0.1632,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 5,
+        "title": "Elicitação de Requisitos a partir de Modelos de Processos de Negócio e Modelos Organizacionais: Uma pesquisa para definição de técnicas baseadas em heurísticas.",
+        "year": 2013,
+        "venue": "nan",
+        "authors": [
+          "Marcos Oliveira",
+          "Sérgio Vieira",
+          "Davi Viana",
+          "Sabrina Marczak",
+          "Tayana Conte"
+        ],
+        "n_citation": 2,
+        "scores": {
+          "score_total": 0.1411,
+          "score_sem": 0.1411,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 6,
+        "title": "XQuery-Pref: Extensão de uma Linguagem para Personalização de Consultas em Documentos XML.",
+        "year": 2015,
+        "venue": "nan",
+        "authors": [
+          "Angélica F. Medeiros",
+          "Valéria Gonçalves Soares",
+          "Eudisley Gomes dos Anjos"
+        ],
+        "n_citation": 0,
+        "scores": {
+          "score_total": 0.135,
+          "score_sem": 0.135,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 7,
+        "title": "Uma Abordagem para Engenharia de Requisitos Baseada em Modelos no Domínio de Software Embarcado.",
+        "year": 2013,
+        "venue": "nan",
+        "authors": [
+          "Milena Rota Sena Marques",
+          "Eliane Siegert",
+          "Lisane B. de Brisolara"
+        ],
+        "n_citation": 0,
+        "scores": {
+          "score_total": 0.1321,
+          "score_sem": 0.1321,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 8,
+        "title": "Seleção de Casos de Teste para Agentes Racionais",
+        "year": 2014,
+        "venue": "Revista De Informática Teórica E Aplicada",
+        "authors": [
+          "Francisca Raquel de Vasconcelos Silveira",
+          "Gustavo Augusto Lima de Campos",
+          "Mariela Inés Cortés"
+        ],
+        "n_citation": 0,
+        "scores": {
+          "score_total": 0.1175,
+          "score_sem": 0.1175,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.05
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 9,
+        "title": "Uma análise comparativa dos modelos de sistemas colaborativos fundamentados na engenharia semiótica",
+        "year": 2014,
+        "venue": "human factors in computing systems",
+        "authors": [
+          "Emanuelly F. M. Barros",
+          "Raquel Oliveira Prates"
+        ],
+        "n_citation": 1,
+        "scores": {
+          "score_total": 0.1029,
+          "score_sem": 0.1029,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 10,
+        "title": "ModelER: Abordagem baseada em modelos aplicada ao processo de elicitação de requisitos",
+        "year": 2014,
+        "venue": "euro american conference on telematics and information systems",
+        "authors": [
+          "Rafael Xavier Souza",
+          "Adicinéia Aparecida de Oliveira",
+          "Rogério Patricio Chagas do Nascimento"
+        ],
+        "n_citation": 0,
+        "scores": {
+          "score_total": 0.0968,
+          "score_sem": 0.0968,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.1
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      }
+    ]
+  },
+  {
+    "author": "Carlos Henrique Oliveira Freitas",
+    "base_title": "Serendipidade Aplicada a Sistemas de Recomendação",
+    "qualis_mode": "sem_only",
+    "recommendations": [
+      {
+        "rank": 1,
+        "title": "Personalizing Pedestrian Accessible way-finding with mPASS",
+        "year": 2016,
+        "venue": "consumer communications and networking conference",
+        "authors": [
+          "Silvia Mirri",
+          "Catia Prandi",
+          "Paola Salomoni"
+        ],
+        "n_citation": 2,
+        "scores": {
+          "score_total": 0.1874,
+          "score_sem": 0.1874,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.875
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 2,
+        "title": "A SaaS Framework for Transdisciplinary Collaboration",
+        "year": 2016,
+        "venue": "international conference on semantic computing",
+        "authors": [
+          "Pratap Chillakanti",
+          "Cristiane Chaves Gattaz"
+        ],
+        "n_citation": 0,
+        "scores": {
+          "score_total": 0.1872,
+          "score_sem": 0.1872,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.75
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 3,
+        "title": "'Jack is a True Scientist': On the Content of Dual Character Concepts.",
+        "year": 2015,
+        "venue": "Cognitive Science",
+        "authors": [
+          "Guillermo Del Pinal",
+          "Kevin Reuter"
+        ],
+        "n_citation": 0,
+        "scores": {
+          "score_total": 0.1731,
+          "score_sem": 0.1731,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 4,
+        "title": "Privacy-Preserving Outsourcing of Data Mining",
+        "year": 2016,
+        "venue": "computer software and applications conference",
+        "authors": [
+          "Anna Monreale",
+          "Wendy Hui Wang"
+        ],
+        "n_citation": 0,
+        "scores": {
+          "score_total": 0.1672,
+          "score_sem": 0.1672,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.875
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 5,
+        "title": "A (2+\\epsilon ) ( 2 + ϵ ) -Approximation Algorithm for the Storage Allocation Problem.",
+        "year": 2015,
+        "venue": "international colloquium on automata, languages and programming",
+        "authors": [
+          "Tobias Mömke",
+          "Andreas Wiese"
+        ],
+        "n_citation": 4,
+        "scores": {
+          "score_total": 0.1566,
+          "score_sem": 0.1566,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.875
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 6,
+        "title": "Vertically-stacked double-gate nanowire FETs with controllable polarity: from devices to regular ASICs",
+        "year": 2013,
+        "venue": "design, automation, and test in europe",
+        "authors": [
+          "Pierre-Emmanuel Gaillardon",
+          "Luca Gaetano Amarù",
+          "Shashikanth Bobba",
+          "Michele De Marchi",
+          "Davide Sacchetto",
+          "Yusuf Leblebici",
+          "Giovanni De Micheli"
+        ],
+        "n_citation": 50,
+        "scores": {
+          "score_total": 0.1551,
+          "score_sem": 0.1551,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 7,
+        "title": "Model-based multiscale gigapixel image formation pipeline on GPU",
+        "year": 2016,
+        "venue": "IEEE Transactions on Computational Imaging",
+        "authors": [
+          "Qian Gong",
+          "Esteban Vera",
+          "Dathon R. Golish",
+          "Steven D. Feller",
+          "David J. Brady",
+          "Michael E. Gehm"
+        ],
+        "n_citation": 0,
+        "scores": {
+          "score_total": 0.1501,
+          "score_sem": 0.1501,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 8,
+        "title": "Community-Based Energy-Aware Routing Protocol in Mobile Social Networks",
+        "year": 2015,
+        "venue": "international conference on algorithms and architectures for parallel processing",
+        "authors": [
+          "Dongmei Bin",
+          "Ying Peng",
+          "Gaocai Wang"
+        ],
+        "n_citation": 0,
+        "scores": {
+          "score_total": 0.143,
+          "score_sem": 0.143,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.5
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 9,
+        "title": "Information-Centric Connectivity",
+        "year": 2016,
+        "venue": "IEEE Communications Magazine",
+        "authors": [
+          "Konstantinos V. Katsaros",
+          "Vasilis Sourlas",
+          "Ioannis Psaras",
+          "Sergi Rene",
+          "George Pavlou"
+        ],
+        "n_citation": 3,
+        "scores": {
+          "score_total": 0.1371,
+          "score_sem": 0.1371,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 1.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 10,
+        "title": "BaSE (byte addressable storage engine) access method",
+        "year": 2013,
+        "venue": "international conference on management of data",
+        "authors": [
+          "Krishnaprasad Shastry",
+          "Shine Mathew",
+          "Sathyanarayanan Manamohan",
+          "Goetz Graefe"
+        ],
+        "n_citation": 0,
+        "scores": {
+          "score_total": 0.1348,
+          "score_sem": 0.1348,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.75
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      }
+    ]
+  },
+  {
+    "author": "Luiz Gonzaga Santana Dos Santos",
+    "base_title": "Functional Split-Aware Optical Fronthaul Design",
+    "qualis_mode": "sem_only",
+    "recommendations": [
+      {
+        "rank": 1,
+        "title": "Mode Combining and -Splitting in Optical MIMO Transmission using Photonic Lanterns.",
+        "year": 2016,
+        "venue": "international conference on pervasive and embedded computing and communication systems",
+        "authors": [
+          "Andreas Ahrens",
+          "Steffen Lochmann"
+        ],
+        "n_citation": 0,
+        "scores": {
+          "score_total": 1.0,
+          "score_sem": 1.0,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.75
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 2,
+        "title": "The maturing of gamification research",
+        "year": 2017,
+        "venue": "Computers in Human Behavior",
+        "authors": [
+          "Lennart E. Nacke",
+          "Sebastian Deterding"
+        ],
+        "n_citation": 0,
+        "scores": {
+          "score_total": 0.6013,
+          "score_sem": 0.6013,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 1.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 3,
+        "title": "Web Archiving Inconsistency: A Research Agenda",
+        "year": 2015,
+        "venue": "nan",
+        "authors": [
+          "Zhiwu Xie",
+          "Herbert Van de Sompel",
+          "Jinyang Liu",
+          "Johann van Reenen",
+          "Ramiro Jordan"
+        ],
+        "n_citation": 0,
+        "scores": {
+          "score_total": 0.6013,
+          "score_sem": 0.6013,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 4,
+        "title": "Typing and Compositionality for Security Protocols: A Generalization to the Geometric Fragment",
+        "year": 2015,
+        "venue": "european symposium on research in computer security",
+        "authors": [
+          "Omar Almousa",
+          "Sebastian Mödersheim",
+          "Paolo Modesti",
+          "Luca Viganò"
+        ],
+        "n_citation": 7,
+        "scores": {
+          "score_total": 0.5562,
+          "score_sem": 0.5562,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.875
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 5,
+        "title": "Sequential Decision Making for Improving Efficiency in Urban Environments.",
+        "year": 2016,
+        "venue": "international joint conference on artificial intelligence",
+        "authors": [
+          "Pradeep Varakantham"
+        ],
+        "n_citation": 0,
+        "scores": {
+          "score_total": 0.5558,
+          "score_sem": 0.5558,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 1.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 6,
+        "title": "Binder Identification Using Pattern Recognition on Phantom Measurements",
+        "year": 2016,
+        "venue": "IEEE Transactions on Instrumentation and Measurement",
+        "authors": [
+          "Reginaldo Santos",
+          "Claudomiro Sales",
+          "Manoel Lima",
+          "Caio Rodrigues",
+          "Alessandra Araujo",
+          "Walisson Cardoso Gomes",
+          "Antoni Fertner",
+          "João Crisóstomo Weyl Albuquerque Costa"
+        ],
+        "n_citation": 0,
+        "scores": {
+          "score_total": 0.541,
+          "score_sem": 0.541,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 1.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 7,
+        "title": "Evaluation of Adaptive Attacker Models.",
+        "year": 2014,
+        "venue": "nan",
+        "authors": [
+          "Leanid Krautsevich",
+          "Artsiom Yautsiukhin"
+        ],
+        "n_citation": 1,
+        "scores": {
+          "score_total": 0.5154,
+          "score_sem": 0.5154,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 8,
+        "title": "Soft-Decision Error Correction of NAND Flash Memory with a Turbo Product Code",
+        "year": 2013,
+        "venue": "signal processing systems",
+        "authors": [
+          "Junhee Cho",
+          "Wonyong Sung"
+        ],
+        "n_citation": 5,
+        "scores": {
+          "score_total": 0.5136,
+          "score_sem": 0.5136,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 9,
+        "title": "Combining Domain Adaptation Approaches for Medical Text Translation",
+        "year": 2014,
+        "venue": "nan",
+        "authors": [
+          "Longyue Wang",
+          "Yi Lu",
+          "Derek F. Wong",
+          "Lidia S. Chao",
+          "Yiming Wang",
+          "Francisco Eduardo Barreto de Oliveira"
+        ],
+        "n_citation": 3,
+        "scores": {
+          "score_total": 0.4973,
+          "score_sem": 0.4973,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 10,
+        "title": "Aging Swiftly",
+        "year": 2015,
+        "venue": "Computing in Science and Engineering",
+        "authors": [
+          "Paul F. Dubois"
+        ],
+        "n_citation": 0,
+        "scores": {
+          "score_total": 0.4884,
+          "score_sem": 0.4884,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.875
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      }
+    ]
+  },
+  {
+    "author": "Isabella de Melo Moreira",
+    "base_title": "Arquitetura Computacional com Modelos de Linguagem de Grande Escala e Dados Abertos Governamentais para Análise e Monitoramento de Obras Públicas: Estudo de Caso da Secretaria da Educação do Estado da Bahia",
+    "qualis_mode": "sem_only",
+    "recommendations": [
+      {
+        "rank": 1,
+        "title": "Informática educacional e a mediação do erro na educação: um estudo teórico-crítico e uma proposta de instrumento computacional",
+        "year": 2016,
+        "venue": "nan",
+        "authors": [
+          "Alexander Robert Kutzke",
+          "Alexandre Ibrahim Direne"
+        ],
+        "n_citation": 0,
+        "scores": {
+          "score_total": 0.2175,
+          "score_sem": 0.2175,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 2,
+        "title": "Um Estudo de Caso na Construção de Ontologias Biomédicas: uma Ontologia de Domínio Sobre Hemoterapia.",
+        "year": 2013,
+        "venue": "nan",
+        "authors": [
+          "Fabrício Mendonça",
+          "Maurício Barcellos Almeida"
+        ],
+        "n_citation": 0,
+        "scores": {
+          "score_total": 0.2064,
+          "score_sem": 0.2064,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 3,
+        "title": "Usabilidade, práticas de linguagem e dispositives móveis: um estudo preliminar",
+        "year": 2013,
+        "venue": "human factors in computing systems",
+        "authors": [
+          "Ana Carolina Marques de Goes",
+          "Fernanda Maria Pereira Freire",
+          "André Constantino da Silva"
+        ],
+        "n_citation": 0,
+        "scores": {
+          "score_total": 0.2034,
+          "score_sem": 0.2034,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 4,
+        "title": "Prolog: A Linguagem, A Máquina Abstrata de Warren e Implementações",
+        "year": 2013,
+        "venue": "Revista De Informática Teórica E Aplicada",
+        "authors": [
+          "George Souza Oliveira",
+          "Anderson Faustino da Silva"
+        ],
+        "n_citation": 0,
+        "scores": {
+          "score_total": 0.1977,
+          "score_sem": 0.1977,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.05
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 5,
+        "title": "Crit érios para avaliação de sistemas gerenciadores de conteúdo com enfoque no desenvolvimento de websites acessíveis: um estudo experimental",
+        "year": 2014,
+        "venue": "human factors in computing systems",
+        "authors": [
+          "Alfredo Gomes de Araújo Neto",
+          "D. G. Bevilaqua",
+          "Isaque Elcio de Souza",
+          "Marcos Santos",
+          "Paulo Afonso Parreira Júnior"
+        ],
+        "n_citation": 0,
+        "scores": {
+          "score_total": 0.1765,
+          "score_sem": 0.1765,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 6,
+        "title": "Um framework para aprimoramento do processo de inovação: estudo de caso em design universal",
+        "year": 2013,
+        "venue": "human factors in computing systems",
+        "authors": [
+          "Júnia Gonçalves",
+          "Elizabeth Furtado"
+        ],
+        "n_citation": 0,
+        "scores": {
+          "score_total": 0.1734,
+          "score_sem": 0.1734,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 7,
+        "title": "Inspeção heurística e observação no contexto de uso: um estudo de caso com o RunKeeper",
+        "year": 2014,
+        "venue": "human factors in computing systems",
+        "authors": [
+          "Horacio Pastor Soares",
+          "Ney Wagner Freitas Cavalcante",
+          "Letícia Régis Di Maio",
+          "Simone Bacellar Leal Ferreira"
+        ],
+        "n_citation": 0,
+        "scores": {
+          "score_total": 0.1706,
+          "score_sem": 0.1706,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 8,
+        "title": "Aplicação de Modelos de Aprendizado Semissupervisionado na Classificação de Imagens de Sensoriamento Remoto",
+        "year": 2013,
+        "venue": "Revista De Informática Teórica E Aplicada",
+        "authors": [
+          "Rogério Galante Negri",
+          "S.J.S. Sant'Anna",
+          "Luciano Vieira Dutra"
+        ],
+        "n_citation": 1,
+        "scores": {
+          "score_total": 0.1672,
+          "score_sem": 0.1672,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.05
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 9,
+        "title": "Estudo exploratório da portabilidade de softwares educacionais em dispositivos móveis",
+        "year": 2013,
+        "venue": "human factors in computing systems",
+        "authors": [
+          "Vitor Hugo Miranda Mourão",
+          "Fernanda Maria Pereira Freire",
+          "André Constantino da Silva"
+        ],
+        "n_citation": 1,
+        "scores": {
+          "score_total": 0.1622,
+          "score_sem": 0.1622,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 10,
+        "title": "Estudo de responsive web design aplicado a um sistema de pesquisa de opinião na área médica",
+        "year": 2013,
+        "venue": "human factors in computing systems",
+        "authors": [
+          "Danilo Wictky Fabri",
+          "Thiago Krempser",
+          "Lucia Vilela Leite Filgueiras"
+        ],
+        "n_citation": 3,
+        "scores": {
+          "score_total": 0.1541,
+          "score_sem": 0.1541,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      }
+    ]
+  },
+  {
+    "author": "Mariana Padilha Pereira",
+    "base_title": "Autonomous Zero-Touch Management in 6G EONs: A Decision-Making Framework",
+    "qualis_mode": "sem_only",
+    "recommendations": [
+      {
+        "rank": 1,
+        "title": "Is your research reproducible",
+        "year": 2016,
+        "venue": "ACM Crossroads Student Magazine",
+        "authors": [
+          "Abdelrahman Hosny"
+        ],
+        "n_citation": 0,
+        "scores": {
+          "score_total": 0.585,
+          "score_sem": 0.585,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 2,
+        "title": "Efficient chameleon hashing-based privacy-preserving auditing in cloud storage",
+        "year": 2016,
+        "venue": "Cluster Computing",
+        "authors": [
+          "Jianhong Zhang",
+          "Xubing Zhao"
+        ],
+        "n_citation": 1,
+        "scores": {
+          "score_total": 0.5661,
+          "score_sem": 0.5661,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.875
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 3,
+        "title": "A wear-leveling algorithm exploiting k-bitwise operations for flash storage devices",
+        "year": 2015,
+        "venue": "IEEE Transactions on Consumer Electronics",
+        "authors": [
+          "Bo-kyeong Kim",
+          "Dong-Ho Lee"
+        ],
+        "n_citation": 1,
+        "scores": {
+          "score_total": 0.5661,
+          "score_sem": 0.5661,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.875
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 4,
+        "title": "Towards A Theory-Of-Mind-Inspired Generic Decision-Making Framework",
+        "year": 2014,
+        "venue": "nan",
+        "authors": [
+          "Mihai Polceanu",
+          "Cédric Buche"
+        ],
+        "n_citation": 12,
+        "scores": {
+          "score_total": 0.5452,
+          "score_sem": 0.5452,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 5,
+        "title": "Nonlinear estimation in a class of gene transcription process",
+        "year": 2014,
+        "venue": "Applied Mathematics and Computation",
+        "authors": [
+          "Ricardo Aguilar-López",
+          "M. Isabel Neria-González",
+          "Rafael Martínez-Guerra",
+          "Juan Luis Mata-Machuca"
+        ],
+        "n_citation": 3,
+        "scores": {
+          "score_total": 0.5307,
+          "score_sem": 0.5307,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 1.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 6,
+        "title": "A Belief-Based Decision-Making Framework for Spectrum Selection in Cognitive Radio Networks",
+        "year": 2016,
+        "venue": "IEEE Transactions on Vehicular Technology",
+        "authors": [
+          "Jordi Pérez-Romero",
+          "Alessandro Raschellà",
+          "Oriol Sallent",
+          "Anna Umbert"
+        ],
+        "n_citation": 1,
+        "scores": {
+          "score_total": 0.4967,
+          "score_sem": 0.4967,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 1.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 7,
+        "title": "Chemical enterprise model and decision-making framework for sustainable chemical product design",
+        "year": 2014,
+        "venue": "Computers in Industry",
+        "authors": [
+          "Juliette Heintz",
+          "Jean Pierre Belaud",
+          "Vincent Gerbaud"
+        ],
+        "n_citation": 22,
+        "scores": {
+          "score_total": 0.4817,
+          "score_sem": 0.4817,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 1.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 8,
+        "title": "Decision-making framework for refactoring",
+        "year": 2015,
+        "venue": "nan",
+        "authors": [
+          "Marko Leppänen",
+          "Samuel Lahtinen",
+          "Kati Kuusinen",
+          "Simo Mäkinen",
+          "Tomi Männistö",
+          "Juha Itkonen",
+          "Jesse Yli-Huumo",
+          "Timo Lehtonen"
+        ],
+        "n_citation": 2,
+        "scores": {
+          "score_total": 0.449,
+          "score_sem": 0.449,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 9,
+        "title": "ePAD: Earthquake Probability-Based Automated Decision-Making Framework for Earthquake Early Warning",
+        "year": 2013,
+        "venue": "Computer-aided Civil and Infrastructure Engineering",
+        "authors": [
+          "Stephen Wu",
+          "James L. Beck",
+          "Thomas H. Heaton"
+        ],
+        "n_citation": 50,
+        "scores": {
+          "score_total": 0.4454,
+          "score_sem": 0.4454,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 10,
+        "title": "The Decision-Making Framework of WrightEagle, the RoboCup 2013 Soccer Simulation 2D League Champion Team",
+        "year": 2013,
+        "venue": "robot soccer world cup",
+        "authors": [
+          "Haochong Zhang",
+          "Xiaoping Chen"
+        ],
+        "n_citation": 4,
+        "scores": {
+          "score_total": 0.4215,
+          "score_sem": 0.4215,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      }
+    ]
+  },
+  {
+    "author": "Pedro Luiz Macedo Leiro",
+    "base_title": "Mitigating Data Sparsity and Cold Start in Collaborative Filtering: Enhancing Singular Value Decomposition with Large Language Models",
+    "qualis_mode": "sem_only",
+    "recommendations": [
+      {
+        "rank": 1,
+        "title": "Two-Level Space---Time Domain Decomposition Methods for Three-Dimensional Unsteady Inverse Source Problems",
+        "year": 2016,
+        "venue": "Journal of Scientific Computing",
+        "authors": [
+          "Xiaomao Deng",
+          "Xiao-Chuan Cai",
+          "Jun Zou"
+        ],
+        "n_citation": 50,
+        "scores": {
+          "score_total": 0.4465,
+          "score_sem": 0.4465,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.875
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 2,
+        "title": "Rating Knowledge Sharing in Cross-Domain Collaborative Filtering",
+        "year": 2015,
+        "venue": "IEEE Transactions on Systems, Man, and Cybernetics",
+        "authors": [
+          "Bin Li",
+          "Xing-Quan Zhu",
+          "Ruijiang Li",
+          "Chengqi Zhang"
+        ],
+        "n_citation": 6,
+        "scores": {
+          "score_total": 0.4372,
+          "score_sem": 0.4372,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 1.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 3,
+        "title": "Tensor Decompositions for Signal Processing Applications: From two-way to multiway component analysis",
+        "year": 2015,
+        "venue": "IEEE Signal Processing Magazine",
+        "authors": [
+          "Andrzej Cichocki",
+          "Danilo P. Mandic",
+          "Lieven De Lathauwer",
+          "Guoxu Zhou",
+          "Qibin Zhao",
+          "Cesar F. Caiafa",
+          "Huy Anh Phan"
+        ],
+        "n_citation": 222,
+        "scores": {
+          "score_total": 0.4349,
+          "score_sem": 0.4349,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 4,
+        "title": "P3MCF: Practical Privacy-Preserving Multi-domain Collaborative Filtering",
+        "year": 2013,
+        "venue": "nan",
+        "authors": [
+          "Toru Nakamura",
+          "Shinsaku Kiyomoto",
+          "Ryu Watanabe",
+          "Yutaka Miyake"
+        ],
+        "n_citation": 2,
+        "scores": {
+          "score_total": 0.4316,
+          "score_sem": 0.4316,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 5,
+        "title": "Representative Agents and the Cold Start Problem in Contract Negotiation",
+        "year": 2015,
+        "venue": "nan",
+        "authors": [
+          "Federico Cerutti",
+          "Christopher Burnett",
+          "Nir Oren"
+        ],
+        "n_citation": 0,
+        "scores": {
+          "score_total": 0.427,
+          "score_sem": 0.427,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 6,
+        "title": "An Efficient Non-Negative Matrix-Factorization-Based Approach to Collaborative Filtering for Recommender Systems",
+        "year": 2014,
+        "venue": "IEEE Transactions on Industrial Informatics",
+        "authors": [
+          "Xin Luo",
+          "MengChu Zhou",
+          "Yunni Xia",
+          "Qingsheng Zhu"
+        ],
+        "n_citation": 127,
+        "scores": {
+          "score_total": 0.4268,
+          "score_sem": 0.4268,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 1.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 7,
+        "title": "Information theoretic approach for cold start users with diversity improvement technique for semantic recommender system",
+        "year": 2015,
+        "venue": "International Journal of Metadata, Semantics and Ontologies",
+        "authors": [
+          "Nidhi Kushwaha",
+          "O. P. Vyas"
+        ],
+        "n_citation": 1,
+        "scores": {
+          "score_total": 0.418,
+          "score_sem": 0.418,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.5
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 8,
+        "title": "The Continuous Cold Start Problem in e-Commerce Recommender Systems",
+        "year": 2015,
+        "venue": "arXiv: Information Retrieval",
+        "authors": [
+          "Lucas Bernardi",
+          "Jaap Kamps",
+          "Julia Kiseleva",
+          "Melanie J. I. Müller"
+        ],
+        "n_citation": 9,
+        "scores": {
+          "score_total": 0.4084,
+          "score_sem": 0.4084,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.875
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 9,
+        "title": "A k-anonymous approach to privacy preserving collaborative filtering",
+        "year": 2015,
+        "venue": "Journal of Computer and System Sciences",
+        "authors": [
+          "Fran Casino",
+          "Josep Domingo-Ferrer",
+          "Constantinos Patsakis",
+          "Domenec Puig",
+          "Agusti Solanas"
+        ],
+        "n_citation": 33,
+        "scores": {
+          "score_total": 0.4037,
+          "score_sem": 0.4037,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.75
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 10,
+        "title": "BDS-MAJ: a BDD-based logic synthesis tool exploiting majority logic decomposition",
+        "year": 2013,
+        "venue": "design automation conference",
+        "authors": [
+          "Luca Gaetano Amarù",
+          "Pierre-Emmanuel Gaillardon",
+          "Giovanni De Micheli"
+        ],
+        "n_citation": 50,
+        "scores": {
+          "score_total": 0.3969,
+          "score_sem": 0.3969,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 1.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      }
+    ]
+  },
+  {
+    "author": "Matheus Costa Pinto Marçal",
+    "base_title": "LLM Assisted Image-based Mobile GUI Testing Model",
+    "qualis_mode": "sem_only",
+    "recommendations": [
+      {
+        "rank": 1,
+        "title": "Risk-based fault detection using Self-Organizing Map",
+        "year": 2015,
+        "venue": "nan",
+        "authors": [
+          "Hongyang Yu",
+          "Faisal Khan",
+          "Vikram Garaniya"
+        ],
+        "n_citation": 0,
+        "scores": {
+          "score_total": 0.6747,
+          "score_sem": 0.6747,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 2,
+        "title": "Mal-EVE: Static detection model for evasive malware",
+        "year": 2015,
+        "venue": "international conference on communications",
+        "authors": [
+          "Charles Lim",
+          "Nicsen"
+        ],
+        "n_citation": 50,
+        "scores": {
+          "score_total": 0.6747,
+          "score_sem": 0.6747,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 1.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 3,
+        "title": "Facial Action Unit Event Detection by Cascade of Tasks",
+        "year": 2013,
+        "venue": "international conference on computer vision",
+        "authors": [
+          "Xiaoyu Ding",
+          "Wen-Sheng Chu",
+          "Fernando De la Torre",
+          "Jeffery F. Cohn",
+          "Qiao Wang"
+        ],
+        "n_citation": 41,
+        "scores": {
+          "score_total": 0.6333,
+          "score_sem": 0.6333,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 1.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 4,
+        "title": "Detection and Combining Techniques for Asynchronous Random Access with Time Diversity",
+        "year": 2016,
+        "venue": "arXiv: Information Theory",
+        "authors": [
+          "Federico Clazzer",
+          "Francisco J. Lázaro",
+          "Gianluigi Liva",
+          "Mario Marchese"
+        ],
+        "n_citation": 5,
+        "scores": {
+          "score_total": 0.6266,
+          "score_sem": 0.6266,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 5,
+        "title": "Distributed multichannel adaptive filtering",
+        "year": 2015,
+        "venue": "nan",
+        "authors": [
+          "Fernando G. Almeida Neto",
+          "Vitor H. Nascimento",
+          "Amanda de Paula"
+        ],
+        "n_citation": 0,
+        "scores": {
+          "score_total": 0.6247,
+          "score_sem": 0.6247,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 6,
+        "title": "DC-20 GHz differential transmit/receieve DP4T switching matrix for radar-based target detection",
+        "year": 2016,
+        "venue": "asia pacific conference on circuits and systems",
+        "authors": [
+          "Afreen Azhari",
+          "Takamaro Kikkawa"
+        ],
+        "n_citation": 0,
+        "scores": {
+          "score_total": 0.614,
+          "score_sem": 0.614,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.5
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 7,
+        "title": "Noise Estimation Using a Constrained Sequential Hidden Markov Model in the Log-Spectral Domain",
+        "year": 2013,
+        "venue": "IEEE Transactions on Audio, Speech, and Language Processing",
+        "authors": [
+          "Dongwen Ying",
+          "Yonghong Yan"
+        ],
+        "n_citation": 1,
+        "scores": {
+          "score_total": 0.6052,
+          "score_sem": 0.6052,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 1.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 8,
+        "title": "Compression-Based Analysis of Cyclic Tag System Emulated by Rule 110.",
+        "year": 2014,
+        "venue": "Journal of Cellular Automata",
+        "authors": [
+          "Shigeru Ninagawa",
+          "G. Martinez"
+        ],
+        "n_citation": 50,
+        "scores": {
+          "score_total": 0.5985,
+          "score_sem": 0.5985,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.05
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 9,
+        "title": "Water distribution system computer-aided design by agent swarm optimization",
+        "year": 2014,
+        "venue": "Computer-aided Civil and Infrastructure Engineering",
+        "authors": [
+          "Idel Montalvo",
+          "Joaquín Izquierdo",
+          "Rafael Pérez-García",
+          "Manuel Herrera"
+        ],
+        "n_citation": 49,
+        "scores": {
+          "score_total": 0.5686,
+          "score_sem": 0.5686,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 10,
+        "title": "Robust optimal policies for Markov decision processes with safety-threshold constraints",
+        "year": 2016,
+        "venue": "conference on decision and control",
+        "authors": [
+          "Rayna Dimitrova",
+          "Jie Fu",
+          "Ufuk Topcu"
+        ],
+        "n_citation": 0,
+        "scores": {
+          "score_total": 0.5617,
+          "score_sem": 0.5617,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 1.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      }
+    ]
+  },
+  {
+    "author": "Guilherme Oliveira do Valle",
+    "base_title": "Aplicação da aprendizagem por reforço na engenharia de trânsito",
+    "qualis_mode": "sem_only",
+    "recommendations": [
+      {
+        "rank": 1,
+        "title": "Self-Interference Cancellation with RF Impairments Suppression for Full-Duplex Systems",
+        "year": 2015,
+        "venue": "vehicular technology conference",
+        "authors": [
+          "Yulong Pan",
+          "Cheng Zhou",
+          "Gaofeng Cui",
+          "Weidong Wang",
+          "Xiuhua Li"
+        ],
+        "n_citation": 0,
+        "scores": {
+          "score_total": 0.3427,
+          "score_sem": 0.3427,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 1.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 2,
+        "title": "Extracting usage patterns from web server log",
+        "year": 2016,
+        "venue": "ieee international conference on high performance computing data and analytics",
+        "authors": [
+          "J. Monisha Privthy Jeba",
+          "M.S. Bhuvaneswari",
+          "K. Muneeswaran"
+        ],
+        "n_citation": 0,
+        "scores": {
+          "score_total": 0.3217,
+          "score_sem": 0.3217,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.75
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 3,
+        "title": "Mathematical practice, crowdsourcing, and social machines",
+        "year": 2013,
+        "venue": "nan",
+        "authors": [
+          "Ursula Martin",
+          "Alison Pease"
+        ],
+        "n_citation": 0,
+        "scores": {
+          "score_total": 0.3168,
+          "score_sem": 0.3168,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 4,
+        "title": "Special issue on intelligent transportation systems",
+        "year": 2015,
+        "venue": "Public Transport",
+        "authors": [
+          "Thomas Albrecht",
+          "Francesco Corman"
+        ],
+        "n_citation": 1,
+        "scores": {
+          "score_total": 0.258,
+          "score_sem": 0.258,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.75
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 5,
+        "title": "Simulation of cloud data security processes and performance",
+        "year": 2015,
+        "venue": "nan",
+        "authors": [
+          "Krishan Chand",
+          "Muthu Ramachandran",
+          "Ah-Lian Kor"
+        ],
+        "n_citation": 0,
+        "scores": {
+          "score_total": 0.2579,
+          "score_sem": 0.2579,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 6,
+        "title": "PaaS Performance Evaluation Methodology",
+        "year": 2015,
+        "venue": "nan",
+        "authors": [
+          "Marcin Jarzab",
+          "Krzysztof Zielinski",
+          "Slawomir Zielinski",
+          "Karol Grzegorczyk",
+          "Marek Piascik"
+        ],
+        "n_citation": 50,
+        "scores": {
+          "score_total": 0.2483,
+          "score_sem": 0.2483,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 7,
+        "title": "Crowdsourcing on the spot: altruistic use of public displays, feasibility, performance, and behaviours",
+        "year": 2013,
+        "venue": "ubiquitous computing",
+        "authors": [
+          "Jorge Goncalves",
+          "Denzil Ferreira",
+          "Simo Hosio",
+          "Yong Liu",
+          "Jakob Rogstadius",
+          "Hannu Kukka",
+          "Vassilis Kostakos"
+        ],
+        "n_citation": 51,
+        "scores": {
+          "score_total": 0.2472,
+          "score_sem": 0.2472,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 8,
+        "title": "Real-time capabilities in functional languages",
+        "year": 2016,
+        "venue": "nan",
+        "authors": [
+          "Jeffrey C. Murphy",
+          "Bhargav Shivkumar",
+          "Lukasz Ziarek"
+        ],
+        "n_citation": 1,
+        "scores": {
+          "score_total": 0.2141,
+          "score_sem": 0.2141,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 9,
+        "title": "Effect of obesity and clinical factors on pre-incision time: study of operating room workflow",
+        "year": 2014,
+        "venue": "nan",
+        "authors": [
+          "Narges Hosseini",
+          "M. Susan Hallbeck",
+          "Christopher J. Jankowski",
+          "Jeanne M. Huddleston",
+          "Amrit Kanwar",
+          "Kalyan S. Pasupathy"
+        ],
+        "n_citation": 50,
+        "scores": {
+          "score_total": 0.2049,
+          "score_sem": 0.2049,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 10,
+        "title": "A New Searching Method of Splitting Threshold Values for Continuous Attribute Decision Tree Problems",
+        "year": 2015,
+        "venue": "systems, man and cybernetics",
+        "authors": [
+          "Kuang-Yow Lian",
+          "Ru-Feng Liu"
+        ],
+        "n_citation": 0,
+        "scores": {
+          "score_total": 0.1869,
+          "score_sem": 0.1869,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.625
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      }
+    ]
+  },
+  {
+    "author": "Fábio Santos Batista",
+    "base_title": "Transposição didática de conceitos da inteligência artificial para a educação básica",
+    "qualis_mode": "sem_only",
+    "recommendations": [
+      {
+        "rank": 1,
+        "title": "Coding for the Permutation Channel with Insertions, Deletions, Substitutions, and Erasures",
+        "year": 2016,
+        "venue": "arXiv: Information Theory",
+        "authors": [
+          "Mladen Kovačević",
+          "Vincent Y. F. Tan"
+        ],
+        "n_citation": 0,
+        "scores": {
+          "score_total": 0.3408,
+          "score_sem": 0.3408,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 2,
+        "title": "A Semi-Automated Workflow Solution for Data Set Publication",
+        "year": 2016,
+        "venue": "nan",
+        "authors": [
+          "Suresh K. Santhana Vannan",
+          "Tammy Walker Beaty",
+          "Robert B. Cook",
+          "Daine M. Wright",
+          "Ranjeet Devarakonda",
+          "Yaxing Wei",
+          "Les A. Hook",
+          "Benjamin F. McMurry"
+        ],
+        "n_citation": 4,
+        "scores": {
+          "score_total": 0.2928,
+          "score_sem": 0.2928,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 3,
+        "title": "Identification of phage-induced genomic islands in the 13 Streptococcus pyogenes strains using genome barcodes",
+        "year": 2014,
+        "venue": "International Journal of Data Mining and Bioinformatics",
+        "authors": [
+          "Chunbao Zhou",
+          "Jiaxin Wang",
+          "Yao Wang",
+          "Yanchun Liang"
+        ],
+        "n_citation": 0,
+        "scores": {
+          "score_total": 0.2504,
+          "score_sem": 0.2504,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 4,
+        "title": "Bootstrapping Evolvability for Inter-Domain Routing",
+        "year": 2015,
+        "venue": "hot topics in networks",
+        "authors": [
+          "Raja R. Sambasivan",
+          "David Tran-Lam",
+          "Aditya Akella",
+          "Peter Steenkiste"
+        ],
+        "n_citation": 3,
+        "scores": {
+          "score_total": 0.2292,
+          "score_sem": 0.2292,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 5,
+        "title": "High Precision Discrete Gaussian Sampling on FPGAs",
+        "year": 2013,
+        "venue": "Lecture Notes in Computer Science",
+        "authors": [
+          "Sujoy Sinha Roy",
+          "Frederik Vercauteren",
+          "Ingrid Verbauwhede"
+        ],
+        "n_citation": 0,
+        "scores": {
+          "score_total": 0.1884,
+          "score_sem": 0.1884,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.5
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 6,
+        "title": "Hybrid CNN and Dictionary-Based Models for Scene Recognition and Domain Adaptation",
+        "year": 2017,
+        "venue": "IEEE Transactions on Circuits and Systems for Video Technology",
+        "authors": [
+          "Guo-Sen Xie",
+          "Xu-Yao Zhang",
+          "Shuicheng Yan",
+          "Cheng-Lin Liu"
+        ],
+        "n_citation": 50,
+        "scores": {
+          "score_total": 0.1743,
+          "score_sem": 0.1743,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 1.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 7,
+        "title": "Kinematic-aware random forest for static and dynamic action recognition from depth sequences",
+        "year": 2016,
+        "venue": "arXiv: Computer Vision and Pattern Recognition",
+        "authors": [
+          "Seungryul Beak",
+          "Zhiyuan Shi",
+          "Masato Kawade",
+          "Tae-Kyun Kim"
+        ],
+        "n_citation": 0,
+        "scores": {
+          "score_total": 0.1396,
+          "score_sem": 0.1396,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 8,
+        "title": "VParC: A Compression Scheme for Numeric Data in Column-Oriented Databases",
+        "year": 2016,
+        "venue": "The International Arab Journal of Information Technology",
+        "authors": [
+          "Ke Yan",
+          "Hong Zhu",
+          "Kevin Lü"
+        ],
+        "n_citation": 1,
+        "scores": {
+          "score_total": 0.1391,
+          "score_sem": 0.1391,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.875
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 9,
+        "title": "Pivot: Fast, Synchronous Mashup Isolation Using Generator Chains",
+        "year": 2014,
+        "venue": "ieee symposium on security and privacy",
+        "authors": [
+          "James Mickens"
+        ],
+        "n_citation": 3,
+        "scores": {
+          "score_total": 0.127,
+          "score_sem": 0.127,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 1.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 10,
+        "title": "Using virtual topology operations to generate analysis topology",
+        "year": 2017,
+        "venue": "Computer-aided Design",
+        "authors": [
+          "Christopher M. Tierney",
+          "Liang Sun",
+          "Trevor Robinson",
+          "Cecil Armstrong"
+        ],
+        "n_citation": 0,
+        "scores": {
+          "score_total": 0.1237,
+          "score_sem": 0.1237,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      }
+    ]
+  },
+  {
+    "author": "Gustavo Ribeiro Trinchão",
+    "base_title": "Software Reuse in Quantum Computing: An Empirical Study of Practices, Evolution, and Risks",
+    "qualis_mode": "sem_only",
+    "recommendations": [
+      {
+        "rank": 1,
+        "title": "A Large-Scale Empirical Study on Software Reuse in Mobile Apps",
+        "year": 2014,
+        "venue": "IEEE Software",
+        "authors": [
+          "Israel J. Mojica",
+          "Bram Adams",
+          "Meiyappan Nagappan",
+          "Steffen Dienst",
+          "Thorsten Berger",
+          "Ahmed E. Hassan"
+        ],
+        "n_citation": 50,
+        "scores": {
+          "score_total": 0.7081,
+          "score_sem": 0.7081,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.75
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 2,
+        "title": "Twitter Adoption and Use by SMEs: An Empirical Study",
+        "year": 2013,
+        "venue": "hawaii international conference on system sciences",
+        "authors": [
+          "Samuel Fosso Wamba",
+          "Lemuria Carter"
+        ],
+        "n_citation": 38,
+        "scores": {
+          "score_total": 0.7081,
+          "score_sem": 0.7081,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 1.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 3,
+        "title": "An Empirical Study of goto in C Code",
+        "year": 2015,
+        "venue": "PeerJ",
+        "authors": [
+          "Meiyappan Nagappan",
+          "Romain Robbes",
+          "Yasutaka Kamei",
+          "Éric Tanter",
+          "Shane McIntosh",
+          "Audris Mockus",
+          "Ahmed E. Hassan"
+        ],
+        "n_citation": 1,
+        "scores": {
+          "score_total": 0.7081,
+          "score_sem": 0.7081,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.875
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 4,
+        "title": "Mining energy-greedy API usage patterns in Android apps: an empirical study",
+        "year": 2014,
+        "venue": "mining software repositories",
+        "authors": [
+          "Mario Linares-Vásquez",
+          "Gabriele Bavota",
+          "Carlos Bernal-Cárdenas",
+          "Rocco Oliveto",
+          "Massimiliano Di Penta",
+          "Denys Poshyvanyk"
+        ],
+        "n_citation": 80,
+        "scores": {
+          "score_total": 0.7081,
+          "score_sem": 0.7081,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 5,
+        "title": "An empirical study of managers' usage intention in BI",
+        "year": 2014,
+        "venue": "Cognition, Technology & Work",
+        "authors": [
+          "Yu-Wei Chang",
+          "Ping-Yu Hsu",
+          "Wen-Lung Shiau"
+        ],
+        "n_citation": 10,
+        "scores": {
+          "score_total": 0.7081,
+          "score_sem": 0.7081,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 1.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 6,
+        "title": "A guide to best practices for Gene Ontology (GO) manual annotation",
+        "year": 2013,
+        "venue": "Database",
+        "authors": [
+          "Rama Balakrishnan",
+          "Midori A. Harris",
+          "Rachael P. Huntley",
+          "Kimberly Van Auken",
+          "J. Michael Cherry"
+        ],
+        "n_citation": 58,
+        "scores": {
+          "score_total": 0.7081,
+          "score_sem": 0.7081,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 7,
+        "title": "Feeling Blue? Go Online: An Empirical Study of Social Support Among Patients",
+        "year": 2014,
+        "venue": "Information Systems Research",
+        "authors": [
+          "Lu Lucy Yan",
+          "Yong Tan"
+        ],
+        "n_citation": 50,
+        "scores": {
+          "score_total": 0.6537,
+          "score_sem": 0.6537,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 8,
+        "title": "Electric Imaging through Evolution, a Modeling Study of Commonalities and Differences",
+        "year": 2014,
+        "venue": "PLOS Computational Biology",
+        "authors": [
+          "Federico Pedraja",
+          "Pedro Aguilera",
+          "Angel A. Caputi",
+          "Ruben Budelli"
+        ],
+        "n_citation": 14,
+        "scores": {
+          "score_total": 0.6326,
+          "score_sem": 0.6326,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 1.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 9,
+        "title": "Social Computing in Open Source Community: A Study of Software Reuse",
+        "year": 2016,
+        "venue": "international conference for young computer scientists",
+        "authors": [
+          "Mengwen Chen",
+          "Tao Wang",
+          "Cheng Yang",
+          "Qiang Fan",
+          "Gang Yin",
+          "Huaimin Wang"
+        ],
+        "n_citation": 0,
+        "scores": {
+          "score_total": 0.6215,
+          "score_sem": 0.6215,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 10,
+        "title": "The usage of best practices and procedures in the database community",
+        "year": 2015,
+        "venue": "Information Systems",
+        "authors": [
+          "Victoria Holt",
+          "Magnus Ramage",
+          "Karen Kear",
+          "Nick W. Heap"
+        ],
+        "n_citation": 50,
+        "scores": {
+          "score_total": 0.6215,
+          "score_sem": 0.6215,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 1.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      }
+    ]
+  },
+  {
+    "author": "Evilasio de Sousa Junior",
+    "base_title": "Visualização Exploratória de Grafos de Conhecimento para Análise da Transdisciplinaridade em Currículos Integrados",
+    "qualis_mode": "sem_only",
+    "recommendations": [
+      {
+        "rank": 1,
+        "title": "Criação de Conhecimento Organizacional e Análise de Sinais Fracos: Convergências",
+        "year": 2015,
+        "venue": "nan",
+        "authors": [
+          "Luciana Nogueira Bortoli",
+          "Raquel Janissek-Muniz",
+          "Natália Marroni Borges"
+        ],
+        "n_citation": 0,
+        "scores": {
+          "score_total": 0.271,
+          "score_sem": 0.271,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 2,
+        "title": "Modelo de interação para o nível de conhecimento em sistemas de registro eletrônico de saúde baseados no OpenEHR",
+        "year": 2014,
+        "venue": "human factors in computing systems",
+        "authors": [
+          "Elisa Tuler de Albergaria",
+          "Marcello Peixoto Bax",
+          "Raquel Oliveira Prates"
+        ],
+        "n_citation": 0,
+        "scores": {
+          "score_total": 0.2204,
+          "score_sem": 0.2204,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 3,
+        "title": "NDR-Tool: Uma Ferramenta de Apoio ao Reuso de Conhecimento em Requisitos Não Funcionais.",
+        "year": 2014,
+        "venue": "nan",
+        "authors": [
+          "Alex Lins de Araújo",
+          "Luiz Marcio Cysneiros",
+          "Vera Werneck"
+        ],
+        "n_citation": 2,
+        "scores": {
+          "score_total": 0.1965,
+          "score_sem": 0.1965,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 4,
+        "title": "Reconhecimento de modelos 3D em realidade aumentada móvel",
+        "year": 2013,
+        "venue": "human factors in computing systems",
+        "authors": [
+          "Ana Regina Mizrahy Cuperschmid",
+          "Regina Coeli Ruschel",
+          "Ana Maria Reis de Goes Monteiro"
+        ],
+        "n_citation": 3,
+        "scores": {
+          "score_total": 0.1838,
+          "score_sem": 0.1838,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 5,
+        "title": "PColorAnt3-RT: Um Algoritmo ACO Paralelo para Coloração de Grafos",
+        "year": 2013,
+        "venue": "Revista De Informática Teórica E Aplicada",
+        "authors": [
+          "Carla Negri Lintzmayer",
+          "Mauro Henrique Mulati",
+          "Anderson Faustino da Silva"
+        ],
+        "n_citation": 0,
+        "scores": {
+          "score_total": 0.183,
+          "score_sem": 0.183,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.05
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 6,
+        "title": "Normalização do locutor em sistemas de reconhecimento de fala para usuários crianças",
+        "year": 2014,
+        "venue": "human factors in computing systems",
+        "authors": [
+          "Ramon Mayor Martins",
+          "Carlos Alberto Ynoguti"
+        ],
+        "n_citation": 0,
+        "scores": {
+          "score_total": 0.1778,
+          "score_sem": 0.1778,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 7,
+        "title": "Organização do conhecimento em bibliotecas digitais de teses e dissertações: uma abordagem baseada na classificação facetada e taxonomias dinâmicas",
+        "year": 2013,
+        "venue": "Perspectivas Em Ciencia Da Informacao",
+        "authors": [
+          "Flávio Vieira Pontes"
+        ],
+        "n_citation": 6,
+        "scores": {
+          "score_total": 0.175,
+          "score_sem": 0.175,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.1
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 8,
+        "title": "Towards a robust smartphone-based 2,5D pedestrian localization",
+        "year": 2016,
+        "venue": "nan",
+        "authors": [
+          "Catia Real Ehrlich",
+          "Jörg Blankenbach",
+          "Arnd Sieprath"
+        ],
+        "n_citation": 1,
+        "scores": {
+          "score_total": 0.0942,
+          "score_sem": 0.0942,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 9,
+        "title": "Exploração de Grafos RDF com Distribuição Controlada.",
+        "year": 2015,
+        "venue": "nan",
+        "authors": [
+          "Raqueline Ritter de Moura Penteado",
+          "Rebeca Schroeder",
+          "Carmem S. Hara"
+        ],
+        "n_citation": 0,
+        "scores": {
+          "score_total": 0.0536,
+          "score_sem": 0.0536,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 10,
+        "title": "SGProv: Mecanismo de Sumarização para Múltiplos Grafos de Proveniência.",
+        "year": 2013,
+        "venue": "nan",
+        "authors": [
+          "Daniele El-Jaick",
+          "Marta Mattoso",
+          "Alexandre A. B. Lima"
+        ],
+        "n_citation": 4,
+        "scores": {
+          "score_total": 0.0,
+          "score_sem": 0.0,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      }
+    ]
+  },
+  {
+    "author": "Guilherme Castro Hora Fontes",
+    "base_title": "Como a Estrutura do Grafo Afeta GNNs: uma Investigação em Regressão de Nós com Estudo de Caso no Futebol Europeu",
+    "qualis_mode": "sem_only",
+    "recommendations": [
+      {
+        "rank": 1,
+        "title": "Informática educacional e a mediação do erro na educação: um estudo teórico-crítico e uma proposta de instrumento computacional",
+        "year": 2016,
+        "venue": "nan",
+        "authors": [
+          "Alexander Robert Kutzke",
+          "Alexandre Ibrahim Direne"
+        ],
+        "n_citation": 0,
+        "scores": {
+          "score_total": 0.4201,
+          "score_sem": 0.4201,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 2,
+        "title": "Inspeção heurística e observação no contexto de uso: um estudo de caso com o RunKeeper",
+        "year": 2014,
+        "venue": "human factors in computing systems",
+        "authors": [
+          "Horacio Pastor Soares",
+          "Ney Wagner Freitas Cavalcante",
+          "Letícia Régis Di Maio",
+          "Simone Bacellar Leal Ferreira"
+        ],
+        "n_citation": 0,
+        "scores": {
+          "score_total": 0.3462,
+          "score_sem": 0.3462,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 3,
+        "title": "Um Estudo de Caso na Construção de Ontologias Biomédicas: uma Ontologia de Domínio Sobre Hemoterapia.",
+        "year": 2013,
+        "venue": "nan",
+        "authors": [
+          "Fabrício Mendonça",
+          "Maurício Barcellos Almeida"
+        ],
+        "n_citation": 0,
+        "scores": {
+          "score_total": 0.3457,
+          "score_sem": 0.3457,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 4,
+        "title": "Usabilidade, práticas de linguagem e dispositives móveis: um estudo preliminar",
+        "year": 2013,
+        "venue": "human factors in computing systems",
+        "authors": [
+          "Ana Carolina Marques de Goes",
+          "Fernanda Maria Pereira Freire",
+          "André Constantino da Silva"
+        ],
+        "n_citation": 0,
+        "scores": {
+          "score_total": 0.3328,
+          "score_sem": 0.3328,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 5,
+        "title": "Um framework para aprimoramento do processo de inovação: estudo de caso em design universal",
+        "year": 2013,
+        "venue": "human factors in computing systems",
+        "authors": [
+          "Júnia Gonçalves",
+          "Elizabeth Furtado"
+        ],
+        "n_citation": 0,
+        "scores": {
+          "score_total": 0.3023,
+          "score_sem": 0.3023,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 6,
+        "title": "Crit érios para avaliação de sistemas gerenciadores de conteúdo com enfoque no desenvolvimento de websites acessíveis: um estudo experimental",
+        "year": 2014,
+        "venue": "human factors in computing systems",
+        "authors": [
+          "Alfredo Gomes de Araújo Neto",
+          "D. G. Bevilaqua",
+          "Isaque Elcio de Souza",
+          "Marcos Santos",
+          "Paulo Afonso Parreira Júnior"
+        ],
+        "n_citation": 0,
+        "scores": {
+          "score_total": 0.2839,
+          "score_sem": 0.2839,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 7,
+        "title": "Serviços de Governo Eletrônico: um estudo sobre o uso por indivíduos no Brasil.",
+        "year": 2015,
+        "venue": "nan",
+        "authors": [
+          "Ernani Marques dos Santos",
+          "Nicolau Reinhard"
+        ],
+        "n_citation": 0,
+        "scores": {
+          "score_total": 0.2619,
+          "score_sem": 0.2619,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 8,
+        "title": "Evoluindo o Catalogo de Transparência: o Estudo do Requisito Não funcional de Entendimento.",
+        "year": 2013,
+        "venue": "nan",
+        "authors": [
+          "Priscila Engiel",
+          "Julio Cesar Sampaio do Prado Leite"
+        ],
+        "n_citation": 0,
+        "scores": {
+          "score_total": 0.2567,
+          "score_sem": 0.2567,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 9,
+        "title": "Estudo de responsive web design aplicado a um sistema de pesquisa de opinião na área médica",
+        "year": 2013,
+        "venue": "human factors in computing systems",
+        "authors": [
+          "Danilo Wictky Fabri",
+          "Thiago Krempser",
+          "Lucia Vilela Leite Filgueiras"
+        ],
+        "n_citation": 3,
+        "scores": {
+          "score_total": 0.2512,
+          "score_sem": 0.2512,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 10,
+        "title": "Caracterização do uso de hashtags do Twitter para mensurar o sentimento da população online: Um estudo de caso nas Eleições Presidenciais dos EUA em 2012.",
+        "year": 2013,
+        "venue": "nan",
+        "authors": [
+          "Glívia Angélica Rodrigues Barbosa",
+          "Pedro Holanda",
+          "Geanderson E. dos Santos",
+          "Conrado C. da Costa",
+          "Ismael Santana Silva",
+          "Adriano Veloso",
+          "Wagner Meira"
+        ],
+        "n_citation": 2,
+        "scores": {
+          "score_total": 0.2475,
+          "score_sem": 0.2475,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      }
+    ]
+  },
+  {
+    "author": "Matheus Ednei Nepomuceno Souza",
+    "base_title": "Avaliação com o uso de IA no ensino de linguagens de programação",
+    "qualis_mode": "sem_only",
+    "recommendations": [
+      {
+        "rank": 1,
+        "title": "O uso de Métodos Ágeis no ensino de Métodos Ágeis",
+        "year": 2015,
+        "venue": "Revista De Informática Teórica E Aplicada",
+        "authors": [
+          "Avelino Ferreira Gomes Filho",
+          "Carlos Felippe Cardoso de Resende",
+          "Rodrigo de Toledo"
+        ],
+        "n_citation": 0,
+        "scores": {
+          "score_total": 1.0,
+          "score_sem": 1.0,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.05
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 2,
+        "title": "Serviços de Governo Eletrônico: um estudo sobre o uso por indivíduos no Brasil.",
+        "year": 2015,
+        "venue": "nan",
+        "authors": [
+          "Ernani Marques dos Santos",
+          "Nicolau Reinhard"
+        ],
+        "n_citation": 0,
+        "scores": {
+          "score_total": 0.2291,
+          "score_sem": 0.2291,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 3,
+        "title": "A Generic SUT Adapter Framework for Protocol Conformance Testing",
+        "year": 2013,
+        "venue": "the internet of things",
+        "authors": [
+          "Jiexi Zha",
+          "Xiaohong Huang",
+          "Jing Qian",
+          "César Viho"
+        ],
+        "n_citation": 0,
+        "scores": {
+          "score_total": 0.2095,
+          "score_sem": 0.2095,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 1.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 4,
+        "title": "O Potencial do Uso de Estimativas de Desempenho na Exploração de Conjuntos de Otimizações",
+        "year": 2015,
+        "venue": "Revista De Informática Teórica E Aplicada",
+        "authors": [
+          "Anderson Faustino da Silva",
+          "Vanderson Martins do Rosário"
+        ],
+        "n_citation": 0,
+        "scores": {
+          "score_total": 0.1939,
+          "score_sem": 0.1939,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.05
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 5,
+        "title": "SMGSC: Social-Level Macro-Governing Methodology for Cross-Management-Domain Service Collaboration Processes",
+        "year": 2016,
+        "venue": "hawaii international conference on system sciences",
+        "authors": [
+          "Ji Gao",
+          "Hexin Lv",
+          "Zhiyong Jin",
+          "Ping Xu"
+        ],
+        "n_citation": 0,
+        "scores": {
+          "score_total": 0.179,
+          "score_sem": 0.179,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 1.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 6,
+        "title": "Caracterização do uso de hashtags do Twitter para mensurar o sentimento da população online: Um estudo de caso nas Eleições Presidenciais dos EUA em 2012.",
+        "year": 2013,
+        "venue": "nan",
+        "authors": [
+          "Glívia Angélica Rodrigues Barbosa",
+          "Pedro Holanda",
+          "Geanderson E. dos Santos",
+          "Conrado C. da Costa",
+          "Ismael Santana Silva",
+          "Adriano Veloso",
+          "Wagner Meira"
+        ],
+        "n_citation": 2,
+        "scores": {
+          "score_total": 0.1694,
+          "score_sem": 0.1694,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 7,
+        "title": "OPORTUNIDADES DO USO INFORMAL DAS TECNOLOGIAS DE INFORMAÇÃO MÓVEIS E SEM FIO NO CONTEXTO DA INTELIGÊNCIA ESTRATÉGICA ANTECIPATIVA E COLETIVA",
+        "year": 2016,
+        "venue": "nan",
+        "authors": [
+          "Natália Marroni Borges",
+          "Raquel Janissek-Muniz",
+          "José Carlos da Silva Freitas Junior"
+        ],
+        "n_citation": 0,
+        "scores": {
+          "score_total": 0.1633,
+          "score_sem": 0.1633,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 8,
+        "title": "Estudo sobre o uso de tablets como ferramenta de suporte à interação de pessoas cegas com painéis digitais",
+        "year": 2013,
+        "venue": "human factors in computing systems",
+        "authors": [
+          "Ana Flavia de Andrade da Silva",
+          "Annibal Biondi Mendes da Silva",
+          "Veronica Oliveira Pontes",
+          "Elaine Naomi Watanabe",
+          "Márcia Ito",
+          "Vagner Figueredo de Santana"
+        ],
+        "n_citation": 5,
+        "scores": {
+          "score_total": 0.145,
+          "score_sem": 0.145,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 9,
+        "title": "Investigando o Uso de Gamificação para Aumentar o Engajamento em Sistemas Colaborativos.",
+        "year": 2013,
+        "venue": "nan",
+        "authors": [
+          "Lucas Felipe da Cunha",
+          "Isabela Gasparini",
+          "Carla Diacui Medeiros Berkenbrock"
+        ],
+        "n_citation": 7,
+        "scores": {
+          "score_total": 0.1073,
+          "score_sem": 0.1073,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 10,
+        "title": "Analisando fatores que influenciam o uso das TIC em escolas brasileiras",
+        "year": 2016,
+        "venue": "nan",
+        "authors": [
+          "Raphael Albino",
+          "Cesar Alexandre de Souza"
+        ],
+        "n_citation": 0,
+        "scores": {
+          "score_total": 0.098,
+          "score_sem": 0.098,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      }
+    ]
+  },
+  {
+    "author": "Fernanda Marques dos Santos Nascimento",
+    "base_title": "Modelo Híbrido CNN-LSTM para detecção de anomalias em ECG via análise espectral: uma abordagem para sinais de teste ergométrico",
+    "qualis_mode": "sem_only",
+    "recommendations": [
+      {
+        "rank": 1,
+        "title": "Uma Abordagem para Engenharia de Requisitos Baseada em Modelos no Domínio de Software Embarcado.",
+        "year": 2013,
+        "venue": "nan",
+        "authors": [
+          "Milena Rota Sena Marques",
+          "Eliane Siegert",
+          "Lisane B. de Brisolara"
+        ],
+        "n_citation": 0,
+        "scores": {
+          "score_total": 0.4151,
+          "score_sem": 0.4151,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 2,
+        "title": "Ranking de Pesquisadores em Cenários Ambíguos: Uma Abordagem Probabilística.",
+        "year": 2014,
+        "venue": "brazilian symposium on databases",
+        "authors": [
+          "Luciana B. Maroun",
+          "Mirella M. Moro"
+        ],
+        "n_citation": 1,
+        "scores": {
+          "score_total": 0.3866,
+          "score_sem": 0.3866,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 3,
+        "title": "Uma Abordagem para Publicação de Dados de Proveniência de Workflows Científicos na Web Semântica.",
+        "year": 2015,
+        "venue": "nan",
+        "authors": [
+          "Rachel Goncalves de Castro",
+          "Renan Souza",
+          "Vítor Silva Sousa",
+          "Kary A. C. S. Ocaña",
+          "Daniel de Oliveira 0001",
+          "Marta Mattoso"
+        ],
+        "n_citation": 0,
+        "scores": {
+          "score_total": 0.3611,
+          "score_sem": 0.3611,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 4,
+        "title": "Codesign de atividades gamificadas: uma abordagem participativa do design instrucional em ambientes virtuais de aprendizagem",
+        "year": 2014,
+        "venue": "human factors in computing systems",
+        "authors": [
+          "Fábio Pereira Alves",
+          "Cristiano Maciel"
+        ],
+        "n_citation": 0,
+        "scores": {
+          "score_total": 0.3373,
+          "score_sem": 0.3373,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 5,
+        "title": "Uma Abordagem Colaborativa de Modelagem Conceitual de Informação utilizando Mind Maps.",
+        "year": 2014,
+        "venue": "nan",
+        "authors": [
+          "Rafael Duarte",
+          "José Rener de Araújo Júnior",
+          "Rubén Araujo",
+          "Fernando Wanderley",
+          "Maria Lencastre"
+        ],
+        "n_citation": 0,
+        "scores": {
+          "score_total": 0.3132,
+          "score_sem": 0.3132,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 6,
+        "title": "Definição e Avaliação de uma Abordagem para Extração e Catalogação de Conteúdo Obtido da Deep Web.",
+        "year": 2014,
+        "venue": "brazilian symposium on databases",
+        "authors": [
+          "Augusto Ferreia de Souza",
+          "Ronaldo dos Santos Mello"
+        ],
+        "n_citation": 0,
+        "scores": {
+          "score_total": 0.3052,
+          "score_sem": 0.3052,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 7,
+        "title": "oLinDa: Uma Abordagem para Decomposição de Consultas em Federações de Dados Interligados.",
+        "year": 2014,
+        "venue": "brazilian symposium on databases",
+        "authors": [
+          "Danusa R. B. Cunha",
+          "Bernadette Farias Lóscio"
+        ],
+        "n_citation": 0,
+        "scores": {
+          "score_total": 0.3016,
+          "score_sem": 0.3016,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 8,
+        "title": "Métodos Computacionais e Estatísticos no Estudo das Ondas de Frequência dos Sinais Eletroencefalográficos e o Envelhecimento: uma Abordagem Através da Análise Linear do Discriminante",
+        "year": 2013,
+        "venue": "Revista De Informática Teórica E Aplicada",
+        "authors": [
+          "Lilian Ribeiro Mendes de Paiva",
+          "Adriano Alves Pereira",
+          "Adriano O. Andrade"
+        ],
+        "n_citation": 0,
+        "scores": {
+          "score_total": 0.2721,
+          "score_sem": 0.2721,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.05
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 9,
+        "title": "Um modelo de features para jogos sérios voltados à saúde: uma abordagem baseada em linha de produtos de software.",
+        "year": 2014,
+        "venue": "nan",
+        "authors": [
+          "Danilo Tavares",
+          "Carla T. L. L. Silva",
+          "Danielle Rousy"
+        ],
+        "n_citation": 2,
+        "scores": {
+          "score_total": 0.26,
+          "score_sem": 0.26,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 10,
+        "title": "Processamento de consultas na Web de Dados: uma abordagem para busca de fontes de dados relevantes.",
+        "year": 2013,
+        "venue": "nan",
+        "authors": [
+          "Alberto Tavares",
+          "Bernadette Farias Lóscio"
+        ],
+        "n_citation": 0,
+        "scores": {
+          "score_total": 0.238,
+          "score_sem": 0.238,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      }
+    ]
+  },
+  {
+    "author": "Marvin Rocha Sousa Ferreira",
+    "base_title": "Transferência Semântica de Preferências entre Domínios Estruturalmente Heterogêneos, Recomendação Zero-Shot de Músicas Baseada em Perfis Literários com Validação Ecológica Real",
+    "qualis_mode": "sem_only",
+    "recommendations": [
+      {
+        "rank": 1,
+        "title": "Snapcab: Urban Scale Context-Aware Smart Transport Using Adaptive Context Tries",
+        "year": 2015,
+        "venue": "nan",
+        "authors": [
+          "Alistair Morris",
+          "Constantinos Patsakis",
+          "Vinny Cahill",
+          "Melanie Bouroche"
+        ],
+        "n_citation": 0,
+        "scores": {
+          "score_total": 0.2036,
+          "score_sem": 0.2036,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 2,
+        "title": "A new nonlocal variational bi-regularized image restoration model via split Bregman method",
+        "year": 2015,
+        "venue": "Eurasip Journal on Image and Video Processing",
+        "authors": [
+          "Dong-Huan Jiang",
+          "Xue Tan",
+          "Yongquan Liang",
+          "Sheng Fang"
+        ],
+        "n_citation": 0,
+        "scores": {
+          "score_total": 0.1854,
+          "score_sem": 0.1854,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.75
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 3,
+        "title": "Interaction with virtual shadow through real shadow using two projectors",
+        "year": 2016,
+        "venue": "international conference on computer graphics and interactive techniques",
+        "authors": [
+          "Hiroko Iwasaki",
+          "Momoko Kondo",
+          "Rei Ito",
+          "Saya Sugiura",
+          "Yuka Oba",
+          "Shinji Mizuno"
+        ],
+        "n_citation": 0,
+        "scores": {
+          "score_total": 0.1831,
+          "score_sem": 0.1831,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 1.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 4,
+        "title": "On-Demand Integration and Linking of Open Data Information",
+        "year": 2015,
+        "venue": "metadata and semantics research",
+        "authors": [
+          "Nuno Lopes",
+          "Martin Stephenson",
+          "Vanessa Lopez",
+          "Pierpaolo Tommasi",
+          "Pol Mac Aonghusa"
+        ],
+        "n_citation": 0,
+        "scores": {
+          "score_total": 0.1641,
+          "score_sem": 0.1641,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 5,
+        "title": "Modified Chaplygin gas cosmology with observational constraints",
+        "year": 2015,
+        "venue": "Applied Mathematics and Computation",
+        "authors": [
+          "J. K. Singh",
+          "N. K. Sharma",
+          "A. Beesham"
+        ],
+        "n_citation": 0,
+        "scores": {
+          "score_total": 0.1616,
+          "score_sem": 0.1616,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 1.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 6,
+        "title": "Face Recognition With Pose Variations and Misalignment via Orthogonal Procrustes Regression",
+        "year": 2016,
+        "venue": "IEEE Transactions on Image Processing",
+        "authors": [
+          "Ying Tai",
+          "Jian Yang",
+          "Yigong Zhang",
+          "Lei Luo",
+          "Jianjun Qian",
+          "Yu Chen"
+        ],
+        "n_citation": 2,
+        "scores": {
+          "score_total": 0.1588,
+          "score_sem": 0.1588,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 1.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 7,
+        "title": "Development and experimental testing of a portable hand exoskeleton",
+        "year": 2015,
+        "venue": "intelligent robots and systems",
+        "authors": [
+          "Benedetto Allotta",
+          "Roberto Conti",
+          "Lapo Governi",
+          "Enrico Meli",
+          "Alessandro Ridolfi",
+          "Yary Volpe"
+        ],
+        "n_citation": 7,
+        "scores": {
+          "score_total": 0.1474,
+          "score_sem": 0.1474,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 8,
+        "title": "Automated Test Input Generation for Android: Are We There Yet? (E)",
+        "year": 2015,
+        "venue": "automated software engineering",
+        "authors": [
+          "Shauvik Roy Choudhary",
+          "Alessandra Gorla",
+          "Alessandro Orso"
+        ],
+        "n_citation": 97,
+        "scores": {
+          "score_total": 0.1422,
+          "score_sem": 0.1422,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.75
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 9,
+        "title": "A Platform for Run-Time Health Verification of Elastic Cyber-Physical Systems",
+        "year": 2016,
+        "venue": "modeling analysis and simulation on computer and telecommunication systems",
+        "authors": [
+          "Daniel Moldovan",
+          "Hong Linh Truong"
+        ],
+        "n_citation": 0,
+        "scores": {
+          "score_total": 0.1414,
+          "score_sem": 0.1414,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 10,
+        "title": "A navigated 4-DOF mechanical aiming device for percutaneous ablation of liver tumours.",
+        "year": 2013,
+        "venue": "nan",
+        "authors": [
+          "Grzegorz Toporek",
+          "Matthias Peterhans",
+          "Yann Lachenal",
+          "Boris Guiu",
+          "Arnaud Monier",
+          "Alban Denys",
+          "Stefan Weber"
+        ],
+        "n_citation": 0,
+        "scores": {
+          "score_total": 0.1387,
+          "score_sem": 0.1387,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      }
+    ]
+  }
+]

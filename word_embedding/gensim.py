@@ -69,7 +69,10 @@ async def extract_best_match(publications: List[Publication], subject: str) -> P
         venue_score = 0
         
         if publication.venue:
-            venue_score = await get_venue_score(publication)
+            try:
+                venue_score = await get_venue_score(publication)
+            except Exception:
+                venue_score = 0  # Offline/timeout: ignora venue score
         
         title_similarity = 0
         

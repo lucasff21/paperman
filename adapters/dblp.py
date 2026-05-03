@@ -70,7 +70,7 @@ class DBLPAdapter(BaseRequestAdapter):
         response = requests.get(self.venue_url, params=params)
 
         if response.status_code not in [200, 429]:
-            raise DependencyException(dependency=f"dblp-venue (status code {response.status_code})", status_code=HTTPStatus.FAILED_DEPENDENCY)
+            return None  # Serviço indisponível: venue_score ignorado, sistema continua
 
         if response.status_code == 429:
             response = self.retry_request(self.publication_url, params, response)

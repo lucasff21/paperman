@@ -28,7 +28,7 @@ class Cache:
         try:
             await self.conn.set(name=key, value=json.dumps(response), ex=Time.DAY)
         except ConnectionError:
-            raise DependencyException(dependency="cache", status_code=HTTPStatus.FAILED_DEPENDENCY)
+            pass  # Cache offline: operação de escrita ignorada silenciosamente
     
     
     async def get_dblp_query(self, query: str) -> Dict | None:
@@ -48,7 +48,7 @@ class Cache:
         try:
             await self.conn.set(name=key, value=public_records, ex=Time.DAY)
         except ConnectionError:
-            raise DependencyException(dependency="cache", status_code=HTTPStatus.FAILED_DEPENDENCY)
+            pass  # Cache offline: operação de escrita ignorada silenciosamente
         
     
     async def get_orcid_public_records(self, id: str) -> Dict | None:
@@ -88,7 +88,7 @@ class Cache:
         try:
             await self.conn.set(name=key, value=json.dumps(data), ex=Time.WEEK)
         except ConnectionError:
-            raise DependencyException(dependency="cache", status_code=HTTPStatus.FAILED_DEPENDENCY)
+            pass  # Cache offline: operação de escrita ignorada silenciosamente
         
     
     async def get_venue(self, query: str) -> str | None:

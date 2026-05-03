@@ -10,3 +10,12 @@ cbow_s100.vectors.npy
 resources/
 
 newrelic.ini
+
+# Dados do experimento (arquivos grandes, gerados localmente)
+resultados/
+
+# Arquivos temporários/de preview
+preview_interface.html
+
+# Cache Python nas subpastas
+offline_evaluation/__pycache__/
