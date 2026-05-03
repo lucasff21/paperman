@@ -161,7 +161,6 @@ HTML_TEMPLATE = """
             successMsg.style.display = 'none';
             form.style.display = 'block';
 
-            const authorData = data.find(a => a.author === authorName);
             const savedEvals = avaliacoes[authorName] || [];
 
             baseTitle.textContent = authorData.base_title;
