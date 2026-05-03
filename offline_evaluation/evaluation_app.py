@@ -87,6 +87,7 @@ HTML_TEMPLATE = """
         h1 { text-align: center; color: #2c3e50; }
         .search-box { display: flex; gap: 10px; margin-bottom: 20px; }
         .search-box input { flex: 1; padding: 12px; font-size: 16px; border-radius: 4px; border: 1px solid #ccc; }
+        .search-box select { flex: 1; padding: 12px; font-size: 16px; border-radius: 4px; border: 1px solid #ccc; background: white; cursor: pointer; }
         .btn-load { padding: 12px 20px; font-size: 16px; background: #3498db; color: white; border: none; border-radius: 4px; cursor: pointer; font-weight: bold; }
         .btn-load:hover { background: #2980b9; }
         .paper-card h3 { margin-top: 0; color: #2980b9; }
@@ -120,12 +121,12 @@ HTML_TEMPLATE = """
         <p style="text-align:center; font-size: 16px;">Selecione seu nome abaixo para começar:</p>
 
         <div class="search-box">
-            <input list="author-list" id="author-input" placeholder="Comece a digitar seu nome..." autocomplete="off">
-            <datalist id="author-list">
+            <select id="author-input">
+                <option value="" disabled selected>Selecione seu nome...</option>
                 {% for author in authors %}
-                <option value="{{ author.name }}{% if author.status == 'concluido' %} [CONCLUÍDO]{% endif %}"></option>
+                <option value="{{ author.name }}">{{ author.name }}{% if author.status == 'concluido' %} [CONCLUÍDO]{% endif %}</option>
                 {% end汇 %}
-            </datalist>
+            </select>
             <button id="btn-load" class="btn-load">Acessar</button>
         </div>
 
@@ -157,17 +158,16 @@ HTML_TEMPLATE = """
         const successMsg = document.getElementById('success-msg');
 
         btnLoad.addEventListener('click', () => {
-            let authorName = input.value.trim();
-            authorName = authorName.replace(' [CONCLUÍDO]', ''); // limpa a tag visual
-            
+            const authorName = input.value.trim();
+
             if (!authorName) {
                 evalArea.classList.add('hidden');
                 return;
             }
-            
+
             const authorData = data.find(a => a.author === authorName);
             if (!authorData) {
-                alert("Nome não encontrado! Por favor, selecione seu nome na lista que aparece ao digitar.");
+                alert("Nome não encontrado! Por favor, selecione seu nome na lista.");
                 evalArea.classList.add('hidden');
                 return;
             }
@@ -215,7 +215,7 @@ HTML_TEMPLATE = """
             submitBtn.disabled = true;
             submitBtn.textContent = '⏳ Salvando...';
 
-            let authorName = input.value.replace(' [CONCLUÍDO]', '').trim();
+            const authorName = input.value.trim();
             const authorData = data.find(a => a.author === authorName);
             
             const avaliacoes_enviadas = authorData.recommendations.map(rec => {
@@ -237,7 +237,10 @@ HTML_TEMPLATE = """
                 successMsg.style.display = 'block';
                 // Atualiza cache local visual
                 avaliacoes[authorName] = avaliacoes_enviadas;
-                input.value = `${authorName} [CONCLUÍDO]`;
+                const opt = Array.from(input.options).find(o => o.value === authorName);
+                if (opt && !opt.textContent.includes('[CONCLUÍDO]')) {
+                    opt.textContent = opt.textContent + ' [CONCLUÍDO]';
+                }
             } else {
                 submitBtn.disabled = false;
                 submitBtn.textContent = 'Salvar Avaliações';
@@ -267,7 +270,7 @@ async def index(request: Request):
     options_html = ""
     for a in authors:
         status_text = " [CONCLUÍDO]" if a["status"] == "concluido" else ""
-        options_html += f'<option value="{a["name"]}{status_text}"></option>\n'
+        options_html += f'<option value="{a["name"]}">{a["name"]}{status_text}</option>\n'
     
     html = HTML_TEMPLATE.split('{% for author in authors %}')[0] + options_html + HTML_TEMPLATE.split('{% endfor %}')[1]
     
