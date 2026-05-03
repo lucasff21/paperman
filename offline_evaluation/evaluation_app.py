@@ -26,18 +26,22 @@ async def load_avaliacoes():
     if not JSONBIN_BIN_ID or not JSONBIN_MASTER_KEY:
         print("Aviso: Chaves do JSONBin não encontradas. Usando dicionário vazio.")
         return {}
-        
+
     url = f"https://api.jsonbin.io/v3/b/{JSONBIN_BIN_ID}/latest"
     headers = {"X-Master-Key": JSONBIN_MASTER_KEY}
-    
-    async with httpx.AsyncClient() as client:
-        response = await client.get(url, headers=headers)
-        if response.status_code == 200:
-            data = response.json()
-            return data.get("record", {})
-        else:
-            print(f"Erro ao ler JSONBin: {response.status_code} - {response.text}")
-            return {}
+
+    try:
+        async with httpx.AsyncClient(timeout=8.0) as client:
+            response = await client.get(url, headers=headers)
+            if response.status_code == 200:
+                data = response.json()
+                return data.get("record", {})
+            else:
+                print(f"Erro ao ler JSONBin: {response.status_code} - {response.text}")
+                return {}
+    except (httpx.ReadTimeout, httpx.ConnectTimeout, httpx.TimeoutException, Exception) as e:
+        print(f"Timeout/Erro ao conectar JSONBin: {e}. Retornando vazio.")
+        return {}
 
 async def save_avaliacoes(data):
     """Salva/Atualiza as avaliações no JSONBin."""
