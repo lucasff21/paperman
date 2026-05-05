@@ -140,6 +140,16 @@ def run(qualis_mode: str = "modulated", random_mode: bool = False) -> None:
     # ── Carregamento ────────────────────────────────────────────────────────
     model = load_model()
     df    = load_csv()
+
+    # Carrega traduções de títulos (PT→EN), se existirem
+    TRANSLATIONS_FILE = os.path.join(os.path.dirname(DATA_JSON), "..", "paperman", "titulos_traduzidos.json")
+    translations: dict = {}
+    if os.path.exists(TRANSLATIONS_FILE):
+        with open(TRANSLATIONS_FILE, encoding="utf-8") as ft:
+            translations = json.load(ft)
+        print(f"[OK] {len(translations)} títulos traduzidos carregados")
+    else:
+        print("[WARN] titulos_traduzidos.json não encontrado — usando títulos originais")
     print()
 
     with open(DATA_JSON, encoding="utf-8") as f:
@@ -155,10 +165,16 @@ def run(qualis_mode: str = "modulated", random_mode: bool = False) -> None:
     for idx, author_data in enumerate(eligible):
         author_name = author_data["author"]
         # Usa o PRIMEIRO título como "perfil" do candidato (subject)
-        subject = author_data["titles_with_meta"][0]["title"]
-
-        print(f"  [{idx+1:02d}] {author_name}")
-        print(f"       Título base: {subject[:80]}")
+        # Se houver tradução PT→EN, usa ela para melhorar o RAKE e o Word2Vec
+        original_subject = author_data["titles_with_meta"][0]["title"]
+        subject = translations.get(author_name, original_subject)
+        if subject != original_subject:
+            print(f"  [{idx+1:02d}] {author_name}")
+            print(f"       Título original : {original_subject[:70]}")
+            print(f"       Título traduzido: {subject[:70]}")
+        else:
+            print(f"  [{idx+1:02d}] {author_name}")
+            print(f"       Título base: {subject[:80]}")
 
         # ══════════════════════════════════════════════════════════════════════
         # FASE 1 — RETRIEVAL: RAKE + String Matching no DBLP
