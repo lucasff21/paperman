@@ -235,6 +235,15 @@ HTML_TEMPLATE = """
             const authorData = data.find(a => a.author === authorName);
             
             const extractEvals = (recommendations, listId) => {
+                // Validação rigorosa: garantir que todos foram avaliados
+                for (let rec of recommendations) {
+                    const checked = document.querySelector(`input[name="nota_${listId}_${rec.rank}"]:checked`);
+                    if (!checked) {
+                        const listaNome = listId === 'a' ? 'Lista A' : 'Lista B';
+                        throw new Error(`Por favor, forneça uma nota para o artigo ${rec.rank} da ${listaNome}.`);
+                    }
+                }
+
                 return recommendations.map(rec => {
                     const nota = document.querySelector(`input[name="nota_${listId}_${rec.rank}"]:checked`).value;
                     const comentario = document.getElementById(`comentario_${listId}_${rec.rank}`).value;
@@ -242,8 +251,16 @@ HTML_TEMPLATE = """
                 });
             };
 
-            const avaliacoes_a = extractEvals(authorData.lista_a, 'a');
-            const avaliacoes_b = extractEvals(authorData.lista_b, 'b');
+            let avaliacoes_a, avaliacoes_b;
+            try {
+                avaliacoes_a = extractEvals(authorData.lista_a, 'a');
+                avaliacoes_b = extractEvals(authorData.lista_b, 'b');
+            } catch (error) {
+                alert(error.message);
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Salvar Avaliações';
+                return; // Interrompe o envio
+            }
 
             const payload = { author: authorName, lista_a: avaliacoes_a, lista_b: avaliacoes_b };
 
