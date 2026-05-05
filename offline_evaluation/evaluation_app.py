@@ -183,7 +183,7 @@ HTML_TEMPLATE = """
                     <p style="margin-bottom: 5px;"><strong>Qual a relevância deste artigo para o seu tema?</strong></p>
                     <div class="rating-group" data-rank="${rec.rank}">
                         ${[1, 2, 3, 4, 5].map(n => `
-                            <input type="radio" name="nota_${listId}_${rec.rank}" id="nota_${listId}_${rec.rank}_${n}" value="${n}" ${nota == n ? 'checked' : ''} required>
+                            <input type="radio" name="nota_${listId}_${rec.rank}" id="nota_${listId}_${rec.rank}_${n}" value="${n}" ${nota == n ? 'checked' : ''}>
                             <label for="nota_${listId}_${rec.rank}_${n}">${n}</label>
                         `).join('')}
                     </div>
