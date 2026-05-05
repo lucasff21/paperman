@@ -9,7 +9,7 @@ import uvicorn
 
 # Caminhos
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-RECOMENDACOES_FILE = os.path.join(BASE_DIR, "recomendacoes_sem_only.json")
+RECOMENDACOES_FILE = os.path.join(BASE_DIR, "recomendacoes_ab.json")
 
 # Configurações JSONBin.io (injetadas via Vercel Env Vars)
 JSONBIN_BIN_ID = os.getenv("JSONBIN_BIN_ID")
@@ -71,7 +71,8 @@ class AvaliacaoItem(BaseModel):
 
 class AvaliacaoPayload(BaseModel):
     author: str
-    avaliacoes: List[AvaliacaoItem]
+    lista_a: List[AvaliacaoItem]
+    lista_b: List[AvaliacaoItem]
 
 # TEMPLATE HTML EMBUTIDO PARA FACILITAR (sem precisar de arquivos externos)
 HTML_TEMPLATE = """
@@ -113,9 +114,9 @@ HTML_TEMPLATE = """
         <h1>Avaliação do Sistema Paperman</h1>
 
         <div style="background:#eaf4fb; border-left: 4px solid #3498db; padding: 15px 20px; border-radius: 4px; margin-bottom: 25px; font-size: 15px; line-height: 1.8;">
-            Com base no título da sua pesquisa, o <strong>Paperman</strong> selecionou <strong>10 artigos científicos</strong> para você avaliar.<br>
+            Com base no título da sua pesquisa, o <strong>Paperman</strong> selecionou <strong>duas listas (Lista A e Lista B) com 10 artigos científicos cada</strong> para você avaliar.<br>
             Para cada artigo, indique o quanto ele é relevante para o seu tema usando a escala de <strong>1</strong> (Totalmente Irrelevante) a <strong>5</strong> (Muito Relevante).<br>
-            <span style="color:#555;">⏱ Tempo estimado: 5 a 10 minutos. Obrigado pela participação!</span>
+            <span style="color:#555;">⏱ Tempo estimado: 10 a 15 minutos. Obrigado pela participação!</span>
         </div>
 
         <p style="text-align:center; font-size: 16px;">Selecione seu nome abaixo para começar:</p>
@@ -139,8 +140,13 @@ HTML_TEMPLATE = """
             <p>Avalie os artigos abaixo em relação ao tema base (1 = Totalmente Irrelevante, 5 = Muito Relevante).</p>
 
             <form id="eval-form">
-                <div id="papers-container"></div>
-                <button type="submit" class="submit-btn">Salvar Avaliações</button>
+                <h2 style="color: #2c3e50; border-bottom: 2px solid #3498db; padding-bottom: 5px;">Lista A</h2>
+                <div id="papers-container-a"></div>
+
+                <h2 style="color: #2c3e50; border-bottom: 2px solid #3498db; padding-bottom: 5px; margin-top: 40px;">Lista B</h2>
+                <div id="papers-container-b"></div>
+                
+                <button type="submit" class="submit-btn" style="margin-top: 30px;">Salvar Avaliações</button>
             </form>
             <div id="success-msg">Avaliações salvas com sucesso! Muito obrigado pela participação.</div>
         </div>
@@ -152,10 +158,40 @@ HTML_TEMPLATE = """
         const input = document.getElementById('author-input');
         const btnLoad = document.getElementById('btn-load');
         const evalArea = document.getElementById('evaluation-area');
-        const papersContainer = document.getElementById('papers-container');
+        const papersContainerA = document.getElementById('papers-container-a');
+        const papersContainerB = document.getElementById('papers-container-b');
         const baseTitle = document.getElementById('base-title');
         const form = document.getElementById('eval-form');
         const successMsg = document.getElementById('success-msg');
+
+        function renderList(container, recommendations, listId, savedEvals) {
+            container.innerHTML = '';
+            recommendations.forEach(rec => {
+                const saved = savedEvals.find(ev => ev.rank === rec.rank) || {};
+                const nota = saved.nota || '';
+                const comentario = saved.comentario || '';
+                const abstractHtml = rec.abstract
+                    ? `<button type="button" class="btn-abstract" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'none' ? 'block' : 'none'; this.textContent = this.textContent === '▲ Ocultar resumo' ? '▼ Ver resumo' : '▲ Ocultar resumo';">▲ Ocultar resumo</button><div class="abstract-box">${rec.abstract}</div>`
+                    : '';
+
+                const div = document.createElement('div');
+                div.className = 'paper-card';
+                div.innerHTML = `
+                    <h3>${rec.rank}. ${rec.title}</h3>
+                    <p><strong>Autores:</strong> ${rec.authors.join(', ')} | <strong>Ano:</strong> ${rec.year} | <strong>Local:</strong> ${rec.venue || 'N/A'}</p>
+                    ${abstractHtml}
+                    <p style="margin-bottom: 5px;"><strong>Qual a relevância deste artigo para o seu tema?</strong></p>
+                    <div class="rating-group" data-rank="${rec.rank}">
+                        ${[1, 2, 3, 4, 5].map(n => `
+                            <input type="radio" name="nota_${listId}_${rec.rank}" id="nota_${listId}_${rec.rank}_${n}" value="${n}" ${nota == n ? 'checked' : ''} required>
+                            <label for="nota_${listId}_${rec.rank}_${n}">${n}</label>
+                        `).join('')}
+                    </div>
+                    <input type="text" class="comment-box" id="comentario_${listId}_${rec.rank}" placeholder="Comentário opcional sobre por que deu essa nota..." value="${comentario}">
+                `;
+                container.appendChild(div);
+            });
+        }
 
         btnLoad.addEventListener('click', () => {
             const authorName = input.value.trim();
@@ -175,36 +211,16 @@ HTML_TEMPLATE = """
             successMsg.style.display = 'none';
             form.style.display = 'block';
 
-            const savedEvals = avaliacoes[authorName] || [];
+            const savedData = avaliacoes[authorName] || { lista_a: [], lista_b: [] };
+            
+            // Retrocompatibilidade para quem já avaliou no modelo antigo: converte array simples para lista_a vazia e reseta
+            const savedListaA = Array.isArray(savedData) ? [] : (savedData.lista_a || []);
+            const savedListaB = Array.isArray(savedData) ? [] : (savedData.lista_b || []);
 
             baseTitle.textContent = authorData.base_title;
-            papersContainer.innerHTML = '';
-
-            authorData.recommendations.forEach(rec => {
-                const saved = savedEvals.find(ev => ev.rank === rec.rank) || {};
-                const nota = saved.nota || '';
-                const comentario = saved.comentario || '';
-                const abstractHtml = rec.abstract
-                    ? `<button type="button" class="btn-abstract" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'none' ? 'block' : 'none'; this.textContent = this.textContent === '▲ Ocultar resumo' ? '▼ Ver resumo' : '▲ Ocultar resumo';">▲ Ocultar resumo</button><div class="abstract-box">${rec.abstract}</div>`
-                    : '';
-
-                const div = document.createElement('div');
-                div.className = 'paper-card';
-                div.innerHTML = `
-                    <h3>${rec.rank}. ${rec.title}</h3>
-                    <p><strong>Autores:</strong> ${rec.authors.join(', ')} | <strong>Ano:</strong> ${rec.year} | <strong>Local:</strong> ${rec.venue || 'N/A'}</p>
-                    ${abstractHtml}
-                    <p style="margin-bottom: 5px;"><strong>Qual a relevância deste artigo para o seu tema?</strong></p>
-                    <div class="rating-group" data-rank="${rec.rank}">
-                        ${[1, 2, 3, 4, 5].map(n => `
-                            <input type="radio" name="nota_${rec.rank}" id="nota_${rec.rank}_${n}" value="${n}" ${nota == n ? 'checked' : ''} required>
-                            <label for="nota_${rec.rank}_${n}">${n}</label>
-                        `).join('')}
-                    </div>
-                    <input type="text" class="comment-box" id="comentario_${rec.rank}" placeholder="Comentário opcional sobre por que deu essa nota..." value="${comentario}">
-                `;
-                papersContainer.appendChild(div);
-            });
+            
+            renderList(papersContainerA, authorData.lista_a, 'a', savedListaA);
+            renderList(papersContainerB, authorData.lista_b, 'b', savedListaB);
 
             evalArea.classList.remove('hidden');
         });
@@ -218,13 +234,18 @@ HTML_TEMPLATE = """
             const authorName = input.value.trim();
             const authorData = data.find(a => a.author === authorName);
             
-            const avaliacoes_enviadas = authorData.recommendations.map(rec => {
-                const nota = document.querySelector(`input[name="nota_${rec.rank}"]:checked`).value;
-                const comentario = document.getElementById(`comentario_${rec.rank}`).value;
-                return { rank: rec.rank, nota: parseInt(nota), comentario: comentario };
-            });
+            const extractEvals = (recommendations, listId) => {
+                return recommendations.map(rec => {
+                    const nota = document.querySelector(`input[name="nota_${listId}_${rec.rank}"]:checked`).value;
+                    const comentario = document.getElementById(`comentario_${listId}_${rec.rank}`).value;
+                    return { rank: rec.rank, nota: parseInt(nota), comentario: comentario };
+                });
+            };
 
-            const payload = { author: authorName, avaliacoes: avaliacoes_enviadas };
+            const avaliacoes_a = extractEvals(authorData.lista_a, 'a');
+            const avaliacoes_b = extractEvals(authorData.lista_b, 'b');
+
+            const payload = { author: authorName, lista_a: avaliacoes_a, lista_b: avaliacoes_b };
 
             const res = await fetch('/api/submit', {
                 method: 'POST',
@@ -236,7 +257,7 @@ HTML_TEMPLATE = """
                 form.style.display = 'none';
                 successMsg.style.display = 'block';
                 // Atualiza cache local visual
-                avaliacoes[authorName] = avaliacoes_enviadas;
+                avaliacoes[authorName] = { lista_a: avaliacoes_a, lista_b: avaliacoes_b };
                 const opt = Array.from(input.options).find(o => o.value === authorName);
                 if (opt && !opt.textContent.includes('[CONCLUÍDO]')) {
                     opt.textContent = opt.textContent + ' [CONCLUÍDO]';
@@ -259,7 +280,16 @@ async def index(request: Request):
     
     authors = []
     for a in data:
-        status = "concluido" if a["author"] in avaliacoes and len(avaliacoes[a["author"]]) > 0 else "pendente"
+        # Se for um dit com lista_a e tiver > 0
+        tem_avaliacao = False
+        if a["author"] in avaliacoes:
+            av = avaliacoes[a["author"]]
+            if isinstance(av, dict) and len(av.get("lista_a", [])) > 0:
+                tem_avaliacao = True
+            elif isinstance(av, list) and len(av) > 0: # formato legado
+                tem_avaliacao = True
+
+        status = "concluido" if tem_avaliacao else "pendente"
         authors.append({"name": a["author"], "status": status})
         
     # Renderizamos de forma simples com replace para evitar configurar diretório de templates complexos agora
@@ -282,7 +312,10 @@ async def index(request: Request):
 @app.post("/api/submit")
 async def submit_eval(payload: AvaliacaoPayload):
     avaliacoes = await load_avaliacoes()
-    avaliacoes[payload.author] = [item.dict() for item in payload.avaliacoes]
+    avaliacoes[payload.author] = {
+        "lista_a": [item.dict() for item in payload.lista_a],
+        "lista_b": [item.dict() for item in payload.lista_b]
+    }
     await save_avaliacoes(avaliacoes)
     return {"status": "success"}
 
