@@ -48,17 +48,22 @@ async def save_avaliacoes(data):
     if not JSONBIN_BIN_ID or not JSONBIN_MASTER_KEY:
         print("Aviso: Chaves não configuradas. Dados NÃO foram salvos na nuvem.")
         return
-        
+
     url = f"https://api.jsonbin.io/v3/b/{JSONBIN_BIN_ID}"
     headers = {
         "Content-Type": "application/json",
         "X-Master-Key": JSONBIN_MASTER_KEY
     }
-    
-    async with httpx.AsyncClient() as client:
-        response = await client.put(url, headers=headers, json=data)
-        if response.status_code != 200:
-            print(f"Erro ao salvar JSONBin: {response.status_code} - {response.text}")
+
+    try:
+        async with httpx.AsyncClient(timeout=12.0) as client:
+            response = await client.put(url, headers=headers, json=data)
+            if response.status_code != 200:
+                print(f"Erro ao salvar JSONBin: {response.status_code} - {response.text}")
+                raise HTTPException(status_code=500, detail="Falha ao salvar no JSONBin")
+    except (httpx.ReadTimeout, httpx.ConnectTimeout, httpx.TimeoutException) as e:
+        print(f"Timeout ao salvar JSONBin: {e}")
+        raise HTTPException(status_code=503, detail="Timeout ao conectar ao JSONBin. Tente novamente.")
 
 app = FastAPI(title="Avaliação Paperman")
 
