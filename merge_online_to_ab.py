@@ -5,7 +5,7 @@ merge_online_to_ab.py
 Converte as recomendações online (sem_only + multiplicative) para o
 formato recomendacoes_ab.json consumido pelo evaluation_app.py na Vercel.
 
-Atualiza (ou insere) as entradas de Fred e Lucas no arquivo existente.
+Processa TODOS os autores presentes nos arquivos online gerados.
 """
 import json, os
 
@@ -40,46 +40,56 @@ def to_ab_item(rec):
         "comentario":       None,
     }
 
-# ── Carrega os dois modelos ───────────────────────────────────────────────────
+# ── Carrega os dois modelos ─────────────────────────────────────────────────────
 data_a = load("recomendacoes_online_sem_only.json")
 data_b = load("recomendacoes_online_multiplicative.json")
 
-AUTHORS = ["Frederico Araújo Durão", "Lucas França Freitas"]
+# Usa todos os autores presentes em ambos os arquivos
+AUTHORS = [a for a in data_a if a in data_b]
+print(f"Autores encontrados em ambos os modelos: {len(AUTHORS)}")
 
-# ── Constrói entradas no formato AB ──────────────────────────────────────────
+# ── Constrói entradas no formato AB ────────────────────────────────────────────
 new_entries = {}
 for author in AUTHORS:
-    da = data_a.get(author)
-    db = data_b.get(author)
-    if not da or not db:
-        print(f"[SKIP] {author} não encontrado em um dos arquivos.")
+    da = data_a[author]
+    db = data_b[author]
+    recs_a = da.get("recommendations", [])
+    recs_b = db.get("recommendations", [])
+    if not recs_a or not recs_b:
+        print(f"[SKIP] {author} — lista vazia em um dos modelos.")
         continue
     new_entries[author] = {
         "author":     author,
         "base_title": da["base_title"],
-        "lista_a":    [to_ab_item(r) for r in da["recommendations"]],
-        "lista_b":    [to_ab_item(r) for r in db["recommendations"]],
+        "lista_a":    [to_ab_item(r) for r in recs_a],
+        "lista_b":    [to_ab_item(r) for r in recs_b],
     }
-    print(f"[OK] {author}: {len(da['recommendations'])} items A / {len(db['recommendations'])} items B")
+    print(f"[OK] {author}: {len(recs_a)}A / {len(recs_b)}B")
 
-# ── Carrega AB existente e substitui/insere Fred e Lucas ─────────────────────
+# ── Reconstrói o AB completo substituindo/inserindo todas as entradas ─────────
+# Carrega AB existente para não perder avaliações já submetidas
 with open(AB_JSON, encoding="utf-8") as f:
     ab_list = json.load(f)
 
-# Índice para lookup rápido
 ab_index = {entry["author"]: i for i, entry in enumerate(ab_list)}
 
+updated = inserted = 0
 for author, entry in new_entries.items():
     if author in ab_index:
-        print(f"[UPDATE] Substituindo entrada existente de '{author}' (índice {ab_index[author]})")
+        # Preserva avaliações já submetidas se existirem
+        old = ab_list[ab_index[author]]
+        if old.get("avaliacao_submetida"):
+            print(f"[PRESERVE] {author} já avaliado — mantendo dados")
+            continue
         ab_list[ab_index[author]] = entry
+        updated += 1
     else:
-        print(f"[INSERT] Adicionando nova entrada de '{author}'")
         ab_list.append(entry)
+        inserted += 1
 
 # ── Salva ─────────────────────────────────────────────────────────────────────
 with open(AB_JSON, "w", encoding="utf-8") as f:
     json.dump(ab_list, f, ensure_ascii=False, indent=2)
 
 print(f"\nSalvo: {AB_JSON}")
-print(f"Total de autores no arquivo: {len(ab_list)}")
+print(f"Atualizados: {updated} | Inseridos: {inserted} | Total: {len(ab_list)}")

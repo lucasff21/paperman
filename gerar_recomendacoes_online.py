@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-import sys, io
-sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace')
+import os
+os.environ.setdefault("PYTHONIOENCODING", "utf-8")
 
 """
 gerar_recomendacoes_online.py — Pipeline Online para Avaliação A/B
@@ -30,34 +30,32 @@ import urllib.request
 import urllib.parse
 from typing import List, Dict, Optional
 
-# ─── Reusa o motor de scoring do sistema existente ────────────────────────────
+import datetime
+import evaluate_online_replica as _eor
 from evaluate_online_replica import (
     load_model,
     is_valid_language,
     extract_best_match_online,
-    YEAR_CUTOFF,
-    YEAR_WINDOW,
-    YEAR_MIN,
     TOP_K_EVAL,
 )
 
+# ─── Janela temporal dinâmica: ano atual - 5 anos ────────────────────────────
+YEAR_CUTOFF = datetime.date.today().year
+YEAR_WINDOW = 5
+YEAR_MIN    = YEAR_CUTOFF - YEAR_WINDOW
+
+# Sobrescreve as constantes do módulo de scoring para usar a janela dinâmica
+# (extract_best_match_online lê YEAR_CUTOFF/YEAR_MIN do namespace do módulo)
+_eor.YEAR_CUTOFF = YEAR_CUTOFF
+_eor.YEAR_WINDOW = YEAR_WINDOW
+_eor.YEAR_MIN    = YEAR_MIN
+
 # ─── Configuração ─────────────────────────────────────────────────────────────
-CANDIDATES = [
-    {
-        "name": "Frederico Araújo Durão",
-        "orcid": "0000-0002-7766-6666",
-    },
-    {
-        "name": "Lucas França Freitas",
-        "orcid": "0009-0006-1512-2803",
-        "fallback_titles": [
-            "Paperman: A Scientific Paper Recommendation System"
-        ],
-    },
-]
+DATA_JSON        = r"c:\Users\Lucas\Documents\Paperman\paperman_back\resultados\candidatos_reais.json"
+TRANSLATIONS_JSON = r"c:\Users\Lucas\Documents\Paperman\paperman_back\paperman\titulos_traduzidos.json"
 
 OUTPUT_BASE = r"c:\Users\Lucas\Documents\Paperman\paperman_back\resultados"
-PAPERS_PER_QUERY = 50      # papers buscados por keyword na OpenAlex
+PAPERS_PER_QUERY = 100     # papers buscados por keyword na OpenAlex
 MAX_QUERIES = 10           # máximo de queries (só bigramas — mais específicos)
 MIN_SEM_THRESHOLD = 0.15   # filtra papers semanticamente distantes antes do scoring
 SLEEP_BETWEEN_QUERIES = 1.0  # segundos entre chamadas (respeita rate limit)
@@ -72,27 +70,52 @@ STOPWORDS = {
 }
 
 
-# ─── 1. ORCID: Busca perfil completo ─────────────────────────────────────────
-def fetch_orcid_titles(orcid_id: str) -> List[str]:
-    """Retorna todos os títulos de publicação do perfil ORCID."""
-    url = f"https://pub.orcid.org/v3.0/{orcid_id}/record"
-    req = urllib.request.Request(url, headers={"Accept": "application/json"})
-    try:
-        with urllib.request.urlopen(req, timeout=15) as r:
-            data = json.loads(r.read())
-    except Exception as e:
-        print(f"  [WARN] ORCID fetch falhou ({orcid_id}): {e}")
-        return []
+# ─── 1. Carrega candidatos do JSON + traduções ────────────────────────────────
+def load_candidates() -> List[Dict]:
+    """
+    Lê candidatos_reais.json e titulos_traduzidos.json.
+    Retorna lista de {name, title_original, title} onde
+    'title' é a versão EN se existir tradução, caso contrário o original.
+    """
+    with open(DATA_JSON, encoding="utf-8") as f:
+        raw = json.load(f)
 
-    works = data.get("activities-summary", {}).get("works", {}).get("group", [])
-    titles = []
-    for group in works:
-        for ws in group.get("work-summary", []):
-            t = (ws.get("title") or {}).get("title") or {}
-            v = t.get("value", "") if isinstance(t, dict) else ""
-            if v:
-                titles.append(v)
-    return titles
+    translations: Dict[str, str] = {}
+    if os.path.exists(TRANSLATIONS_JSON):
+        with open(TRANSLATIONS_JSON, encoding="utf-8") as f:
+            translations = json.load(f)
+
+    candidates = []
+    for a in raw:
+        person   = a.get("person", {})
+        name_obj = person.get("name", {})
+        given    = (name_obj.get("given-names")  or {}).get("value", "")
+        family   = (name_obj.get("family-name") or {}).get("value", "")
+        name     = f"{given} {family}".strip()
+
+        works = a.get("activities-summary", {}).get("works", {}).get("group", [])
+        title_original = ""
+        for group in works:
+            for ws in group.get("work-summary", []):
+                t = (ws.get("title") or {}).get("title") or {}
+                v = t.get("value", "") if isinstance(t, dict) else ""
+                if v:
+                    title_original = v
+                    break
+            if title_original:
+                break
+
+        if not title_original:
+            continue
+
+        title_en = translations.get(name, title_original)
+        candidates.append({
+            "name":             name,
+            "title_original":   title_original,
+            "title":            title_en,
+        })
+
+    return candidates
 
 
 # ─── 2. Extração de keywords (SOMENTE bigramas) ──────────────────────────────
@@ -201,14 +224,17 @@ def search_openalex(query: str, year_min: int, year_max: int) -> List[Dict]:
 
 # ─── 4. Pipeline principal ────────────────────────────────────────────────────
 def run(qualis_mode: str = "sem_only") -> None:
+    candidates = load_candidates()
+
     print()
     print("=" * 70)
     print("  GERADOR DE RECOMENDAÇÕES ONLINE — AVALIAÇÃO A/B")
     print("=" * 70)
     print(f"  Motor de busca   : OpenAlex API (online, sem CSV local)")
-    print(f"  Perfil candidato : ORCID API")
+    print(f"  Perfil candidato : candidatos_reais.json + titulos_traduzidos.json")
     print(f"  Scoring          : {qualis_mode}")
     print(f"  Janela temporal  : {YEAR_MIN}–{YEAR_CUTOFF}")
+    print(f"  Candidatos       : {len(candidates)}")
     print(f"  Top-K            : {TOP_K_EVAL}")
     print("=" * 70)
     print()
@@ -216,37 +242,23 @@ def run(qualis_mode: str = "sem_only") -> None:
     model = load_model()
     results = []
 
-    for cand in CANDIDATES:
-        name = cand["name"]
-        orcid = cand["orcid"]
-        print(f"\n{'─'*60}")
-        print(f"  Candidato: {name}")
-        print(f"  ORCID:     {orcid}")
+    for idx, cand in enumerate(candidates):
+        name             = cand["name"]
+        title_original   = cand["title_original"]
+        title_en         = cand["title"]
+        translated       = title_en != title_original
 
-        # 1. Busca títulos no ORCID
-        titles = fetch_orcid_titles(orcid)
-        print(f"  Títulos ORCID encontrados: {len(titles)}")
+        print(f"\n[{idx+1:02d}/{len(candidates)}] {name}")
+        print(f"  Titulo original : {title_original[:75]}")
+        if translated:
+            print(f"  Titulo EN       : {title_en[:75]}")
 
-        # Fallback para candidatos sem publicações no ORCID
-        if not titles:
-            fallback = cand.get("fallback_titles", [])
-            if fallback:
-                titles = fallback
-                print(f"  [FALLBACK] Usando títulos manuais: {titles}")
-            else:
-                print(f"  [SKIP] Sem títulos disponíveis.")
-                continue
-
-        for t in titles[:5]:
-            print(f"    - {t[:75]}")
-        if len(titles) > 5:
-            print(f"    ... e mais {len(titles)-5}")
+        # Usa o título EN como âncora (melhor para Word2Vec treinado em EN)
+        titles = [title_en]
 
         # 2. Extrai keywords
         keywords = extract_keywords(titles)
-        print(f"\n  Keywords extraídas ({len(keywords)}):")
-        for kw in keywords:
-            print(f"    \"{kw}\"")
+        print(f"  Keywords ({len(keywords)}): {', '.join(repr(k) for k in keywords)}")
 
         # 3. Busca na OpenAlex
         candidates_pool: Dict[str, Dict] = {}
@@ -294,13 +306,25 @@ def run(qualis_mode: str = "sem_only") -> None:
 
         print(f"\n  Pool bruto: {len(pre_filtered)} | Após pré-filtro semântico (>={MIN_SEM_THRESHOLD}): {len(filtered)} papers")
 
+        # Fallback: se o pré-filtro semântico zerar o pool (ex: termos de nicho
+        # que o Word2Vec não conhece), usa o pool bruto sem filtro semântico.
+        # Isso garante que candidatos de áreas fora do CS (bioinformática, física)
+        # ainda recebam recomendações — o scoring semântico ainda vai ordenar corretamente.
+        if not filtered and pre_filtered:
+            print(f"  [FALLBACK] Pré-filtro zerou o pool — usando pool bruto ({len(pre_filtered)} papers)")
+            filtered = pre_filtered
+
+        if not filtered:
+            print(f"  [SKIP] Pool vazio após todos os filtros. Pulando candidato.")
+            continue
+
         # 5. Scoring
         ranked = extract_best_match_online(
             candidates=filtered,
-            subject=titles[0],  # Usa o 1º título como âncora semântica
+            subject=titles[0],
             model=model,
             qualis_mode=qualis_mode,
-        )
+        ) or []
 
         # 6. Monta Top-10
         recommendations = []
@@ -322,6 +346,7 @@ def run(qualis_mode: str = "sem_only") -> None:
                 if len(recommendations) >= TOP_K_EVAL:
                     break
 
+
         print(f"  Top-{len(recommendations)} gerado:")
         for i, rec in enumerate(recommendations, 1):
             sc = rec.get("_scores", {})
@@ -329,23 +354,22 @@ def run(qualis_mode: str = "sem_only") -> None:
             print(f"        total={sc.get('score_total',0):.3f} sem={sc.get('score_sem',0):.3f} cit={sc.get('score_cit',0):.3f}")
 
         results.append({
-            "author": name,
-            "orcid": orcid,
-            "base_title": titles[0],
-            "n_orcid_titles": len(titles),
-            "keywords_used": keywords,
+            "author":           name,
+            "base_title":       title_en,
+            "title_original":   title_original,
+            "keywords_used":    keywords,
             "recommendations": [
                 {
-                    "rank": i + 1,
-                    "title": rec["title"],
-                    "year": rec["year"],
-                    "venue": rec["venue"],
-                    "authors": rec["authors"],
-                    "n_citation": rec["n_citation"],
-                    "abstract": rec.get("abstract", ""),
-                    "scores": rec.get("_scores", {}),
+                    "rank":             i + 1,
+                    "title":            rec["title"],
+                    "year":             rec["year"],
+                    "venue":            rec["venue"],
+                    "authors":          rec["authors"],
+                    "n_citation":       rec["n_citation"],
+                    "abstract":         rec.get("abstract", ""),
+                    "scores":           rec.get("_scores", {}),
                     "avaliacao_usuario": None,
-                    "comentario": None,
+                    "comentario":       None,
                 }
                 for i, rec in enumerate(recommendations)
             ],
