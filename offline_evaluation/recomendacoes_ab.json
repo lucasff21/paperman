@@ -13112,23 +13112,21 @@
   },
   {
     "author": "Frederico Araújo Durão",
-    "base_title": "A cloud-based recommendation model",
+    "base_title": "State recommender system for actuator devices in smart homes: Integration of deep reinforcement learning and implicit feedback",
     "lista_a": [
       {
         "rank": 1,
-        "title": "Automatic Summarization for Terminology Recommendation: The Case of the NCBO Ontology Recommender.",
-        "year": 2014,
-        "venue": "nan",
+        "title": "A Utility-Based Semantic Recommender for Technology-Enhanced Learning",
+        "year": 2015,
+        "venue": "",
         "authors": [
-          "Pablo López-García",
-          "Stefan Schulz",
-          "Roman Kern"
+          "Andrea Zielinski"
         ],
-        "n_citation": 1,
-        "abstract": "",
+        "n_citation": 6,
+        "abstract": "In this paper, we present the design of a Knowledge-based recommender system for Technology Enhanced Learning based on Semantic Web Technologies. It uses a knowledge model for representing the current state of the learner, pedagogical strategies, and learning objects. To create a learner model, the learners' activity and progress is tracked and higher-level learner features (i.e., Didactical Factors) are extracted. For a given learner state and set of pedagogical rules, the Recommendation Engine",
         "scores": {
-          "score_total": 1.0,
-          "score_sem": 1.0,
+          "score_total": 0.5088,
+          "score_sem": 0.5088,
           "score_rec": 0.0,
           "score_cit": 0.0,
           "qua_term": 0.0,
@@ -13139,41 +13137,44 @@
       },
       {
         "rank": 2,
-        "title": "An empirical study on change recommendation",
-        "year": 2015,
-        "venue": "computer science and software engineering",
+        "title": "Wide &amp; Deep Learning for Recommender Systems",
+        "year": 2016,
+        "venue": "",
         "authors": [
-          "Manishankar Mondal",
-          "Chanchal K. Roy",
-          "Kevin A. Schneider"
+          "Heng-Tze Cheng",
+          "Levent Koç",
+          "Jeremiah Harmsen",
+          "Tal Shaked",
+          "Tushar Chandra"
         ],
-        "n_citation": 2,
-        "abstract": "Recommending changes to programmers by exploiting their repetition tendencies during system evolution has been investigated by a number of studies. In our research we perform a change type (additions, deletions, and modifications) based analysis of the efficiency of change recommendation. We also investigate the programmer sensitivity of the repeated changes (i.e., the extent the same changes are repeated by the same programmers) of different change types. The existing studies did not perform su",
+        "n_citation": 3314,
+        "abstract": "Generalized linear models with nonlinear feature transformations are widely used for large-scale regression and classification problems with sparse inputs. Memorization of feature interactions through a wide set of cross-product feature transformations are effective and interpretable, while generalization requires more feature engineering effort. With less feature engineering, deep neural networks can generalize better to unseen feature combinations through low-dimensional dense embeddings learn",
         "scores": {
-          "score_total": 0.711,
-          "score_sem": 0.711,
+          "score_total": 0.4816,
+          "score_sem": 0.4816,
           "score_rec": 0.0,
           "score_cit": 0.0,
           "qua_term": 0.0,
-          "qua_raw": 0.625
+          "qua_raw": 0.0
         },
         "avaliacao_usuario": null,
         "comentario": null
       },
       {
         "rank": 3,
-        "title": "Automatic Repair of Infinite Loops",
+        "title": "Collaborative Deep Learning for Recommender Systems",
         "year": 2015,
-        "venue": "arXiv: Software Engineering",
+        "venue": "",
         "authors": [
-          "Sebastian R. Lamelas Marcote",
-          "Martin Monperrus"
+          "Hao Wang",
+          "Naiyan Wang",
+          "Dit‐Yan Yeung"
         ],
-        "n_citation": 7,
-        "abstract": "Research on automatic software repair is concerned with the development of systems that automatically detect and repair bugs. One well-known class of bugs is the infinite loop. Every computer programmer or user has, at least once, experienced this type of bug. We state the problem of repairing infinite loops in the context of test-suite based software repair: given a test suite with at least one failing test, generate a patch that makes all test cases pass. Consequently, repairing infinites loop",
+        "n_citation": 1649,
+        "abstract": "Collaborative filtering (CF) is a successful approach commonly used by many recommender systems. Conventional CF-based methods use the ratings given to items by users as the sole source of information for learning to make recommendation. However, the ratings are often very sparse in many applications, causing CF-based methods to degrade significantly in their recommendation performance. To address this sparsity problem, auxiliary information such as item content information may be utilized. Coll",
         "scores": {
-          "score_total": 0.5083,
-          "score_sem": 0.5083,
+          "score_total": 0.4816,
+          "score_sem": 0.4816,
           "score_rec": 0.0,
           "score_cit": 0.0,
           "qua_term": 0.0,
@@ -13184,109 +13185,116 @@
       },
       {
         "rank": 4,
-        "title": "Mathematical analysis and calculation of molecular surfaces",
-        "year": 2016,
-        "venue": "Journal of Computational Physics",
+        "title": "Query Processing Techniques for Big Spatial-Keyword Data",
+        "year": 2017,
+        "venue": "",
         "authors": [
-          "Chaoyu Quan",
-          "Benjamin Stamm"
+          "Ahmed R. Mahmood",
+          "Walid G. Aref"
         ],
-        "n_citation": 3,
-        "abstract": "In this article we derive a complete characterization of the Solvent Excluded Surface (SES) for molecular systems including a complete characterization of singularities of the surface. The theory is based on an implicit representation of the SES, which, in turn, is based on the signed distance function to the Solvent Accessible Surface (SAS). All proofs are constructive so that the theory allows for efficient algorithms in order to compute the area of the SES and the volume of the SES-cavity, or",
+        "n_citation": 20,
+        "abstract": "The widespread use of GPS-enabled cellular devices, i.e., smart phones, led to the popularity of numerous mobile applications, e.g., social networks, micro-blogs, mobile web search, and crowd-powered reviews. These applications generate large amounts of geo-tagged textual data, i.e., spatial-keyword data. This data needs to be processed and queried at an unprecedented scale. The management of spatial-keyword data at this scale goes beyond the capabilities of centralized systems. We live in the e",
         "scores": {
-          "score_total": 0.4629,
-          "score_sem": 0.4629,
+          "score_total": 0.4777,
+          "score_sem": 0.4777,
           "score_rec": 0.0,
           "score_cit": 0.0,
           "qua_term": 0.0,
-          "qua_raw": 1.0
+          "qua_raw": 0.0
         },
         "avaliacao_usuario": null,
         "comentario": null
       },
       {
         "rank": 5,
-        "title": "PSAMM: A Portable System for the Analysis of Metabolic Models",
-        "year": 2016,
-        "venue": "PLOS Computational Biology",
+        "title": "Panorama of Recommender Systems to Support Learning",
+        "year": 2015,
+        "venue": "",
         "authors": [
-          "Jon Lund Steffensen",
-          "Keith Dufault-Thompson",
-          "Ying Zhang"
+          "Hendrik Drachsler",
+          "Katrien Verbert",
+          "Olga C. Santos",
+          "Nikos Manouselis"
         ],
-        "n_citation": 6,
-        "abstract": "The genome-scale models of metabolic networks have been broadly applied in phenotype prediction, evolutionary reconstruction, community functional analysis, and metabolic engineering. Despite the development of tools that support individual steps along the modeling procedure, it is still difficult to associate mathematical simulation results with the annotation and biological interpretation of metabolic models. In order to solve this problem, here we developed a Portable System for the Analysis ",
+        "n_citation": 234,
+        "abstract": "",
         "scores": {
-          "score_total": 0.4629,
-          "score_sem": 0.4629,
+          "score_total": 0.4602,
+          "score_sem": 0.4602,
           "score_rec": 0.0,
           "score_cit": 0.0,
           "qua_term": 0.0,
-          "qua_raw": 1.0
+          "qua_raw": 0.0
         },
         "avaliacao_usuario": null,
         "comentario": null
       },
       {
         "rank": 6,
-        "title": "Complexity Analysis of Precedence Terminating Infinite Graph Rewrite Systems",
-        "year": 2015,
-        "venue": "arXiv: Computational Complexity",
+        "title": "Deep Matrix Factorization Models for Recommender Systems",
+        "year": 2017,
+        "venue": "",
         "authors": [
-          "Naohi Eguchi"
+          "Hong-Jian Xue",
+          "Xinyu Dai",
+          "Jianbing Zhang",
+          "Shujian Huang",
+          "Jiajun Chen"
         ],
-        "n_citation": 0,
-        "abstract": "The general form of safe recursion (or ramified recurrence) can be expressed by an infinite graph rewrite system including unfolding graph rewrite rules introduced by Dal Lago, Martini and Zorzi, in which the size of every normal form by innermost rewriting is polynomially bounded. Every unfolding graph rewrite rule is precedence terminating in the sense of Middeldorp, Ohsaki and Zantema. Although precedence terminating infinite rewrite systems cover all the primitive recursive functions, in thi",
+        "n_citation": 971,
+        "abstract": "Recommender systems usually make personalized recommendation with user-item interaction ratings, implicit feedback and auxiliary information. Matrix factorization is the basic idea to predict a personalized ranking over a set of items for an individual user with the similarities among users and items. In this paper, we propose a novel matrix factorization model with neural network architecture. Firstly, we construct a user-item matrix with explicit ratings and non-preference implicit feedback. W",
         "scores": {
-          "score_total": 0.4451,
-          "score_sem": 0.4451,
+          "score_total": 0.4544,
+          "score_sem": 0.4544,
           "score_rec": 0.0,
           "score_cit": 0.0,
           "qua_term": 0.0,
-          "qua_raw": 0.75
+          "qua_raw": 0.0
         },
         "avaliacao_usuario": null,
         "comentario": null
       },
       {
         "rank": 7,
-        "title": "Improving cluster analysis by co-initializations ☆",
-        "year": 2014,
-        "venue": "Pattern Recognition Letters",
+        "title": "A Hybrid Collaborative Filtering Model with Deep Structure for Recommender Systems",
+        "year": 2017,
+        "venue": "Proceedings of the AAAI Conference on Artificial Intelligence",
         "authors": [
-          "He Zhang",
-          "Zhirong Yang",
-          "Erkki Oja"
+          "Xin Dong",
+          "Yu Lei",
+          "Zhonghuo Wu",
+          "Yuxia Sun",
+          "Lingfeng Yuan"
         ],
-        "n_citation": 6,
-        "abstract": "Many modern clustering methods employ a non-convex objective function and use iterative optimization algorithms to nd local minima. Thus initialization of the algorithms is very important. Conventionally the starting guess of the iterations is randomly chosen; however, such a simple initialization often leads to poor clusterings. Here we propose a new method to improve cluster analysis by combining a set of clustering methods. Dierent from other aggregation approaches, which seek for consensus p",
+        "n_citation": 280,
+        "abstract": "Collaborative filtering (CF) is a widely used approach in recommender systems to solve many real-world problems. Traditional CF-based methods employ the user-item matrix which encodes the individual preferences of users for items for learning to make recommendation. In real applications, the rating matrix is usually very sparse, causing CF-based methods to degrade significantly in recommendation performance. In this case, some improved CF methods utilize the increasing amount of side information",
         "scores": {
-          "score_total": 0.4411,
-          "score_sem": 0.4411,
+          "score_total": 0.4544,
+          "score_sem": 0.4544,
           "score_rec": 0.0,
           "score_cit": 0.0,
           "qua_term": 0.0,
-          "qua_raw": 1.0
+          "qua_raw": 0.0
         },
         "avaliacao_usuario": null,
         "comentario": null
       },
       {
         "rank": 8,
-        "title": "TaDiRAH: a Case Study in Pragmatic Classification.",
-        "year": 2016,
-        "venue": "Digital Humanities Quarterly",
+        "title": "A Semantic Recommender System for Adaptive Learning",
+        "year": 2015,
+        "venue": "IT Professional",
         "authors": [
-          "Luise Borek",
-          "Quinn Dombrowski",
-          "Jody Perkins",
-          "Christof Schöch"
+          "Paolo Montuschi",
+          "Fabrizio Lamberti",
+          "Valentina Gatteschi",
+          "Claudio Giovanni Demartini"
         ],
-        "n_citation": 1,
-        "abstract": "",
+        "n_citation": 23,
+        "abstract": "The ever-more complex labor world and the current economic crisis ask learners and workers to continuously update their qualification levels to stay relevant on the job. Hence, education and training providers need to adjust their offerings to cope with such evolving requirements. However, the huge number of variables to consider means that finding the right learning content that lets an individual fill his or her competency gap might be difficult. The authors' semantic-based recommender system ",
         "scores": {
-          "score_total": 0.422,
-          "score_sem": 0.422,
+          "score_total": 0.451,
+          "score_sem": 0.451,
           "score_rec": 0.0,
           "score_cit": 0.0,
           "qua_term": 0.0,
@@ -13297,19 +13305,21 @@
       },
       {
         "rank": 9,
-        "title": "A Randomized Asynchronous Linear Solver with Provable Convergence Rate",
-        "year": 2013,
-        "venue": "nan",
+        "title": "Collaborative Knowledge Base Embedding for Recommender Systems",
+        "year": 2016,
+        "venue": "",
         "authors": [
-          "Haim Avron",
-          "Alex Druinsky",
-          "Anshul Gupta"
+          "Fuzheng Zhang",
+          "Nicholas Jing Yuan",
+          "Defu Lian",
+          "Xing Xie",
+          "Wei‐Ying Ma"
         ],
-        "n_citation": 2,
-        "abstract": "",
+        "n_citation": 1758,
+        "abstract": "Among different recommendation techniques, collaborative filtering usually suffer from limited performance due to the sparsity of user-item interactions. To address the issues, auxiliary information is usually used to boost the performance. Due to the rapid collection of information on the web, the knowledge base provides heterogeneous information including both structured and unstructured data with different semantics, which can be consumed by various applications. In this paper, we investigate",
         "scores": {
-          "score_total": 0.4188,
-          "score_sem": 0.4188,
+          "score_total": 0.4496,
+          "score_sem": 0.4496,
           "score_rec": 0.0,
           "score_cit": 0.0,
           "qua_term": 0.0,
@@ -13320,23 +13330,23 @@
       },
       {
         "rank": 10,
-        "title": "Feature-aging for age-invariant face recognition",
-        "year": 2015,
-        "venue": "nan",
+        "title": "A survey of active learning in collaborative filtering recommender systems",
+        "year": 2016,
+        "venue": "Computer Science Review",
         "authors": [
-          "Huiling Zhou",
-          "Kwok-Wai Wong",
-          "Kin-Man Lam"
+          "Mehdi Elahi",
+          "Francesco Ricci⋆",
+          "Neil Rubens"
         ],
-        "n_citation": 0,
-        "abstract": "Age-invariant face recognition has attracted some recent attention. In real applications, the age progression of those face images, stored in a face database for recognition and identification purposes, should also be considered, so as to achieve a higher accuracy level. In this paper, we propose a method to predict the aging of facial features so as to alleviate the effect of age progression on face recognition. The original facial feature and the aged facial feature of a face image should be c",
+        "n_citation": 299,
+        "abstract": "",
         "scores": {
-          "score_total": 0.4028,
-          "score_sem": 0.4028,
+          "score_total": 0.4412,
+          "score_sem": 0.4412,
           "score_rec": 0.0,
           "score_cit": 0.0,
           "qua_term": 0.0,
-          "qua_raw": 0.0
+          "qua_raw": 1.0
         },
         "avaliacao_usuario": null,
         "comentario": null
@@ -13345,22 +13355,23 @@
     "lista_b": [
       {
         "rank": 1,
-        "title": "Fast Thermal Characterization of Thermoelectric Modules Using Infrared Camera",
+        "title": "Saturation in qualitative research: exploring its conceptualization and operationalization",
         "year": 2017,
-        "venue": "IEEE Transactions on Instrumentation and Measurement",
+        "venue": "Quality & Quantity",
         "authors": [
-          "F. Attivissimo",
-          "Attilio Di Nisio",
-          "Carlo Guarnieri Calo Carducci",
-          "Maurizio Spadavecchia"
+          "Benjamin Saunders",
+          "Julius Sim",
+          "Tom Kingstone",
+          "Shula Baker",
+          "Jackie Waterfield"
         ],
-        "n_citation": 50,
-        "abstract": "Thermoelectric modules are receiving more and more attention due to the increasing interest in the energy harvesting sector. The selection of the proper module for a particular application can be done comparing the values of the figure of merit, which depend on electrical parameters such as internal electrical resistance and Seebeck voltage, and the equivalent thermal resistance. Despite its importance, thermal resistance is more difficult to estimate than other parameters, as a well-engineered ",
+        "n_citation": 11279,
+        "abstract": "Saturation has attained widespread acceptance as a methodological principle in qualitative research. It is commonly taken to indicate that, on the basis of the data that have been collected or analysed hitherto, further data collection and/or analysis are unnecessary. However, there appears to be uncertainty as to how saturation should be conceptualized, and inconsistencies in its use. In this paper, we look to clarify the nature, purposes and uses of saturation, and in doing so add to theoretic",
         "scores": {
-          "score_total": 0.4077,
-          "score_sem": 0.4077,
+          "score_total": 0.3456,
+          "score_sem": 0.3642,
           "score_rec": 1.0,
-          "score_cit": 1.0,
+          "score_cit": 0.9491,
           "qua_term": 1.0,
           "qua_raw": 1.0
         },
@@ -13369,21 +13380,20 @@
       },
       {
         "rank": 2,
-        "title": "Direct Optimization of the Detection Cost for I-Vector-Based Spoken Language Recognition",
+        "title": "Social Networking Sites and Addiction: Ten Lessons Learned",
         "year": 2017,
-        "venue": "IEEE Transactions on Audio, Speech, and Language Processing",
+        "venue": "International Journal of Environmental Research and Public Health",
         "authors": [
-          "Aleksandr Sizov",
-          "Kong Aik Lee",
-          "Tomi Kinnunen"
+          "Daria J. Kuss",
+          "Mark D. Griffiths"
         ],
-        "n_citation": 50,
-        "abstract": "",
+        "n_citation": 1417,
+        "abstract": "addiction is only one example of SNS addiction; (vi) fear of missing out (FOMO) may be part of SNS addiction; (vii) smartphone addiction may be part of SNS addiction; (viii) nomophobia may be part of SNS addiction; (ix) there are sociodemographic differences in SNS addiction; and (x) there are methodological problems with research to date. These are discussed in turn. Recommendations for research and clinical applications are provided.",
         "scores": {
-          "score_total": 0.3752,
-          "score_sem": 0.3752,
+          "score_total": 0.0405,
+          "score_sem": 0.3401,
           "score_rec": 1.0,
-          "score_cit": 1.0,
+          "score_cit": 0.1192,
           "qua_term": 1.0,
           "qua_raw": 1.0
         },
@@ -13392,25 +13402,23 @@
       },
       {
         "rank": 3,
-        "title": "ADDSEN: Adaptive Data Processing and Dissemination for Drone Swarms in Urban Sensing",
-        "year": 2017,
-        "venue": "IEEE Transactions on Computers",
+        "title": "The Phyre2 web portal for protein modeling, prediction and analysis",
+        "year": 2015,
+        "venue": "Nature Protocols",
         "authors": [
-          "Di Wu",
-          "Dmitri I. Arkhipov",
-          "Minyoung Kim",
-          "Carolyn L. Talcott",
-          "Amelia C. Regan",
-          "Julie A. McCann",
-          "Nalini Venkatasubramanian"
+          "Lawrence A. Kelley",
+          "Stefans Mezulis",
+          "Christopher M. Yates",
+          "Mark N. Wass",
+          "Michael J.E. Sternberg"
         ],
-        "n_citation": 50,
-        "abstract": "We present   $ADDSEN$       middleware as a holistic solution for Adaptive Data processing and dissemination for Drone swarms in urban SENsing. To efficiently process sensed data in the middleware, we have proposed a cyber-physical sensing framework using partially ordered knowledge sharing for distributed knowledge management in drone swarms. A reinforcement learning dissemination strategy is implemented in the framework.   $ADDSEN$       uses online learning techniques to adaptively balance th",
+        "n_citation": 10193,
+        "abstract": "",
         "scores": {
-          "score_total": 0.3575,
-          "score_sem": 0.3575,
-          "score_rec": 1.0,
-          "score_cit": 1.0,
+          "score_total": 0.0368,
+          "score_sem": 0.4056,
+          "score_rec": 0.3174,
+          "score_cit": 0.2859,
           "qua_term": 1.0,
           "qua_raw": 1.0
         },
@@ -13419,21 +13427,20 @@
       },
       {
         "rank": 4,
-        "title": "Temperature-Insensitive Optical Fiber Curvature Sensor Based on SMF-MMF-TCSMF-MMF-SMF Structure",
+        "title": "Two Decades of Recommender Systems at Amazon.com",
         "year": 2017,
-        "venue": "IEEE Transactions on Instrumentation and Measurement",
+        "venue": "IEEE Internet Computing",
         "authors": [
-          "Yong Zhao",
-          "Lu Cai",
-          "Xue-gang Li"
+          "Brent Smith",
+          "Greg Linden"
         ],
-        "n_citation": 50,
-        "abstract": "A new optical fiber curvature sensor dominated by three-core single mode fiber (TCSMF) is proposed and demonstrated. The sensing structure is formed by cascading multimode fiber (MMF), TCSMF and MMF together, namely, the SMF-MMF-TCSMF-MMF-SMF structure. Three core modes in the TCSMF interfere with each other and then form the interference spectrum. The interference phase difference is changed due to the elastic-optic effect as bending deformation inflicted on the fiber. Thus the spectrum can be ",
+        "n_citation": 646,
+        "abstract": "Amazon is well-known for personalization and recommendations, which help customers discover items they might otherwise not have found. In this update to their original paper, the authors discuss some of the changes as Amazon has grown.",
         "scores": {
-          "score_total": 0.286,
-          "score_sem": 0.286,
+          "score_total": 0.021,
+          "score_sem": 0.3872,
           "score_rec": 1.0,
-          "score_cit": 1.0,
+          "score_cit": 0.0543,
           "qua_term": 1.0,
           "qua_raw": 1.0
         },
@@ -13442,23 +13449,20 @@
       },
       {
         "rank": 5,
-        "title": "Computing conformational free energy differences in explicit solvent: An efficient thermodynamic cycle using an auxiliary potential and a free energy functional constructed from the end points",
+        "title": "Social network analysis: Characteristics of online social networks after a disaster",
         "year": 2017,
-        "venue": "Journal of Computational Chemistry",
+        "venue": "International Journal of Information Management",
         "authors": [
-          "Robert C. Harris",
-          "Nanjie Deng",
-          "Ronald M. Levy",
-          "Ryosuke Ishizuka",
-          "Nobuyuki Matubayasi"
+          "Jooho Kim",
+          "Makarand Hastak"
         ],
-        "n_citation": 50,
+        "n_citation": 619,
         "abstract": "",
         "scores": {
-          "score_total": 0.2173,
-          "score_sem": 0.2173,
+          "score_total": 0.0188,
+          "score_sem": 0.3618,
           "score_rec": 1.0,
-          "score_cit": 1.0,
+          "score_cit": 0.0521,
           "qua_term": 1.0,
           "qua_raw": 1.0
         },
@@ -13467,22 +13471,20 @@
       },
       {
         "rank": 6,
-        "title": "Enabling Privacy in a Distributed Game-Theoretical Scheduling System for Domestic Appliances",
+        "title": "Diversity in recommender systems – A survey",
         "year": 2017,
-        "venue": "IEEE Transactions on Smart Grid",
+        "venue": "Knowledge-Based Systems",
         "authors": [
-          "Cristina Rottondi",
-          "Antimo Barbato",
-          "Lin Chen",
-          "Giacomo Verticale"
+          "Matevž Kunaver",
+          "Tomaž Požrl"
         ],
-        "n_citation": 50,
-        "abstract": "Demand side management (DSM) makes it possible to adjust the load experienced by the power grid while reducing the consumers’ bill. Game-theoretic DSM is an appealing decentralized approach for collaboratively scheduling the usage of domestic electrical appliances within a set of households while meeting the users’ preferences about the usage time. The drawback of distributed DSM protocols is that they require each user to communicate his/her own energy consumption patterns, which may leak sensi",
+        "n_citation": 479,
+        "abstract": "",
         "scores": {
-          "score_total": 0.1997,
-          "score_sem": 0.2636,
+          "score_total": 0.0171,
+          "score_sem": 0.425,
           "score_rec": 1.0,
-          "score_cit": 0.7576,
+          "score_cit": 0.0403,
           "qua_term": 1.0,
           "qua_raw": 1.0
         },
@@ -13491,66 +13493,20 @@
       },
       {
         "rank": 7,
-        "title": "Robot Assistant in Management of Diabetes in Children Based on the Internet of Things",
+        "title": "The Capacity of Private Information Retrieval",
         "year": 2017,
-        "venue": "IEEE Internet of Things Journal",
+        "venue": "IEEE Transactions on Information Theory",
         "authors": [
-          "Majid A. Al-Taee",
-          "Waleed Al-Nuaimy",
-          "Zahra J. Muhsin",
-          "Ali Al-Ataby"
+          "Hua Sun",
+          "Syed A. Jafar"
         ],
-        "n_citation": 50,
-        "abstract": "This paper presents a new eHealth platform incorporating humanoid robots to support an emerging multidimensional care approach for the treatment of diabetes. The architecture of the platform extends the Internet of Things to a Web-centric paradigm through utilizing existing Web standards to access and control objects of the physical layer. This incorporates capillary networks, each of which encompasses a set of medical sensors linked wirelessly to a humanoid robot linked (via the Internet) to a ",
+        "n_citation": 461,
+        "abstract": "In the private information retrieval (PIR) problem, a user wishes to retrieve, as efficiently as possible, one out of K messages from N non-communicating databases (each holds all K messages) while revealing nothing about the identity of the desired message index to any individual database. The information theoretic capacity of PIR is the maximum number of bits of desired information that can be privately retrieved per bit of downloaded information. For K messages and N databases, we show that t",
         "scores": {
-          "score_total": 0.1996,
-          "score_sem": 0.2395,
+          "score_total": 0.0126,
+          "score_sem": 0.3721,
           "score_rec": 1.0,
-          "score_cit": 0.8333,
-          "qua_term": 1.0,
-          "qua_raw": 1.0
-        },
-        "avaliacao_usuario": null,
-        "comentario": null
-      },
-      {
-        "rank": 8,
-        "title": "An Ancilla Based Quantum Simulation Framework for Non-Unitary Matrices",
-        "year": 2017,
-        "venue": "Quantum Information Processing",
-        "authors": [
-          "Ammar Daskin",
-          "Sabre Kais"
-        ],
-        "n_citation": 50,
-        "abstract": "The success probability in an ancilla-based circuit generally decreases exponentially in the number of qubits consisted in the ancilla. Although the probability can be amplified through the amplitude amplification process, the input dependence of the amplitude amplification makes difficult to sequentially combine two or more ancilla-based circuits. A new version of the amplitude amplification known as the oblivious amplitude amplification runs independently of the input to the system register. T",
-        "scores": {
-          "score_total": 0.1776,
-          "score_sem": 0.2368,
-          "score_rec": 1.0,
-          "score_cit": 1.0,
-          "qua_term": 0.75,
-          "qua_raw": 0.75
-        },
-        "avaliacao_usuario": null,
-        "comentario": null
-      },
-      {
-        "rank": 9,
-        "title": "Extending adaptive world modeling by identifying and handling insufficient knowledge models",
-        "year": 2016,
-        "venue": "Journal of Applied Logic",
-        "authors": [
-          "Achim Kuwertz",
-          "Jürgen Beyerer"
-        ],
-        "n_citation": 50,
-        "abstract": "Adaptive knowledge modeling is an approach for extending the abilities of the Object-Oriented World Model, a system for representing the state of an observed real-world environment, to open-world modeling. In open environments, entities unforeseen at the design-time of a world model can occur. For coping with such circumstances, adaptive knowledge modeling is tasked with adapting the underlying knowledge model according to the environment. The approach is based on quantitative measures, introduc",
-        "scores": {
-          "score_total": 0.1629,
-          "score_sem": 0.3271,
-          "score_rec": 0.5693,
-          "score_cit": 1.0,
+          "score_cit": 0.0388,
           "qua_term": 0.875,
           "qua_raw": 0.875
         },
@@ -13558,23 +13514,67 @@
         "comentario": null
       },
       {
-        "rank": 10,
-        "title": "A Novel Hybrid Classifiers based Model for mining in Neuro-imaging",
-        "year": 2016,
-        "venue": "the internet of things",
+        "rank": 8,
+        "title": "A systematic review and taxonomy of explanations in decision support and recommender systems",
+        "year": 2017,
+        "venue": "User Modeling and User-Adapted Interaction",
         "authors": [
-          "A. B. N. Alvi",
-          "Usman Qamar",
-          "Abdul Wahab Muzaffar",
-          "Wasi Haider Butt"
+          "Ingrid Nunes",
+          "Dietmar Jannach"
         ],
-        "n_citation": 50,
-        "abstract": "Resting state functional magnetic resonance imaging (fMRI) has great clinical significance in detection and diagnosis of epilepsy. Various neuro-imaging markers have been extracted from time series data using statistical and connectivity measures. Powerful data mining rules, association based techniques and classifiers are used to extract information from big datasets. The application of data mining in neuro-imaging has been explored rarely. This paper proposes a hybrid classification based ense",
+        "n_citation": 367,
+        "abstract": "",
         "scores": {
-          "score_total": 0.0872,
-          "score_sem": 0.3063,
-          "score_rec": 0.5693,
-          "score_cit": 0.5,
+          "score_total": 0.0119,
+          "score_sem": 0.3869,
+          "score_rec": 1.0,
+          "score_cit": 0.0309,
+          "qua_term": 1.0,
+          "qua_raw": 1.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 9,
+        "title": "Knowledge-based recommendation: a review of ontology-based recommender systems for e-learning",
+        "year": 2017,
+        "venue": "Artificial Intelligence Review",
+        "authors": [
+          "John K. Tarus",
+          "Zhendong Niu",
+          "Ghulam Mustafa"
+        ],
+        "n_citation": 479,
+        "abstract": "",
+        "scores": {
+          "score_total": 0.0103,
+          "score_sem": 0.2567,
+          "score_rec": 1.0,
+          "score_cit": 0.0403,
+          "qua_term": 1.0,
+          "qua_raw": 1.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 10,
+        "title": "A recommender system based on collaborative filtering using ontology and dimensionality reduction techniques",
+        "year": 2017,
+        "venue": "Expert Systems with Applications",
+        "authors": [
+          "Mehrbakhsh Nilashi",
+          "Othman Ibrahim",
+          "Karamollah Bagherifard"
+        ],
+        "n_citation": 362,
+        "abstract": "",
+        "scores": {
+          "score_total": 0.0093,
+          "score_sem": 0.3069,
+          "score_rec": 1.0,
+          "score_cit": 0.0304,
           "qua_term": 1.0,
           "qua_raw": 1.0
         },
@@ -13589,45 +13589,41 @@
     "lista_a": [
       {
         "rank": 1,
-        "title": "A Friend Recommendation Algorithm Based on Multiple Factors in LBSNs",
-        "year": 2015,
-        "venue": "nan",
+        "title": "Personalized paper recommendation in online social scholar system",
+        "year": 2014,
+        "venue": "2014 IEEE/ACM International Conference on Advances in Social Networks Analysis and Mining (ASONAM 2014)",
         "authors": [
-          "Tiancheng Zhang",
-          "Wei Wang",
-          "Dejun Yue",
-          "Ge Yu"
+          "Huan Xue",
+          "Jiafeng Guo",
+          "Yanyan Lan",
+          "Lei Cao"
         ],
-        "n_citation": 1,
-        "abstract": "In location-based social networks, the current friend recommendation algorithms just take a relatively single factor into account without comprehensive evaluations. To solve this problem, we design a framework - Multiple Heterogeneous Social Network (MHSN) according to users' profiles, check-in records and interests. Based on this framework, we propose a friend recommendation model which consider multiple factors, including 1) a detecting model based on interest similarity by using users' check-",
+        "n_citation": 19,
+        "abstract": "This paper presents a practical paper recommender system, which aims to provide personalized research paper recommendations to users within an online social scholar system. As an online recommender system, there are three basic problems we need to tackle: 1) How to formalize and solve the recommendation problem; 2) How to achieve real time recommendation; and 3) How to interact with users. In our work, we take the personalized paper recommendation as a ranking problem with respect to users' rese",
         "scores": {
-          "score_total": 0.5055,
-          "score_sem": 0.5055,
+          "score_total": 1.0,
+          "score_sem": 1.0,
           "score_rec": 0.0,
           "score_cit": 0.0,
           "qua_term": 0.0,
-          "qua_raw": 0.0
+          "qua_raw": 0.875
         },
         "avaliacao_usuario": null,
         "comentario": null
       },
       {
         "rank": 2,
-        "title": "Improving Scalability of Personalized Recommendation Systems for Enterprise Knowledge Workers",
-        "year": 2016,
-        "venue": "IEEE Access",
+        "title": "Hepatitis B vaccines: WHO position paper, July 2017 – Recommendations",
+        "year": 2017,
+        "venue": "Vaccine",
         "authors": [
-          "Chetan Kumar Verma",
-          "Michael Hart",
-          "Sandeep Bhatkar",
-          "Aleatha Parker-Wood",
-          "Sujit Dey"
+          "World Health Organization"
         ],
-        "n_citation": 4,
-        "abstract": "Enterprise knowledge workers have been overwhelmed by the growing rate of incoming data in recent years. In this paper, we present a recommendation system with the goal of helping knowledge workers in discovering useful new content. In particular, our system builds personalized user models based on file activities on enterprise network file servers. Our models use novel features that are derived from file metadata and user collaboration. Through extensive evaluation on real-world enterprise data",
+        "n_citation": 253,
+        "abstract": "",
         "scores": {
-          "score_total": 0.4636,
-          "score_sem": 0.4636,
+          "score_total": 1.0,
+          "score_sem": 1.0,
           "score_rec": 0.0,
           "score_cit": 0.0,
           "qua_term": 0.0,
@@ -13638,65 +13634,59 @@
       },
       {
         "rank": 3,
-        "title": "Multistage blind source separations by wavelet analysis",
-        "year": 2014,
-        "venue": "International Journal of Wavelets, Multiresolution and Information Processing",
-        "authors": [
-          "Ryuichi Ashino",
-          "Takeshi Mandai",
-          "Akira Morimoto"
-        ],
-        "n_citation": 50,
-        "abstract": "The purpose of blind source separation is to separate the original sources from the sensor array, without knowing the transmission channel characteristics. Besides methods based on independent component analysis, several methods based on time-frequency analysis have been proposed. In this paper, a new method of multistage separation is proposed, which improves our formerly proposed methods using the time-scale information matrix based on the continuous multiwavelet transform.",
+        "title": "Rotavirus vaccines WHO position paper: January 2013 – Recommendations",
+        "year": 2013,
+        "venue": "Vaccine",
+        "authors": [],
+        "n_citation": 147,
+        "abstract": "",
         "scores": {
-          "score_total": 0.4629,
-          "score_sem": 0.4629,
+          "score_total": 1.0,
+          "score_sem": 1.0,
           "score_rec": 0.0,
           "score_cit": 0.0,
           "qua_term": 0.0,
-          "qua_raw": 0.5
+          "qua_raw": 1.0
         },
         "avaliacao_usuario": null,
         "comentario": null
       },
       {
         "rank": 4,
-        "title": "Women in Rural Bangladesh: Empowered by Access to Mobile Phones",
-        "year": 2016,
-        "venue": "nan",
-        "authors": [
-          "Mohd Kamrul Islam",
-          "Frances Slack"
-        ],
-        "n_citation": 0,
-        "abstract": "Mobile phones are seen as a means for social and economic progress in rural and remote areas of developing countries. In Bangladesh the availability and use of information and communication technology (ICT), particularly mobile phones, is thought to have accelerated the development of women in the rural population by creating the possibility of a wider connection. Using qualitative and quantitative methods for data collection, this research has investigated the impact of mobile phone use by wome",
+        "title": "Tetanus vaccines: WHO position paper, February 2017 – Recommendations",
+        "year": 2017,
+        "venue": "Vaccine",
+        "authors": [],
+        "n_citation": 100,
+        "abstract": "",
         "scores": {
-          "score_total": 0.4508,
-          "score_sem": 0.4508,
+          "score_total": 1.0,
+          "score_sem": 1.0,
           "score_rec": 0.0,
           "score_cit": 0.0,
           "qua_term": 0.0,
-          "qua_raw": 0.0
+          "qua_raw": 1.0
         },
         "avaliacao_usuario": null,
         "comentario": null
       },
       {
         "rank": 5,
-        "title": "Two-Valued Logic is Not Sufficient to Model Human Reasoning, but Three-Valued Logic is: A Formal Analysis.",
-        "year": 2016,
-        "venue": "nan",
+        "title": "Crop recommendation system for precision agriculture",
+        "year": 2017,
+        "venue": "",
         "authors": [
-          "Marco Ragni",
-          "Emmanuelle-Anna Dietz",
-          "Ilir Kola",
-          "Steffen Hölldobler"
+          "S. Pudumalar",
+          "E. Ramanujam",
+          "R. Harine Rajashree",
+          "C. Kavya",
+          "T. Kiruthika"
         ],
-        "n_citation": 2,
-        "abstract": "",
+        "n_citation": 315,
+        "abstract": "Data mining is the practice of examining and deriving purposeful information from the data. Data mining finds its application in various fields like finance, retail, medicine, agriculture etc. Data mining in agriculture is used for analyzing the various biotic and abiotic factors. Agriculture in India plays a predominant role in economy and employment. The common problem existing among the Indian farmers are they don't choose the right crop based on their soil requirements. Due to this they face",
         "scores": {
-          "score_total": 0.4508,
-          "score_sem": 0.4508,
+          "score_total": 1.0,
+          "score_sem": 1.0,
           "score_rec": 0.0,
           "score_cit": 0.0,
           "qua_term": 0.0,
@@ -13707,113 +13697,115 @@
       },
       {
         "rank": 6,
-        "title": "UTravel: Smart mobility with a novel user profiling and recommendation approach",
-        "year": 2016,
-        "venue": "Pervasive and Mobile Computing",
+        "title": "Quantum Recommendation Systems",
+        "year": 2017,
+        "venue": "DR-NTU (Nanyang Technological University)",
         "authors": [
-          "Michele Amoretti",
-          "Laura Belli",
-          "Francesco Zanichelli"
+          "Iordanis Kerenidis",
+          "Anupam Prakash"
         ],
-        "n_citation": 0,
-        "abstract": "The exponentially growing availability of online information calls for personalized search and recommendation. Such systems provide recommendations typically based on user profiles built taking into account user actions. Not yet fully explored, is the domain of context-aware recommendation. In this article, we introduce a novel approach, where user profiling and context-based data filtering both concur to recommendation production. Based on the aforementioned approach, UTravel is a smart mobilit",
+        "n_citation": 201,
+        "abstract": "A recommendation system uses the past purchases or ratings of n products by a group of m users, in order to provide personalized recommendations to individual users. The information is modeled as an m \\times n preference matrix which is assumed to have a good rank-k approximation, for a small constant k. In this work, we present a quantum algorithm for recommendation systems that has running time O(\\text{poly}(k)\\text{polylog}(mn)). All known classical algorithms for recommendation systems that ",
         "scores": {
-          "score_total": 0.4208,
-          "score_sem": 0.4208,
+          "score_total": 1.0,
+          "score_sem": 1.0,
           "score_rec": 0.0,
           "score_cit": 0.0,
           "qua_term": 0.0,
-          "qua_raw": 0.875
+          "qua_raw": 0.0
         },
         "avaliacao_usuario": null,
         "comentario": null
       },
       {
         "rank": 7,
-        "title": "Learning disease relationships from clinical drug trials.",
-        "year": 2017,
-        "venue": "Journal of the American Medical Informatics Association",
+        "title": "Survey on Collaborative Filtering, Content-based Filtering and Hybrid Recommendation System",
+        "year": 2015,
+        "venue": "International Journal of Computer Applications",
         "authors": [
-          "Bryan Haslam",
-          "Luis Perez-Breva"
+          "Poonam B.Thorat",
+          "R M Goudar",
+          "Sunita Barve"
         ],
-        "n_citation": 0,
-        "abstract": "Objective Our objective is to test the limits of the assumption that better learning from data in medicine requires more granular data. We hypothesize that clinical trial metadata contains latent scientific, clinical, and regulatory expert knowledge that can be accessed to draw conclusions about the underlying biology of diseases. We seek to demonstrate that this latent information can be uncovered from the whole body of clinical trials.#N##N#Materials and Methods We extract free-text metadata f",
+        "n_citation": 308,
+        "abstract": "Recommender systems or recommendation systems are a subset of information filtering system that used to anticipate the 'evaluation' or 'preference' that user would feed to an item. In recent years E-commerce applications are widely using Recommender system. Generally the most popular Ecommerce sites are probably music, news, books, research articles, and products. Recommender systems are also available for business experts, jokes, restaurants, financial services, life insurance and twitter follo",
         "scores": {
-          "score_total": 0.4196,
-          "score_sem": 0.4196,
+          "score_total": 1.0,
+          "score_sem": 1.0,
           "score_rec": 0.0,
           "score_cit": 0.0,
           "qua_term": 0.0,
-          "qua_raw": 1.0
+          "qua_raw": 0.75
         },
         "avaliacao_usuario": null,
         "comentario": null
       },
       {
         "rank": 8,
-        "title": "Nonparametric Learning of Phonological Constraints in Optimality Theory",
-        "year": 2014,
-        "venue": "meeting of the association for computational linguistics",
+        "title": "A sentiment-enhanced personalized location recommendation system",
+        "year": 2013,
+        "venue": "",
         "authors": [
-          "Gabriel Doyle",
-          "Klinton Bicknell",
-          "Roger Levy"
+          "Dingqi Yang",
+          "Daqing Zhang",
+          "Zhiyong Yu",
+          "Zhu Wang"
         ],
-        "n_citation": 7,
-        "abstract": "We present a method to jointly learn features and weights directly from distributional data in a log-linear framework. Specifically, we propose a non-parametric Bayesian model for learning phonological markedness constraints directly from the distribution of input-output mappings in an Optimality Theory (OT) setting. The model uses an Indian Buffet Process prior to learn the feature values used in the loglinear method, and is the first algorithm for learning phonological constraints without pres",
+        "n_citation": 230,
+        "abstract": "Although online recommendation systems such as recommendation of movies or music have been systematically studied in the past decade, location recommendation in Location Based Social Networks (LBSNs) is not well investigated yet. In LBSNs, users can check in and leave tips commenting on a venue. These two heterogeneous data sources both describe users' preference of venues. However, in current research work, only users' check-in behavior is considered in users' location preference model, users' ",
         "scores": {
-          "score_total": 0.4128,
-          "score_sem": 0.4128,
+          "score_total": 1.0,
+          "score_sem": 1.0,
           "score_rec": 0.0,
           "score_cit": 0.0,
           "qua_term": 0.0,
-          "qua_raw": 1.0
+          "qua_raw": 0.0
         },
         "avaliacao_usuario": null,
         "comentario": null
       },
       {
         "rank": 9,
-        "title": "Modeling User Consumption Sequences",
-        "year": 2016,
-        "venue": "international world wide web conferences",
+        "title": "A Survey on Recommendation System",
+        "year": 2017,
+        "venue": "International Journal of Computer Applications",
         "authors": [
-          "Austin R. Benson",
-          "Ravi Kumar",
-          "Andrew Tomkins"
+          "Debashis Das",
+          "Laxman Sahoo",
+          "Sujoy Datta"
         ],
-        "n_citation": 8,
-        "abstract": "We study sequences of consumption in which the same item may be consumed multiple times. We identify two macroscopic behavior patterns of repeated consumptions. First, in a given user's lifetime, very few items live for a long time. Second, the last consumptions of an item exhibit growing inter-arrival gaps consistent with the notion of increasing boredom leading up to eventual abandonment.#R##N##R##N#We then present what is to our knowledge the first holistic model of sequential repeated consum",
+        "n_citation": 115,
+        "abstract": "Recommendation systems have become extremely common in recent years. It helps the customer to discover information and settle on choices where they do not have the required learning to judge a specific item. It can be utilized as a part of different diverse approaches to encourage its customer with effective information sorting. It is a software tool and techniques that provide suggestion based on the customer's taste to discover new appropriate thing for them by filtering personalized informati",
         "scores": {
-          "score_total": 0.3986,
-          "score_sem": 0.3986,
+          "score_total": 1.0,
+          "score_sem": 1.0,
           "score_rec": 0.0,
           "score_cit": 0.0,
           "qua_term": 0.0,
-          "qua_raw": 1.0
+          "qua_raw": 0.75
         },
         "avaliacao_usuario": null,
         "comentario": null
       },
       {
         "rank": 10,
-        "title": "Mediated Muslim martyrdom: Rethinking digital solidarity in the “Arab Spring”",
-        "year": 2017,
-        "venue": "New Media & Society",
+        "title": "Survey on Recommendation System",
+        "year": 2016,
+        "venue": "International Journal of Computer Applications",
         "authors": [
-          "Johanna Sumiala",
-          "Lilly Korpiola"
+          "L. H. Shah",
+          "Hetal Gaudani",
+          "Prem Balani"
         ],
-        "n_citation": 0,
-        "abstract": "In today’s world of networked, mobile, and global digital communication, Muslim martyrdom as a multi-layered communicative practice has experienced a new type of media saturation, thereby posing a challenge for the study of media, religion, and culture in a digital age. In this article, the analysis focuses on two cases of high symbolic relevance for the events later referred to as the “Arab Spring”—the deaths of a Tunisian fruit seller Mohammed Bouazizi and a young Egyptian man Khaled Saeed. Sp",
+        "n_citation": 101,
+        "abstract": "This paper describes the overview of recommendation system. The recommendation system is the sub-part of the data mining field. This is the era of the e-commerce business. Recommender systems are used to assists the enterprise to implement one-to-one marketing strategies. These type of strategies offer several advantages like establishing the customer loyalty, increase the probability of cross-selling, fulfilling the customer need by presenting the items or products of customer interest. The rec",
         "scores": {
-          "score_total": 0.3902,
-          "score_sem": 0.3902,
+          "score_total": 1.0,
+          "score_sem": 1.0,
           "score_rec": 0.0,
           "score_cit": 0.0,
           "qua_term": 0.0,
-          "qua_raw": 1.0
+          "qua_raw": 0.75
         },
         "avaliacao_usuario": null,
         "comentario": null
@@ -13822,19 +13814,22 @@
     "lista_b": [
       {
         "rank": 1,
-        "title": "Binary Adaptive Embeddings From Order Statistics of Random Projections",
-        "year": 2017,
-        "venue": "IEEE Signal Processing Letters",
+        "title": "Overview of the Coupled Model Intercomparison Project Phase 6 (CMIP6) experimental design and organization",
+        "year": 2016,
+        "venue": "Geoscientific model development",
         "authors": [
-          "Diego Valsesia",
-          "Enrico Magli"
+          "Veronika Eyring",
+          "Sandrine Bony",
+          "Gerald A. Meehl",
+          "C. A. Senior",
+          "Björn Stevens"
         ],
-        "n_citation": 50,
-        "abstract": "We use some of the largest order statistics of the random projections of a reference signal to construct a binary embedding that is adapted to signals correlated with such signal. The embedding is characterized from the analytical standpoint and shown to provide improved performance on tasks such as classification in a reduced-dimensionality space.",
+        "n_citation": 11752,
+        "abstract": "Abstract. By coordinating the design and distribution of global climate model simulations of the past, current, and future climate, the Coupled Model Intercomparison Project (CMIP) has become one of the foundational elements of climate science. However, the need to address an ever-expanding range of scientific questions arising from more and more research communities has made it necessary to revise the organization of CMIP. After a long and wide community consultation, a new and more federated s",
         "scores": {
-          "score_total": 0.2919,
-          "score_sem": 0.2919,
-          "score_rec": 1.0,
+          "score_total": 0.1816,
+          "score_sem": 0.319,
+          "score_rec": 0.5693,
           "score_cit": 1.0,
           "qua_term": 1.0,
           "qua_raw": 1.0
@@ -13844,22 +13839,19 @@
       },
       {
         "rank": 2,
-        "title": "Higher-Order Occurrence Pooling for Bags-of-Words: Visual Concept Detection",
+        "title": "Hepatitis B vaccines: WHO position paper, July 2017 – Recommendations",
         "year": 2017,
-        "venue": "IEEE Transactions on Pattern Analysis and Machine Intelligence",
+        "venue": "Vaccine",
         "authors": [
-          "Piotr Koniusz",
-          "Fei Yan",
-          "Philippe-Henri Gosselin",
-          "Krystian Mikolajczyk"
+          "World Health Organization"
         ],
-        "n_citation": 50,
-        "abstract": "In object recognition, the Bag-of-Words model assumes: i) extraction of local descriptors from images, ii) embedding the descriptors by a coder to a given visual vocabulary space which results in mid-level features, iii) extracting statistics from mid-level features with a pooling operator that aggregates occurrences of visual words in images into signatures, which we refer to as First-order Occurrence Pooling. This paper investigates higher-order pooling that aggregates over co-occurrences of v",
+        "n_citation": 253,
+        "abstract": "",
         "scores": {
-          "score_total": 0.2698,
-          "score_sem": 0.2698,
+          "score_total": 0.0431,
+          "score_sem": 1.0,
           "score_rec": 1.0,
-          "score_cit": 1.0,
+          "score_cit": 0.0431,
           "qua_term": 1.0,
           "qua_raw": 1.0
         },
@@ -13868,22 +13860,19 @@
       },
       {
         "rank": 3,
-        "title": "A Study of Causes and Consequences of Client-Side JavaScript Bugs",
+        "title": "Measles vaccines: WHO position paper, April 2017 – Recommendations",
         "year": 2017,
-        "venue": "IEEE Transactions on Software Engineering",
+        "venue": "Vaccine",
         "authors": [
-          "Frolin S. Ocariza",
-          "Kartik Bajaj",
-          "Karthik Pattabiraman",
-          "Ali Mesbah"
+          "World Health Organization"
         ],
-        "n_citation": 50,
-        "abstract": "Client-side JavaScript is widely used in web applications to improve user-interactivity and minimize client-server communications. Unfortunately, JavaScript is known to be error-prone. While prior studies have demonstrated the prevalence of JavaScript faults, no attempts have been made to determine their causes and consequences. The goal of our study is to understand the root causes and impact of JavaScript faults and how the results can impact JavaScript programmers, testers and tool developers",
+        "n_citation": 211,
+        "abstract": "",
         "scores": {
-          "score_total": 0.2327,
-          "score_sem": 0.2327,
+          "score_total": 0.0243,
+          "score_sem": 0.6771,
           "score_rec": 1.0,
-          "score_cit": 1.0,
+          "score_cit": 0.0359,
           "qua_term": 1.0,
           "qua_raw": 1.0
         },
@@ -13892,20 +13881,22 @@
       },
       {
         "rank": 4,
-        "title": "Does evaluative scientometrics lose its main focus on scientific quality by the new orientation towards societal impact",
+        "title": "A personalized recommendation system with combinational algorithm for online learning",
         "year": 2017,
-        "venue": "Scientometrics",
+        "venue": "Journal of Ambient Intelligence and Humanized Computing",
         "authors": [
-          "Lutz Bornmann",
-          "Robin Haunschild"
+          "Jun Xiao",
+          "Minjuan Wang",
+          "Bingqian Jiang",
+          "Junli Li"
         ],
-        "n_citation": 50,
-        "abstract": "When the meaning of key terms is incompatible in competing taxonomies, a revolution might occur in the field by which the established taxonomy is replaced with another. Since the key term “impact” in scientometrics seems to undergo a taxonomic change, a revolution might be taking place at present: Impact is no longer defined as impact on science alone (measured by citations), but on all sectors of society (e.g. economics, culture, or politics). In this Short Communication, we outline that the cu",
+        "n_citation": 188,
+        "abstract": "",
         "scores": {
-          "score_total": 0.2208,
-          "score_sem": 0.2208,
+          "score_total": 0.0221,
+          "score_sem": 0.6901,
           "score_rec": 1.0,
-          "score_cit": 1.0,
+          "score_cit": 0.032,
           "qua_term": 1.0,
           "qua_raw": 1.0
         },
@@ -13914,67 +13905,64 @@
       },
       {
         "rank": 5,
-        "title": "Stochastic C-Stability and B-Consistency of Explicit and Implicit Euler-Type Schemes",
-        "year": 2016,
-        "venue": "Journal of Scientific Computing",
+        "title": "TCARS: Time- and Community-Aware Recommendation System",
+        "year": 2017,
+        "venue": "Future Generation Computer Systems",
         "authors": [
-          "Wolf-Jürgen Beyn",
-          "Elena Isaak",
-          "Raphael Kruse"
+          "Fatemeh Rezaeimehr",
+          "Parham Moradi",
+          "Sajad Ahmadian",
+          "Nooruldeen Nasih Qader",
+          "Mahdi Jalili"
         ],
-        "n_citation": 50,
-        "abstract": "This paper is concerned with the numerical approximation of stochastic ordinary differential equations, which satisfy a global monotonicity condition. This condition includes several equations with super-linearly growing drift and diffusion coefficient functions such as the stochastic Ginzburg---Landau equation and the 3/2-volatility model from mathematical finance. Our analysis of the mean-square error of convergence is based on a suitable generalization of the notions of C-stability and B-cons",
+        "n_citation": 101,
+        "abstract": "",
         "scores": {
-          "score_total": 0.1986,
-          "score_sem": 0.3987,
-          "score_rec": 0.5693,
-          "score_cit": 1.0,
-          "qua_term": 0.875,
-          "qua_raw": 0.875
+          "score_total": 0.0172,
+          "score_sem": 1.0,
+          "score_rec": 1.0,
+          "score_cit": 0.0172,
+          "qua_term": 1.0,
+          "qua_raw": 1.0
         },
         "avaliacao_usuario": null,
         "comentario": null
       },
       {
         "rank": 6,
-        "title": "Extrapolative Beliefs in Perceptual and Economic Decisions: Evidence of a Common Mechanism",
-        "year": 2016,
-        "venue": "Management Science",
-        "authors": [
-          "Cary Frydman",
-          "Gideon Nave"
-        ],
-        "n_citation": 50,
-        "abstract": "A critical component of both economic and perceptual decision making under uncertainty is the belief-formation process. However, most research has studied belief formation in economic and perceptual decision making in isolation. One reason for this separate treatment may be the assumption that there are distinct psychological mechanisms that underlie belief formation in economic and perceptual decisions. An alternative theory is that there exists a common mechanism that governs belief formation ",
+        "title": "Tetanus vaccines: WHO position paper, February 2017 – Recommendations",
+        "year": 2017,
+        "venue": "Vaccine",
+        "authors": [],
+        "n_citation": 100,
+        "abstract": "",
         "scores": {
-          "score_total": 0.1806,
-          "score_sem": 0.3625,
-          "score_rec": 0.5693,
-          "score_cit": 1.0,
-          "qua_term": 0.875,
-          "qua_raw": 0.875
+          "score_total": 0.017,
+          "score_sem": 1.0,
+          "score_rec": 1.0,
+          "score_cit": 0.017,
+          "qua_term": 1.0,
+          "qua_raw": 1.0
         },
         "avaliacao_usuario": null,
         "comentario": null
       },
       {
         "rank": 7,
-        "title": "Decision-making in the manufacturing environment using a value-risk graph",
-        "year": 2016,
-        "venue": "Journal of Intelligent Manufacturing",
+        "title": "Content-based filtering for recommendation systems using multiattribute networks",
+        "year": 2017,
+        "venue": "Expert Systems with Applications",
         "authors": [
-          "Liaqat-Ali Shah",
-          "Alain Etienne",
-          "Ali Siadat",
-          "François B. Vernadat"
+          "Jieun Son",
+          "Seoung Bum Kim"
         ],
-        "n_citation": 50,
-        "abstract": "A value-risk based decision-making tool is proposed for performance assessment of manufacturing scenarios. For this purpose, values (i.e. qualitative objective statements) and concerns (i.e. qualitative risk statements) of stakeholders in any given manufacturing scenario are first identified and are made explicit via objective and risk modeling. Next, performance and risk measures are derived from the corresponding objective and risk models to evaluate the scenario under study. After that, upper",
+        "n_citation": 174,
+        "abstract": "",
         "scores": {
-          "score_total": 0.1768,
-          "score_sem": 0.3106,
-          "score_rec": 0.5693,
-          "score_cit": 1.0,
+          "score_total": 0.0166,
+          "score_sem": 0.561,
+          "score_rec": 1.0,
+          "score_cit": 0.0296,
           "qua_term": 1.0,
           "qua_raw": 1.0
         },
@@ -13983,20 +13971,21 @@
       },
       {
         "rank": 8,
-        "title": "Blockchain-based secure firmware update for embedded devices in an Internet of Things environment",
+        "title": "RETRACTED ARTICLE: Hybrid Recommendation System for Heart Disease Diagnosis based on Multiple Kernel Learning with Adaptive Neuro-Fuzzy Inference System",
         "year": 2017,
-        "venue": "The Journal of Supercomputing",
+        "venue": "Multimedia Tools and Applications",
         "authors": [
-          "Boo-Hyung Lee",
-          "Jong-Hyouk Lee"
+          "Gunasekaran Manogaran",
+          "R. Varatharajan",
+          "M. K. Priyan"
         ],
-        "n_citation": 50,
-        "abstract": "Embedded devices are going to be used extremely in Internet of Things (IoT) environments. The small and tiny IoT devices will operate and communicate each other without involvement of users, while their operations must be correct and protected against various attacks. In this paper, we focus on a secure firmware update issue, which is a fundamental security challenge for the embedded devices in an IoT environment. A new firmware update scheme that utilizes a blockchain technology is proposed to ",
+        "n_citation": 233,
+        "abstract": "",
         "scores": {
-          "score_total": 0.1733,
-          "score_sem": 0.2329,
+          "score_total": 0.0163,
+          "score_sem": 0.4707,
           "score_rec": 1.0,
-          "score_cit": 0.8503,
+          "score_cit": 0.0397,
           "qua_term": 0.875,
           "qua_raw": 0.875
         },
@@ -14005,44 +13994,46 @@
       },
       {
         "rank": 9,
-        "title": "Automatic learning of pre-miRNAs from different species",
-        "year": 2016,
-        "venue": "BMC Bioinformatics",
+        "title": "A Survey on Recommendation System",
+        "year": 2017,
+        "venue": "International Journal of Computer Applications",
         "authors": [
-          "Ivani de Oliveira Negrão Lopes",
-          "Alexander Schliep",
-          "André Carlos Ponce Leon Ferreira de Carvalho"
+          "Debashis Das",
+          "Laxman Sahoo",
+          "Sujoy Datta"
         ],
-        "n_citation": 50,
-        "abstract": "Background#R##N#Discovery of microRNAs (miRNAs) relies on predictive models for characteristic features from miRNA precursors (pre-miRNAs). The short length of miRNA genes and the lack of pronounced sequence features complicate this task. To accommodate the peculiarities of plant and animal miRNAs systems, tools for both systems have evolved differently. However, these tools are biased towards the species for which they were primarily developed and, consequently, their predictive performance on ",
+        "n_citation": 115,
+        "abstract": "Recommendation systems have become extremely common in recent years. It helps the customer to discover information and settle on choices where they do not have the required learning to judge a specific item. It can be utilized as a part of different diverse approaches to encourage its customer with effective information sorting. It is a software tool and techniques that provide suggestion based on the customer's taste to discover new appropriate thing for them by filtering personalized informati",
         "scores": {
-          "score_total": 0.1334,
-          "score_sem": 0.3623,
-          "score_rec": 0.5693,
-          "score_cit": 0.6466,
-          "qua_term": 1.0,
-          "qua_raw": 1.0
+          "score_total": 0.0147,
+          "score_sem": 1.0,
+          "score_rec": 1.0,
+          "score_cit": 0.0196,
+          "qua_term": 0.75,
+          "qua_raw": 0.75
         },
         "avaliacao_usuario": null,
         "comentario": null
       },
       {
         "rank": 10,
-        "title": "Exploiting collective knowledge with three-way decision theory: Cases from the questionnaire-based research ☆",
+        "title": "Type-2 fuzzy ontology–aided recommendation systems for IoT–based healthcare",
         "year": 2017,
-        "venue": "International Journal of Approximate Reasoning",
+        "venue": "Computer Communications",
         "authors": [
-          "Federico Cabitza",
-          "Davide Ciucci",
-          "Angela Locoro"
+          "Farman Ali",
+          "S. M. Riazul Islam",
+          "Daehan Kwak",
+          "Pervez Khan",
+          "Niamat Ullah"
         ],
-        "n_citation": 50,
-        "abstract": "Two methods are proposed for collective knowledge extraction from questionnaires with ordinal scales and dichotomous questions.#R##N##R##N#Both methods are based on a three-way decision procedure and a statistical method aimed at attaining statistical significance of the above decision. One method is aimed at giving an (absolute) assessment of “objects” according to a given “criterion” and the other one at producing a relative ranking of the “objects”. A criterion can be related to one or more q",
+        "n_citation": 191,
+        "abstract": "",
         "scores": {
-          "score_total": 0.0771,
-          "score_sem": 0.3797,
+          "score_total": 0.0145,
+          "score_sem": 0.447,
           "score_rec": 1.0,
-          "score_cit": 0.203,
+          "score_cit": 0.0325,
           "qua_term": 1.0,
           "qua_raw": 1.0
         },
