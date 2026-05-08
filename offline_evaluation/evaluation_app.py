@@ -182,7 +182,7 @@ HTML_TEMPLATE = """
                 const div = document.createElement('div');
                 div.className = 'paper-card';
                 div.innerHTML = `
-                    <h3>${rec.rank}. ${rec.title}</h3>
+                    <h3>${rec.rank}. ${rec.doi ? `<a href="${rec.doi}" target="_blank" rel="noopener noreferrer" style="color:#2980b9;text-decoration:none;" onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'">${rec.title}</a>` : rec.title}</h3>
                     <p><strong>Autores:</strong> ${rec.authors.join(', ')} | <strong>Ano:</strong> ${rec.year} | <strong>Local:</strong> ${rec.venue || 'N/A'}</p>
                     ${abstractHtml}
                     <p style="margin-bottom: 5px;"><strong>Qual a relevância deste artigo para o seu tema?</strong></p>

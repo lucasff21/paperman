@@ -161,7 +161,7 @@ def search_openalex(query: str, year_min: int, year_max: int) -> List[Dict]:
     params = urllib.parse.urlencode({
         "search": query,
         "filter": f"publication_year:{year_min}-{year_max},language:en",
-        "select": "title,publication_year,primary_location,cited_by_count,authorships,abstract_inverted_index",
+        "select": "title,publication_year,primary_location,cited_by_count,authorships,abstract_inverted_index,doi",
         "per_page": PAPERS_PER_QUERY,
         "mailto": "paperman@experiment.com",
     })
@@ -206,17 +206,22 @@ def search_openalex(query: str, year_min: int, year_max: int) -> List[Dict]:
             for word, positions in inv.items():
                 for pos in positions:
                     pos_word[pos] = word
-            abstract = " ".join(pos_word[i] for i in sorted(pos_word))[:500]
+            abstract = " ".join(pos_word[i] for i in sorted(pos_word))[:1500]
+
+        # DOI
+        doi_raw = p.get("doi") or ""
+        doi = doi_raw if doi_raw.startswith("http") else (f"https://doi.org/{doi_raw}" if doi_raw else "")
 
         papers.append({
-            "title": title,
-            "year": int(year),
-            "venue": venue,
-            "authors": authors,
-            "id": title[:50],  # OpenAlex não tem id compatível com DBLP
-            "n_citation": int(n_citation),
+            "title":          title,
+            "year":           int(year),
+            "venue":          venue,
+            "authors":        authors,
+            "id":             title[:50],
+            "n_citation":     int(n_citation),
             "references_raw": "[]",
-            "abstract": abstract,
+            "abstract":       abstract,
+            "doi":            doi,
         })
 
     return papers
@@ -367,6 +372,7 @@ def run(qualis_mode: str = "sem_only") -> None:
                     "authors":          rec["authors"],
                     "n_citation":       rec["n_citation"],
                     "abstract":         rec.get("abstract", ""),
+                    "doi":              rec.get("doi", ""),
                     "scores":           rec.get("_scores", {}),
                     "avaliacao_usuario": None,
                     "comentario":       None,
