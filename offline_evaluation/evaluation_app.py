@@ -145,11 +145,11 @@ HTML_TEMPLATE = """
             <p>Avalie os artigos abaixo em relação ao tema base (1 = Totalmente Irrelevante, 5 = Muito Relevante).</p>
 
             <form id="eval-form">
-                <h2 style="color: #2c3e50; border-bottom: 2px solid #3498db; padding-bottom: 5px;">Lista A</h2>
-                <div id="papers-container-a"></div>
-
-                <h2 style="color: #2c3e50; border-bottom: 2px solid #3498db; padding-bottom: 5px; margin-top: 40px;">Lista B</h2>
+                <h2 style="color: #2c3e50; border-bottom: 2px solid #3498db; padding-bottom: 5px;">Lista B</h2>
                 <div id="papers-container-b"></div>
+
+                <h2 style="color: #2c3e50; border-bottom: 2px solid #3498db; padding-bottom: 5px; margin-top: 40px;">Lista A</h2>
+                <div id="papers-container-a"></div>
                 
                 <button type="submit" class="submit-btn" style="margin-top: 30px;">Salvar Avaliações</button>
             </form>
