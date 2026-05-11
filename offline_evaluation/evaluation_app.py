@@ -79,6 +79,14 @@ class AvaliacaoPayload(BaseModel):
     lista_a: List[AvaliacaoItem]
     lista_b: List[AvaliacaoItem]
 
+class SurveyPayload(BaseModel):
+    author: str
+    relevancia: int
+    diversidade: int
+    precisao: int
+    interesse: int
+    surpresa: int
+
 # TEMPLATE HTML EMBUTIDO PARA FACILITAR (sem precisar de arquivos externos)
 HTML_TEMPLATE = """
 <!DOCTYPE html>
@@ -112,6 +120,18 @@ HTML_TEMPLATE = """
         .btn-abstract { background: none; border: 1px solid #aaa; border-radius: 4px; padding: 3px 10px; font-size: 12px; cursor: pointer; color: #555; margin-bottom: 4px; }
         .btn-abstract:hover { background: #eee; }
         #success-msg { text-align: center; color: #27ae60; font-size: 18px; margin-top: 20px; display: none; }
+        /* Survey */
+        #survey-area { display: none; margin-top: 30px; }
+        .survey-question { background: #f8f9fa; border-radius: 8px; padding: 20px; margin-bottom: 20px; border-left: 4px solid #3498db; }
+        .survey-question p.q-title { font-weight: bold; font-size: 16px; margin: 0 0 4px 0; color: #2c3e50; }
+        .survey-question p.q-desc { font-size: 14px; color: #555; margin: 0 0 14px 0; line-height: 1.5; }
+        .likert-group { display: flex; gap: 10px; flex-wrap: wrap; }
+        .likert-group input[type="radio"] { display: none; }
+        .likert-group label { cursor: pointer; padding: 10px 18px; background: #eee; border-radius: 6px; font-weight: bold; font-size: 15px; transition: 0.2s; }
+        .likert-group input[type="radio"]:checked + label { background: #3498db; color: white; }
+        .likert-group label:hover { background: #d0e8f7; }
+        #survey-submit-btn { width: 100%; padding: 15px; font-size: 18px; background: #27ae60; color: white; border: none; border-radius: 6px; cursor: pointer; margin-top: 10px; transition: 0.3s; }
+        #survey-submit-btn:hover { background: #2ecc71; }
     </style>
 </head>
 <body>
@@ -154,6 +174,54 @@ HTML_TEMPLATE = """
                 <button type="submit" class="submit-btn" style="margin-top: 30px;">Salvar Avaliações</button>
             </form>
             <div id="success-msg">Avaliações salvas com sucesso! Muito obrigado pela participação.</div>
+
+            <!-- Questionário pós-avaliação -->
+            <div id="survey-area">
+                <h2 style="color: #2c3e50; border-top: 2px solid #eee; padding-top: 30px; margin-top: 10px;">📋 Questionário Final</h2>
+                <p style="color:#555; margin-bottom: 24px;">Avalie o sistema de recomendação como um todo (1 = Discordo totalmente, 5 = Concordo totalmente).</p>
+
+                <div class="survey-question">
+                    <p class="q-title">1. Relevância</p>
+                    <p class="q-desc">Os artigos recomendados são relevantes para meus interesses de pesquisa ou para o tema investigado.</p>
+                    <div class="likert-group">
+                        ${[1,2,3,4,5].map(n => `<input type="radio" name="sq_relevancia" id="sq_rel_${n}" value="${n}"><label for="sq_rel_${n}">${n}</label>`).join('')}
+                    </div>
+                </div>
+
+                <div class="survey-question">
+                    <p class="q-title">2. Diversidade</p>
+                    <p class="q-desc">As recomendações abordaram diferentes perspectivas, subáreas ou abordagens dentro do meu tema de pesquisa.</p>
+                    <div class="likert-group">
+                        ${[1,2,3,4,5].map(n => `<input type="radio" name="sq_diversidade" id="sq_div_${n}" value="${n}"><label for="sq_div_${n}">${n}</label>`).join('')}
+                    </div>
+                </div>
+
+                <div class="survey-question">
+                    <p class="q-title">3. Precisão</p>
+                    <p class="q-desc">As recomendações correspondem com precisão ao assunto ou contexto de busca informado.</p>
+                    <div class="likert-group">
+                        ${[1,2,3,4,5].map(n => `<input type="radio" name="sq_precisao" id="sq_pre_${n}" value="${n}"><label for="sq_pre_${n}">${n}</label>`).join('')}
+                    </div>
+                </div>
+
+                <div class="survey-question">
+                    <p class="q-title">4. Interesse</p>
+                    <p class="q-desc">Os artigos recomendados despertam meu interesse e motivariam uma leitura mais aprofundada.</p>
+                    <div class="likert-group">
+                        ${[1,2,3,4,5].map(n => `<input type="radio" name="sq_interesse" id="sq_int_${n}" value="${n}"><label for="sq_int_${n}">${n}</label>`).join('')}
+                    </div>
+                </div>
+
+                <div class="survey-question">
+                    <p class="q-title">5. Surpresa (Serendipidade)</p>
+                    <p class="q-desc">As recomendações apresentaram artigos inesperados, mas que ainda assim se mostraram úteis ou potencialmente valiosos para minha pesquisa.</p>
+                    <div class="likert-group">
+                        ${[1,2,3,4,5].map(n => `<input type="radio" name="sq_surpresa" id="sq_sur_${n}" value="${n}"><label for="sq_sur_${n}">${n}</label>`).join('')}
+                    </div>
+                </div>
+
+                <button id="survey-submit-btn">Enviar Questionário</button>
+            </div>
         </div>
     </div>
 
@@ -168,6 +236,8 @@ HTML_TEMPLATE = """
         const baseTitle = document.getElementById('base-title');
         const form = document.getElementById('eval-form');
         const successMsg = document.getElementById('success-msg');
+        const surveyArea = document.getElementById('survey-area');
+        const surveySubmitBtn = document.getElementById('survey-submit-btn');
 
         function renderList(container, recommendations, listId, savedEvals) {
             container.innerHTML = '';
@@ -277,7 +347,10 @@ HTML_TEMPLATE = """
 
             if (res.ok) {
                 form.style.display = 'none';
-                successMsg.style.display = 'block';
+                // Mostra o questionario pos-avaliacao
+                surveyArea.style.display = 'block';
+                surveyArea.innerHTML = surveyArea.innerHTML; // Força re-render das labels com template literals
+                window.scrollTo({ top: surveyArea.offsetTop - 20, behavior: 'smooth' });
                 // Atualiza cache local visual
                 avaliacoes[authorName] = { lista_a: avaliacoes_a, lista_b: avaliacoes_b };
                 const opt = Array.from(input.options).find(o => o.value === authorName);
@@ -288,6 +361,43 @@ HTML_TEMPLATE = """
                 submitBtn.disabled = false;
                 submitBtn.textContent = 'Salvar Avaliações';
                 alert("Erro ao salvar avaliações. Por favor, tente novamente.");
+            }
+        });
+
+        surveySubmitBtn.addEventListener('click', async () => {
+            const fields = ['relevancia', 'diversidade', 'precisao', 'interesse', 'surpresa'];
+            const nomes = ['Relevância', 'Diversidade', 'Precisão', 'Interesse', 'Surpresa'];
+            const respostas = {};
+            for (let i = 0; i < fields.length; i++) {
+                const checked = document.querySelector(`input[name="sq_${fields[i]}"]:checked`);
+                if (!checked) {
+                    alert(`Por favor, responda a pergunta "${nomes[i]}" antes de enviar.`);
+                    return;
+                }
+                respostas[fields[i]] = parseInt(checked.value);
+            }
+
+            surveySubmitBtn.disabled = true;
+            surveySubmitBtn.textContent = '⏳ Enviando...';
+
+            const surveyPayload = {
+                author: input.value.trim(),
+                ...respostas
+            };
+
+            const res = await fetch('/api/submit-survey', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(surveyPayload)
+            });
+
+            if (res.ok) {
+                surveyArea.style.display = 'none';
+                successMsg.style.display = 'block';
+            } else {
+                surveySubmitBtn.disabled = false;
+                surveySubmitBtn.textContent = 'Enviar Questionário';
+                alert('Erro ao enviar questionário. Por favor, tente novamente.');
             }
         });
     </script>
@@ -334,10 +444,32 @@ async def index(request: Request):
 @app.post("/api/submit")
 async def submit_eval(payload: AvaliacaoPayload):
     avaliacoes = await load_avaliacoes()
+    existing = avaliacoes.get(payload.author, {})
+    if isinstance(existing, dict):
+        questionario = existing.get("questionario", None)
+    else:
+        questionario = None
     avaliacoes[payload.author] = {
         "lista_a": [item.dict() for item in payload.lista_a],
-        "lista_b": [item.dict() for item in payload.lista_b]
+        "lista_b": [item.dict() for item in payload.lista_b],
+        "questionario": questionario,  # preserva questionário já submetido
     }
+    await save_avaliacoes(avaliacoes)
+    return {"status": "success"}
+
+@app.post("/api/submit-survey")
+async def submit_survey(payload: SurveyPayload):
+    avaliacoes = await load_avaliacoes()
+    existing = avaliacoes.get(payload.author, {})
+    if isinstance(existing, dict):
+        existing["questionario"] = {
+            "relevancia":   payload.relevancia,
+            "diversidade":  payload.diversidade,
+            "precisao":     payload.precisao,
+            "interesse":    payload.interesse,
+            "surpresa":     payload.surpresa,
+        }
+        avaliacoes[payload.author] = existing
     await save_avaliacoes(avaliacoes)
     return {"status": "success"}
 
