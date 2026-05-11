@@ -74,18 +74,19 @@ class AvaliacaoItem(BaseModel):
     nota: int
     comentario: Optional[str] = ""
 
-class AvaliacaoPayload(BaseModel):
-    author: str
-    lista_a: List[AvaliacaoItem]
-    lista_b: List[AvaliacaoItem]
-
-class SurveyPayload(BaseModel):
-    author: str
+class SurveyAnswers(BaseModel):
     relevancia: int
     diversidade: int
     precisao: int
     atualidade: int
     surpresa: int
+
+class AvaliacaoPayload(BaseModel):
+    author: str
+    lista_a: List[AvaliacaoItem]
+    lista_b: List[AvaliacaoItem]
+    survey_a: Optional[SurveyAnswers] = None
+    survey_b: Optional[SurveyAnswers] = None
 
 # TEMPLATE HTML EMBUTIDO PARA FACILITAR (sem precisar de arquivos externos)
 HTML_TEMPLATE = """
@@ -167,19 +168,15 @@ HTML_TEMPLATE = """
             <form id="eval-form">
                 <h2 style="color: #2c3e50; border-bottom: 2px solid #3498db; padding-bottom: 5px;">Lista B</h2>
                 <div id="papers-container-b"></div>
+                <div id="survey-container-b"></div>
 
                 <h2 style="color: #2c3e50; border-bottom: 2px solid #3498db; padding-bottom: 5px; margin-top: 40px;">Lista A</h2>
                 <div id="papers-container-a"></div>
+                <div id="survey-container-a"></div>
                 
-                <button type="submit" class="submit-btn" style="margin-top: 30px;">Salvar Avaliações</button>
+                <button type="submit" class="submit-btn" style="margin-top: 30px;">Salvar Avaliações e Questionários</button>
             </form>
             <div id="success-msg">Avaliações salvas com sucesso! Muito obrigado pela participação.</div>
-
-            <!-- Questionário pós-avaliação -->
-            <div id="survey-area" style="display:none; margin-top:30px;">
-                <div id="survey-questions-container"></div>
-                <button id="survey-submit-btn" style="width:100%; padding:15px; font-size:18px; background:#27ae60; color:white; border:none; border-radius:6px; cursor:pointer; margin-top:10px;">Enviar Questionário</button>
-            </div>
         </div>
     </div>
 
@@ -278,11 +275,16 @@ HTML_TEMPLATE = """
             // Retrocompatibilidade para quem já avaliou no modelo antigo: converte array simples para lista_a vazia e reseta
             const savedListaA = Array.isArray(savedData) ? [] : (savedData.lista_a || []);
             const savedListaB = Array.isArray(savedData) ? [] : (savedData.lista_b || []);
+            const savedSurveyA = Array.isArray(savedData) ? null : (savedData.survey_a || null);
+            const savedSurveyB = Array.isArray(savedData) ? null : (savedData.survey_b || null);
 
             baseTitle.textContent = authorData.base_title;
             
-            renderList(papersContainerA, authorData.lista_a, 'a', savedListaA);
             renderList(papersContainerB, authorData.lista_b, 'b', savedListaB);
+            renderSurvey('survey-container-b', 'b', 'Lista B', savedSurveyB);
+
+            renderList(papersContainerA, authorData.lista_a, 'a', savedListaA);
+            renderSurvey('survey-container-a', 'a', 'Lista A', savedSurveyA);
 
             evalArea.classList.remove('hidden');
         });
@@ -431,32 +433,16 @@ async def index(request: Request):
 @app.post("/api/submit")
 async def submit_eval(payload: AvaliacaoPayload):
     avaliacoes = await load_avaliacoes()
-    existing = avaliacoes.get(payload.author, {})
-    if isinstance(existing, dict):
-        questionario = existing.get("questionario", None)
-    else:
-        questionario = None
+    
+    survey_a_dict = payload.survey_a.dict() if payload.survey_a else None
+    survey_b_dict = payload.survey_b.dict() if payload.survey_b else None
+    
     avaliacoes[payload.author] = {
         "lista_a": [item.dict() for item in payload.lista_a],
         "lista_b": [item.dict() for item in payload.lista_b],
-        "questionario": questionario,  # preserva questionário já submetido
+        "survey_a": survey_a_dict,
+        "survey_b": survey_b_dict,
     }
-    await save_avaliacoes(avaliacoes)
-    return {"status": "success"}
-
-@app.post("/api/submit-survey")
-async def submit_survey(payload: SurveyPayload):
-    avaliacoes = await load_avaliacoes()
-    existing = avaliacoes.get(payload.author, {})
-    if isinstance(existing, dict):
-        existing["questionario"] = {
-            "relevancia":   payload.relevancia,
-            "diversidade":  payload.diversidade,
-            "precisao":     payload.precisao,
-            "interesse":    payload.interesse,
-            "surpresa":     payload.surpresa,
-        }
-        avaliacoes[payload.author] = existing
     await save_avaliacoes(avaliacoes)
     return {"status": "success"}
 
