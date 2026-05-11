@@ -191,10 +191,8 @@ HTML_TEMPLATE = """
         const baseTitle = document.getElementById('base-title');
         const form = document.getElementById('eval-form');
         const successMsg = document.getElementById('success-msg');
-        const surveyArea = document.getElementById('survey-area');
-        const surveySubmitBtn = document.getElementById('survey-submit-btn');
 
-        function renderSurvey() {
+        function renderSurvey(containerId, listId, listName, savedEvals) {
             const questions = [
                 { id: 'relevancia', title: '1. Relev\u00e2ncia', desc: 'Os artigos recomendados s\u00e3o relevantes para meus interesses de pesquisa ou para o tema investigado.' },
                 { id: 'diversidade', title: '2. Diversidade', desc: 'As recomenda\u00e7\u00f5es abordaram diferentes perspectivas, sub\u00e1reas ou abordagens dentro do meu tema de pesquisa.' },
@@ -202,23 +200,31 @@ HTML_TEMPLATE = """
                 { id: 'atualidade', title: '4. Atualidade', desc: 'Os artigos recomendados refletem publica\u00e7\u00f5es recentes ou abordagens atualizadas sobre o tema.' },
                 { id: 'surpresa', title: '5. Surpresa (Serendipidade)', desc: 'As recomenda\u00e7\u00f5es apresentaram artigos inesperados, mas que ainda assim se mostraram \u00fateis ou potencialmente valiosos para minha pesquisa.' },
             ];
-            const container = document.getElementById('survey-questions-container');
+            const container = document.getElementById(containerId);
             container.innerHTML = `
-                <h2 style="color:#2c3e50; border-top:2px solid #eee; padding-top:30px; margin-top:10px;">&#x1F4CB; Question\u00e1rio Final</h2>
-                <p style="color:#555; margin-bottom:24px;">Avalie o sistema de recomenda\u00e7\u00e3o como um todo (1 = Discordo totalmente, 5 = Concordo totalmente).</p>
+                <div style="background:#f8f9fa; border:1px solid #ddd; padding:20px; border-radius:8px; margin-top:20px; margin-bottom: 40px;">
+                    <h3 style="color:#2c3e50; margin-top:0;">&#x1F4CB; Question\u00e1rio sobre a ${listName}</h3>
+                    <p style="color:#555; margin-bottom:24px;">Avalie o conjunto de recomenda\u00e7\u00f5es da ${listName} (1 = Discordo totalmente, 5 = Concordo totalmente).</p>
+                    <div class="questions-wrapper"></div>
+                </div>
             `;
+            const wrapper = container.querySelector('.questions-wrapper');
             questions.forEach(q => {
                 const div = document.createElement('div');
                 div.className = 'survey-question';
+                div.style.marginBottom = '15px';
+                
+                const savedVal = savedEvals ? savedEvals[q.id] : null;
+                
                 const likertHtml = [1,2,3,4,5].map(n =>
-                    `<input type="radio" name="sq_${q.id}" id="sq_${q.id}_${n}" value="${n}"><label for="sq_${q.id}_${n}">${n}</label>`
+                    `<input type="radio" name="sq_${listId}_${q.id}" id="sq_${listId}_${q.id}_${n}" value="${n}" ${savedVal == n ? 'checked' : ''}><label for="sq_${listId}_${q.id}_${n}">${n}</label>`
                 ).join('');
                 div.innerHTML = `
-                    <p class="q-title">${q.title}</p>
-                    <p class="q-desc">${q.desc}</p>
+                    <p class="q-title" style="font-weight:bold; margin-bottom:5px;">${q.title}</p>
+                    <p class="q-desc" style="font-size:13px; color:#666; margin-bottom:10px;">${q.desc}</p>
                     <div class="likert-group">${likertHtml}</div>
                 `;
-                container.appendChild(div);
+                wrapper.appendChild(div);
             });
         }
 
@@ -315,18 +321,41 @@ HTML_TEMPLATE = """
                 });
             };
 
-            let avaliacoes_a, avaliacoes_b;
+            const extractSurvey = (listId, listName) => {
+                const fields = ['relevancia', 'diversidade', 'precisao', 'atualidade', 'surpresa'];
+                const nomes = ['Relevância', 'Diversidade', 'Precisão', 'Atualidade', 'Surpresa'];
+                const respostas = {};
+                for (let i = 0; i < fields.length; i++) {
+                    const checked = document.querySelector(`input[name="sq_${listId}_${fields[i]}"]:checked`);
+                    if (!checked) {
+                        throw new Error(`Por favor, responda a pergunta "${nomes[i]}" do questionário da ${listName} antes de enviar.`);
+                    }
+                    respostas[fields[i]] = parseInt(checked.value);
+                }
+                return respostas;
+            };
+
+            let avaliacoes_a, avaliacoes_b, survey_a, survey_b;
             try {
-                avaliacoes_a = extractEvals(authorData.lista_a, 'a');
                 avaliacoes_b = extractEvals(authorData.lista_b, 'b');
+                survey_b = extractSurvey('b', 'Lista B');
+                
+                avaliacoes_a = extractEvals(authorData.lista_a, 'a');
+                survey_a = extractSurvey('a', 'Lista A');
             } catch (error) {
                 alert(error.message);
                 submitBtn.disabled = false;
-                submitBtn.textContent = 'Salvar Avaliações';
-                return; // Interrompe o envio
+                submitBtn.textContent = 'Salvar Avaliações e Questionários';
+                return;
             }
 
-            const payload = { author: authorName, lista_a: avaliacoes_a, lista_b: avaliacoes_b };
+            const payload = { 
+                author: authorName, 
+                lista_a: avaliacoes_a, 
+                lista_b: avaliacoes_b,
+                survey_a: survey_a,
+                survey_b: survey_b
+            };
 
             const res = await fetch('/api/submit', {
                 method: 'POST',
@@ -336,57 +365,17 @@ HTML_TEMPLATE = """
 
             if (res.ok) {
                 form.style.display = 'none';
-                // Renderiza e exibe o questionário pós-avaliação
-                renderSurvey();
-                surveyArea.style.display = 'block';
-                window.scrollTo({ top: surveyArea.offsetTop - 20, behavior: 'smooth' });
-                // Atualiza cache local visual
-                avaliacoes[authorName] = { lista_a: avaliacoes_a, lista_b: avaliacoes_b };
+                successMsg.style.display = 'block';
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+                avaliacoes[authorName] = { lista_a: avaliacoes_a, lista_b: avaliacoes_b, survey_a: survey_a, survey_b: survey_b };
                 const opt = Array.from(input.options).find(o => o.value === authorName);
                 if (opt && !opt.textContent.includes('[CONCLUÍDO]')) {
                     opt.textContent = opt.textContent + ' [CONCLUÍDO]';
                 }
             } else {
                 submitBtn.disabled = false;
-                submitBtn.textContent = 'Salvar Avaliações';
+                submitBtn.textContent = 'Salvar Avaliações e Questionários';
                 alert("Erro ao salvar avaliações. Por favor, tente novamente.");
-            }
-        });
-
-        surveySubmitBtn.addEventListener('click', async () => {
-            const fields = ['relevancia', 'diversidade', 'precisao', 'atualidade', 'surpresa'];
-            const nomes = ['Relevância', 'Diversidade', 'Precisão', 'Atualidade', 'Surpresa'];
-            const respostas = {};
-            for (let i = 0; i < fields.length; i++) {
-                const checked = document.querySelector(`input[name="sq_${fields[i]}"]:checked`);
-                if (!checked) {
-                    alert(`Por favor, responda a pergunta "${nomes[i]}" antes de enviar.`);
-                    return;
-                }
-                respostas[fields[i]] = parseInt(checked.value);
-            }
-
-            surveySubmitBtn.disabled = true;
-            surveySubmitBtn.textContent = '⏳ Enviando...';
-
-            const surveyPayload = {
-                author: input.value.trim(),
-                ...respostas
-            };
-
-            const res = await fetch('/api/submit-survey', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(surveyPayload)
-            });
-
-            if (res.ok) {
-                surveyArea.style.display = 'none';
-                successMsg.style.display = 'block';
-            } else {
-                surveySubmitBtn.disabled = false;
-                surveySubmitBtn.textContent = 'Enviar Questionário';
-                alert('Erro ao enviar questionário. Por favor, tente novamente.');
             }
         });
     </script>
