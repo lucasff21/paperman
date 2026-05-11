@@ -248,6 +248,7 @@ def run(qualis_mode: str = "sem_only") -> None:
     results = []
 
     for idx, cand in enumerate(candidates):
+        start_time = time.time()
         name             = cand["name"]
         title_original   = cand["title_original"]
         title_en         = cand["title"]
@@ -363,6 +364,7 @@ def run(qualis_mode: str = "sem_only") -> None:
             "base_title":       title_en,
             "title_original":   title_original,
             "keywords_used":    keywords,
+            "generation_time_seconds": round(time.time() - start_time, 2),
             "recommendations": [
                 {
                     "rank":             i + 1,

@@ -92,8 +92,8 @@ YEAR_MIN             = YEAR_CUTOFF - YEAR_WINDOW + 1   # 2013 — menor ano acei
 CANDIDATES_PER_TOPIC = 90      # head(N) por keyword no DBLP. Subido de 45→100 após
                                  # remoção da injeção: pool maior compensa a perda do
                                  # gabarito injetado, aumentando a chance de coautoria
-                                 # orgânica aparecer nos candidatos.
-TOP_K_EVAL           = 10        # avaliamos @3, @5, @10
+                                 # ===== PARÂMETROS GLOBAIS DE AVALIAÇÃO =====
+TOP_K_EVAL           = 15        # Buffer maior para evitar perda de itens por duplicação no teste A/B
 
 FUZZ_THRESHOLD       = 85        # threshold de fuzzy matching para coautoria
 ALLOWED_LANGS        = [Language.PORTUGUESE, Language.ENGLISH]

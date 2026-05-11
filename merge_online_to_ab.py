@@ -59,13 +59,42 @@ for author in AUTHORS:
     if not recs_a or not recs_b:
         print(f"[SKIP] {author} — lista vazia em um dos modelos.")
         continue
+
+    # 1. Pega os TOP 10 da Lista A
+    final_recs_a = recs_a[:10]
+    dois_a = {r.get("doi") for r in final_recs_a if r.get("doi")}
+    titles_a = {r["title"].lower().strip() for r in final_recs_a}
+
+    # 2. Pega 10 artigos da Lista B pulando o que já tem na A
+    final_recs_b = []
+    skipped_b = []
+    for r in recs_b:
+        doi = r.get("doi")
+        title = r["title"].lower().strip()
+        
+        # Filtra repetição
+        if (doi and doi in dois_a) or (title in titles_a):
+            skipped_b.append(r)
+            continue
+            
+        final_recs_b.append(r)
+        if len(final_recs_b) == 10:
+            break
+
+    # Se a reserva acabou e não chegamos a 10, preenchemos com os repetidos (fallback)
+    if len(final_recs_b) < 10:
+        needed = 10 - len(final_recs_b)
+        final_recs_b.extend(skipped_b[:needed])
+
     new_entries[author] = {
         "author":     author,
         "base_title": da["base_title"],
-        "lista_a":    [to_ab_item(r) for r in recs_a],
-        "lista_b":    [to_ab_item(r) for r in recs_b],
+        "generation_time_a": da.get("generation_time_seconds", 0),
+        "generation_time_b": db.get("generation_time_seconds", 0),
+        "lista_a":    [to_ab_item(r) for r in final_recs_a],
+        "lista_b":    [to_ab_item(r) for r in final_recs_b],
     }
-    print(f"[OK] {author}: {len(recs_a)}A / {len(recs_b)}B")
+    print(f"[OK] {author}: {len(final_recs_a)}A / {len(final_recs_b)}B")
 
 # ── Reconstrói o AB completo substituindo/inserindo todas as entradas ─────────
 # Carrega AB existente para não perder avaliações já submetidas
