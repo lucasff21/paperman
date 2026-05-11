@@ -28,6 +28,7 @@ def to_ab_item(rec):
         "authors":          rec.get("authors", []),
         "n_citation":       rec.get("n_citation", 0),
         "abstract":         rec.get("abstract", ""),
+        "doi":              rec.get("doi", ""),
         "scores": {
             "score_total":  scores.get("score_total", 0),
             "score_sem":    scores.get("score_sem",   0),
