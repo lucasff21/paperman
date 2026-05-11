@@ -176,51 +176,9 @@ HTML_TEMPLATE = """
             <div id="success-msg">Avaliações salvas com sucesso! Muito obrigado pela participação.</div>
 
             <!-- Questionário pós-avaliação -->
-            <div id="survey-area">
-                <h2 style="color: #2c3e50; border-top: 2px solid #eee; padding-top: 30px; margin-top: 10px;">📋 Questionário Final</h2>
-                <p style="color:#555; margin-bottom: 24px;">Avalie o sistema de recomendação como um todo (1 = Discordo totalmente, 5 = Concordo totalmente).</p>
-
-                <div class="survey-question">
-                    <p class="q-title">1. Relevância</p>
-                    <p class="q-desc">Os artigos recomendados são relevantes para meus interesses de pesquisa ou para o tema investigado.</p>
-                    <div class="likert-group">
-                        ${[1,2,3,4,5].map(n => `<input type="radio" name="sq_relevancia" id="sq_rel_${n}" value="${n}"><label for="sq_rel_${n}">${n}</label>`).join('')}
-                    </div>
-                </div>
-
-                <div class="survey-question">
-                    <p class="q-title">2. Diversidade</p>
-                    <p class="q-desc">As recomendações abordaram diferentes perspectivas, subáreas ou abordagens dentro do meu tema de pesquisa.</p>
-                    <div class="likert-group">
-                        ${[1,2,3,4,5].map(n => `<input type="radio" name="sq_diversidade" id="sq_div_${n}" value="${n}"><label for="sq_div_${n}">${n}</label>`).join('')}
-                    </div>
-                </div>
-
-                <div class="survey-question">
-                    <p class="q-title">3. Precisão</p>
-                    <p class="q-desc">As recomendações correspondem com precisão ao assunto ou contexto de busca informado.</p>
-                    <div class="likert-group">
-                        ${[1,2,3,4,5].map(n => `<input type="radio" name="sq_precisao" id="sq_pre_${n}" value="${n}"><label for="sq_pre_${n}">${n}</label>`).join('')}
-                    </div>
-                </div>
-
-                <div class="survey-question">
-                    <p class="q-title">4. Interesse</p>
-                    <p class="q-desc">Os artigos recomendados despertam meu interesse e motivariam uma leitura mais aprofundada.</p>
-                    <div class="likert-group">
-                        ${[1,2,3,4,5].map(n => `<input type="radio" name="sq_interesse" id="sq_int_${n}" value="${n}"><label for="sq_int_${n}">${n}</label>`).join('')}
-                    </div>
-                </div>
-
-                <div class="survey-question">
-                    <p class="q-title">5. Surpresa (Serendipidade)</p>
-                    <p class="q-desc">As recomendações apresentaram artigos inesperados, mas que ainda assim se mostraram úteis ou potencialmente valiosos para minha pesquisa.</p>
-                    <div class="likert-group">
-                        ${[1,2,3,4,5].map(n => `<input type="radio" name="sq_surpresa" id="sq_sur_${n}" value="${n}"><label for="sq_sur_${n}">${n}</label>`).join('')}
-                    </div>
-                </div>
-
-                <button id="survey-submit-btn">Enviar Questionário</button>
+            <div id="survey-area" style="display:none; margin-top:30px;">
+                <div id="survey-questions-container"></div>
+                <button id="survey-submit-btn" style="width:100%; padding:15px; font-size:18px; background:#27ae60; color:white; border:none; border-radius:6px; cursor:pointer; margin-top:10px;">Enviar Questionário</button>
             </div>
         </div>
     </div>
@@ -238,6 +196,34 @@ HTML_TEMPLATE = """
         const successMsg = document.getElementById('success-msg');
         const surveyArea = document.getElementById('survey-area');
         const surveySubmitBtn = document.getElementById('survey-submit-btn');
+
+        function renderSurvey() {
+            const questions = [
+                { id: 'relevancia', title: '1. Relev\u00e2ncia', desc: 'Os artigos recomendados s\u00e3o relevantes para meus interesses de pesquisa ou para o tema investigado.' },
+                { id: 'diversidade', title: '2. Diversidade', desc: 'As recomenda\u00e7\u00f5es abordaram diferentes perspectivas, sub\u00e1reas ou abordagens dentro do meu tema de pesquisa.' },
+                { id: 'precisao', title: '3. Precis\u00e3o', desc: 'As recomenda\u00e7\u00f5es correspondem com precis\u00e3o ao assunto ou contexto de busca informado.' },
+                { id: 'interesse', title: '4. Interesse', desc: 'Os artigos recomendados despertam meu interesse e motivariam uma leitura mais aprofundada.' },
+                { id: 'surpresa', title: '5. Surpresa (Serendipidade)', desc: 'As recomenda\u00e7\u00f5es apresentaram artigos inesperados, mas que ainda assim se mostraram \u00fateis ou potencialmente valiosos para minha pesquisa.' },
+            ];
+            const container = document.getElementById('survey-questions-container');
+            container.innerHTML = `
+                <h2 style="color:#2c3e50; border-top:2px solid #eee; padding-top:30px; margin-top:10px;">\uD83D\uDCCB Question\u00e1rio Final</h2>
+                <p style="color:#555; margin-bottom:24px;">Avalie o sistema de recomenda\u00e7\u00e3o como um todo (1 = Discordo totalmente, 5 = Concordo totalmente).</p>
+            `;
+            questions.forEach(q => {
+                const div = document.createElement('div');
+                div.className = 'survey-question';
+                const likertHtml = [1,2,3,4,5].map(n =>
+                    `<input type="radio" name="sq_${q.id}" id="sq_${q.id}_${n}" value="${n}"><label for="sq_${q.id}_${n}">${n}</label>`
+                ).join('');
+                div.innerHTML = `
+                    <p class="q-title">${q.title}</p>
+                    <p class="q-desc">${q.desc}</p>
+                    <div class="likert-group">${likertHtml}</div>
+                `;
+                container.appendChild(div);
+            });
+        }
 
         function renderList(container, recommendations, listId, savedEvals) {
             container.innerHTML = '';
@@ -348,9 +334,9 @@ HTML_TEMPLATE = """
 
             if (res.ok) {
                 form.style.display = 'none';
-                // Mostra o questionario pos-avaliacao
+                // Renderiza e exibe o questionário pós-avaliação
+                renderSurvey();
                 surveyArea.style.display = 'block';
-                surveyArea.innerHTML = surveyArea.innerHTML; // Força re-render das labels com template literals
                 window.scrollTo({ top: surveyArea.offsetTop - 20, behavior: 'smooth' });
                 // Atualiza cache local visual
                 avaliacoes[authorName] = { lista_a: avaliacoes_a, lista_b: avaliacoes_b };
