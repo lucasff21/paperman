@@ -84,7 +84,7 @@ class SurveyPayload(BaseModel):
     relevancia: int
     diversidade: int
     precisao: int
-    interesse: int
+    atualidade: int
     surpresa: int
 
 # TEMPLATE HTML EMBUTIDO PARA FACILITAR (sem precisar de arquivos externos)
@@ -202,7 +202,7 @@ HTML_TEMPLATE = """
                 { id: 'relevancia', title: '1. Relev\u00e2ncia', desc: 'Os artigos recomendados s\u00e3o relevantes para meus interesses de pesquisa ou para o tema investigado.' },
                 { id: 'diversidade', title: '2. Diversidade', desc: 'As recomenda\u00e7\u00f5es abordaram diferentes perspectivas, sub\u00e1reas ou abordagens dentro do meu tema de pesquisa.' },
                 { id: 'precisao', title: '3. Precis\u00e3o', desc: 'As recomenda\u00e7\u00f5es correspondem com precis\u00e3o ao assunto ou contexto de busca informado.' },
-                { id: 'interesse', title: '4. Interesse', desc: 'Os artigos recomendados despertam meu interesse e motivariam uma leitura mais aprofundada.' },
+                { id: 'atualidade', title: '4. Atualidade', desc: 'Os artigos recomendados refletem publica\u00e7\u00f5es recentes ou abordagens atualizadas sobre o tema.' },
                 { id: 'surpresa', title: '5. Surpresa (Serendipidade)', desc: 'As recomenda\u00e7\u00f5es apresentaram artigos inesperados, mas que ainda assim se mostraram \u00fateis ou potencialmente valiosos para minha pesquisa.' },
             ];
             const container = document.getElementById('survey-questions-container');
@@ -352,8 +352,8 @@ HTML_TEMPLATE = """
         });
 
         surveySubmitBtn.addEventListener('click', async () => {
-            const fields = ['relevancia', 'diversidade', 'precisao', 'interesse', 'surpresa'];
-            const nomes = ['Relevância', 'Diversidade', 'Precisão', 'Interesse', 'Surpresa'];
+            const fields = ['relevancia', 'diversidade', 'precisao', 'atualidade', 'surpresa'];
+            const nomes = ['Relevância', 'Diversidade', 'Precisão', 'Atualidade', 'Surpresa'];
             const respostas = {};
             for (let i = 0; i < fields.length; i++) {
                 const checked = document.querySelector(`input[name="sq_${fields[i]}"]:checked`);
