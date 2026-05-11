@@ -60,31 +60,31 @@ for author in AUTHORS:
         print(f"[SKIP] {author} — lista vazia em um dos modelos.")
         continue
 
-    # 1. Pega os TOP 10 da Lista A
-    final_recs_a = recs_a[:10]
-    dois_a = {r.get("doi") for r in final_recs_a if r.get("doi")}
-    titles_a = {r["title"].lower().strip() for r in final_recs_a}
+    # 1. Pega os TOP 10 da Lista B (Multiplicativo é o "dono da vez")
+    final_recs_b = recs_b[:10]
+    dois_b = {r.get("doi") for r in final_recs_b if r.get("doi")}
+    titles_b = {r["title"].lower().strip() for r in final_recs_b}
 
-    # 2. Pega 10 artigos da Lista B pulando o que já tem na A
-    final_recs_b = []
-    skipped_b = []
-    for r in recs_b:
+    # 2. Pega 10 artigos da Lista A pulando o que já tem na B
+    final_recs_a = []
+    skipped_a = []
+    for r in recs_a:
         doi = r.get("doi")
         title = r["title"].lower().strip()
         
         # Filtra repetição
-        if (doi and doi in dois_a) or (title in titles_a):
-            skipped_b.append(r)
+        if (doi and doi in dois_b) or (title in titles_b):
+            skipped_a.append(r)
             continue
             
-        final_recs_b.append(r)
-        if len(final_recs_b) == 10:
+        final_recs_a.append(r)
+        if len(final_recs_a) == 10:
             break
 
     # Se a reserva acabou e não chegamos a 10, preenchemos com os repetidos (fallback)
-    if len(final_recs_b) < 10:
-        needed = 10 - len(final_recs_b)
-        final_recs_b.extend(skipped_b[:needed])
+    if len(final_recs_a) < 10:
+        needed = 10 - len(final_recs_a)
+        final_recs_a.extend(skipped_a[:needed])
 
     new_entries[author] = {
         "author":     author,

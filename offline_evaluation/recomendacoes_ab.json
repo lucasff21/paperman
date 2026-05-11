@@ -2635,30 +2635,6 @@
         "comentario": null
       },
       {
-        "rank": 4,
-        "title": "Reinforcement learning algorithms: A brief survey",
-        "year": 2023,
-        "venue": "Expert Systems with Applications",
-        "authors": [
-          "Ashish Kumar Shakya",
-          "G. N. Pillai",
-          "Sohom Chakrabarty"
-        ],
-        "n_citation": 530,
-        "abstract": "",
-        "doi": "https://doi.org/10.1016/j.eswa.2023.120495",
-        "scores": {
-          "score_total": 0.5466,
-          "score_sem": 0.5466,
-          "score_rec": 0.0,
-          "score_cit": 0.0,
-          "qua_term": 0.0,
-          "qua_raw": 1.0
-        },
-        "avaliacao_usuario": null,
-        "comentario": null
-      },
-      {
         "rank": 5,
         "title": "Bayesian Inverse Reinforcement Learning",
         "year": 2025,
@@ -2676,31 +2652,6 @@
           "score_cit": 0.0,
           "qua_term": 0.0,
           "qua_raw": 0.0
-        },
-        "avaliacao_usuario": null,
-        "comentario": null
-      },
-      {
-        "rank": 6,
-        "title": "Model-based Reinforcement Learning: A Survey",
-        "year": 2023,
-        "venue": "Foundations and Trends® in Machine Learning",
-        "authors": [
-          "Thomas M. Moerland",
-          "Joost Broekens",
-          "Aske Plaat",
-          "Catholijn M. Jonker"
-        ],
-        "n_citation": 472,
-        "abstract": "Sequential decision making, commonly formalized as Markov Decision Process (MDP) optimization, is an important challenge in artificial intelligence. Two key approaches to this problem are reinforcement learning (RL) and planning. This survey is an integration of both fields, better known as model-based reinforcement learning. Model-based RL has two main steps. First, we systematically cover approaches to dynamics model learning, including challenges like dealing with stochasticity, uncertainty, partial observability, and temporal abstraction. Second, we present a systematic categorization of planning-learning integration, including aspects like: where to start planning, what budgets to allocate to planning and real data collection, how to plan, and how to integrate planning in the learning and acting loop. After these two sections, we also discuss implicit model-based RL as an end-to-end alternative for model learning and planning, and we cover the potential benefits of model-based RL. Along the way, the survey also draws connections to several related RL fields, like hierarchical RL and transfer learning. Altogether, the survey presents a broad conceptual overview of the combination of planning and learning for MDP optimization.",
-        "doi": "https://doi.org/10.1561/2200000086",
-        "scores": {
-          "score_total": 0.5466,
-          "score_sem": 0.5466,
-          "score_rec": 0.0,
-          "score_cit": 0.0,
-          "qua_term": 0.0,
-          "qua_raw": 1.0
         },
         "avaliacao_usuario": null,
         "comentario": null
@@ -2799,6 +2750,52 @@
         },
         "avaliacao_usuario": null,
         "comentario": null
+      },
+      {
+        "rank": 11,
+        "title": "Distral: Robust Multitask Reinforcement Learning",
+        "year": 2025,
+        "venue": "Oxford University Research Archive (ORA) (University of Oxford)",
+        "authors": [
+          "Yee Whye Teh"
+        ],
+        "n_citation": 146,
+        "abstract": "Neural information processing systems foundation. All rights reserved. Most deep reinforcement learning algorithms are data inefficient in complex and rich environments, limiting their applicability to many scenarios. One direction for improving data efficiency is multitask learning with shared neural network parameters, where efficiency may be improved through transfer across related tasks. In practice, however, this is not usually observed, because gradients from different tasks can interfere negatively, making learning unstable and sometimes even less data efficient. Another issue is the different reward schemes between tasks, which can easily lead to one task dominating the learning of a shared model. We propose a new approach for joint training of multiple tasks, which we refer to as Distral (distill &amp;amp; transfer learning). Instead of sharing parameters between the different workers, we propose to share a \"distilled\" policy that captures common behaviour across tasks. Each worker is trained to solve its own task while constrained to stay close to the shared policy, while the shared policy is trained by distillation to be the centroid of all task policies. Both aspects of the learning process are derived by optimizing a joint objective function. We show that our approach supports efficient transfer on complex 3D environments, outperforming several related methods. Moreover, the proposed learning process is more robust to hyperparameter settings and more stable - att",
+        "doi": "https://doi.org/10.57702/nufubi9l",
+        "scores": {
+          "score_total": 0.5466,
+          "score_sem": 0.5466,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 12,
+        "title": "Automating turbulence modelling by multi-agent reinforcement learning",
+        "year": 2021,
+        "venue": "Nature Machine Intelligence",
+        "authors": [
+          "Guido Novati",
+          "Hugues Lascombes de Laroussilhe",
+          "Petros Koumoutsakos"
+        ],
+        "n_citation": 172,
+        "abstract": "",
+        "doi": "https://doi.org/10.1038/s42256-020-00272-0",
+        "scores": {
+          "score_total": 0.5466,
+          "score_sem": 0.5466,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 1.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
       }
     ],
     "lista_b": [
@@ -2821,6 +2818,55 @@
           "score_sem": 0.448,
           "score_rec": 0.2263,
           "score_cit": 0.0229,
+          "qua_term": 1.0,
+          "qua_raw": 1.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 2,
+        "title": "Reinforcement learning algorithms: A brief survey",
+        "year": 2023,
+        "venue": "Expert Systems with Applications",
+        "authors": [
+          "Ashish Kumar Shakya",
+          "G. N. Pillai",
+          "Sohom Chakrabarty"
+        ],
+        "n_citation": 530,
+        "abstract": "",
+        "doi": "https://doi.org/10.1016/j.eswa.2023.120495",
+        "scores": {
+          "score_total": 0.0023,
+          "score_sem": 0.5466,
+          "score_rec": 0.2263,
+          "score_cit": 0.0182,
+          "qua_term": 1.0,
+          "qua_raw": 1.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 3,
+        "title": "Model-based Reinforcement Learning: A Survey",
+        "year": 2023,
+        "venue": "Foundations and Trends® in Machine Learning",
+        "authors": [
+          "Thomas M. Moerland",
+          "Joost Broekens",
+          "Aske Plaat",
+          "Catholijn M. Jonker"
+        ],
+        "n_citation": 472,
+        "abstract": "Sequential decision making, commonly formalized as Markov Decision Process (MDP) optimization, is an important challenge in artificial intelligence. Two key approaches to this problem are reinforcement learning (RL) and planning. This survey is an integration of both fields, better known as model-based reinforcement learning. Model-based RL has two main steps. First, we systematically cover approaches to dynamics model learning, including challenges like dealing with stochasticity, uncertainty, partial observability, and temporal abstraction. Second, we present a systematic categorization of planning-learning integration, including aspects like: where to start planning, what budgets to allocate to planning and real data collection, how to plan, and how to integrate planning in the learning and acting loop. After these two sections, we also discuss implicit model-based RL as an end-to-end alternative for model learning and planning, and we cover the potential benefits of model-based RL. Along the way, the survey also draws connections to several related RL fields, like hierarchical RL and transfer learning. Altogether, the survey presents a broad conceptual overview of the combination of planning and learning for MDP optimization.",
+        "doi": "https://doi.org/10.1561/2200000086",
+        "scores": {
+          "score_total": 0.002,
+          "score_sem": 0.5466,
+          "score_rec": 0.2263,
+          "score_cit": 0.0162,
           "qua_term": 1.0,
           "qua_raw": 1.0
         },
@@ -3003,55 +3049,6 @@
         },
         "avaliacao_usuario": null,
         "comentario": null
-      },
-      {
-        "rank": 11,
-        "title": "Reinforcement Learning based Recommender Systems: A Survey",
-        "year": 2022,
-        "venue": "ACM Computing Surveys",
-        "authors": [
-          "M. Mehdi Afsar",
-          "Trafford Crump",
-          "Behrouz H. Far"
-        ],
-        "n_citation": 456,
-        "abstract": "Recommender systems (RSs) have become an inseparable part of our everyday lives. They help us find our favorite items to purchase, our friends on social networks, and our favorite movies to watch. Traditionally, the recommendation problem was considered to be a classification or prediction problem, but it is now widely agreed that formulating it as a sequential decision problem can better reflect the user-system interaction. Therefore, it can be formulated as a Markov decision process (MDP) and be solved by reinforcement learning (RL) algorithms. Unlike traditional recommendation methods, including collaborative filtering and content-based filtering, RL is able to handle the sequential, dynamic user-system interaction and to take into account the long-term user engagement. Although the idea of using RL for recommendation is not new and has been around for about two decades, it was not very practical, mainly because of scalability problems of traditional RL algorithms. However, a new trend has emerged in the field since the introduction of deep reinforcement learning (DRL) , which made it possible to apply RL to the recommendation problem with large state and action spaces. In this paper, a survey on reinforcement learning based recommender systems (RLRSs) is presented. Our aim is to present an outlook on the field and to provide the reader with a fairly complete knowledge of key concepts of the field. We first recognize and illustrate that RLRSs can be generally classified in",
-        "doi": "https://doi.org/10.1145/3543846",
-        "scores": {
-          "score_total": 0.0006,
-          "score_sem": 0.4666,
-          "score_rec": 0.1018,
-          "score_cit": 0.0125,
-          "qua_term": 1.0,
-          "qua_raw": 1.0
-        },
-        "avaliacao_usuario": null,
-        "comentario": null
-      },
-      {
-        "rank": 12,
-        "title": "Exploration in deep reinforcement learning: A survey",
-        "year": 2022,
-        "venue": "Information Fusion",
-        "authors": [
-          "Paweł Ładosz",
-          "Lilian Weng",
-          "Minwoo Kim",
-          "Hyondong Oh"
-        ],
-        "n_citation": 462,
-        "abstract": "",
-        "doi": "https://doi.org/10.1016/j.inffus.2022.03.003",
-        "scores": {
-          "score_total": 0.0006,
-          "score_sem": 0.448,
-          "score_rec": 0.1018,
-          "score_cit": 0.0127,
-          "qua_term": 1.0,
-          "qua_raw": 1.0
-        },
-        "avaliacao_usuario": null,
-        "comentario": null
       }
     ]
   },
@@ -3140,58 +3137,6 @@
         "comentario": null
       },
       {
-        "rank": 4,
-        "title": "A Survey of Large Language Models",
-        "year": 2026,
-        "venue": "Frontiers of Computer Science",
-        "authors": [
-          "Wayne Xin Zhao",
-          "Kun Zhou",
-          "Junyi Li",
-          "Tianyi Tang",
-          "Xiaolei Wang"
-        ],
-        "n_citation": 1392,
-        "abstract": "Abstract The rapid evolution of large language models (LLMs) has driven a transformative shift in artificial intelligence (AI), reshaping both research paradigms and practical applications. Distinguished from their predecessors by unprecedented scale and advanced capabilities, LLMs necessitate new frameworks for understanding their development, behavior, and societal impact. This survey systematically reviews recent advancements in LLM techniques across four key dimensions: (1) pre-training methodologies, which establish core model capabilities through large-scale self-supervised training, architectural innovations, and data curation strategies; (2) post-training techniques, including supervised fine-tuning and reinforcement learning, which adapt foundational models to downstream tasks and enhance their alignment and safety; (3) utilization strategies, such as in-context learning, prompt engineering, and agentic reasoning, that optimize real-world deployment and enable effective interaction with external environments; and (4) evaluation methods, encompassing benchmarks for key ability dimensions such as core language capabilities, reasoning, and safety, which support comprehensive and reliable assessment of model performance. Additionally, we identify critical research issues, including those concerning theoretical foundations, efficient scaling, alignment, and agentic capability, and highlight the open challenges they present. By synthesizing state-of-the-art insights and em",
-        "doi": "https://doi.org/10.1007/s11704-026-60308-3",
-        "scores": {
-          "score_total": 1.0,
-          "score_sem": 1.0,
-          "score_rec": 0.0,
-          "score_cit": 0.0,
-          "qua_term": 0.0,
-          "qua_raw": 0.75
-        },
-        "avaliacao_usuario": null,
-        "comentario": null
-      },
-      {
-        "rank": 5,
-        "title": "ChatGPT and Other Large Language Models Are Double-edged Swords",
-        "year": 2023,
-        "venue": "Radiology",
-        "authors": [
-          "Yiqiu Shen",
-          "Laura Heacock",
-          "Jonathan Elias",
-          "Keith Hentel",
-          "Beatriu Reig"
-        ],
-        "n_citation": 992,
-        "abstract": "",
-        "doi": "https://doi.org/10.1148/radiol.230163",
-        "scores": {
-          "score_total": 1.0,
-          "score_sem": 1.0,
-          "score_rec": 0.0,
-          "score_cit": 0.0,
-          "qua_term": 0.0,
-          "qua_raw": 1.0
-        },
-        "avaliacao_usuario": null,
-        "comentario": null
-      },
-      {
         "rank": 6,
         "title": "BLIP-2: Bootstrapping Language-Image Pre-training with Frozen Image Encoders and Large Language Models",
         "year": 2023,
@@ -3243,32 +3188,6 @@
         "comentario": null
       },
       {
-        "rank": 8,
-        "title": "Explainability for Large Language Models: A Survey",
-        "year": 2024,
-        "venue": "ACM Transactions on Intelligent Systems and Technology",
-        "authors": [
-          "Haiyan Zhao",
-          "Hanjie Chen",
-          "Fan Yang",
-          "Ninghao Liu",
-          "Huiqi Deng"
-        ],
-        "n_citation": 508,
-        "abstract": "Large language models (LLMs) have demonstrated impressive capabilities in natural language processing. However, their internal mechanisms are still unclear and this lack of transparency poses unwanted risks for downstream applications. Therefore, understanding and explaining these models is crucial for elucidating their behaviors, limitations, and social impacts. In this article, we introduce a taxonomy of explainability techniques and provide a structured overview of methods for explaining Transformer-based language models. We categorize techniques based on the training paradigms of LLMs: traditional fine-tuning-based paradigm and prompting-based paradigm. For each paradigm, we summarize the goals and dominant approaches for generating local explanations of individual predictions and global explanations of overall model knowledge. We also discuss metrics for evaluating generated explanations and discuss how explanations can be leveraged to debug models and improve performance. Lastly, we examine key challenges and emerging opportunities for explanation techniques in the era of LLMs in comparison to conventional deep learning models.",
-        "doi": "https://doi.org/10.1145/3639372",
-        "scores": {
-          "score_total": 1.0,
-          "score_sem": 1.0,
-          "score_rec": 0.0,
-          "score_cit": 0.0,
-          "qua_term": 0.0,
-          "qua_raw": 1.0
-        },
-        "avaliacao_usuario": null,
-        "comentario": null
-      },
-      {
         "rank": 9,
         "title": "Retrieval-Augmented Generation for Large Language Models: A Survey",
         "year": 2023,
@@ -3295,20 +3214,93 @@
         "comentario": null
       },
       {
-        "rank": 10,
-        "title": "Bias and Fairness in Large Language Models: A Survey",
-        "year": 2024,
+        "rank": 11,
+        "title": "Science in the age of large language models",
+        "year": 2023,
+        "venue": "Nature Reviews Physics",
+        "authors": [
+          "Abeba Birhane",
+          "Atoosa Kasirzadeh",
+          "David Leslie",
+          "Sandra Wachter"
+        ],
+        "n_citation": 309,
+        "abstract": "",
+        "doi": "https://doi.org/10.1038/s42254-023-00581-4",
+        "scores": {
+          "score_total": 1.0,
+          "score_sem": 1.0,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 12,
+        "title": "Role play with large language models",
+        "year": 2023,
+        "venue": "Nature",
+        "authors": [
+          "Murray Shanahan",
+          "Kyle McDonell",
+          "Laria Reynolds"
+        ],
+        "n_citation": 367,
+        "abstract": "",
+        "doi": "https://doi.org/10.1038/s41586-023-06647-8",
+        "scores": {
+          "score_total": 1.0,
+          "score_sem": 1.0,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 13,
+        "title": "Persistent Anti-Muslim Bias in Large Language Models",
+        "year": 2021,
+        "venue": "",
+        "authors": [
+          "Abubakar Abid",
+          "Maheen Farooqi",
+          "James Zou"
+        ],
+        "n_citation": 424,
+        "abstract": "It has been observed that large-scale language models capture undesirable societal biases, e.g. relating to race and gender; yet religious bias has been relatively unexplored. We demonstrate that GPT-3, a state-of-the-art contextual language model, captures persistent Muslim-violence bias. We probe GPT-3 in various ways, including prompt completion, analogical reasoning, and story generation, to understand this anti-Muslim bias, demonstrating that it appears consistently and creatively in different uses of the model and that it is severe even compared to biases about other religious groups. For instance, Muslim is analogized to terrorist in 23% of test cases, while Jewish is mapped to its most common stereotype, money, in 5% of test cases. We quantify the positive distraction needed to overcome this bias with adversarial text prompts, and find that use of the most positive 6 adjectives reduces violent completions for Muslims from 66% to 20%, but which is still higher than for other religious groups.",
+        "doi": "https://doi.org/10.1145/3461702.3462624",
+        "scores": {
+          "score_total": 1.0,
+          "score_sem": 1.0,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 14,
+        "title": "Can Large Language Models Transform Computational Social Science?",
+        "year": 2023,
         "venue": "Computational Linguistics",
         "authors": [
-          "Isabel O. Gallegos",
-          "Ryan A. Rossi",
-          "Joe Barrow",
-          "Md Mehrab Tanjim",
-          "Sungchul Kim"
+          "Caleb Ziems",
+          "William A. Held",
+          "Omar Ahmed Shaikh",
+          "Jiaao Chen",
+          "Zhehao Zhang"
         ],
-        "n_citation": 460,
-        "abstract": "Abstract Rapid advancements of large language models (LLMs) have enabled the processing, understanding, and generation of human-like text, with increasing integration into systems that touch our social sphere. Despite this success, these models can learn, perpetuate, and amplify harmful social biases. In this article, we present a comprehensive survey of bias evaluation and mitigation techniques for LLMs. We first consolidate, formalize, and expand notions of social bias and fairness in natural language processing, defining distinct facets of harm and introducing several desiderata to operationalize fairness for LLMs. We then unify the literature by proposing three intuitive taxonomies, two for bias evaluation, namely, metrics and datasets, and one for mitigation. Our first taxonomy of metrics for bias evaluation disambiguates the relationship between metrics and evaluation datasets, and organizes metrics by the different levels at which they operate in a model: embeddings, probabilities, and generated text. Our second taxonomy of datasets for bias evaluation categorizes datasets by their structure as counterfactual inputs or prompts, and identifies the targeted harms and social groups; we also release a consolidation of publicly available datasets for improved access. Our third taxonomy of techniques for bias mitigation classifies methods by their intervention during pre-processing, in-training, intra-processing, and post-processing, with granular subcategories that elucidat",
-        "doi": "https://doi.org/10.1162/coli_a_00524",
+        "n_citation": 406,
+        "abstract": "Abstract Large language models (LLMs) are capable of successfully performing many language processing tasks zero-shot (without training data). If zero-shot LLMs can also reliably classify and explain social phenomena like persuasiveness and political ideology, then LLMs could augment the computational social science (CSS) pipeline in important ways. This work provides a road map for using LLMs as CSS tools. Towards this end, we contribute a set of prompting best practices and an extensive evaluation pipeline to measure the zero-shot performance of 13 language models on 25 representative English CSS benchmarks. On taxonomic labeling tasks (classification), LLMs fail to outperform the best fine-tuned models but still achieve fair levels of agreement with humans. On free-form coding tasks (generation), LLMs produce explanations that often exceed the quality of crowdworkers’ gold references. We conclude that the performance of today’s LLMs can augment the CSS research pipeline in two ways: (1) serving as zero-shot data annotators on human annotation teams, and (2) bootstrapping challenging creative generation tasks (e.g., explaining the underlying attributes of a text). In summary, LLMs are posed to meaningfully participate in social science analysis in partnership with humans.",
+        "doi": "https://doi.org/10.1162/coli_a_00502",
         "scores": {
           "score_total": 1.0,
           "score_sem": 1.0,
@@ -3322,6 +3314,32 @@
       }
     ],
     "lista_b": [
+      {
+        "rank": 1,
+        "title": "A Survey of Large Language Models",
+        "year": 2026,
+        "venue": "Frontiers of Computer Science",
+        "authors": [
+          "Wayne Xin Zhao",
+          "Kun Zhou",
+          "Junyi Li",
+          "Tianyi Tang",
+          "Xiaolei Wang"
+        ],
+        "n_citation": 1392,
+        "abstract": "Abstract The rapid evolution of large language models (LLMs) has driven a transformative shift in artificial intelligence (AI), reshaping both research paradigms and practical applications. Distinguished from their predecessors by unprecedented scale and advanced capabilities, LLMs necessitate new frameworks for understanding their development, behavior, and societal impact. This survey systematically reviews recent advancements in LLM techniques across four key dimensions: (1) pre-training methodologies, which establish core model capabilities through large-scale self-supervised training, architectural innovations, and data curation strategies; (2) post-training techniques, including supervised fine-tuning and reinforcement learning, which adapt foundational models to downstream tasks and enhance their alignment and safety; (3) utilization strategies, such as in-context learning, prompt engineering, and agentic reasoning, that optimize real-world deployment and enable effective interaction with external environments; and (4) evaluation methods, encompassing benchmarks for key ability dimensions such as core language capabilities, reasoning, and safety, which support comprehensive and reliable assessment of model performance. Additionally, we identify critical research issues, including those concerning theoretical foundations, efficient scaling, alignment, and agentic capability, and highlight the open challenges they present. By synthesizing state-of-the-art insights and em",
+        "doi": "https://doi.org/10.1007/s11704-026-60308-3",
+        "scores": {
+          "score_total": 0.0694,
+          "score_sem": 1.0,
+          "score_rec": 1.0,
+          "score_cit": 0.0925,
+          "qua_term": 0.75,
+          "qua_raw": 0.75
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
       {
         "rank": 2,
         "title": "A Survey on Evaluation of Large Language Models",
@@ -3427,6 +3445,58 @@
         "comentario": null
       },
       {
+        "rank": 6,
+        "title": "Explainability for Large Language Models: A Survey",
+        "year": 2024,
+        "venue": "ACM Transactions on Intelligent Systems and Technology",
+        "authors": [
+          "Haiyan Zhao",
+          "Hanjie Chen",
+          "Fan Yang",
+          "Ninghao Liu",
+          "Huiqi Deng"
+        ],
+        "n_citation": 508,
+        "abstract": "Large language models (LLMs) have demonstrated impressive capabilities in natural language processing. However, their internal mechanisms are still unclear and this lack of transparency poses unwanted risks for downstream applications. Therefore, understanding and explaining these models is crucial for elucidating their behaviors, limitations, and social impacts. In this article, we introduce a taxonomy of explainability techniques and provide a structured overview of methods for explaining Transformer-based language models. We categorize techniques based on the training paradigms of LLMs: traditional fine-tuning-based paradigm and prompting-based paradigm. For each paradigm, we summarize the goals and dominant approaches for generating local explanations of individual predictions and global explanations of overall model knowledge. We also discuss metrics for evaluating generated explanations and discuss how explanations can be leveraged to debug models and improve performance. Lastly, we examine key challenges and emerging opportunities for explanation techniques in the era of LLMs in comparison to conventional deep learning models.",
+        "doi": "https://doi.org/10.1145/3639372",
+        "scores": {
+          "score_total": 0.0043,
+          "score_sem": 1.0,
+          "score_rec": 0.3869,
+          "score_cit": 0.0112,
+          "qua_term": 1.0,
+          "qua_raw": 1.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 7,
+        "title": "Bias and Fairness in Large Language Models: A Survey",
+        "year": 2024,
+        "venue": "Computational Linguistics",
+        "authors": [
+          "Isabel O. Gallegos",
+          "Ryan A. Rossi",
+          "Joe Barrow",
+          "Md Mehrab Tanjim",
+          "Sungchul Kim"
+        ],
+        "n_citation": 460,
+        "abstract": "Abstract Rapid advancements of large language models (LLMs) have enabled the processing, understanding, and generation of human-like text, with increasing integration into systems that touch our social sphere. Despite this success, these models can learn, perpetuate, and amplify harmful social biases. In this article, we present a comprehensive survey of bias evaluation and mitigation techniques for LLMs. We first consolidate, formalize, and expand notions of social bias and fairness in natural language processing, defining distinct facets of harm and introducing several desiderata to operationalize fairness for LLMs. We then unify the literature by proposing three intuitive taxonomies, two for bias evaluation, namely, metrics and datasets, and one for mitigation. Our first taxonomy of metrics for bias evaluation disambiguates the relationship between metrics and evaluation datasets, and organizes metrics by the different levels at which they operate in a model: embeddings, probabilities, and generated text. Our second taxonomy of datasets for bias evaluation categorizes datasets by their structure as counterfactual inputs or prompts, and identifies the targeted harms and social groups; we also release a consolidation of publicly available datasets for improved access. Our third taxonomy of techniques for bias mitigation classifies methods by their intervention during pre-processing, in-training, intra-processing, and post-processing, with granular subcategories that elucidat",
+        "doi": "https://doi.org/10.1162/coli_a_00524",
+        "scores": {
+          "score_total": 0.0039,
+          "score_sem": 1.0,
+          "score_rec": 0.3869,
+          "score_cit": 0.0102,
+          "qua_term": 1.0,
+          "qua_raw": 1.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
         "rank": 8,
         "title": "Unifying Large Language Models and Knowledge Graphs: A Roadmap",
         "year": 2024,
@@ -3446,6 +3516,32 @@
           "score_sem": 0.5229,
           "score_rec": 0.3869,
           "score_cit": 0.0192,
+          "qua_term": 1.0,
+          "qua_raw": 1.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 9,
+        "title": "ChatGPT and Other Large Language Models Are Double-edged Swords",
+        "year": 2023,
+        "venue": "Radiology",
+        "authors": [
+          "Yiqiu Shen",
+          "Laura Heacock",
+          "Jonathan Elias",
+          "Keith Hentel",
+          "Beatriu Reig"
+        ],
+        "n_citation": 992,
+        "abstract": "",
+        "doi": "https://doi.org/10.1148/radiol.230163",
+        "scores": {
+          "score_total": 0.0037,
+          "score_sem": 1.0,
+          "score_rec": 0.2263,
+          "score_cit": 0.0165,
           "qua_term": 1.0,
           "qua_raw": 1.0
         },
@@ -3477,110 +3573,6 @@
         },
         "avaliacao_usuario": null,
         "comentario": null
-      },
-      {
-        "rank": 11,
-        "title": "Augmenting large language models with chemistry tools",
-        "year": 2024,
-        "venue": "Nature Machine Intelligence",
-        "authors": [
-          "Andres M. Bran",
-          "Sam Cox",
-          "Oliver Schilter",
-          "Carlo Baldassari",
-          "Andrew Dickson White"
-        ],
-        "n_citation": 534,
-        "abstract": "Large language models (LLMs) have shown strong performance in tasks across domains but struggle with chemistry-related problems. These models also lack access to external knowledge sources, limiting their usefulness in scientific applications. We introduce ChemCrow, an LLM chemistry agent designed to accomplish tasks across organic synthesis, drug discovery and materials design. By integrating 18 expert-designed tools and using GPT-4 as the LLM, ChemCrow augments the LLM performance in chemistry, and new capabilities emerge. Our agent autonomously planned and executed the syntheses of an insect repellent and three organocatalysts and guided the discovery of a novel chromophore. Our evaluation, including both LLM and expert assessments, demonstrates ChemCrow's effectiveness in automating a diverse set of chemical tasks. Our work not only aids expert chemists and lowers barriers for non-experts but also fosters scientific advancement by bridging the gap between experimental and computational chemistry.",
-        "doi": "https://doi.org/10.1038/s42256-024-00832-8",
-        "scores": {
-          "score_total": 0.0031,
-          "score_sem": 0.6866,
-          "score_rec": 0.3869,
-          "score_cit": 0.0118,
-          "qua_term": 1.0,
-          "qua_raw": 1.0
-        },
-        "avaliacao_usuario": null,
-        "comentario": null
-      },
-      {
-        "rank": 12,
-        "title": "Large Language Models for Software Engineering: A Systematic Literature Review",
-        "year": 2024,
-        "venue": "ACM Transactions on Software Engineering and Methodology",
-        "authors": [
-          "Xinyi Hou",
-          "Yanjie Zhao",
-          "Yue Liu",
-          "Zhou Yang",
-          "Kailong Wang"
-        ],
-        "n_citation": 634,
-        "abstract": "Large Language Models (LLMs) have significantly impacted numerous domains, including Software Engineering (SE). Many recent publications have explored LLMs applied to various SE tasks. Nevertheless, a comprehensive understanding of the application, effects, and possible limitations of LLMs on SE is still in its early stages. To bridge this gap, we conducted a Systematic Literature Review (SLR) on LLM4SE, with a particular focus on understanding how LLMs can be exploited to optimize processes and outcomes. We selected and analyzed 395 research articles from January 2017 to January 2024 to answer four key Research Questions (RQs). In RQ1, we categorize different LLMs that have been employed in SE tasks, characterizing their distinctive features and uses. In RQ2, we analyze the methods used in data collection, pre-processing, and application, highlighting the role of well-curated datasets for successful LLM for SE implementation. RQ3 investigates the strategies employed to optimize and evaluate the performance of LLMs in SE. Finally, RQ4 examines the specific SE tasks where LLMs have shown success to date, illustrating their practical contributions to the field. From the answers to these RQs, we discuss the current state-of-the-art and trends, identifying gaps in existing research, and highlighting promising areas for future study. Our artifacts are publicly available at https://github.com/security-pride/LLM4SE_SLR .",
-        "doi": "https://doi.org/10.1145/3695988",
-        "scores": {
-          "score_total": 0.003,
-          "score_sem": 0.6281,
-          "score_rec": 0.3869,
-          "score_cit": 0.014,
-          "qua_term": 0.875,
-          "qua_raw": 0.875
-        },
-        "avaliacao_usuario": null,
-        "comentario": null
-      },
-      {
-        "rank": 13,
-        "title": "Structured information extraction from scientific text with large language models",
-        "year": 2024,
-        "venue": "Nature Communications",
-        "authors": [
-          "John Dagdelen",
-          "Alexander Dunn",
-          "Sang‐Hoon Lee",
-          "Nicholas Walker",
-          "Andrew Rosen"
-        ],
-        "n_citation": 536,
-        "abstract": "Extracting structured knowledge from scientific text remains a challenging task for machine learning models. Here, we present a simple approach to joint named entity recognition and relation extraction and demonstrate how pretrained large language models (GPT-3, Llama-2) can be fine-tuned to extract useful records of complex scientific knowledge. We test three representative tasks in materials chemistry: linking dopants and host materials, cataloging metal-organic frameworks, and general composition/phase/morphology/application information extraction. Records are extracted from single sentences or entire paragraphs, and the output can be returned as simple English sentences or a more structured format such as a list of JSON objects. This approach represents a simple, accessible, and highly flexible route to obtaining large databases of structured specialized scientific knowledge extracted from research papers.",
-        "doi": "https://doi.org/10.1038/s41467-024-45563-x",
-        "scores": {
-          "score_total": 0.0029,
-          "score_sem": 0.6283,
-          "score_rec": 0.3869,
-          "score_cit": 0.0119,
-          "qua_term": 1.0,
-          "qua_raw": 1.0
-        },
-        "avaliacao_usuario": null,
-        "comentario": null
-      },
-      {
-        "rank": 14,
-        "title": "A Review on Large Language Models: Architectures, Applications, Taxonomies, Open Issues and Challenges",
-        "year": 2024,
-        "venue": "IEEE Access",
-        "authors": [
-          "Mohaimenul Azam Khan Raiaan",
-          "Md. Saddam Hossain Mukta",
-          "Kaniz Fatema",
-          "Nur Mohammad Fahad",
-          "Sadman Sakib"
-        ],
-        "n_citation": 648,
-        "abstract": "Large Language Models (LLMs) recently demonstrated extraordinary capability, including natural language processing (NLP), language translation, text generation, question answering, etc. Moreover, LLMs are a new and essential part of computerized language processing, having the ability to understand complex verbal patterns and generate coherent and appropriate replies for the situation. Though this success of LLMs has prompted a substantial increase in research contributions, rapid growth has made it difficult to understand the overall impact of these improvements. Since a lot of new research on LLMs is coming out quickly, it is getting tough to get an overview of all of them in a short note. Consequently, the research community would benefit from a short but thorough review of the recent changes in this area. This article thoroughly overviews LLMs, including their history, architectures, transformers, resources, training methods, applications, impacts, challenges, etc. This paper begins by discussing the fundamental concepts of LLMs with its traditional pipeline of the LLMs training phase. It then provides an overview of the existing works, the history of LLMs, their evolution over time, the architecture of transformers in LLMs, the different resources of LLMs, and the different training methods that have been used to train them. It also demonstrated the datasets utilized in the studies. After that, the paper discusses the wide range of applications of LLMs, including biomedi",
-        "doi": "https://doi.org/10.1109/access.2024.3365742",
-        "scores": {
-          "score_total": 0.0027,
-          "score_sem": 0.492,
-          "score_rec": 0.3869,
-          "score_cit": 0.0143,
-          "qua_term": 1.0,
-          "qua_raw": 1.0
-        },
-        "avaliacao_usuario": null,
-        "comentario": null
       }
     ]
   },
@@ -3590,6 +3582,255 @@
     "generation_time_a": 16.75,
     "generation_time_b": 10.38,
     "lista_a": [
+      {
+        "rank": 11,
+        "title": "Spectral–Spatial Feature Tokenization Transformer for Hyperspectral Image Classification",
+        "year": 2022,
+        "venue": "IEEE Transactions on Geoscience and Remote Sensing",
+        "authors": [
+          "Le Sun",
+          "Guangrui Zhao",
+          "Yuhui Zheng",
+          "Zebin Wu"
+        ],
+        "n_citation": 633,
+        "abstract": "In hyperspectral image (HSI) classification, each pixel sample is assigned to a land-cover category. In the recent past, convolutional neural network (CNN)-based HSI classification methods have greatly improved performance due to their superior ability to represent features. However, these methods have limited ability to obtain deep semantic features, and as the layer’s number increases, computational costs rise significantly. The transformer framework can represent high-level semantic features well. In this article, a spectral–spatial feature tokenization transformer (SSFTT) method is proposed to capture spectral–spatial features and high-level semantic features. First, a spectral–spatial feature extraction module is built to extract low-level features. This module is composed of a 3-D convolution layer and a 2-D convolution layer, which are used to extract the shallow spectral and spatial features. Second, a Gaussian weighted feature tokenizer is introduced for features transformation. Third, the transformed features are input into the transformer encoder module for feature representation and learning. Finally, a linear layer is used to identify the first learnable token to obtain the sample label. Using three standard datasets, experimental analysis confirms that the computation time is less than other deep learning methods and the performance of the classification outperforms several current state-of-the-art methods. The code of this work is available at <uri xmlns:mml=\"h",
+        "doi": "https://doi.org/10.1109/tgrs.2022.3144158",
+        "scores": {
+          "score_total": 0.0,
+          "score_sem": 0.0,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 1.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 12,
+        "title": "Class-Incremental Learning: Survey and Performance Evaluation on Image Classification",
+        "year": 2022,
+        "venue": "IEEE Transactions on Pattern Analysis and Machine Intelligence",
+        "authors": [
+          "Marc Masana",
+          "Xialei Liu",
+          "Bartłomiej Twardowski",
+          "Mikel Menta",
+          "Andrew D. Bagdanov"
+        ],
+        "n_citation": 597,
+        "abstract": "For future learning systems, incremental learning is desirable because it allows for: efficient resource usage by eliminating the need to retrain from scratch at the arrival of new data; reduced memory usage by preventing or limiting the amount of data required to be stored - also important when privacy limitations are imposed; and learning that more closely resembles human learning. The main challenge for incremental learning is catastrophic forgetting, which refers to the precipitous drop in performance on previously learned tasks after learning a new one. Incremental learning of deep neural networks has seen explosive growth in recent years. Initial work focused on task-incremental learning, where a task-ID is provided at inference time. Recently, we have seen a shift towards class-incremental learning where the learner must discriminate at inference time between all classes seen in previous tasks without recourse to a task-ID. In this paper, we provide a complete survey of existing class-incremental learning methods for image classification, and in particular, we perform an extensive experimental evaluation on thirteen class-incremental methods. We consider several new experimental scenarios, including a comparison of class-incremental methods on multiple large-scale image classification datasets, an investigation into small and large domain shifts, and a comparison of various network architectures.",
+        "doi": "https://doi.org/10.1109/tpami.2022.3213473",
+        "scores": {
+          "score_total": 0.0,
+          "score_sem": 0.0,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 1.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 13,
+        "title": "Spatial-Spectral Transformer for Hyperspectral Image Classification",
+        "year": 2021,
+        "venue": "Remote Sensing",
+        "authors": [
+          "Xin He",
+          "Yushi Chen",
+          "Zhouhan Lin"
+        ],
+        "n_citation": 423,
+        "abstract": "Recently, a great many deep convolutional neural network (CNN)-based methods have been proposed for hyperspectral image (HSI) classification. Although the proposed CNN-based methods have the advantages of spatial feature extraction, they are difficult to handle the sequential data with and CNNs are not good at modeling the long-range dependencies. However, the spectra of HSI are a kind of sequential data, and HSI usually contains hundreds of bands. Therefore, it is difficult for CNNs to handle HSI processing well. On the other hand, the Transformer model, which is based on an attention mechanism, has proved its advantages in processing sequential data. To address the issue of capturing relationships of sequential spectra in HSI in a long distance, in this study, Transformer is investigated for HSI classification. Specifically, in this study, a new classification framework titled spatial-spectral Transformer (SST) is proposed for HSI classification. In the proposed SST, a well-designed CNN is used to extract the spatial features, and a modified Transformer (a Transformer with dense connection, i.e., DenseTransformer) is proposed to capture sequential spectra relationships, and multilayer perceptron is used to finish the final classification task. Furthermore, dynamic feature augmentation, which aims to alleviate the overfitting problem and therefore generalize the model well, is proposed and added to the SST (SST-FA). In addition, to address the issue of limited training sampl",
+        "doi": "https://doi.org/10.3390/rs13030498",
+        "scores": {
+          "score_total": 0.0,
+          "score_sem": 0.0,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 1.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 14,
+        "title": "Comparing Vision Transformers and Convolutional Neural Networks for Image Classification: A Literature Review",
+        "year": 2023,
+        "venue": "Applied Sciences",
+        "authors": [
+          "José Maurício",
+          "Inês Domingues",
+          "Jorge Bernardino"
+        ],
+        "n_citation": 514,
+        "abstract": "Transformers are models that implement a mechanism of self-attention, individually weighting the importance of each part of the input data. Their use in image classification tasks is still somewhat limited since researchers have so far chosen Convolutional Neural Networks for image classification and transformers were more targeted to Natural Language Processing (NLP) tasks. Therefore, this paper presents a literature review that shows the differences between Vision Transformers (ViT) and Convolutional Neural Networks. The state of the art that used the two architectures for image classification was reviewed and an attempt was made to understand what factors may influence the performance of the two deep learning architectures based on the datasets used, image size, number of target classes (for the classification problems), hardware, and evaluated architectures and top results. The objective of this work is to identify which of the architectures is the best for image classification and under what conditions. This paper also describes the importance of the Multi-Head Attention mechanism for improving the performance of ViT in image classification.",
+        "doi": "https://doi.org/10.3390/app13095521",
+        "scores": {
+          "score_total": 0.0,
+          "score_sem": 0.0,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.875
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 15,
+        "title": "Understanding Robustness of Transformers for Image Classification",
+        "year": 2021,
+        "venue": "2021 IEEE/CVF International Conference on Computer Vision (ICCV)",
+        "authors": [
+          "Srinadh Bhojanapalli",
+          "Ayan Chakrabarti",
+          "Daniel Gläsner",
+          "Daliang Li",
+          "Thomas Unterthiner"
+        ],
+        "n_citation": 389,
+        "abstract": "Deep Convolutional Neural Networks (CNNs) have long been the architecture of choice for computer vision tasks. Recently, Transformer-based architectures like Vision Transformer (ViT) have matched or even surpassed ResNets for image classification. However, details of the Transformer architecture –such as the use of non-overlapping patches– lead one to wonder whether these networks are as robust. In this paper, we perform an extensive study of a variety of different measures of robustness of ViT models and compare the findings to ResNet baselines. We investigate robustness to input perturbations as well as robustness to model perturbations. We find that when pre-trained with a sufficient amount of data, ViT models are at least as robust as the ResNet counterparts on a broad range of perturbations. We also find that Transformers are robust to the removal of almost any single layer, and that while activations from later layers are highly correlated with each other, they nevertheless play an important role in classification.",
+        "doi": "https://doi.org/10.1109/iccv48922.2021.01007",
+        "scores": {
+          "score_total": 0.0,
+          "score_sem": 0.0,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 1.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 16,
+        "title": "Multimodal Fusion Transformer for Remote Sensing Image Classification",
+        "year": 2023,
+        "venue": "IEEE Transactions on Geoscience and Remote Sensing",
+        "authors": [
+          "Swalpa Kumar Roy",
+          "Ankur Deria",
+          "Danfeng Hong",
+          "Behnood Rasti",
+          "Antonio Plaza"
+        ],
+        "n_citation": 452,
+        "abstract": "Vision transformers (ViTs) have been trending in image classification tasks due to their promising performance when compared to convolutional neural networks (CNNs). As a result, many researchers have tried to incorporate ViTs in hyperspectral image (HSI) classification tasks. To achieve satisfactory performance, close to that of CNNs, transformers need fewer parameters. ViTs and other similar transformers use an external classification (CLS) token which is randomly initialized and often fails to generalize well, whereas other sources of multimodal datasets, such as light detection and ranging (LiDAR) offer the potential to improve these models by means of a CLS. In this paper, we introduce a new multimodal fusion transformer (MFT) network which comprises a multihead cross patch attention (mCrossPA) for HSI land-cover classification. Our mCrossPA utilizes other sources of complementary information in addition to the HSI in the transformer encoder to achieve better generalization. The concept of tokenization is used to generate CLS and HSI patch tokens, helping to learn a distinctive representation in a reduced and hierarchical feature space. Extensive experiments are carried out on widely used benchmark datasets i.e., the University of Houston, Trento, University of Southern Mississippi Gulfpark (MUUFL), and Augsburg. We compare the results of the proposed MFT model with other state-of-the-art transformers, classical CNNs, and conventional classifiers models. The superior per",
+        "doi": "https://doi.org/10.1109/tgrs.2023.3286826",
+        "scores": {
+          "score_total": 0.0,
+          "score_sem": 0.0,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 1.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 17,
+        "title": "Dual-stream Multiple Instance Learning Network for Whole Slide Image Classification with Self-supervised Contrastive Learning",
+        "year": 2021,
+        "venue": "",
+        "authors": [
+          "Bin Li",
+          "Yin Li",
+          "Kevin W. Eliceiri"
+        ],
+        "n_citation": 770,
+        "abstract": "We address the challenging problem of whole slide image (WSI) classification. WSIs have very high resolutions and usually lack localized annotations. WSI classification can be cast as a multiple instance learning (MIL) problem when only slide-level labels are available. We propose a MIL-based method for WSI classification and tumor detection that does not require localized annotations. Our method has three major components. First, we introduce a novel MIL aggregator that models the relations of the instances in a dual-stream architecture with trainable distance measurement. Second, since WSIs can produce large or unbalanced bags that hinder the training of MIL models, we propose to use self-supervised contrastive learning to extract good representations for MIL and alleviate the issue of prohibitive memory cost for large bags. Third, we adopt a pyramidal fusion mechanism for multiscale WSI features, and further improve the accuracy of classification and localization. Our model is evaluated on two representative WSI datasets. The classification accuracy of our model compares favorably to fully-supervised methods, with less than 2% accuracy gap across datasets. Our results also outperform all previous MIL-based methods. Additional benchmark results on standard MIL datasets further demonstrate the superior performance of our MIL aggregator on general MIL problems.",
+        "doi": "https://doi.org/10.1109/cvpr46437.2021.01409",
+        "scores": {
+          "score_total": 0.0,
+          "score_sem": 0.0,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 18,
+        "title": "TransMed: Transformers Advance Multi-Modal Medical Image Classification",
+        "year": 2021,
+        "venue": "Diagnostics",
+        "authors": [
+          "Yin Dai",
+          "Yifan Gao",
+          "Fayu Liu"
+        ],
+        "n_citation": 431,
+        "abstract": "Over the past decade, convolutional neural networks (CNN) have shown very competitive performance in medical image analysis tasks, such as disease classification, tumor segmentation, and lesion detection. CNN has great advantages in extracting local features of images. However, due to the locality of convolution operation, it cannot deal with long-range relationships well. Recently, transformers have been applied to computer vision and achieved remarkable success in large-scale datasets. Compared with natural images, multi-modal medical images have explicit and important long-range dependencies, and effective multi-modal fusion strategies can greatly improve the performance of deep models. This prompts us to study transformer-based structures and apply them to multi-modal medical images. Existing transformer-based network architectures require large-scale datasets to achieve better performance. However, medical imaging datasets are relatively small, which makes it difficult to apply pure transformers to medical image analysis. Therefore, we propose TransMed for multi-modal medical image classification. TransMed combines the advantages of CNN and transformer to efficiently extract low-level features of images and establish long-range dependencies between modalities. We evaluated our model on two datasets, parotid gland tumors classification and knee injury classification. Combining our contributions, we achieve an improvement of 10.1% and 1.9% in average accuracy, respectively",
+        "doi": "https://doi.org/10.3390/diagnostics11081384",
+        "scores": {
+          "score_total": 0.0,
+          "score_sem": 0.0,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.75
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 19,
+        "title": "A comparison between VGG16, VGG19 and ResNet50 architecture frameworks for Image Classification",
+        "year": 2021,
+        "venue": "",
+        "authors": [
+          "Sheldon Mascarenhas",
+          "Mukul Agarwal"
+        ],
+        "n_citation": 504,
+        "abstract": "Artificial Intelligence advancements have come a long way over the past twenty years. Rapid developments in AI have given birth to a trending topic called machine learning. Machine learning enables us to use algorithms and programming techniques to extract, understand and train data. Machine learning led to the creation of a concept called deep learning which uses algorithms to create an artificial neural network and use it to develop and learn, based on which it makes intuitive decisions by itself. Image classification is a task where we classify the images into sets of different categories, which when performed using deep learning increases business productivity by saving time and manpower. In this paper, we intend to determine which model of the architecture of the Convoluted Neural Network (CNN) can be used to solve a real-life problem of product classification to help optimize pricing comparison. We have compared the VGG16, VGG19, and ResNet50 architectures based on their accuracy while all three of these models solve the same image classification problem. We have concluded that the ResNet50 is the best architecture based on the comparison. These models have provided accuracies of 0.9667, 0.9707, and 0.9733 for VGG16, VGG19, and ResNet50 at epoch 20. The data provided is a real-life data set, sourced from a regional retailer.",
+        "doi": "https://doi.org/10.1109/centcon52345.2021.9687944",
+        "scores": {
+          "score_total": 0.0,
+          "score_sem": 0.0,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 20,
+        "title": "Transfer learning for image classification using VGG19: Caltech-101 image data set",
+        "year": 2021,
+        "venue": "Journal of Ambient Intelligence and Humanized Computing",
+        "authors": [
+          "Monika Bansal",
+          "Munish Kumar",
+          "Monika Sachdeva",
+          "Ajay Mittal"
+        ],
+        "n_citation": 369,
+        "abstract": "",
+        "doi": "https://doi.org/10.1007/s12652-021-03488-z",
+        "scores": {
+          "score_total": 0.0,
+          "score_sem": 0.0,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 1.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      }
+    ],
+    "lista_b": [
       {
         "rank": 1,
         "title": "CrossViT: Cross-Attention Multi-Scale Vision Transformer for Image Classification",
@@ -3607,8 +3848,8 @@
           "score_total": 0.0,
           "score_sem": 0.0,
           "score_rec": 0.0,
-          "score_cit": 0.0,
-          "qua_term": 0.0,
+          "score_cit": 0.061,
+          "qua_term": 1.0,
           "qua_raw": 1.0
         },
         "avaliacao_usuario": null,
@@ -3633,7 +3874,7 @@
           "score_total": 0.0,
           "score_sem": 0.0,
           "score_rec": 0.0,
-          "score_cit": 0.0,
+          "score_cit": 0.0375,
           "qua_term": 0.0,
           "qua_raw": 0.0
         },
@@ -3658,8 +3899,8 @@
         "scores": {
           "score_total": 0.0,
           "score_sem": 0.0,
-          "score_rec": 0.0,
-          "score_cit": 0.0,
+          "score_rec": 0.1018,
+          "score_cit": 0.0336,
           "qua_term": 0.0,
           "qua_raw": 0.0
         },
@@ -3685,8 +3926,8 @@
           "score_total": 0.0,
           "score_sem": 0.0,
           "score_rec": 0.0,
-          "score_cit": 0.0,
-          "qua_term": 0.0,
+          "score_cit": 0.023,
+          "qua_term": 1.0,
           "qua_raw": 1.0
         },
         "avaliacao_usuario": null,
@@ -3710,9 +3951,9 @@
         "scores": {
           "score_total": 0.0,
           "score_sem": 0.0,
-          "score_rec": 0.0,
-          "score_cit": 0.0,
-          "qua_term": 0.0,
+          "score_rec": 0.1018,
+          "score_cit": 0.0285,
+          "qua_term": 1.0,
           "qua_raw": 1.0
         },
         "avaliacao_usuario": null,
@@ -3737,8 +3978,8 @@
           "score_total": 0.0,
           "score_sem": 0.0,
           "score_rec": 0.0,
-          "score_cit": 0.0,
-          "qua_term": 0.0,
+          "score_cit": 0.0184,
+          "qua_term": 1.0,
           "qua_raw": 1.0
         },
         "avaliacao_usuario": null,
@@ -3762,9 +4003,9 @@
         "scores": {
           "score_total": 0.0,
           "score_sem": 0.0,
-          "score_rec": 0.0,
-          "score_cit": 0.0,
-          "qua_term": 0.0,
+          "score_rec": 0.2263,
+          "score_cit": 0.0384,
+          "qua_term": 1.0,
           "qua_raw": 1.0
         },
         "avaliacao_usuario": null,
@@ -3786,8 +4027,8 @@
         "scores": {
           "score_total": 0.0,
           "score_sem": 0.0,
-          "score_rec": 0.0,
-          "score_cit": 0.0,
+          "score_rec": 0.1018,
+          "score_cit": 0.0244,
           "qua_term": 0.0,
           "qua_raw": 0.0
         },
@@ -3813,8 +4054,8 @@
           "score_total": 0.0,
           "score_sem": 0.0,
           "score_rec": 0.0,
-          "score_cit": 0.0,
-          "qua_term": 0.0,
+          "score_cit": 0.0187,
+          "qua_term": 1.0,
           "qua_raw": 1.0
         },
         "avaliacao_usuario": null,
@@ -3838,257 +4079,8 @@
         "scores": {
           "score_total": 0.0,
           "score_sem": 0.0,
-          "score_rec": 0.0,
-          "score_cit": 0.0,
-          "qua_term": 0.0,
-          "qua_raw": 1.0
-        },
-        "avaliacao_usuario": null,
-        "comentario": null
-      }
-    ],
-    "lista_b": [
-      {
-        "rank": 11,
-        "title": "Spectral–Spatial Feature Tokenization Transformer for Hyperspectral Image Classification",
-        "year": 2022,
-        "venue": "IEEE Transactions on Geoscience and Remote Sensing",
-        "authors": [
-          "Le Sun",
-          "Guangrui Zhao",
-          "Yuhui Zheng",
-          "Zebin Wu"
-        ],
-        "n_citation": 633,
-        "abstract": "In hyperspectral image (HSI) classification, each pixel sample is assigned to a land-cover category. In the recent past, convolutional neural network (CNN)-based HSI classification methods have greatly improved performance due to their superior ability to represent features. However, these methods have limited ability to obtain deep semantic features, and as the layer’s number increases, computational costs rise significantly. The transformer framework can represent high-level semantic features well. In this article, a spectral–spatial feature tokenization transformer (SSFTT) method is proposed to capture spectral–spatial features and high-level semantic features. First, a spectral–spatial feature extraction module is built to extract low-level features. This module is composed of a 3-D convolution layer and a 2-D convolution layer, which are used to extract the shallow spectral and spatial features. Second, a Gaussian weighted feature tokenizer is introduced for features transformation. Third, the transformed features are input into the transformer encoder module for feature representation and learning. Finally, a linear layer is used to identify the first learnable token to obtain the sample label. Using three standard datasets, experimental analysis confirms that the computation time is less than other deep learning methods and the performance of the classification outperforms several current state-of-the-art methods. The code of this work is available at <uri xmlns:mml=\"h",
-        "doi": "https://doi.org/10.1109/tgrs.2022.3144158",
-        "scores": {
-          "score_total": 0.0,
-          "score_sem": 0.0,
           "score_rec": 0.1018,
-          "score_cit": 0.0241,
-          "qua_term": 1.0,
-          "qua_raw": 1.0
-        },
-        "avaliacao_usuario": null,
-        "comentario": null
-      },
-      {
-        "rank": 12,
-        "title": "Class-Incremental Learning: Survey and Performance Evaluation on Image Classification",
-        "year": 2022,
-        "venue": "IEEE Transactions on Pattern Analysis and Machine Intelligence",
-        "authors": [
-          "Marc Masana",
-          "Xialei Liu",
-          "Bartłomiej Twardowski",
-          "Mikel Menta",
-          "Andrew D. Bagdanov"
-        ],
-        "n_citation": 597,
-        "abstract": "For future learning systems, incremental learning is desirable because it allows for: efficient resource usage by eliminating the need to retrain from scratch at the arrival of new data; reduced memory usage by preventing or limiting the amount of data required to be stored - also important when privacy limitations are imposed; and learning that more closely resembles human learning. The main challenge for incremental learning is catastrophic forgetting, which refers to the precipitous drop in performance on previously learned tasks after learning a new one. Incremental learning of deep neural networks has seen explosive growth in recent years. Initial work focused on task-incremental learning, where a task-ID is provided at inference time. Recently, we have seen a shift towards class-incremental learning where the learner must discriminate at inference time between all classes seen in previous tasks without recourse to a task-ID. In this paper, we provide a complete survey of existing class-incremental learning methods for image classification, and in particular, we perform an extensive experimental evaluation on thirteen class-incremental methods. We consider several new experimental scenarios, including a comparison of class-incremental methods on multiple large-scale image classification datasets, an investigation into small and large domain shifts, and a comparison of various network architectures.",
-        "doi": "https://doi.org/10.1109/tpami.2022.3213473",
-        "scores": {
-          "score_total": 0.0,
-          "score_sem": 0.0,
-          "score_rec": 0.1018,
-          "score_cit": 0.0228,
-          "qua_term": 1.0,
-          "qua_raw": 1.0
-        },
-        "avaliacao_usuario": null,
-        "comentario": null
-      },
-      {
-        "rank": 13,
-        "title": "Spatial-Spectral Transformer for Hyperspectral Image Classification",
-        "year": 2021,
-        "venue": "Remote Sensing",
-        "authors": [
-          "Xin He",
-          "Yushi Chen",
-          "Zhouhan Lin"
-        ],
-        "n_citation": 423,
-        "abstract": "Recently, a great many deep convolutional neural network (CNN)-based methods have been proposed for hyperspectral image (HSI) classification. Although the proposed CNN-based methods have the advantages of spatial feature extraction, they are difficult to handle the sequential data with and CNNs are not good at modeling the long-range dependencies. However, the spectra of HSI are a kind of sequential data, and HSI usually contains hundreds of bands. Therefore, it is difficult for CNNs to handle HSI processing well. On the other hand, the Transformer model, which is based on an attention mechanism, has proved its advantages in processing sequential data. To address the issue of capturing relationships of sequential spectra in HSI in a long distance, in this study, Transformer is investigated for HSI classification. Specifically, in this study, a new classification framework titled spatial-spectral Transformer (SST) is proposed for HSI classification. In the proposed SST, a well-designed CNN is used to extract the spatial features, and a modified Transformer (a Transformer with dense connection, i.e., DenseTransformer) is proposed to capture sequential spectra relationships, and multilayer perceptron is used to finish the final classification task. Furthermore, dynamic feature augmentation, which aims to alleviate the overfitting problem and therefore generalize the model well, is proposed and added to the SST (SST-FA). In addition, to address the issue of limited training sampl",
-        "doi": "https://doi.org/10.3390/rs13030498",
-        "scores": {
-          "score_total": 0.0,
-          "score_sem": 0.0,
-          "score_rec": 0.0,
-          "score_cit": 0.0134,
-          "qua_term": 1.0,
-          "qua_raw": 1.0
-        },
-        "avaliacao_usuario": null,
-        "comentario": null
-      },
-      {
-        "rank": 14,
-        "title": "Comparing Vision Transformers and Convolutional Neural Networks for Image Classification: A Literature Review",
-        "year": 2023,
-        "venue": "Applied Sciences",
-        "authors": [
-          "José Maurício",
-          "Inês Domingues",
-          "Jorge Bernardino"
-        ],
-        "n_citation": 514,
-        "abstract": "Transformers are models that implement a mechanism of self-attention, individually weighting the importance of each part of the input data. Their use in image classification tasks is still somewhat limited since researchers have so far chosen Convolutional Neural Networks for image classification and transformers were more targeted to Natural Language Processing (NLP) tasks. Therefore, this paper presents a literature review that shows the differences between Vision Transformers (ViT) and Convolutional Neural Networks. The state of the art that used the two architectures for image classification was reviewed and an attempt was made to understand what factors may influence the performance of the two deep learning architectures based on the datasets used, image size, number of target classes (for the classification problems), hardware, and evaluated architectures and top results. The objective of this work is to identify which of the architectures is the best for image classification and under what conditions. This paper also describes the importance of the Multi-Head Attention mechanism for improving the performance of ViT in image classification.",
-        "doi": "https://doi.org/10.3390/app13095521",
-        "scores": {
-          "score_total": 0.0,
-          "score_sem": 0.0,
-          "score_rec": 0.2263,
-          "score_cit": 0.0245,
-          "qua_term": 0.875,
-          "qua_raw": 0.875
-        },
-        "avaliacao_usuario": null,
-        "comentario": null
-      },
-      {
-        "rank": 15,
-        "title": "Understanding Robustness of Transformers for Image Classification",
-        "year": 2021,
-        "venue": "2021 IEEE/CVF International Conference on Computer Vision (ICCV)",
-        "authors": [
-          "Srinadh Bhojanapalli",
-          "Ayan Chakrabarti",
-          "Daniel Gläsner",
-          "Daliang Li",
-          "Thomas Unterthiner"
-        ],
-        "n_citation": 389,
-        "abstract": "Deep Convolutional Neural Networks (CNNs) have long been the architecture of choice for computer vision tasks. Recently, Transformer-based architectures like Vision Transformer (ViT) have matched or even surpassed ResNets for image classification. However, details of the Transformer architecture –such as the use of non-overlapping patches– lead one to wonder whether these networks are as robust. In this paper, we perform an extensive study of a variety of different measures of robustness of ViT models and compare the findings to ResNet baselines. We investigate robustness to input perturbations as well as robustness to model perturbations. We find that when pre-trained with a sufficient amount of data, ViT models are at least as robust as the ResNet counterparts on a broad range of perturbations. We also find that Transformers are robust to the removal of almost any single layer, and that while activations from later layers are highly correlated with each other, they nevertheless play an important role in classification.",
-        "doi": "https://doi.org/10.1109/iccv48922.2021.01007",
-        "scores": {
-          "score_total": 0.0,
-          "score_sem": 0.0,
-          "score_rec": 0.0,
-          "score_cit": 0.0123,
-          "qua_term": 1.0,
-          "qua_raw": 1.0
-        },
-        "avaliacao_usuario": null,
-        "comentario": null
-      },
-      {
-        "rank": 16,
-        "title": "Multimodal Fusion Transformer for Remote Sensing Image Classification",
-        "year": 2023,
-        "venue": "IEEE Transactions on Geoscience and Remote Sensing",
-        "authors": [
-          "Swalpa Kumar Roy",
-          "Ankur Deria",
-          "Danfeng Hong",
-          "Behnood Rasti",
-          "Antonio Plaza"
-        ],
-        "n_citation": 452,
-        "abstract": "Vision transformers (ViTs) have been trending in image classification tasks due to their promising performance when compared to convolutional neural networks (CNNs). As a result, many researchers have tried to incorporate ViTs in hyperspectral image (HSI) classification tasks. To achieve satisfactory performance, close to that of CNNs, transformers need fewer parameters. ViTs and other similar transformers use an external classification (CLS) token which is randomly initialized and often fails to generalize well, whereas other sources of multimodal datasets, such as light detection and ranging (LiDAR) offer the potential to improve these models by means of a CLS. In this paper, we introduce a new multimodal fusion transformer (MFT) network which comprises a multihead cross patch attention (mCrossPA) for HSI land-cover classification. Our mCrossPA utilizes other sources of complementary information in addition to the HSI in the transformer encoder to achieve better generalization. The concept of tokenization is used to generate CLS and HSI patch tokens, helping to learn a distinctive representation in a reduced and hierarchical feature space. Extensive experiments are carried out on widely used benchmark datasets i.e., the University of Houston, Trento, University of Southern Mississippi Gulfpark (MUUFL), and Augsburg. We compare the results of the proposed MFT model with other state-of-the-art transformers, classical CNNs, and conventional classifiers models. The superior per",
-        "doi": "https://doi.org/10.1109/tgrs.2023.3286826",
-        "scores": {
-          "score_total": 0.0,
-          "score_sem": 0.0,
-          "score_rec": 0.2263,
-          "score_cit": 0.0215,
-          "qua_term": 1.0,
-          "qua_raw": 1.0
-        },
-        "avaliacao_usuario": null,
-        "comentario": null
-      },
-      {
-        "rank": 17,
-        "title": "Dual-stream Multiple Instance Learning Network for Whole Slide Image Classification with Self-supervised Contrastive Learning",
-        "year": 2021,
-        "venue": "",
-        "authors": [
-          "Bin Li",
-          "Yin Li",
-          "Kevin W. Eliceiri"
-        ],
-        "n_citation": 770,
-        "abstract": "We address the challenging problem of whole slide image (WSI) classification. WSIs have very high resolutions and usually lack localized annotations. WSI classification can be cast as a multiple instance learning (MIL) problem when only slide-level labels are available. We propose a MIL-based method for WSI classification and tumor detection that does not require localized annotations. Our method has three major components. First, we introduce a novel MIL aggregator that models the relations of the instances in a dual-stream architecture with trainable distance measurement. Second, since WSIs can produce large or unbalanced bags that hinder the training of MIL models, we propose to use self-supervised contrastive learning to extract good representations for MIL and alleviate the issue of prohibitive memory cost for large bags. Third, we adopt a pyramidal fusion mechanism for multiscale WSI features, and further improve the accuracy of classification and localization. Our model is evaluated on two representative WSI datasets. The classification accuracy of our model compares favorably to fully-supervised methods, with less than 2% accuracy gap across datasets. Our results also outperform all previous MIL-based methods. Additional benchmark results on standard MIL datasets further demonstrate the superior performance of our MIL aggregator on general MIL problems.",
-        "doi": "https://doi.org/10.1109/cvpr46437.2021.01409",
-        "scores": {
-          "score_total": 0.0,
-          "score_sem": 0.0,
-          "score_rec": 0.0,
-          "score_cit": 0.0245,
-          "qua_term": 0.0,
-          "qua_raw": 0.0
-        },
-        "avaliacao_usuario": null,
-        "comentario": null
-      },
-      {
-        "rank": 18,
-        "title": "TransMed: Transformers Advance Multi-Modal Medical Image Classification",
-        "year": 2021,
-        "venue": "Diagnostics",
-        "authors": [
-          "Yin Dai",
-          "Yifan Gao",
-          "Fayu Liu"
-        ],
-        "n_citation": 431,
-        "abstract": "Over the past decade, convolutional neural networks (CNN) have shown very competitive performance in medical image analysis tasks, such as disease classification, tumor segmentation, and lesion detection. CNN has great advantages in extracting local features of images. However, due to the locality of convolution operation, it cannot deal with long-range relationships well. Recently, transformers have been applied to computer vision and achieved remarkable success in large-scale datasets. Compared with natural images, multi-modal medical images have explicit and important long-range dependencies, and effective multi-modal fusion strategies can greatly improve the performance of deep models. This prompts us to study transformer-based structures and apply them to multi-modal medical images. Existing transformer-based network architectures require large-scale datasets to achieve better performance. However, medical imaging datasets are relatively small, which makes it difficult to apply pure transformers to medical image analysis. Therefore, we propose TransMed for multi-modal medical image classification. TransMed combines the advantages of CNN and transformer to efficiently extract low-level features of images and establish long-range dependencies between modalities. We evaluated our model on two datasets, parotid gland tumors classification and knee injury classification. Combining our contributions, we achieve an improvement of 10.1% and 1.9% in average accuracy, respectively",
-        "doi": "https://doi.org/10.3390/diagnostics11081384",
-        "scores": {
-          "score_total": 0.0,
-          "score_sem": 0.0,
-          "score_rec": 0.0,
-          "score_cit": 0.0137,
-          "qua_term": 0.75,
-          "qua_raw": 0.75
-        },
-        "avaliacao_usuario": null,
-        "comentario": null
-      },
-      {
-        "rank": 19,
-        "title": "A comparison between VGG16, VGG19 and ResNet50 architecture frameworks for Image Classification",
-        "year": 2021,
-        "venue": "",
-        "authors": [
-          "Sheldon Mascarenhas",
-          "Mukul Agarwal"
-        ],
-        "n_citation": 504,
-        "abstract": "Artificial Intelligence advancements have come a long way over the past twenty years. Rapid developments in AI have given birth to a trending topic called machine learning. Machine learning enables us to use algorithms and programming techniques to extract, understand and train data. Machine learning led to the creation of a concept called deep learning which uses algorithms to create an artificial neural network and use it to develop and learn, based on which it makes intuitive decisions by itself. Image classification is a task where we classify the images into sets of different categories, which when performed using deep learning increases business productivity by saving time and manpower. In this paper, we intend to determine which model of the architecture of the Convoluted Neural Network (CNN) can be used to solve a real-life problem of product classification to help optimize pricing comparison. We have compared the VGG16, VGG19, and ResNet50 architectures based on their accuracy while all three of these models solve the same image classification problem. We have concluded that the ResNet50 is the best architecture based on the comparison. These models have provided accuracies of 0.9667, 0.9707, and 0.9733 for VGG16, VGG19, and ResNet50 at epoch 20. The data provided is a real-life data set, sourced from a regional retailer.",
-        "doi": "https://doi.org/10.1109/centcon52345.2021.9687944",
-        "scores": {
-          "score_total": 0.0,
-          "score_sem": 0.0,
-          "score_rec": 0.0,
-          "score_cit": 0.016,
-          "qua_term": 0.0,
-          "qua_raw": 0.0
-        },
-        "avaliacao_usuario": null,
-        "comentario": null
-      },
-      {
-        "rank": 20,
-        "title": "Transfer learning for image classification using VGG19: Caltech-101 image data set",
-        "year": 2021,
-        "venue": "Journal of Ambient Intelligence and Humanized Computing",
-        "authors": [
-          "Monika Bansal",
-          "Munish Kumar",
-          "Monika Sachdeva",
-          "Ajay Mittal"
-        ],
-        "n_citation": 369,
-        "abstract": "",
-        "doi": "https://doi.org/10.1007/s12652-021-03488-z",
-        "scores": {
-          "score_total": 0.0,
-          "score_sem": 0.0,
-          "score_rec": 0.0,
-          "score_cit": 0.0117,
+          "score_cit": 0.0233,
           "qua_term": 1.0,
           "qua_raw": 1.0
         },
@@ -4708,32 +4700,6 @@
         "comentario": null
       },
       {
-        "rank": 6,
-        "title": "A Survey on Generative Diffusion Models",
-        "year": 2024,
-        "venue": "IEEE Transactions on Knowledge and Data Engineering",
-        "authors": [
-          "Hanqun Cao",
-          "Cheng Tan",
-          "Zhangyang Gao",
-          "Yilun Xu",
-          "Guangyong Chen"
-        ],
-        "n_citation": 429,
-        "abstract": "Deep generative models have unlocked another profound realm of human creativity. By capturing and generalizing patterns within data, we have entered the epoch of all-encompassing Artificial Intelligence for General Creativity (AIGC). Notably, diffusion models, recognized as one of the paramount generative models, materialize human ideation into tangible instances across diverse domains, encompassing imagery, text, speech, biology, and healthcare. To provide advanced and comprehensive insights into diffusion, this survey comprehensively elucidates its developmental trajectory and future directions from three distinct angles: the fundamental formulation of diffusion, algorithmic enhancements, and the manifold applications of diffusion. Each layer is meticulously explored to offer a profound comprehension of its evolution. Structured and summarized approaches are presented here.",
-        "doi": "https://doi.org/10.1109/tkde.2024.3361474",
-        "scores": {
-          "score_total": 0.5089,
-          "score_sem": 0.5089,
-          "score_rec": 0.0,
-          "score_cit": 0.0,
-          "qua_term": 0.0,
-          "qua_raw": 1.0
-        },
-        "avaliacao_usuario": null,
-        "comentario": null
-      },
-      {
         "rank": 7,
         "title": "Self-Consuming Generative Models go MAD",
         "year": 2023,
@@ -4831,9 +4797,61 @@
         },
         "avaliacao_usuario": null,
         "comentario": null
+      },
+      {
+        "rank": 11,
+        "title": "An all-atom protein generative model",
+        "year": 2024,
+        "venue": "Proceedings of the National Academy of Sciences",
+        "authors": [
+          "Alexander E. Chu",
+          "Jinho Kim",
+          "Lucy Cheng",
+          "Gina El Nesr",
+          "Minkai Xu"
+        ],
+        "n_citation": 64,
+        "abstract": "Proteins mediate their functions through chemical interactions; modeling these interactions, which are typically through sidechains, is an important need in protein design. However, constructing an all-atom generative model requires an appropriate scheme for managing the jointly continuous and discrete nature of proteins encoded in the structure and sequence. We describe an all-atom diffusion model of protein structure, Protpardelle, which represents all sidechain states at once as a \"superposition\" state; superpositions defining a protein are collapsed into individual residue types and conformations during sample generation. When combined with sequence design methods, our model is able to codesign all-atom protein structure and sequence. Generated proteins are of good quality under the typical quality, diversity, and novelty metrics, and sidechains reproduce the chemical features and behavior of natural proteins. Finally, we explore the potential of our model to conduct all-atom protein design and scaffold functional motifs in a backbone- and rotamer-free way.",
+        "doi": "https://doi.org/10.1073/pnas.2311500121",
+        "scores": {
+          "score_total": 0.5089,
+          "score_sem": 0.5089,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
       }
     ],
     "lista_b": [
+      {
+        "rank": 1,
+        "title": "A Survey on Generative Diffusion Models",
+        "year": 2024,
+        "venue": "IEEE Transactions on Knowledge and Data Engineering",
+        "authors": [
+          "Hanqun Cao",
+          "Cheng Tan",
+          "Zhangyang Gao",
+          "Yilun Xu",
+          "Guangyong Chen"
+        ],
+        "n_citation": 429,
+        "abstract": "Deep generative models have unlocked another profound realm of human creativity. By capturing and generalizing patterns within data, we have entered the epoch of all-encompassing Artificial Intelligence for General Creativity (AIGC). Notably, diffusion models, recognized as one of the paramount generative models, materialize human ideation into tangible instances across diverse domains, encompassing imagery, text, speech, biology, and healthcare. To provide advanced and comprehensive insights into diffusion, this survey comprehensively elucidates its developmental trajectory and future directions from three distinct angles: the fundamental formulation of diffusion, algorithmic enhancements, and the manifold applications of diffusion. Each layer is meticulously explored to offer a profound comprehension of its evolution. Structured and summarized approaches are presented here.",
+        "doi": "https://doi.org/10.1109/tkde.2024.3361474",
+        "scores": {
+          "score_total": 0.0019,
+          "score_sem": 0.5089,
+          "score_rec": 0.3869,
+          "score_cit": 0.0095,
+          "qua_term": 1.0,
+          "qua_raw": 1.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
       {
         "rank": 2,
         "title": "A technical review of multi-omics data integration methods: from classical statistical to deep generative approaches",
@@ -5055,32 +5073,6 @@
           "score_sem": 0.3428,
           "score_rec": 0.2263,
           "score_cit": 0.0041,
-          "qua_term": 1.0,
-          "qua_raw": 1.0
-        },
-        "avaliacao_usuario": null,
-        "comentario": null
-      },
-      {
-        "rank": 11,
-        "title": "Network Traffic Fingerprinting for IIoT Device Identification: A Survey",
-        "year": 2025,
-        "venue": "IEEE Transactions on Industrial Informatics",
-        "authors": [
-          "Chuan Sheng",
-          "Wei Zhou",
-          "Qing‐Long Han",
-          "Wanlun Ma",
-          "Xiaogang Zhu"
-        ],
-        "n_citation": 54,
-        "abstract": "As the Industrial Internet of Things (IIoT) continues to expand, the need for effective device identification becomes critical for securing industrial environments. Network traffic fingerprinting has emerged as an important technique for IIoT device identification, leveraging the unique communication patterns embedded in network traffic. Despite significant efforts in this area, a comprehensive overview of the relevant research is still missing. To address the lack of comprehensive research, this paper, for the first time, identifies critical knowledge gaps constraining IIoT device identification through network traffic analysis: obscure fingerprint feature space, limited generalizability to unknowns, and scarce data sources. Focusing on these gaps, existing methods are analyzed and summarized in detail across network traffic fingerprinting, IIoT device identification, and public IIoT datasets. Specifically, network traffic fingerprinting methods are categorized into three levels: Packet-level, flow-level, and business-level, and relevant methods are examined in terms of data formats, segmentation units, and extraction or generation techniques. In the context of IIoT device identification, tasks such as device type, model, and instance recognition, as well as abnormal device detection, are extensively investigated using rule-based, traditional machine learning- based, and deep learning-based approaches, with a focus on device fingerprints and application scenarios. Furthermor",
-        "doi": "https://doi.org/10.1109/tii.2025.3534441",
-        "scores": {
-          "score_total": 0.0003,
-          "score_sem": 0.2844,
-          "score_rec": 0.6131,
-          "score_cit": 0.0018,
           "qua_term": 1.0,
           "qua_raw": 1.0
         },
@@ -9247,32 +9239,6 @@
         "comentario": null
       },
       {
-        "rank": 4,
-        "title": "Medical Image Computing and Computer Assisted Intervention – MICCAI 2023",
-        "year": 2023,
-        "venue": "Lecture notes in computer science",
-        "authors": [
-          "Hayit Greenspan",
-          "Anant Madabhushi",
-          "Parvin Mousavi",
-          "Septimiu Salcudean",
-          "James Duncan"
-        ],
-        "n_citation": 169,
-        "abstract": "",
-        "doi": "https://doi.org/10.1007/978-3-031-43999-5",
-        "scores": {
-          "score_total": 1.0,
-          "score_sem": 1.0,
-          "score_rec": 0.0,
-          "score_cit": 0.0,
-          "qua_term": 0.0,
-          "qua_raw": 0.5
-        },
-        "avaliacao_usuario": null,
-        "comentario": null
-      },
-      {
         "rank": 5,
         "title": "Medical Image Computing and Computer Assisted Intervention – MICCAI 2021",
         "year": 2021,
@@ -9426,6 +9392,32 @@
         },
         "avaliacao_usuario": null,
         "comentario": null
+      },
+      {
+        "rank": 11,
+        "title": "SRDC: Semantics-based Ransomware Detection and Classification with LLM-assisted Pre-training",
+        "year": 2025,
+        "venue": "Proceedings of the AAAI Conference on Artificial Intelligence",
+        "authors": [
+          "Ce Zhou",
+          "Yilun Liu",
+          "Weibin Meng",
+          "Shimin Tao",
+          "Weinan Tian"
+        ],
+        "n_citation": 5,
+        "abstract": "In recent years, ransomware has emerged as a formidable data security threat, causing significant data privacy breaches that inflict substantial financial, reputational, and operational damages on society. Many studies employ dynamic feature analysis for ransomware detection. However, these methods utilize neither the internal semantic information (semantic information inherent in the features), nor external semantics (the wealth of existing knowledge and expert experience with regard to ransomware detection). Moreover, conventional methods rely on training data from known ransomware families, while zero-day ransomware often has unknown data distribution patterns, posing detection challenges. In this paper, we propose a Semantics-based Ransomware Detection and family Classification (SRDC) framework that can utilize both internal and external semantics of software. To bolster semantic analysis in zero-day attacks, we also design a procedure called LLM-assisted task-adaptive pre-training (LATAP). In LATAP, ransomware semantics from human experts and LLMs are employed to pre-train the detection model (GPT-2). By fully utilizing semantics, the proposed SRDC framework outperforms the SOTA methods by 12.15% for ransomware family classification tasks, and by 4.03% for zero-day ransomware detection tasks. SRDC also exhibits excellent data efficiency, requiring only two ransom families for training, which is only 35% of the data required by existing methods, to achieve a 90%+ accuracy",
+        "doi": "https://doi.org/10.1609/aaai.v39i27.35080",
+        "scores": {
+          "score_total": 0.6747,
+          "score_sem": 0.6747,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
       }
     ],
     "lista_b": [
@@ -9528,6 +9520,32 @@
           "score_cit": 0.0086,
           "qua_term": 1.0,
           "qua_raw": 1.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 5,
+        "title": "Medical Image Computing and Computer Assisted Intervention – MICCAI 2023",
+        "year": 2023,
+        "venue": "Lecture notes in computer science",
+        "authors": [
+          "Hayit Greenspan",
+          "Anant Madabhushi",
+          "Parvin Mousavi",
+          "Septimiu Salcudean",
+          "James Duncan"
+        ],
+        "n_citation": 169,
+        "abstract": "",
+        "doi": "https://doi.org/10.1007/978-3-031-43999-5",
+        "scores": {
+          "score_total": 0.0009,
+          "score_sem": 1.0,
+          "score_rec": 0.2263,
+          "score_cit": 0.0081,
+          "qua_term": 0.5,
+          "qua_raw": 0.5
         },
         "avaliacao_usuario": null,
         "comentario": null
@@ -9654,32 +9672,6 @@
           "score_cit": 0.0021,
           "qua_term": 0.875,
           "qua_raw": 0.875
-        },
-        "avaliacao_usuario": null,
-        "comentario": null
-      },
-      {
-        "rank": 12,
-        "title": "Explainable XR: Understanding User Behaviors of XR Environments Using LLM-Assisted Analytics Framework",
-        "year": 2025,
-        "venue": "IEEE Transactions on Visualization and Computer Graphics",
-        "authors": [
-          "Yoonsang Kim",
-          "Zainab Aamir",
-          "Mithilesh Kumar Singh",
-          "Saeed Boorboor",
-          "Klaus Mueller"
-        ],
-        "n_citation": 17,
-        "abstract": "We present Explainable XR, an end-to-end framework for analyzing user behavior in diverse eXtended Reality (XR) environments by leveraging Large Language Models (LLMs) for data interpretation assistance. Existing XR user analytics frameworks face challenges in handling cross-virtuality - AR, VR, MR - transitions, multi-user collaborative application scenarios, and the complexity of multimodal data. Explainable XR addresses these challenges by providing a virtuality-agnostic solution for the collection, analysis, and visualization of immersive sessions. We propose three main components in our framework: (1) A novel user data recording schema, called User Action Descriptor (UAD), that can capture the users' multimodal actions, along with their intents and the contexts; (2) a platform-agnostic XR session recorder, and (3) a visual analytics interface that offers LLM-assisted insights tailored to the analysts' perspectives, facilitating the exploration and analysis of the recorded XR session data. We demonstrate the versatility of Explainable XR by demonstrating five use-case scenarios, in both individual and collaborative XR applications across virtualities. Our technical evaluation and user studies show that Explainable XR provides a highly usable analytics solution for understanding user actions and delivering multifaceted, actionable insights into user behaviors in immersive environments.",
-        "doi": "https://doi.org/10.1109/tvcg.2025.3549537",
-        "scores": {
-          "score_total": 0.0004,
-          "score_sem": 0.4319,
-          "score_rec": 0.6131,
-          "score_cit": 0.0016,
-          "qua_term": 1.0,
-          "qua_raw": 1.0
         },
         "avaliacao_usuario": null,
         "comentario": null
@@ -10792,30 +10784,6 @@
         "comentario": null
       },
       {
-        "rank": 5,
-        "title": "GANs for Medical Image Synthesis: An Empirical Study",
-        "year": 2023,
-        "venue": "Journal of Imaging",
-        "authors": [
-          "Youssef Skandarani",
-          "Pierre‐Marc Jodoin",
-          "Alain Lalande"
-        ],
-        "n_citation": 231,
-        "abstract": "Generative adversarial networks (GANs) have become increasingly powerful, generating mind-blowing photorealistic images that mimic the content of datasets they have been trained to replicate. One recurrent theme in medical imaging, is whether GANs can also be as effective at generating workable medical data, as they are for generating realistic RGB images. In this paper, we perform a multi-GAN and multi-application study, to gauge the benefits of GANs in medical imaging. We tested various GAN architectures, from basic DCGAN to more sophisticated style-based GANs, on three medical imaging modalities and organs, namely: cardiac cine-MRI, liver CT, and RGB retina images. GANs were trained on well-known and widely utilized datasets, from which their FID scores were computed, to measure the visual acuity of their generated images. We further tested their usefulness by measuring the segmentation accuracy of a U-Net trained on these generated images and the original data. The results reveal that GANs are far from being equal, as some are ill-suited for medical imaging applications, while others performed much better. The top-performing GANs are capable of generating realistic-looking medical images by FID standards, that can fool trained experts in a visual Turing test and comply to some metrics. However, segmentation results suggest that no GAN is capable of reproducing the full richness of medical datasets.",
-        "doi": "https://doi.org/10.3390/jimaging9030069",
-        "scores": {
-          "score_total": 0.7081,
-          "score_sem": 0.7081,
-          "score_rec": 0.0,
-          "score_cit": 0.0,
-          "qua_term": 0.0,
-          "qua_raw": 0.875
-        },
-        "avaliacao_usuario": null,
-        "comentario": null
-      },
-      {
         "rank": 6,
         "title": "An Empirical Study of GPT-3 for Few-Shot Knowledge-Based VQA",
         "year": 2022,
@@ -10938,6 +10906,29 @@
           "score_cit": 0.0,
           "qua_term": 0.0,
           "qua_raw": 1.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 11,
+        "title": "Empirical study of transformers for source code",
+        "year": 2021,
+        "venue": "",
+        "authors": [
+          "Nadezhda Chirkova",
+          "Sergey Troshin"
+        ],
+        "n_citation": 54,
+        "abstract": "Initially developed for natural language processing (NLP), Transformers are now widely used for source code processing, due to the format similarity between source code and text. In contrast to natural language, source code is strictly structured, i.e., it follows the syntax of the programming language. Several recent works develop Transformer modifications for capturing syntactic information in source code. The drawback of these works is that they do not compare to each other and consider different tasks. In this work, we conduct a thorough empirical study of the capabilities of Transformers to utilize syntactic information in different tasks. We consider three tasks (code completion, function naming and bug fixing) and re-implement different syntax-capturing modifications in a unified framework. We show that Transformers are able to make meaningful predictions based purely on syntactic information and underline the best practices of taking the syntactic information into account for improving the performance of the model.",
+        "doi": "https://doi.org/10.1145/3468264.3468611",
+        "scores": {
+          "score_total": 0.7081,
+          "score_sem": 0.7081,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.0
         },
         "avaliacao_usuario": null,
         "comentario": null
@@ -11071,6 +11062,30 @@
         "comentario": null
       },
       {
+        "rank": 6,
+        "title": "GANs for Medical Image Synthesis: An Empirical Study",
+        "year": 2023,
+        "venue": "Journal of Imaging",
+        "authors": [
+          "Youssef Skandarani",
+          "Pierre‐Marc Jodoin",
+          "Alain Lalande"
+        ],
+        "n_citation": 231,
+        "abstract": "Generative adversarial networks (GANs) have become increasingly powerful, generating mind-blowing photorealistic images that mimic the content of datasets they have been trained to replicate. One recurrent theme in medical imaging, is whether GANs can also be as effective at generating workable medical data, as they are for generating realistic RGB images. In this paper, we perform a multi-GAN and multi-application study, to gauge the benefits of GANs in medical imaging. We tested various GAN architectures, from basic DCGAN to more sophisticated style-based GANs, on three medical imaging modalities and organs, namely: cardiac cine-MRI, liver CT, and RGB retina images. GANs were trained on well-known and widely utilized datasets, from which their FID scores were computed, to measure the visual acuity of their generated images. We further tested their usefulness by measuring the segmentation accuracy of a U-Net trained on these generated images and the original data. The results reveal that GANs are far from being equal, as some are ill-suited for medical imaging applications, while others performed much better. The top-performing GANs are capable of generating realistic-looking medical images by FID standards, that can fool trained experts in a visual Turing test and comply to some metrics. However, segmentation results suggest that no GAN is capable of reproducing the full richness of medical datasets.",
+        "doi": "https://doi.org/10.3390/jimaging9030069",
+        "scores": {
+          "score_total": 0.0066,
+          "score_sem": 0.7081,
+          "score_rec": 0.2263,
+          "score_cit": 0.0469,
+          "qua_term": 0.875,
+          "qua_raw": 0.875
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
         "rank": 7,
         "title": "A theoretical distribution analysis of synthetic minority oversampling technique (SMOTE) for imbalanced learning",
         "year": 2023,
@@ -11161,32 +11176,6 @@
           "score_sem": 0.5111,
           "score_rec": 0.1018,
           "score_cit": 0.1159,
-          "qua_term": 1.0,
-          "qua_raw": 1.0
-        },
-        "avaliacao_usuario": null,
-        "comentario": null
-      },
-      {
-        "rank": 11,
-        "title": "CLIP4Clip: An empirical study of CLIP for end to end video clip retrieval and captioning",
-        "year": 2022,
-        "venue": "Neurocomputing",
-        "authors": [
-          "Huaishao Luo",
-          "Lei Ji",
-          "Ming Zhong",
-          "Yang Chen",
-          "Wen Lei"
-        ],
-        "n_citation": 664,
-        "abstract": "",
-        "doi": "https://doi.org/10.1016/j.neucom.2022.07.028",
-        "scores": {
-          "score_total": 0.0056,
-          "score_sem": 0.5126,
-          "score_rec": 0.1018,
-          "score_cit": 0.1078,
           "qua_term": 1.0,
           "qua_raw": 1.0
         },
@@ -12277,28 +12266,6 @@
         "comentario": null
       },
       {
-        "rank": 4,
-        "title": "Artificial Intelligence in English Language Teaching: The Good, the Bad and the Ugly",
-        "year": 2023,
-        "venue": "RELC Journal",
-        "authors": [
-          "Nicky Hockly"
-        ],
-        "n_citation": 178,
-        "abstract": "The use of educational technologies in English language teaching (ELT) has become widely accepted in the post-pandemic era, and, for better or worse, some of these technologies rely on artificial intelligence (AI). As an area of technological growth and increasing financial investment, we are likely to see more AI-driven technologies in teaching and learning in the post-pandemic ELT world. We are currently in the stage of ‘weak’ AI, which typically performs restricted tasks within specific domains relatively well. However, ‘strong’ AI, equivalent to human intelligence, is the long-term goal, and although this is no more than a theoretical construct at present, we can expect ‘stronger’ AI to emerge over time. ELT will not be immune to this development, and it behoves us as language teachers to be familiar with AI's current benefits and challenges, so that we can better prepare for that future. This article describes how AI is currently used in ELT, and explores some of the opportunities and challenges that AI can provide for learners, teachers and institutions. Ethical issues such as collecting learner data, surveillance and privacy are considered, as well as learner wellbeing and the digital literacies that teachers and learners will need to develop to co-exist in a brave new world of educational AI. Chatbots are examined as one example of AI-driven technology for language learning. There are of course many more, such as machine translation, intelligent tutoring systems and a",
-        "doi": "https://doi.org/10.1177/00336882231168504",
-        "scores": {
-          "score_total": 0.6994,
-          "score_sem": 0.6994,
-          "score_rec": 0.0,
-          "score_cit": 0.0,
-          "qua_term": 0.0,
-          "qua_raw": 0.875
-        },
-        "avaliacao_usuario": null,
-        "comentario": null
-      },
-      {
         "rank": 5,
         "title": "Task-Based Language Teaching",
         "year": 2022,
@@ -12430,6 +12397,29 @@
         },
         "avaliacao_usuario": null,
         "comentario": null
+      },
+      {
+        "rank": 11,
+        "title": "Heritage Language Teaching",
+        "year": 2021,
+        "venue": "",
+        "authors": [
+          "Sergio Loza",
+          "Sara M. Beaudrie"
+        ],
+        "n_citation": 28,
+        "abstract": "",
+        "doi": "https://doi.org/10.4324/9781003148227",
+        "scores": {
+          "score_total": 0.6994,
+          "score_sem": 0.6994,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
       }
     ],
     "lista_b": [
@@ -12522,6 +12512,28 @@
           "score_cit": 0.0051,
           "qua_term": 1.0,
           "qua_raw": 1.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 5,
+        "title": "Artificial Intelligence in English Language Teaching: The Good, the Bad and the Ugly",
+        "year": 2023,
+        "venue": "RELC Journal",
+        "authors": [
+          "Nicky Hockly"
+        ],
+        "n_citation": 178,
+        "abstract": "The use of educational technologies in English language teaching (ELT) has become widely accepted in the post-pandemic era, and, for better or worse, some of these technologies rely on artificial intelligence (AI). As an area of technological growth and increasing financial investment, we are likely to see more AI-driven technologies in teaching and learning in the post-pandemic ELT world. We are currently in the stage of ‘weak’ AI, which typically performs restricted tasks within specific domains relatively well. However, ‘strong’ AI, equivalent to human intelligence, is the long-term goal, and although this is no more than a theoretical construct at present, we can expect ‘stronger’ AI to emerge over time. ELT will not be immune to this development, and it behoves us as language teachers to be familiar with AI's current benefits and challenges, so that we can better prepare for that future. This article describes how AI is currently used in ELT, and explores some of the opportunities and challenges that AI can provide for learners, teachers and institutions. Ethical issues such as collecting learner data, surveillance and privacy are considered, as well as learner wellbeing and the digital literacies that teachers and learners will need to develop to co-exist in a brave new world of educational AI. Chatbots are examined as one example of AI-driven technology for language learning. There are of course many more, such as machine translation, intelligent tutoring systems and a",
+        "doi": "https://doi.org/10.1177/00336882231168504",
+        "scores": {
+          "score_total": 0.0008,
+          "score_sem": 0.6994,
+          "score_rec": 0.2263,
+          "score_cit": 0.0055,
+          "qua_term": 0.875,
+          "qua_raw": 0.875
         },
         "avaliacao_usuario": null,
         "comentario": null
@@ -12645,32 +12657,6 @@
           "score_sem": 0.4532,
           "score_rec": 0.2263,
           "score_cit": 0.0026,
-          "qua_term": 1.0,
-          "qua_raw": 1.0
-        },
-        "avaliacao_usuario": null,
-        "comentario": null
-      },
-      {
-        "rank": 11,
-        "title": "Deploying and Evaluating LLMs to Program Service Mobile Robots",
-        "year": 2024,
-        "venue": "IEEE Robotics and Automation Letters",
-        "authors": [
-          "Zichao Hu",
-          "Francesca Lucchetti",
-          "Claire Schlesinger",
-          "Yash Saxena",
-          "Anders Freeman"
-        ],
-        "n_citation": 30,
-        "abstract": "Recent advancements in large language models (LLMs) have spurred interest in using them for generating robot programs from natural language, with promising initial results. We investigate the use of LLMs to generate programs for service mobile robots leveraging mobility, perception, and human interaction skills, and where <italic xmlns:mml=\"http://www.w3.org/1998/Math/MathML\" xmlns:xlink=\"http://www.w3.org/1999/xlink\">accurate sequencing and ordering</i> of actions is crucial for success. We contribute <sc xmlns:mml=\"http://www.w3.org/1998/Math/MathML\" xmlns:xlink=\"http://www.w3.org/1999/xlink\">CodeBotler</small> , an open-source robot-agnostic tool to program service mobile robots from natural language, and <sc xmlns:mml=\"http://www.w3.org/1998/Math/MathML\" xmlns:xlink=\"http://www.w3.org/1999/xlink\">RoboEval</small> , a benchmark for evaluating LLMs' capabilities of generating programs to complete service robot tasks. <sc xmlns:mml=\"http://www.w3.org/1998/Math/MathML\" xmlns:xlink=\"http://www.w3.org/1999/xlink\">CodeBotler</small> performs program generation via few-shot prompting of LLMs with an embedded domain-specific language (eDSL) in Python, and leverages skill abstractions to deploy generated programs on any general-purpose mobile robot. <sc xmlns:mml=\"http://www.w3.org/1998/Math/MathML\" xmlns:xlink=\"http://www.w3.org/1999/xlink\">RoboEval</small> evaluates the correctness of generated programs by checking execution traces starting with multiple initial states, and check",
-        "doi": "https://doi.org/10.1109/lra.2024.3360020",
-        "scores": {
-          "score_total": 0.0002,
-          "score_sem": 0.4676,
-          "score_rec": 0.3869,
-          "score_cit": 0.0012,
           "qua_term": 1.0,
           "qua_raw": 1.0
         },
@@ -13847,30 +13833,6 @@
         "comentario": null
       },
       {
-        "rank": 7,
-        "title": "DiffuRec: A Diffusion Model for Sequential Recommendation",
-        "year": 2023,
-        "venue": "ACM Transactions on Information Systems",
-        "authors": [
-          "Zihao Li",
-          "Aixin Sun",
-          "Chenliang Li"
-        ],
-        "n_citation": 122,
-        "abstract": "Mainstream solutions to sequential recommendation represent items with fixed vectors. These vectors have limited capability in capturing items’ latent aspects and users’ diverse preferences. As a new generative paradigm, diffusion models have achieved excellent performance in areas like computer vision and natural language processing. To our understanding, its unique merit in representation generation well fits the problem setting of sequential recommendation. In this article, we make the very first attempt to adapt the diffusion model to sequential recommendation and propose DiffuRec for item representation construction and uncertainty injection. Rather than modeling item representations as fixed vectors, we represent them as distributions in DiffuRec , which reflect a user’s multiple interests and an item’s various aspects adaptively. In the diffusion phase, DiffuRec corrupts the target item embedding into a Gaussian distribution via noise adding, which is further applied for sequential item distribution representation generation and uncertainty injection. Afterward, the item representation is fed into an approximator for target item representation reconstruction. In the reverse phase, based on a user’s historical interaction behaviors, we reverse a Gaussian noise into the target item representation, then apply a rounding operation for target item prediction. Experiments over four datasets show that DiffuRec outperforms strong baselines by a large margin. 1",
-        "doi": "https://doi.org/10.1145/3631116",
-        "scores": {
-          "score_total": 1.0,
-          "score_sem": 1.0,
-          "score_rec": 0.0,
-          "score_cit": 0.0,
-          "qua_term": 0.0,
-          "qua_raw": 1.0
-        },
-        "avaliacao_usuario": null,
-        "comentario": null
-      },
-      {
         "rank": 8,
         "title": "Collaborative filtering recommendation algorithm in cloud computing environment",
         "year": 2021,
@@ -13943,6 +13905,32 @@
         },
         "avaliacao_usuario": null,
         "comentario": null
+      },
+      {
+        "rank": 11,
+        "title": "Device-Cloud Collaborative Learning for Recommendation",
+        "year": 2021,
+        "venue": "",
+        "authors": [
+          "Jiangchao Yao",
+          "Feng Wang",
+          "Kunyang Jia",
+          "Bo Han",
+          "Jingren Zhou"
+        ],
+        "n_citation": 41,
+        "abstract": "With the rapid development of storage and computing power on mobile devices, it becomes critical and popular to deploy models on devices to save onerous communication latencies and to capture real-time features. While quite a lot of works have explored to facilitate on-device learning and inference, most of them focus on dealing with response delay or privacy protection. Little has been done to model the collaboration between the device and the cloud modeling and benefit both sides jointly. To bridge this gap, we are among the first attempts to study the Device-Cloud Collaborative Learning (DCCL) framework. Specifically, we propose a novel MetaPatch learning approach on the device side to efficiently achieve \"thousands of people with thousands of models'' given a centralized cloud model. Then, with billions of updated personalized device models, we propose a \"model-over-models'' distillation algorithm, namely MoMoDistill, to update the centralized cloud model. Our extensive experiments over a range of datasets with different settings demonstrate the effectiveness of such collaboration on both cloud and devices, especially its superiority to model long-tailed users.",
+        "doi": "https://doi.org/10.1145/3447548.3467097",
+        "scores": {
+          "score_total": 0.6901,
+          "score_sem": 0.6901,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 0.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
       }
     ],
     "lista_b": [
@@ -13968,6 +13956,30 @@
           "score_cit": 0.2365,
           "qua_term": 0.875,
           "qua_raw": 0.875
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 2,
+        "title": "DiffuRec: A Diffusion Model for Sequential Recommendation",
+        "year": 2023,
+        "venue": "ACM Transactions on Information Systems",
+        "authors": [
+          "Zihao Li",
+          "Aixin Sun",
+          "Chenliang Li"
+        ],
+        "n_citation": 122,
+        "abstract": "Mainstream solutions to sequential recommendation represent items with fixed vectors. These vectors have limited capability in capturing items’ latent aspects and users’ diverse preferences. As a new generative paradigm, diffusion models have achieved excellent performance in areas like computer vision and natural language processing. To our understanding, its unique merit in representation generation well fits the problem setting of sequential recommendation. In this article, we make the very first attempt to adapt the diffusion model to sequential recommendation and propose DiffuRec for item representation construction and uncertainty injection. Rather than modeling item representations as fixed vectors, we represent them as distributions in DiffuRec , which reflect a user’s multiple interests and an item’s various aspects adaptively. In the diffusion phase, DiffuRec corrupts the target item embedding into a Gaussian distribution via noise adding, which is further applied for sequential item distribution representation generation and uncertainty injection. Afterward, the item representation is fed into an approximator for target item representation reconstruction. In the reverse phase, based on a user’s historical interaction behaviors, we reverse a Gaussian noise into the target item representation, then apply a rounding operation for target item prediction. Experiments over four datasets show that DiffuRec outperforms strong baselines by a large margin. 1",
+        "doi": "https://doi.org/10.1145/3631116",
+        "scores": {
+          "score_total": 0.0159,
+          "score_sem": 1.0,
+          "score_rec": 0.2263,
+          "score_cit": 0.0701,
+          "qua_term": 1.0,
+          "qua_raw": 1.0
         },
         "avaliacao_usuario": null,
         "comentario": null
@@ -14168,32 +14180,6 @@
           "score_sem": 0.5751,
           "score_rec": 0.3869,
           "score_cit": 0.0183,
-          "qua_term": 1.0,
-          "qua_raw": 1.0
-        },
-        "avaliacao_usuario": null,
-        "comentario": null
-      },
-      {
-        "rank": 11,
-        "title": "A personalized product recommendation model in e-commerce based on retrieval strategy",
-        "year": 2024,
-        "venue": "Journal of Open Innovation Technology Market and Complexity",
-        "authors": [
-          "Duy-Nghia Nguyen",
-          "Van-Ho Nguyen",
-          "Trang D Trinh",
-          "Thanh Ho",
-          "Hoanh-Su Le"
-        ],
-        "n_citation": 30,
-        "abstract": "In recent years, online shopping is one of the routine parts in people’s life. It is convenient and takes less effort to purchase it. Regarding the increasing revolution of e-commerce businesses, recommendation engine plays a crucial role in them. Recommendation engines are very popular and easy to implement to their platform nowadays. Due to the extremely high competition of e-commerce businesses, the operation needs to integrate the recommender wisely. This study presents a comprehensive approach to improving user experience and engagement on e-commerce platforms through the implementation of an implicit personalized product recommendation engine. Collaborating with the H&M Group, the research combines the strength of each recommending algorithms which are collaborative filtering, popularity, and Bayesian personalized ranking to develop a robust recommendation system. By leveraging a retrieval strategy that combines multiple algorithmic techniques and evaluating candidates using machine learning models which comprise LightGBM and Deep Neural Network, the study achieves promising results. The authors utilize two popular technical metrics to evaluate their models which are mean average precision at K candidates (MAP@K) and mean average recall at K candidates (MAR@K). The empirical result indicates that the LightGBM model has remarkable performance than Deep Neural Network model, which are 0.06 versus 0.02 respectively in MAP@K and 0.03 versus 0.01 respectively in MAR@K when b",
-        "doi": "https://doi.org/10.1016/j.joitmc.2024.100303",
-        "scores": {
-          "score_total": 0.0038,
-          "score_sem": 0.4456,
-          "score_rec": 0.3869,
-          "score_cit": 0.0222,
           "qua_term": 1.0,
           "qua_raw": 1.0
         },
