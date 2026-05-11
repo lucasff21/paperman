@@ -3587,11 +3587,35 @@
   {
     "author": "David de Oliveira Lima",
     "base_title": "Classification of images with spatial transcriptomics information",
-    "generation_time_a": 14.61,
-    "generation_time_b": 15.15,
+    "generation_time_a": 16.75,
+    "generation_time_b": 10.38,
     "lista_a": [
       {
         "rank": 1,
+        "title": "CrossViT: Cross-Attention Multi-Scale Vision Transformer for Image Classification",
+        "year": 2021,
+        "venue": "2021 IEEE/CVF International Conference on Computer Vision (ICCV)",
+        "authors": [
+          "Chun-Fu Richard Chen",
+          "Quanfu Fan",
+          "Rameswar Panda"
+        ],
+        "n_citation": 1915,
+        "abstract": "The recently developed vision transformer (ViT) has achieved promising results on image classification compared to convolutional neural networks. Inspired by this, in this paper, we study how to learn multi-scale feature representations in transformer models for image classification. To this end, we propose a dual-branch transformer to com-bine image patches (i.e., tokens in a transformer) of different sizes to produce stronger image features. Our approach processes small-patch and large-patch tokens with two separate branches of different computational complexity and these tokens are then fused purely by attention multiple times to complement each other. Furthermore, to reduce computation, we develop a simple yet effective token fusion module based on cross attention, which uses a single token for each branch as a query to exchange information with other branches. Our proposed cross-attention only requires linear time for both computational and memory complexity instead of quadratic time otherwise. Extensive experiments demonstrate that our approach performs better than or on par with several concurrent works on vision transformer, in addition to efficient CNN models. For example, on the ImageNet1K dataset, with some architectural changes, our approach outperforms the recent DeiT by a large margin of 2% with a small to moderate increase in FLOPs and model parameters. Our source codes and models are available at https://github.com/IBM/CrossViT.",
+        "doi": "https://doi.org/10.1109/iccv48922.2021.00041",
+        "scores": {
+          "score_total": 0.0,
+          "score_sem": 0.0,
+          "score_rec": 0.0,
+          "score_cit": 0.0,
+          "qua_term": 0.0,
+          "qua_raw": 1.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 2,
         "title": "SpectralFormer: Rethinking Hyperspectral Image Classification with Transformers",
         "year": 2021,
         "venue": "arXiv (Cornell University)",
@@ -3617,7 +3641,7 @@
         "comentario": null
       },
       {
-        "rank": 2,
+        "rank": 3,
         "title": "Transfer learning for medical image classification: a literature review",
         "year": 2022,
         "venue": "BMC Medical Imaging",
@@ -3643,7 +3667,7 @@
         "comentario": null
       },
       {
-        "rank": 3,
+        "rank": 4,
         "title": "Review of Image Classification Algorithms Based on Convolutional Neural Networks",
         "year": 2021,
         "venue": "Remote Sensing",
@@ -3669,7 +3693,7 @@
         "comentario": null
       },
       {
-        "rank": 4,
+        "rank": 5,
         "title": "ResMLP: Feedforward Networks for Image Classification With Data-Efficient Training",
         "year": 2022,
         "venue": "IEEE Transactions on Pattern Analysis and Machine Intelligence",
@@ -3695,7 +3719,7 @@
         "comentario": null
       },
       {
-        "rank": 5,
+        "rank": 6,
         "title": "Vision Transformers for Remote Sensing Image Classification",
         "year": 2021,
         "venue": "Remote Sensing",
@@ -3721,7 +3745,7 @@
         "comentario": null
       },
       {
-        "rank": 6,
+        "rank": 7,
         "title": "MedMNIST v2 - A large-scale lightweight benchmark for 2D and 3D biomedical image classification",
         "year": 2023,
         "venue": "Scientific Data",
@@ -3747,7 +3771,7 @@
         "comentario": null
       },
       {
-        "rank": 7,
+        "rank": 8,
         "title": "An on-chip photonic deep neural network for image classification",
         "year": 2022,
         "venue": "Nature",
@@ -3771,7 +3795,7 @@
         "comentario": null
       },
       {
-        "rank": 8,
+        "rank": 9,
         "title": "Big Self-Supervised Models Advance Medical Image Classification",
         "year": 2021,
         "venue": "2021 IEEE/CVF International Conference on Computer Vision (ICCV)",
@@ -3797,7 +3821,7 @@
         "comentario": null
       },
       {
-        "rank": 9,
+        "rank": 10,
         "title": "Transformer-based unsupervised contrastive learning for histopathological image classification",
         "year": 2022,
         "venue": "Medical Image Analysis",
@@ -3821,9 +3845,11 @@
         },
         "avaliacao_usuario": null,
         "comentario": null
-      },
+      }
+    ],
+    "lista_b": [
       {
-        "rank": 10,
+        "rank": 11,
         "title": "Spectral–Spatial Feature Tokenization Transformer for Hyperspectral Image Classification",
         "year": 2022,
         "venue": "IEEE Transactions on Geoscience and Remote Sensing",
@@ -3839,18 +3865,16 @@
         "scores": {
           "score_total": 0.0,
           "score_sem": 0.0,
-          "score_rec": 0.0,
-          "score_cit": 0.0,
-          "qua_term": 0.0,
+          "score_rec": 0.1018,
+          "score_cit": 0.0241,
+          "qua_term": 1.0,
           "qua_raw": 1.0
         },
         "avaliacao_usuario": null,
         "comentario": null
-      }
-    ],
-    "lista_b": [
+      },
       {
-        "rank": 11,
+        "rank": 12,
         "title": "Class-Incremental Learning: Survey and Performance Evaluation on Image Classification",
         "year": 2022,
         "venue": "IEEE Transactions on Pattern Analysis and Machine Intelligence",
@@ -3876,7 +3900,31 @@
         "comentario": null
       },
       {
-        "rank": 12,
+        "rank": 13,
+        "title": "Spatial-Spectral Transformer for Hyperspectral Image Classification",
+        "year": 2021,
+        "venue": "Remote Sensing",
+        "authors": [
+          "Xin He",
+          "Yushi Chen",
+          "Zhouhan Lin"
+        ],
+        "n_citation": 423,
+        "abstract": "Recently, a great many deep convolutional neural network (CNN)-based methods have been proposed for hyperspectral image (HSI) classification. Although the proposed CNN-based methods have the advantages of spatial feature extraction, they are difficult to handle the sequential data with and CNNs are not good at modeling the long-range dependencies. However, the spectra of HSI are a kind of sequential data, and HSI usually contains hundreds of bands. Therefore, it is difficult for CNNs to handle HSI processing well. On the other hand, the Transformer model, which is based on an attention mechanism, has proved its advantages in processing sequential data. To address the issue of capturing relationships of sequential spectra in HSI in a long distance, in this study, Transformer is investigated for HSI classification. Specifically, in this study, a new classification framework titled spatial-spectral Transformer (SST) is proposed for HSI classification. In the proposed SST, a well-designed CNN is used to extract the spatial features, and a modified Transformer (a Transformer with dense connection, i.e., DenseTransformer) is proposed to capture sequential spectra relationships, and multilayer perceptron is used to finish the final classification task. Furthermore, dynamic feature augmentation, which aims to alleviate the overfitting problem and therefore generalize the model well, is proposed and added to the SST (SST-FA). In addition, to address the issue of limited training sampl",
+        "doi": "https://doi.org/10.3390/rs13030498",
+        "scores": {
+          "score_total": 0.0,
+          "score_sem": 0.0,
+          "score_rec": 0.0,
+          "score_cit": 0.0134,
+          "qua_term": 1.0,
+          "qua_raw": 1.0
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 14,
         "title": "Comparing Vision Transformers and Convolutional Neural Networks for Image Classification: A Literature Review",
         "year": 2023,
         "venue": "Applied Sciences",
@@ -3900,7 +3948,7 @@
         "comentario": null
       },
       {
-        "rank": 13,
+        "rank": 15,
         "title": "Understanding Robustness of Transformers for Image Classification",
         "year": 2021,
         "venue": "2021 IEEE/CVF International Conference on Computer Vision (ICCV)",
@@ -3926,7 +3974,7 @@
         "comentario": null
       },
       {
-        "rank": 14,
+        "rank": 16,
         "title": "Multimodal Fusion Transformer for Remote Sensing Image Classification",
         "year": 2023,
         "venue": "IEEE Transactions on Geoscience and Remote Sensing",
@@ -3952,7 +4000,7 @@
         "comentario": null
       },
       {
-        "rank": 15,
+        "rank": 17,
         "title": "Dual-stream Multiple Instance Learning Network for Whole Slide Image Classification with Self-supervised Contrastive Learning",
         "year": 2021,
         "venue": "",
@@ -3976,25 +4024,46 @@
         "comentario": null
       },
       {
-        "rank": 1,
-        "title": "SpectralFormer: Rethinking Hyperspectral Image Classification with Transformers",
+        "rank": 18,
+        "title": "TransMed: Transformers Advance Multi-Modal Medical Image Classification",
         "year": 2021,
-        "venue": "arXiv (Cornell University)",
+        "venue": "Diagnostics",
         "authors": [
-          "Danfeng Hong",
-          "Zhu Han",
-          "Jing Yao",
-          "Lianru Gao",
-          "Bing Zhang"
+          "Yin Dai",
+          "Yifan Gao",
+          "Fayu Liu"
         ],
-        "n_citation": 1178,
-        "abstract": "Hyperspectral (HS) images are characterized by approximately contiguous spectral information, enabling the fine identification of materials by capturing subtle spectral discrepancies. Owing to their excellent locally contextual modeling ability, convolutional neural networks (CNNs) have been proven to be a powerful feature extractor in HS image classification. However, CNNs fail to mine and represent the sequence attributes of spectral signatures well due to the limitations of their inherent network backbone. To solve this issue, we rethink HS image classification from a sequential perspective with transformers, and propose a novel backbone network called \\ul{SpectralFormer}. Beyond band-wise representations in classic transformers, SpectralFormer is capable of learning spectrally local sequence information from neighboring bands of HS images, yielding group-wise spectral embeddings. More significantly, to reduce the possibility of losing valuable information in the layer-wise propagation process, we devise a cross-layer skip connection to convey memory-like components from shallow to deep layers by adaptively learning to fuse \"soft\" residuals across layers. It is worth noting that the proposed SpectralFormer is a highly flexible backbone network, which can be applicable to both pixel- and patch-wise inputs. We evaluate the classification performance of the proposed SpectralFormer on three HS datasets by conducting extensive experiments, showing the superiority over classic t",
-        "doi": "https://doi.org/10.1109/tgrs.2021.3130716",
+        "n_citation": 431,
+        "abstract": "Over the past decade, convolutional neural networks (CNN) have shown very competitive performance in medical image analysis tasks, such as disease classification, tumor segmentation, and lesion detection. CNN has great advantages in extracting local features of images. However, due to the locality of convolution operation, it cannot deal with long-range relationships well. Recently, transformers have been applied to computer vision and achieved remarkable success in large-scale datasets. Compared with natural images, multi-modal medical images have explicit and important long-range dependencies, and effective multi-modal fusion strategies can greatly improve the performance of deep models. This prompts us to study transformer-based structures and apply them to multi-modal medical images. Existing transformer-based network architectures require large-scale datasets to achieve better performance. However, medical imaging datasets are relatively small, which makes it difficult to apply pure transformers to medical image analysis. Therefore, we propose TransMed for multi-modal medical image classification. TransMed combines the advantages of CNN and transformer to efficiently extract low-level features of images and establish long-range dependencies between modalities. We evaluated our model on two datasets, parotid gland tumors classification and knee injury classification. Combining our contributions, we achieve an improvement of 10.1% and 1.9% in average accuracy, respectively",
+        "doi": "https://doi.org/10.3390/diagnostics11081384",
         "scores": {
           "score_total": 0.0,
           "score_sem": 0.0,
           "score_rec": 0.0,
-          "score_cit": 0.0375,
+          "score_cit": 0.0137,
+          "qua_term": 0.75,
+          "qua_raw": 0.75
+        },
+        "avaliacao_usuario": null,
+        "comentario": null
+      },
+      {
+        "rank": 19,
+        "title": "A comparison between VGG16, VGG19 and ResNet50 architecture frameworks for Image Classification",
+        "year": 2021,
+        "venue": "",
+        "authors": [
+          "Sheldon Mascarenhas",
+          "Mukul Agarwal"
+        ],
+        "n_citation": 504,
+        "abstract": "Artificial Intelligence advancements have come a long way over the past twenty years. Rapid developments in AI have given birth to a trending topic called machine learning. Machine learning enables us to use algorithms and programming techniques to extract, understand and train data. Machine learning led to the creation of a concept called deep learning which uses algorithms to create an artificial neural network and use it to develop and learn, based on which it makes intuitive decisions by itself. Image classification is a task where we classify the images into sets of different categories, which when performed using deep learning increases business productivity by saving time and manpower. In this paper, we intend to determine which model of the architecture of the Convoluted Neural Network (CNN) can be used to solve a real-life problem of product classification to help optimize pricing comparison. We have compared the VGG16, VGG19, and ResNet50 architectures based on their accuracy while all three of these models solve the same image classification problem. We have concluded that the ResNet50 is the best architecture based on the comparison. These models have provided accuracies of 0.9667, 0.9707, and 0.9733 for VGG16, VGG19, and ResNet50 at epoch 20. The data provided is a real-life data set, sourced from a regional retailer.",
+        "doi": "https://doi.org/10.1109/centcon52345.2021.9687944",
+        "scores": {
+          "score_total": 0.0,
+          "score_sem": 0.0,
+          "score_rec": 0.0,
+          "score_cit": 0.016,
           "qua_term": 0.0,
           "qua_raw": 0.0
         },
@@ -4002,103 +4071,24 @@
         "comentario": null
       },
       {
-        "rank": 2,
-        "title": "Transfer learning for medical image classification: a literature review",
-        "year": 2022,
-        "venue": "BMC Medical Imaging",
-        "authors": [
-          "Kim Eun Hee",
-          "Alejandro Cosa‐Linan",
-          "Nandhini Santhanam",
-          "Mahboubeh Jannesari",
-          "Máté E. Maros"
-        ],
-        "n_citation": 879,
-        "abstract": "BACKGROUND: Transfer learning (TL) with convolutional neural networks aims to improve performances on a new task by leveraging the knowledge of similar tasks learned in advance. It has made a major contribution to medical image analysis as it overcomes the data scarcity problem as well as it saves time and hardware resources. However, transfer learning has been arbitrarily configured in the majority of studies. This review paper attempts to provide guidance for selecting a model and TL approaches for the medical image classification task. METHODS: 425 peer-reviewed articles were retrieved from two databases, PubMed and Web of Science, published in English, up until December 31, 2020. Articles were assessed by two independent reviewers, with the aid of a third reviewer in the case of discrepancies. We followed the PRISMA guidelines for the paper selection and 121 studies were regarded as eligible for the scope of this review. We investigated articles focused on selecting backbone models and TL approaches including feature extractor, feature extractor hybrid, fine-tuning and fine-tuning from scratch. RESULTS: The majority of studies (n = 57) empirically evaluated multiple models followed by deep models (n = 33) and shallow (n = 24) models. Inception, one of the deep models, was the most employed in literature (n = 26). With respect to the TL, the majority of studies (n = 46) empirically benchmarked multiple approaches to identify the optimal configuration. The rest of the studi",
-        "doi": "https://doi.org/10.1186/s12880-022-00793-7",
-        "scores": {
-          "score_total": 0.0,
-          "score_sem": 0.0,
-          "score_rec": 0.1018,
-          "score_cit": 0.0336,
-          "qua_term": 0.0,
-          "qua_raw": 0.0
-        },
-        "avaliacao_usuario": null,
-        "comentario": null
-      },
-      {
-        "rank": 3,
-        "title": "Review of Image Classification Algorithms Based on Convolutional Neural Networks",
+        "rank": 20,
+        "title": "Transfer learning for image classification using VGG19: Caltech-101 image data set",
         "year": 2021,
-        "venue": "Remote Sensing",
+        "venue": "Journal of Ambient Intelligence and Humanized Computing",
         "authors": [
-          "Leiyu Chen",
-          "Shaobo Li",
-          "Qiang Bai",
-          "Jing Yang",
-          "Sanlong Jiang"
+          "Monika Bansal",
+          "Munish Kumar",
+          "Monika Sachdeva",
+          "Ajay Mittal"
         ],
-        "n_citation": 724,
-        "abstract": "Image classification has always been a hot research direction in the world, and the emergence of deep learning has promoted the development of this field. Convolutional neural networks (CNNs) have gradually become the mainstream algorithm for image classification since 2012, and the CNN architecture applied to other visual recognition tasks (such as object detection, object localization, and semantic segmentation) is generally derived from the network architecture in image classification. In the wake of these successes, CNN-based methods have emerged in remote sensing image scene classification and achieved advanced classification accuracy. In this review, which focuses on the application of CNNs to image classification tasks, we cover their development, from their predecessors up to recent state-of-the-art (SOAT) network architectures. Along the way, we analyze (1) the basic structure of artificial neural networks (ANNs) and the basic network layers of CNNs, (2) the classic predecessor network models, (3) the recent SOAT network algorithms, (4) comprehensive comparison of various image classification methods mentioned in this article. Finally, we have also summarized the main analysis and discussion in this article, as well as introduce some of the current trends.",
-        "doi": "https://doi.org/10.3390/rs13224712",
+        "n_citation": 369,
+        "abstract": "",
+        "doi": "https://doi.org/10.1007/s12652-021-03488-z",
         "scores": {
           "score_total": 0.0,
           "score_sem": 0.0,
           "score_rec": 0.0,
-          "score_cit": 0.023,
-          "qua_term": 1.0,
-          "qua_raw": 1.0
-        },
-        "avaliacao_usuario": null,
-        "comentario": null
-      },
-      {
-        "rank": 4,
-        "title": "ResMLP: Feedforward Networks for Image Classification With Data-Efficient Training",
-        "year": 2022,
-        "venue": "IEEE Transactions on Pattern Analysis and Machine Intelligence",
-        "authors": [
-          "Hugo Touvron",
-          "Piotr Bojanowski",
-          "Mathilde Caron",
-          "Matthieu Cord",
-          "Alaaeldin El-Nouby"
-        ],
-        "n_citation": 748,
-        "abstract": "We present ResMLP, an architecture built entirely upon multi-layer perceptrons for image classification. It is a simple residual network that alternates (i) a linear layer in which image patches interact, independently and identically across channels, and (ii) a two-layer feed-forward network in which channels interact independently per patch. When trained with a modern training strategy using heavy data-augmentation and optionally distillation, it attains surprisingly good accuracy/complexity trade-offs on ImageNet. We also train ResMLP models in a self-supervised setup, to further remove priors from employing a labelled dataset. Finally, by adapting our model to machine translation we achieve surprisingly good results. We share pre-trained models and our code based on the Timm library.",
-        "doi": "https://doi.org/10.1109/tpami.2022.3206148",
-        "scores": {
-          "score_total": 0.0,
-          "score_sem": 0.0,
-          "score_rec": 0.1018,
-          "score_cit": 0.0285,
-          "qua_term": 1.0,
-          "qua_raw": 1.0
-        },
-        "avaliacao_usuario": null,
-        "comentario": null
-      },
-      {
-        "rank": 5,
-        "title": "Vision Transformers for Remote Sensing Image Classification",
-        "year": 2021,
-        "venue": "Remote Sensing",
-        "authors": [
-          "Yakoub Bazi",
-          "Laila Bashmal",
-          "Mohamad Mahmoud Al Rahhal",
-          "Reham Al-Dayil",
-          "Naif Al Ajlan"
-        ],
-        "n_citation": 580,
-        "abstract": "In this paper, we propose a remote-sensing scene-classification method based on vision transformers. These types of networks, which are now recognized as state-of-the-art models in natural language processing, do not rely on convolution layers as in standard convolutional neural networks (CNNs). Instead, they use multihead attention mechanisms as the main building block to derive long-range contextual relation between pixels in images. In a first step, the images under analysis are divided into patches, then converted to sequence by flattening and embedding. To keep information about the position, embedding position is added to these patches. Then, the resulting sequence is fed to several multihead attention layers for generating the final representation. At the classification stage, the first token sequence is fed to a softmax classification layer. To boost the classification performance, we explore several data augmentation strategies to generate additional data for training. Moreover, we show experimentally that we can compress the network by pruning half of the layers while keeping competing classification accuracies. Experimental results conducted on different remote-sensing image datasets demonstrate the promising capability of the model compared to state-of-the-art methods. Specifically, Vision Transformer obtains an average classification accuracy of 98.49%, 95.86%, 95.56% and 93.83% on Merced, AID, Optimal31 and NWPU datasets, respectively. While the compressed versi",
-        "doi": "https://doi.org/10.3390/rs13030516",
-        "scores": {
-          "score_total": 0.0,
-          "score_sem": 0.0,
-          "score_rec": 0.0,
-          "score_cit": 0.0184,
+          "score_cit": 0.0117,
           "qua_term": 1.0,
           "qua_raw": 1.0
         },
