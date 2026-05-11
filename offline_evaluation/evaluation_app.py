@@ -207,7 +207,7 @@ HTML_TEMPLATE = """
             ];
             const container = document.getElementById('survey-questions-container');
             container.innerHTML = `
-                <h2 style="color:#2c3e50; border-top:2px solid #eee; padding-top:30px; margin-top:10px;">\uD83D\uDCCB Question\u00e1rio Final</h2>
+                <h2 style="color:#2c3e50; border-top:2px solid #eee; padding-top:30px; margin-top:10px;">&#x1F4CB; Question\u00e1rio Final</h2>
                 <p style="color:#555; margin-bottom:24px;">Avalie o sistema de recomenda\u00e7\u00e3o como um todo (1 = Discordo totalmente, 5 = Concordo totalmente).</p>
             `;
             questions.forEach(q => {
