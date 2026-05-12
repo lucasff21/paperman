@@ -140,7 +140,7 @@ HTML_TEMPLATE = """
         <h1>Avaliação do Sistema Paperman</h1>
 
         <div style="background:#eaf4fb; border-left: 4px solid #3498db; padding: 15px 20px; border-radius: 4px; margin-bottom: 25px; font-size: 15px; line-height: 1.8;">
-            Com base no título da sua pesquisa, o <strong>Paperman</strong> selecionou <strong>duas listas (Lista A e Lista B) com 10 artigos científicos cada</strong> para você avaliar.<br>
+            Com base no título da sua pesquisa, o <strong>Paperman</strong> selecionou <strong>duas listas (Lista 1 e Lista 2) com 10 artigos científicos cada</strong> para você avaliar.<br>
             Para cada artigo, indique o quanto ele é relevante para o seu tema usando a escala de <strong>1</strong> (Totalmente Irrelevante) a <strong>5</strong> (Muito Relevante).<br>
             <span style="color:#555;">⏱ Tempo estimado: 10 a 15 minutos. Obrigado pela participação!</span>
         </div>
@@ -166,11 +166,11 @@ HTML_TEMPLATE = """
             <p>Avalie os artigos abaixo em relação ao tema base (1 = Totalmente Irrelevante, 5 = Muito Relevante).</p>
 
             <form id="eval-form">
-                <h2 style="color: #2c3e50; border-bottom: 2px solid #3498db; padding-bottom: 5px;">Lista B</h2>
+                <h2 style="color: #2c3e50; border-bottom: 2px solid #3498db; padding-bottom: 5px;">Lista 1</h2>
                 <div id="papers-container-b"></div>
                 <div id="survey-container-b"></div>
 
-                <h2 style="color: #2c3e50; border-bottom: 2px solid #3498db; padding-bottom: 5px; margin-top: 40px;">Lista A</h2>
+                <h2 style="color: #2c3e50; border-bottom: 2px solid #3498db; padding-bottom: 5px; margin-top: 40px;">Lista 2</h2>
                 <div id="papers-container-a"></div>
                 <div id="survey-container-a"></div>
                 
@@ -287,10 +287,10 @@ HTML_TEMPLATE = """
             baseTitle.textContent = authorData.base_title;
             
             renderList(papersContainerB, authorData.lista_b, 'b', savedListaB);
-            renderSurvey('survey-container-b', 'b', 'Lista B', savedSurveyB);
+            renderSurvey('survey-container-b', 'b', 'Lista 1', savedSurveyB);
 
             renderList(papersContainerA, authorData.lista_a, 'a', savedListaA);
-            renderSurvey('survey-container-a', 'a', 'Lista A', savedSurveyA);
+            renderSurvey('survey-container-a', 'a', 'Lista 2', savedSurveyA);
 
             evalArea.classList.remove('hidden');
         });
@@ -309,7 +309,7 @@ HTML_TEMPLATE = """
                 for (let rec of recommendations) {
                     const checked = document.querySelector(`input[name="nota_${listId}_${rec.rank}"]:checked`);
                     if (!checked) {
-                        const listaNome = listId === 'a' ? 'Lista A' : 'Lista B';
+                        const listaNome = listId === 'a' ? 'Lista 2' : 'Lista 1';
                         throw new Error(`Por favor, forneça uma nota para o artigo ${rec.rank} da ${listaNome}.`);
                     }
                 }
@@ -338,10 +338,10 @@ HTML_TEMPLATE = """
             let avaliacoes_a, avaliacoes_b, survey_a, survey_b;
             try {
                 avaliacoes_b = extractEvals(authorData.lista_b, 'b');
-                survey_b = extractSurvey('b', 'Lista B');
+                survey_b = extractSurvey('b', 'Lista 1');
                 
                 avaliacoes_a = extractEvals(authorData.lista_a, 'a');
-                survey_a = extractSurvey('a', 'Lista A');
+                survey_a = extractSurvey('a', 'Lista 2');
             } catch (error) {
                 alert(error.message);
                 submitBtn.disabled = false;
