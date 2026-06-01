@@ -9,7 +9,14 @@ from decouple import config
 from redis.asyncio.client import Redis as aioredis
 from redis.exceptions import ConnectionError
 
-from enums import Time
+class Time:
+    WEEK = 604800
+    DAY = 86400
+    THREE_HOURS = 10800
+    HOUR = 3600
+    MINUTE = 60
+
+
 from exceptions import DependencyException
 
 
