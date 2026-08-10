@@ -15,7 +15,7 @@ RECOMENDACOES_FILE = os.path.join(BASE_DIR, "recomendacoes_ab.json")
 JSONBIN_BIN_ID = os.getenv("JSONBIN_BIN_ID")
 JSONBIN_MASTER_KEY = os.getenv("JSONBIN_MASTER_KEY")
 
-app = FastAPI(title="Avaliação Paperman")
+app = FastAPI(title="Avaliação Recademy")
 
 def load_data():
     with open(RECOMENDACOES_FILE, "r", encoding="utf-8") as f:
@@ -65,7 +65,7 @@ async def save_avaliacoes(data):
         print(f"Timeout ao salvar JSONBin: {e}")
         raise HTTPException(status_code=503, detail="Timeout ao conectar ao JSONBin. Tente novamente.")
 
-app = FastAPI(title="Avaliação Paperman")
+app = FastAPI(title="Avaliação Recademy")
 
 
 
@@ -137,10 +137,10 @@ HTML_TEMPLATE = """
 </head>
 <body>
     <div class="container">
-        <h1>Avaliação do Sistema Paperman</h1>
+        <h1>Avaliação do Sistema Recademy</h1>
 
         <div style="background:#eaf4fb; border-left: 4px solid #3498db; padding: 15px 20px; border-radius: 4px; margin-bottom: 25px; font-size: 15px; line-height: 1.8;">
-            Com base no título da sua pesquisa, o <strong>Paperman</strong> selecionou <strong>duas listas (Lista 1 e Lista 2) com 10 artigos científicos cada</strong> para você avaliar.<br>
+            Com base no título da sua pesquisa, o <strong>Recademy</strong> selecionou <strong>duas listas (Lista 1 e Lista 2) com 10 artigos científicos cada</strong> para você avaliar.<br>
             Para cada artigo, indique o quanto ele é relevante para o seu tema usando a escala de <strong>1</strong> (Totalmente Irrelevante) a <strong>5</strong> (Muito Relevante).<br>
             <span style="color:#555;">⏱ Tempo estimado: 10 a 15 minutos. Obrigado pela participação!</span>
         </div>
