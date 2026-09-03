@@ -1,0 +1,1322 @@
+[
+  {
+    "author": "Sudeshna Sarkar",
+    "train_size": 10,
+    "test_size": 10,
+    "n_recommendations": 10,
+    "hits_at_10": 0,
+    "hits_by_type": {
+      "coauthor": 0,
+      "author_cited": 0,
+      "cited_author": 0,
+      "any": 0
+    },
+    "first_hit_position": null,
+    "mean_pool_size": 41.5,
+    "gold_enriched": 10,
+    "n_author_papers_in_dblp": 23,
+    "validation": {
+      "method": "enriched injection + triangulated (coauthor + citation_fwd + citation_bwd)"
+    },
+    "metrics_by_k": {
+      "k3": {
+        "precision": 0.0,
+        "mrr": 0.0,
+        "ndcg": 0.0
+      },
+      "k5": {
+        "precision": 0.0,
+        "mrr": 0.0,
+        "ndcg": 0.0
+      },
+      "k10": {
+        "precision": 0.0,
+        "mrr": 0.0,
+        "ndcg": 0.0
+      }
+    },
+    "metrics_by_k_per_proxy": {
+      "coauthor": {
+        "k3": {
+          "precision": 0.0,
+          "mrr": 0.0,
+          "ndcg": 0.0
+        },
+        "k5": {
+          "precision": 0.0,
+          "mrr": 0.0,
+          "ndcg": 0.0
+        },
+        "k10": {
+          "precision": 0.0,
+          "mrr": 0.0,
+          "ndcg": 0.0
+        }
+      },
+      "author_cited": {
+        "k3": {
+          "precision": 0.0,
+          "mrr": 0.0,
+          "ndcg": 0.0
+        },
+        "k5": {
+          "precision": 0.0,
+          "mrr": 0.0,
+          "ndcg": 0.0
+        },
+        "k10": {
+          "precision": 0.0,
+          "mrr": 0.0,
+          "ndcg": 0.0
+        }
+      },
+      "cited_author": {
+        "k3": {
+          "precision": 0.0,
+          "mrr": 0.0,
+          "ndcg": 0.0
+        },
+        "k5": {
+          "precision": 0.0,
+          "mrr": 0.0,
+          "ndcg": 0.0
+        },
+        "k10": {
+          "precision": 0.0,
+          "mrr": 0.0,
+          "ndcg": 0.0
+        }
+      }
+    },
+    "held_out_titles": [
+      "A Survey of the Model Transfer Approaches to Cross-Lingual Dependency Parsing",
+      "Transform, Combine, and Transfer",
+      "Transform, combine, and transfer: Delexicalized transfer parser for low-resource languages",
+      "BIOINTMED: integrated biomedical knowledge base with ontologies and clinical trials",
+      "FIRE 2020 EDNIL Track: Event Detection from News in Indian Languages",
+      "The Impact of Flexible Platoon Formation Operations",
+      "Recommendation for Multi-stakeholders and through Neural Review Mining",
+      "Using Communities of Words Derived from Multilingual Word Vectors for Cross-Language Information Retrieval in Indian Languages",
+      "Using communities ofwords derived from multilingual word vectors for cross-language information retrieval in Indian languages",
+      "Drug-drug interactions prediction based on drug embedding and graph auto-encoder"
+    ],
+    "recommendations": [
+      {
+        "title": "Price of Fairness for Allocating a Bounded Resource",
+        "year": 2017,
+        "venue": "European Journal of Operational Research",
+        "n_citation": 0,
+        "is_hit": false,
+        "hit_type": null,
+        "scores": {
+          "score": 2.4048,
+          "sem": 0.4048,
+          "rec": 1.0,
+          "cit": 0.0,
+          "qua_term": 1.0,
+          "qua_raw": 1.0
+        }
+      },
+      {
+        "title": "On nonlocal image completion using an ensemble of dictionaries",
+        "year": 2016,
+        "venue": "international conference on image processing",
+        "n_citation": 0,
+        "is_hit": false,
+        "hit_type": null,
+        "scores": {
+          "score": 1.9341,
+          "sem": 0.3648,
+          "rec": 0.5693,
+          "cit": 0.0,
+          "qua_term": 1.0,
+          "qua_raw": 1.0
+        }
+      },
+      {
+        "title": "Efficient influence maximization under TSCM: a suitable diffusion model in online social networks",
+        "year": 2017,
+        "venue": "soft computing",
+        "n_citation": 50,
+        "is_hit": false,
+        "hit_type": null,
+        "scores": {
+          "score": 2.6358,
+          "sem": 0.3179,
+          "rec": 1.0,
+          "cit": 0.3179,
+          "qua_term": 1.0,
+          "qua_raw": 1.0
+        }
+      },
+      {
+        "title": "Texture Reconstruction Guided by a High-Resolution Patch",
+        "year": 2017,
+        "venue": "IEEE Transactions on Image Processing",
+        "n_citation": 50,
+        "is_hit": false,
+        "hit_type": null,
+        "scores": {
+          "score": 2.6586,
+          "sem": 0.3293,
+          "rec": 1.0,
+          "cit": 0.3293,
+          "qua_term": 1.0,
+          "qua_raw": 1.0
+        }
+      },
+      {
+        "title": "Thermal-aware power-efficient deadline based task allocation in multi-core processor",
+        "year": 2017,
+        "venue": "Journal of Computational Science",
+        "n_citation": 0,
+        "is_hit": false,
+        "hit_type": null,
+        "scores": {
+          "score": 2.1325,
+          "sem": 0.2575,
+          "rec": 1.0,
+          "cit": 0.0,
+          "qua_term": 0.875,
+          "qua_raw": 0.875
+        }
+      },
+      {
+        "title": "Investor commitment to serial entrepreneurs: A multilayer network analysis",
+        "year": 2017,
+        "venue": "Social Networks",
+        "n_citation": 50,
+        "is_hit": false,
+        "hit_type": null,
+        "scores": {
+          "score": 2.8676,
+          "sem": 0.4338,
+          "rec": 1.0,
+          "cit": 0.4338,
+          "qua_term": 1.0,
+          "qua_raw": 1.0
+        }
+      },
+      {
+        "title": "Interference Bound for Local Channel Allocation",
+        "year": 2017,
+        "venue": "Wireless Personal Communications",
+        "n_citation": 0,
+        "is_hit": false,
+        "hit_type": null,
+        "scores": {
+          "score": 2.0667,
+          "sem": 0.1917,
+          "rec": 1.0,
+          "cit": 0.0,
+          "qua_term": 0.875,
+          "qua_raw": 0.875
+        }
+      },
+      {
+        "title": "FAMe-TM: Formal analysis methodology for task migration algorithms in Many-Core systems",
+        "year": 2017,
+        "venue": "Science of Computer Programming",
+        "n_citation": 50,
+        "is_hit": false,
+        "hit_type": null,
+        "scores": {
+          "score": 3.0965,
+          "sem": 0.6733,
+          "rec": 1.0,
+          "cit": 0.6733,
+          "qua_term": 0.75,
+          "qua_raw": 0.75
+        }
+      },
+      {
+        "title": "Efficient Partial Online Synthesis of Special Instructions for Reconfigurable Processors",
+        "year": 2017,
+        "venue": "IEEE Transactions on Very Large Scale Integration Systems",
+        "n_citation": 0,
+        "is_hit": false,
+        "hit_type": null,
+        "scores": {
+          "score": 2.2003,
+          "sem": 0.3253,
+          "rec": 1.0,
+          "cit": 0.0,
+          "qua_term": 0.875,
+          "qua_raw": 0.875
+        }
+      },
+      {
+        "title": "Moving Mesh Discontinuous Galerkin Methods for PDEs with Traveling Waves",
+        "year": 2017,
+        "venue": "Applied Mathematics and Computation",
+        "n_citation": 50,
+        "is_hit": false,
+        "hit_type": null,
+        "scores": {
+          "score": 2.6677,
+          "sem": 0.3338,
+          "rec": 1.0,
+          "cit": 0.3338,
+          "qua_term": 1.0,
+          "qua_raw": 1.0
+        }
+      }
+    ]
+  },
+  {
+    "author": "Yuan-Fang Li",
+    "train_size": 10,
+    "test_size": 10,
+    "n_recommendations": 10,
+    "hits_at_10": 2,
+    "hits_by_type": {
+      "coauthor": 2,
+      "author_cited": 0,
+      "cited_author": 0,
+      "any": 2
+    },
+    "first_hit_position": 8,
+    "mean_pool_size": 46.2,
+    "gold_enriched": 8,
+    "n_author_papers_in_dblp": 0,
+    "validation": {
+      "method": "enriched injection + triangulated (coauthor + citation_fwd + citation_bwd)"
+    },
+    "metrics_by_k": {
+      "k3": {
+        "precision": 0.0,
+        "mrr": 0.0,
+        "ndcg": 0.0
+      },
+      "k5": {
+        "precision": 0.0,
+        "mrr": 0.0,
+        "ndcg": 0.0
+      },
+      "k10": {
+        "precision": 0.2,
+        "mrr": 0.125,
+        "ndcg": 0.37800210039683896
+      }
+    },
+    "metrics_by_k_per_proxy": {
+      "coauthor": {
+        "k3": {
+          "precision": 0.0,
+          "mrr": 0.0,
+          "ndcg": 0.0
+        },
+        "k5": {
+          "precision": 0.0,
+          "mrr": 0.0,
+          "ndcg": 0.0
+        },
+        "k10": {
+          "precision": 0.2,
+          "mrr": 0.125,
+          "ndcg": 0.37800210039683896
+        }
+      },
+      "author_cited": {
+        "k3": {
+          "precision": 0.0,
+          "mrr": 0.0,
+          "ndcg": 0.0
+        },
+        "k5": {
+          "precision": 0.0,
+          "mrr": 0.0,
+          "ndcg": 0.0
+        },
+        "k10": {
+          "precision": 0.0,
+          "mrr": 0.0,
+          "ndcg": 0.0
+        }
+      },
+      "cited_author": {
+        "k3": {
+          "precision": 0.0,
+          "mrr": 0.0,
+          "ndcg": 0.0
+        },
+        "k5": {
+          "precision": 0.0,
+          "mrr": 0.0,
+          "ndcg": 0.0
+        },
+        "k10": {
+          "precision": 0.0,
+          "mrr": 0.0,
+          "ndcg": 0.0
+        }
+      }
+    },
+    "held_out_titles": [
+      "Normalizing Flow-based Neural Process for Few-Shot Knowledge Graph Completion",
+      "Label-Guided Generative Adversarial Network for Realistic Image Synthesis",
+      "State-Aware Compositional Learning Toward Unbiased Training for Scene Graph Generation",
+      "Toward a Unified Transformer-Based Framework for Scene Graph Generation and Human-Object Interaction Detection",
+      "KGVQL: A knowledge graph visual query language with bidirectional transformations",
+      "Benchmark construction and experimental evaluations for incoherent ontologies",
+      "Less is more: Data-efficient complex question answering over knowledge bases",
+      "Few-Shot Complex Knowledge Base Question Answering via Meta Reinforcement Learning",
+      "Generating Question Titles for Stack Overflow from Mined Code Snippets",
+      "Retrieve, Program, Repeat: Complex Knowledge Base Question Answering via Alternate Meta-learning"
+    ],
+    "recommendations": [
+      {
+        "title": "An efficient dynamic window size selection method for 2-D histogram construction in contextual and variational contrast enhancement",
+        "year": 2017,
+        "venue": "Multimedia Tools and Applications",
+        "n_citation": 50,
+        "is_hit": false,
+        "hit_type": null,
+        "scores": {
+          "score": 2.493,
+          "sem": 0.309,
+          "rec": 1.0,
+          "cit": 0.309,
+          "qua_term": 0.875,
+          "qua_raw": 0.875
+        }
+      },
+      {
+        "title": "Genenames.org: the HGNC and VGNC resources in 2017",
+        "year": 2017,
+        "venue": "Nucleic Acids Research",
+        "n_citation": 50,
+        "is_hit": false,
+        "hit_type": null,
+        "scores": {
+          "score": 2.9879,
+          "sem": 0.4939,
+          "rec": 1.0,
+          "cit": 0.4939,
+          "qua_term": 1.0,
+          "qua_raw": 1.0
+        }
+      },
+      {
+        "title": "Risk-Constrained Optimal Bidding Strategy for Pairing of Wind and Demand Response Resources",
+        "year": 2017,
+        "venue": "IEEE Transactions on Smart Grid",
+        "n_citation": 50,
+        "is_hit": false,
+        "hit_type": null,
+        "scores": {
+          "score": 3.0967,
+          "sem": 0.5483,
+          "rec": 1.0,
+          "cit": 0.5483,
+          "qua_term": 1.0,
+          "qua_raw": 1.0
+        }
+      },
+      {
+        "title": "Phase Correlation for Dense Visual Compass from Omnidirectional Camera-Robot Images",
+        "year": 2017,
+        "venue": "international conference on robotics and automation",
+        "n_citation": 0,
+        "is_hit": false,
+        "hit_type": null,
+        "scores": {
+          "score": 2.5485,
+          "sem": 0.5485,
+          "rec": 1.0,
+          "cit": 0.0,
+          "qua_term": 1.0,
+          "qua_raw": 1.0
+        }
+      },
+      {
+        "title": "Invited - Energy harvesting and transient computing: a paradigm shift for embedded systems?",
+        "year": 2016,
+        "venue": "design automation conference",
+        "n_citation": 0,
+        "is_hit": false,
+        "hit_type": null,
+        "scores": {
+          "score": 1.5693,
+          "sem": 0.0,
+          "rec": 0.5693,
+          "cit": 0.0,
+          "qua_term": 1.0,
+          "qua_raw": 1.0
+        }
+      },
+      {
+        "title": "Joint Millimeter-Wave Fronthaul and OFDMA Resource Allocation in Ultra-Dense CRAN",
+        "year": 2017,
+        "venue": "IEEE Transactions on Communications",
+        "n_citation": 50,
+        "is_hit": false,
+        "hit_type": null,
+        "scores": {
+          "score": 2.815,
+          "sem": 0.4075,
+          "rec": 1.0,
+          "cit": 0.4075,
+          "qua_term": 1.0,
+          "qua_raw": 1.0
+        }
+      },
+      {
+        "title": "Open-domain extraction of future events from Twitter",
+        "year": 2016,
+        "venue": "Natural Language Engineering",
+        "n_citation": 50,
+        "is_hit": false,
+        "hit_type": null,
+        "scores": {
+          "score": 2.5018,
+          "sem": 0.527,
+          "rec": 0.5693,
+          "cit": 0.4054,
+          "qua_term": 1.0,
+          "qua_raw": 1.0
+        }
+      },
+      {
+        "title": "Normalizing Flow-based Neural Process for Few-Shot Knowledge Graph Completion",
+        "year": 2016,
+        "venue": "Annual International ACM SIGIR Conference on Research and Development in Information Retrieval",
+        "n_citation": 48,
+        "is_hit": true,
+        "hit_type": "coauthor",
+        "scores": {
+          "score": 2.2404,
+          "sem": 0.386,
+          "rec": 0.5693,
+          "cit": 0.2851,
+          "qua_term": 1.0,
+          "qua_raw": 1.0
+        }
+      },
+      {
+        "title": "KGVQL: A knowledge graph visual query language with bidirectional transformations",
+        "year": 2016,
+        "venue": "Knowledge-Based Systems",
+        "n_citation": 21,
+        "is_hit": true,
+        "hit_type": "coauthor",
+        "scores": {
+          "score": 2.0839,
+          "sem": 0.389,
+          "rec": 0.5693,
+          "cit": 0.1257,
+          "qua_term": 1.0,
+          "qua_raw": 1.0
+        }
+      },
+      {
+        "title": "Novel wharf-based genetic algorithm for berth allocation planning",
+        "year": 2017,
+        "venue": "soft computing",
+        "n_citation": 0,
+        "is_hit": false,
+        "hit_type": null,
+        "scores": {
+          "score": 2.287,
+          "sem": 0.287,
+          "rec": 1.0,
+          "cit": 0.0,
+          "qua_term": 1.0,
+          "qua_raw": 1.0
+        }
+      }
+    ]
+  },
+  {
+    "author": "Gilles Dowek",
+    "train_size": 10,
+    "test_size": 10,
+    "n_recommendations": 10,
+    "hits_at_10": 0,
+    "hits_by_type": {
+      "coauthor": 0,
+      "author_cited": 0,
+      "cited_author": 0,
+      "any": 0
+    },
+    "first_hit_position": null,
+    "mean_pool_size": 48.6,
+    "gold_enriched": 5,
+    "n_author_papers_in_dblp": 23,
+    "validation": {
+      "method": "enriched injection + triangulated (coauthor + citation_fwd + citation_bwd)"
+    },
+    "metrics_by_k": {
+      "k3": {
+        "precision": 0.0,
+        "mrr": 0.0,
+        "ndcg": 0.0
+      },
+      "k5": {
+        "precision": 0.0,
+        "mrr": 0.0,
+        "ndcg": 0.0
+      },
+      "k10": {
+        "precision": 0.0,
+        "mrr": 0.0,
+        "ndcg": 0.0
+      }
+    },
+    "metrics_by_k_per_proxy": {
+      "coauthor": {
+        "k3": {
+          "precision": 0.0,
+          "mrr": 0.0,
+          "ndcg": 0.0
+        },
+        "k5": {
+          "precision": 0.0,
+          "mrr": 0.0,
+          "ndcg": 0.0
+        },
+        "k10": {
+          "precision": 0.0,
+          "mrr": 0.0,
+          "ndcg": 0.0
+        }
+      },
+      "author_cited": {
+        "k3": {
+          "precision": 0.0,
+          "mrr": 0.0,
+          "ndcg": 0.0
+        },
+        "k5": {
+          "precision": 0.0,
+          "mrr": 0.0,
+          "ndcg": 0.0
+        },
+        "k10": {
+          "precision": 0.0,
+          "mrr": 0.0,
+          "ndcg": 0.0
+        }
+      },
+      "cited_author": {
+        "k3": {
+          "precision": 0.0,
+          "mrr": 0.0,
+          "ndcg": 0.0
+        },
+        "k5": {
+          "precision": 0.0,
+          "mrr": 0.0,
+          "ndcg": 0.0
+        },
+        "k10": {
+          "precision": 0.0,
+          "mrr": 0.0,
+          "ndcg": 0.0
+        }
+      }
+    },
+    "held_out_titles": [
+      "Yet Another Bijection between Sequent Calculus and Natural Deduction",
+      "The probability of non-confluent systems",
+      "Causal graph dynamics",
+      "Real numbers, chaos, and the principle of a bounded density of information",
+      "A simple proof that super-consistency implies cut elimination",
+      "A theory independent curry-de bruijn-howard correspondence",
+      "Around the physical church-turing thesis: Cellular automata, formal languages, and the principles of quantum theory",
+      "Natural Computing: Preface",
+      "Nominal semantics for predicate logic: Algebras, substitution, quantifiers, and limits",
+      "PNL to HOL: From the logic of nominal sets to the logic of higher-order functions"
+    ],
+    "recommendations": [
+      {
+        "title": "On almost small and almost large super-Vandermonde sets in GF(q)",
+        "year": 2017,
+        "venue": "Designs, Codes and Cryptography",
+        "n_citation": 0,
+        "is_hit": false,
+        "hit_type": null,
+        "scores": {
+          "score": 1.875,
+          "sem": 0.0,
+          "rec": 1.0,
+          "cit": 0.0,
+          "qua_term": 0.875,
+          "qua_raw": 0.875
+        }
+      },
+      {
+        "title": "Influence of momentum interpolation methods on the accuracy and convergence of pressure-velocity coupling algorithms in OpenFOAM",
+        "year": 2017,
+        "venue": "Journal of Computational and Applied Mathematics",
+        "n_citation": 50,
+        "is_hit": false,
+        "hit_type": null,
+        "scores": {
+          "score": 2.7137,
+          "sem": 0.4194,
+          "rec": 1.0,
+          "cit": 0.4194,
+          "qua_term": 0.875,
+          "qua_raw": 0.875
+        }
+      },
+      {
+        "title": "Facial expression recognition with Convolutional Neural Networks: Coping with few data and the training sample order",
+        "year": 2017,
+        "venue": "Pattern Recognition",
+        "n_citation": 58,
+        "is_hit": false,
+        "hit_type": null,
+        "scores": {
+          "score": 2.0,
+          "sem": 0.0,
+          "rec": 1.0,
+          "cit": 0.0,
+          "qua_term": 1.0,
+          "qua_raw": 1.0
+        }
+      },
+      {
+        "title": "Discovery of Novel Phosphodiesterase-2A Inhibitors by Structure-based Virtual Screening, Structural Optimization, and Bioassay",
+        "year": 2017,
+        "venue": "Journal of Chemical Information and Modeling",
+        "n_citation": 50,
+        "is_hit": false,
+        "hit_type": null,
+        "scores": {
+          "score": 2.8371,
+          "sem": 0.4185,
+          "rec": 1.0,
+          "cit": 0.4185,
+          "qua_term": 1.0,
+          "qua_raw": 1.0
+        }
+      },
+      {
+        "title": "The effect of preprocessing pipelines in subject classification and detection of abnormal resting state functional network connectivity using group ICA.",
+        "year": 2017,
+        "venue": "NeuroImage",
+        "n_citation": 50,
+        "is_hit": false,
+        "hit_type": null,
+        "scores": {
+          "score": 2.7678,
+          "sem": 0.3839,
+          "rec": 1.0,
+          "cit": 0.3839,
+          "qua_term": 1.0,
+          "qua_raw": 1.0
+        }
+      },
+      {
+        "title": "Linear layout of locally twisted cubes",
+        "year": 2017,
+        "venue": "International Journal of Computer Mathematics",
+        "n_citation": 50,
+        "is_hit": false,
+        "hit_type": null,
+        "scores": {
+          "score": 2.2757,
+          "sem": 0.2186,
+          "rec": 1.0,
+          "cit": 0.1822,
+          "qua_term": 0.875,
+          "qua_raw": 0.875
+        }
+      },
+      {
+        "title": "Hyperspectral face recognition with log-polar Fourier features and collaborative representation based voting classifiers",
+        "year": 2017,
+        "venue": "IET Biometrics",
+        "n_citation": 50,
+        "is_hit": false,
+        "hit_type": null,
+        "scores": {
+          "score": 2.2787,
+          "sem": 0.2473,
+          "rec": 1.0,
+          "cit": 0.1565,
+          "qua_term": 0.875,
+          "qua_raw": 0.875
+        }
+      },
+      {
+        "title": "Applications of provenance in performance prediction and data storage optimisation",
+        "year": 2017,
+        "venue": "Future Generation Computer Systems",
+        "n_citation": 0,
+        "is_hit": false,
+        "hit_type": null,
+        "scores": {
+          "score": 2.1804,
+          "sem": 0.1804,
+          "rec": 1.0,
+          "cit": 0.0,
+          "qua_term": 1.0,
+          "qua_raw": 1.0
+        }
+      },
+      {
+        "title": "Exploiting the complementary strengths of multi-layer CNN features for image retrieval",
+        "year": 2017,
+        "venue": "Neurocomputing",
+        "n_citation": 50,
+        "is_hit": false,
+        "hit_type": null,
+        "scores": {
+          "score": 2.0,
+          "sem": 0.0,
+          "rec": 1.0,
+          "cit": 0.0,
+          "qua_term": 1.0,
+          "qua_raw": 1.0
+        }
+      },
+      {
+        "title": "A decision cognizant Kullback-Leibler divergence",
+        "year": 2017,
+        "venue": "Pattern Recognition",
+        "n_citation": 1,
+        "is_hit": false,
+        "hit_type": null,
+        "scores": {
+          "score": 2.0,
+          "sem": 0.0,
+          "rec": 1.0,
+          "cit": 0.0,
+          "qua_term": 1.0,
+          "qua_raw": 1.0
+        }
+      }
+    ]
+  },
+  {
+    "author": "Johan Lilius",
+    "train_size": 10,
+    "test_size": 10,
+    "n_recommendations": 10,
+    "hits_at_10": 0,
+    "hits_by_type": {
+      "coauthor": 0,
+      "author_cited": 0,
+      "cited_author": 0,
+      "any": 0
+    },
+    "first_hit_position": null,
+    "mean_pool_size": 44.9,
+    "gold_enriched": 8,
+    "n_author_papers_in_dblp": 35,
+    "validation": {
+      "method": "enriched injection + triangulated (coauthor + citation_fwd + citation_bwd)"
+    },
+    "metrics_by_k": {
+      "k3": {
+        "precision": 0.0,
+        "mrr": 0.0,
+        "ndcg": 0.0
+      },
+      "k5": {
+        "precision": 0.0,
+        "mrr": 0.0,
+        "ndcg": 0.0
+      },
+      "k10": {
+        "precision": 0.0,
+        "mrr": 0.0,
+        "ndcg": 0.0
+      }
+    },
+    "metrics_by_k_per_proxy": {
+      "coauthor": {
+        "k3": {
+          "precision": 0.0,
+          "mrr": 0.0,
+          "ndcg": 0.0
+        },
+        "k5": {
+          "precision": 0.0,
+          "mrr": 0.0,
+          "ndcg": 0.0
+        },
+        "k10": {
+          "precision": 0.0,
+          "mrr": 0.0,
+          "ndcg": 0.0
+        }
+      },
+      "author_cited": {
+        "k3": {
+          "precision": 0.0,
+          "mrr": 0.0,
+          "ndcg": 0.0
+        },
+        "k5": {
+          "precision": 0.0,
+          "mrr": 0.0,
+          "ndcg": 0.0
+        },
+        "k10": {
+          "precision": 0.0,
+          "mrr": 0.0,
+          "ndcg": 0.0
+        }
+      },
+      "cited_author": {
+        "k3": {
+          "precision": 0.0,
+          "mrr": 0.0,
+          "ndcg": 0.0
+        },
+        "k5": {
+          "precision": 0.0,
+          "mrr": 0.0,
+          "ndcg": 0.0
+        },
+        "k10": {
+          "precision": 0.0,
+          "mrr": 0.0,
+          "ndcg": 0.0
+        }
+      }
+    },
+    "held_out_titles": [
+      "Scenario-based Testing of a Ship Collision Avoidance System",
+      "An efficient model for quantifying the interaction between structural properties of software and hardware in the ARM big.LITTLE architecture",
+      "RDF Stores for Enhanced Living Environments: An Overview",
+      "An ontology for wearables data interoperability and ambient assisted living application development",
+      "Efficient Task-Based Code Generation for SDF Graph Execution on Multicore Processors",
+      "Inactivity Benchmarking",
+      "IoT at Sea",
+      "Model-Based Representations for Dataflow Schedules",
+      "Quantifying the Interaction between Structural Properties of Software and Hardware in the ARM Big.LITTLE Architecture",
+      "A method for automatic whoosh sound description"
+    ],
+    "recommendations": [
+      {
+        "title": "MIMO Secret Communications Against an Active Eavesdropper",
+        "year": 2017,
+        "venue": "IEEE Transactions on Information Forensics and Security",
+        "n_citation": 0,
+        "is_hit": false,
+        "hit_type": null,
+        "scores": {
+          "score": 2.3193,
+          "sem": 0.3193,
+          "rec": 1.0,
+          "cit": 0.0,
+          "qua_term": 1.0,
+          "qua_raw": 1.0
+        }
+      },
+      {
+        "title": "Artificial-Noise-Aided Secure Transmission Scheme With Limited Training and Feedback Overhead",
+        "year": 2017,
+        "venue": "IEEE Transactions on Wireless Communications",
+        "n_citation": 0,
+        "is_hit": false,
+        "hit_type": null,
+        "scores": {
+          "score": 2.3555,
+          "sem": 0.3555,
+          "rec": 1.0,
+          "cit": 0.0,
+          "qua_term": 1.0,
+          "qua_raw": 1.0
+        }
+      },
+      {
+        "title": "Full-Swing Local Bitline SRAM Architecture Based on the 22-nm FinFET Technology for Low-Voltage Operation",
+        "year": 2016,
+        "venue": "IEEE Transactions on Very Large Scale Integration Systems",
+        "n_citation": 50,
+        "is_hit": false,
+        "hit_type": null,
+        "scores": {
+          "score": 2.0254,
+          "sem": 0.3201,
+          "rec": 0.5693,
+          "cit": 0.261,
+          "qua_term": 0.875,
+          "qua_raw": 0.875
+        }
+      },
+      {
+        "title": "Co-contraction activity of ankle muscles during walking: A gender comparison",
+        "year": 2017,
+        "venue": "Biomedical Signal Processing and Control",
+        "n_citation": 50,
+        "is_hit": false,
+        "hit_type": null,
+        "scores": {
+          "score": 2.3849,
+          "sem": 0.1925,
+          "rec": 1.0,
+          "cit": 0.1925,
+          "qua_term": 1.0,
+          "qua_raw": 1.0
+        }
+      },
+      {
+        "title": "Computing Resource Allocation in Three-Tier IoT Fog Networks: a Joint Optimization Approach Combining Stackelberg Game and Matching",
+        "year": 2017,
+        "venue": "IEEE Internet of Things Journal",
+        "n_citation": 0,
+        "is_hit": false,
+        "hit_type": null,
+        "scores": {
+          "score": 2.4551,
+          "sem": 0.4551,
+          "rec": 1.0,
+          "cit": 0.0,
+          "qua_term": 1.0,
+          "qua_raw": 1.0
+        }
+      },
+      {
+        "title": "Physical Layer Security Jamming: Theoretical Limits and Practical Designs in Wireless Networks",
+        "year": 2017,
+        "venue": "IEEE Access",
+        "n_citation": 50,
+        "is_hit": false,
+        "hit_type": null,
+        "scores": {
+          "score": 2.8899,
+          "sem": 0.4449,
+          "rec": 1.0,
+          "cit": 0.4449,
+          "qua_term": 1.0,
+          "qua_raw": 1.0
+        }
+      },
+      {
+        "title": "Developing strategies for predicting hyperkalemia in potassium-increasing drug-drug interactions",
+        "year": 2017,
+        "venue": "Journal of the American Medical Informatics Association",
+        "n_citation": 50,
+        "is_hit": false,
+        "hit_type": null,
+        "scores": {
+          "score": 3.0053,
+          "sem": 0.5027,
+          "rec": 1.0,
+          "cit": 0.5027,
+          "qua_term": 1.0,
+          "qua_raw": 1.0
+        }
+      },
+      {
+        "title": "Middle-ground players in dynamic imitative markets: global entry strategies of Korean firms in the biosimilars market",
+        "year": 2017,
+        "venue": "Technology Analysis & Strategic Management",
+        "n_citation": 0,
+        "is_hit": false,
+        "hit_type": null,
+        "scores": {
+          "score": 2.3128,
+          "sem": 0.4378,
+          "rec": 1.0,
+          "cit": 0.0,
+          "qua_term": 0.875,
+          "qua_raw": 0.875
+        }
+      },
+      {
+        "title": "An intelligent quality-based approach to fusing multi-source probabilistic information",
+        "year": 2016,
+        "venue": "Information Fusion",
+        "n_citation": 4,
+        "is_hit": false,
+        "hit_type": null,
+        "scores": {
+          "score": 2.1458,
+          "sem": 0.5338,
+          "rec": 0.5693,
+          "cit": 0.0427,
+          "qua_term": 1.0,
+          "qua_raw": 1.0
+        }
+      },
+      {
+        "title": "Joint Hypergraph Learning and Sparse Regression for Feature Selection",
+        "year": 2017,
+        "venue": "Pattern Recognition",
+        "n_citation": 50,
+        "is_hit": false,
+        "hit_type": null,
+        "scores": {
+          "score": 2.0,
+          "sem": 0.0,
+          "rec": 1.0,
+          "cit": 0.0,
+          "qua_term": 1.0,
+          "qua_raw": 1.0
+        }
+      }
+    ]
+  },
+  {
+    "author": "José Duato",
+    "train_size": 10,
+    "test_size": 10,
+    "n_recommendations": 10,
+    "hits_at_10": 2,
+    "hits_by_type": {
+      "coauthor": 2,
+      "author_cited": 0,
+      "cited_author": 0,
+      "any": 2
+    },
+    "first_hit_position": 3,
+    "mean_pool_size": 45.1,
+    "gold_enriched": 9,
+    "n_author_papers_in_dblp": 138,
+    "validation": {
+      "method": "enriched injection + triangulated (coauthor + citation_fwd + citation_bwd)"
+    },
+    "metrics_by_k": {
+      "k3": {
+        "precision": 0.3333333333333333,
+        "mrr": 0.3333333333333333,
+        "ndcg": 0.3065735963827292
+      },
+      "k5": {
+        "precision": 0.4,
+        "mrr": 0.3333333333333333,
+        "ndcg": 0.5706417189553201
+      },
+      "k10": {
+        "precision": 0.2,
+        "mrr": 0.3333333333333333,
+        "ndcg": 0.5706417189553201
+      }
+    },
+    "metrics_by_k_per_proxy": {
+      "coauthor": {
+        "k3": {
+          "precision": 0.3333333333333333,
+          "mrr": 0.3333333333333333,
+          "ndcg": 0.3065735963827292
+        },
+        "k5": {
+          "precision": 0.4,
+          "mrr": 0.3333333333333333,
+          "ndcg": 0.5706417189553201
+        },
+        "k10": {
+          "precision": 0.2,
+          "mrr": 0.3333333333333333,
+          "ndcg": 0.5706417189553201
+        }
+      },
+      "author_cited": {
+        "k3": {
+          "precision": 0.0,
+          "mrr": 0.0,
+          "ndcg": 0.0
+        },
+        "k5": {
+          "precision": 0.0,
+          "mrr": 0.0,
+          "ndcg": 0.0
+        },
+        "k10": {
+          "precision": 0.0,
+          "mrr": 0.0,
+          "ndcg": 0.0
+        }
+      },
+      "cited_author": {
+        "k3": {
+          "precision": 0.0,
+          "mrr": 0.0,
+          "ndcg": 0.0
+        },
+        "k5": {
+          "precision": 0.0,
+          "mrr": 0.0,
+          "ndcg": 0.0
+        },
+        "k10": {
+          "precision": 0.0,
+          "mrr": 0.0,
+          "ndcg": 0.0
+        }
+      }
+    },
+    "held_out_titles": [
+      "Combining Source-adaptive and Oblivious Routing with Congestion Control in High-performance Interconnects using Hybrid and Direct Topologies",
+      "Constructing virtual 5-dimensional tori out of lower-dimensional network cards",
+      "DCFNoC: A delayed conflict-free time division multiplexing network on chip",
+      "Efficient dynamic isolation of congestion in lossless datacenter networks",
+      "Modeling Traffic Workloads in Data-center Network Simulation Tools",
+      "Path2SL: Leveraging InfiniBand Resources to Reduce Head-of-Line Blocking in Fat Trees",
+      "Path2SL: Optimizing Head-of-Line Blocking Reduction in InfiniBand-Based\n               Fat-Tree Networks",
+      "Theoretical scalability analysis of distributed deep convolutional neural networks",
+      "Accurately modeling the on-chip and off-chip GPU memory subsystem",
+      "Feasible enhancements to congestion control in InfiniBand-based networks"
+    ],
+    "recommendations": [
+      {
+        "title": "Sublinear Root Detection and New Hardness Results for Sparse Polynomials over Finite Fields",
+        "year": 2016,
+        "venue": "SIAM Journal on Computing",
+        "n_citation": 14,
+        "is_hit": false,
+        "hit_type": null,
+        "scores": {
+          "score": 1.9836,
+          "sem": 0.3222,
+          "rec": 0.5693,
+          "cit": 0.0921,
+          "qua_term": 1.0,
+          "qua_raw": 1.0
+        }
+      },
+      {
+        "title": "PCDDB: new developments at the Protein Circular Dichroism Data Bank.",
+        "year": 2017,
+        "venue": "Nucleic Acids Research",
+        "n_citation": 50,
+        "is_hit": false,
+        "hit_type": null,
+        "scores": {
+          "score": 2.805,
+          "sem": 0.4025,
+          "rec": 1.0,
+          "cit": 0.4025,
+          "qua_term": 1.0,
+          "qua_raw": 1.0
+        }
+      },
+      {
+        "title": "DCFNoC: A delayed conflict-free time division multiplexing network on chip",
+        "year": 2016,
+        "venue": "Design Automation Conference",
+        "n_citation": 14,
+        "is_hit": true,
+        "hit_type": "coauthor",
+        "scores": {
+          "score": 1.8904,
+          "sem": 0.2509,
+          "rec": 0.5693,
+          "cit": 0.0702,
+          "qua_term": 1.0,
+          "qua_raw": 1.0
+        }
+      },
+      {
+        "title": "Theoretical scalability analysis of distributed deep convolutional neural networks",
+        "year": 2016,
+        "venue": "IEEE/ACM International Symposium on Cluster, Cloud and Internet Computing",
+        "n_citation": 13,
+        "is_hit": true,
+        "hit_type": "coauthor",
+        "scores": {
+          "score": 2.1154,
+          "sem": 0.5326,
+          "rec": 0.5693,
+          "cit": 0.1385,
+          "qua_term": 0.875,
+          "qua_raw": 0.875
+        }
+      },
+      {
+        "title": "Multimodal Image Registration With Line Segments by Selective Search",
+        "year": 2017,
+        "venue": "IEEE Transactions on Systems, Man, and Cybernetics",
+        "n_citation": 50,
+        "is_hit": false,
+        "hit_type": null,
+        "scores": {
+          "score": 2.718,
+          "sem": 0.359,
+          "rec": 1.0,
+          "cit": 0.359,
+          "qua_term": 1.0,
+          "qua_raw": 1.0
+        }
+      },
+      {
+        "title": "Quantification of the first-order high-pass filter's influence on the automatic measurements of the electrocardiogram",
+        "year": 2017,
+        "venue": "Computer Methods and Programs in Biomedicine",
+        "n_citation": 0,
+        "is_hit": false,
+        "hit_type": null,
+        "scores": {
+          "score": 2.3206,
+          "sem": 0.3206,
+          "rec": 1.0,
+          "cit": 0.0,
+          "qua_term": 1.0,
+          "qua_raw": 1.0
+        }
+      },
+      {
+        "title": "Cognitive Relaying With Transceiver Hardware Impairments Under Interference Constraints",
+        "year": 2016,
+        "venue": "IEEE Communications Letters",
+        "n_citation": 2,
+        "is_hit": false,
+        "hit_type": null,
+        "scores": {
+          "score": 1.5693,
+          "sem": 0.0,
+          "rec": 0.5693,
+          "cit": 0.0,
+          "qua_term": 1.0,
+          "qua_raw": 1.0
+        }
+      },
+      {
+        "title": "Collaborative trajectory privacy preserving scheme in location-based services",
+        "year": 2017,
+        "venue": "Information Sciences",
+        "n_citation": 50,
+        "is_hit": false,
+        "hit_type": null,
+        "scores": {
+          "score": 2.558,
+          "sem": 0.279,
+          "rec": 1.0,
+          "cit": 0.279,
+          "qua_term": 1.0,
+          "qua_raw": 1.0
+        }
+      },
+      {
+        "title": "Visualizing dispersion interactions through the use of local orbital spaces",
+        "year": 2017,
+        "venue": "Journal of Computational Chemistry",
+        "n_citation": 50,
+        "is_hit": false,
+        "hit_type": null,
+        "scores": {
+          "score": 2.905,
+          "sem": 0.4525,
+          "rec": 1.0,
+          "cit": 0.4525,
+          "qua_term": 1.0,
+          "qua_raw": 1.0
+        }
+      },
+      {
+        "title": "A hybrid method based on genetic algorithm and dynamic programming for solving a bi-objective cell formation problem considering alternative process routings and machine duplication",
+        "year": 2017,
+        "venue": "Applied Soft Computing",
+        "n_citation": 0,
+        "is_hit": false,
+        "hit_type": null,
+        "scores": {
+          "score": 2.4188,
+          "sem": 0.4188,
+          "rec": 1.0,
+          "cit": 0.0,
+          "qua_term": 1.0,
+          "qua_raw": 1.0
+        }
+      }
+    ]
+  }
+]

@@ -1,0 +1,972 @@
+[
+  {
+    "author": "Sudeshna Sarkar",
+    "train_size": 10,
+    "test_size": 10,
+    "n_recommendations": 10,
+    "hits_at_10": 3,
+    "hits_by_type": {
+      "coauthor": 3,
+      "author_cited": 0,
+      "cited_author": 0,
+      "any": 3
+    },
+    "first_hit_position": 6,
+    "mean_pool_size": 44.9,
+    "gold_enriched": 10,
+    "n_author_papers_in_dblp": 23,
+    "validation": {
+      "method": "enriched injection + triangulated (coauthor + citation_fwd + citation_bwd)"
+    },
+    "metrics_by_k": {
+      "k3": {
+        "precision": 0.0,
+        "mrr": 0.0,
+        "ndcg": 0.0
+      },
+      "k5": {
+        "precision": 0.0,
+        "mrr": 0.0,
+        "ndcg": 0.0
+      },
+      "k10": {
+        "precision": 0.3,
+        "mrr": 0.16666666666666666,
+        "ndcg": 0.44407940125847906
+      }
+    },
+    "metrics_by_k_per_proxy": {
+      "coauthor": {
+        "k3": {
+          "precision": 0.0,
+          "mrr": 0.0,
+          "ndcg": 0.0
+        },
+        "k5": {
+          "precision": 0.0,
+          "mrr": 0.0,
+          "ndcg": 0.0
+        },
+        "k10": {
+          "precision": 0.3,
+          "mrr": 0.16666666666666666,
+          "ndcg": 0.44407940125847906
+        }
+      },
+      "author_cited": {
+        "k3": {
+          "precision": 0.0,
+          "mrr": 0.0,
+          "ndcg": 0.0
+        },
+        "k5": {
+          "precision": 0.0,
+          "mrr": 0.0,
+          "ndcg": 0.0
+        },
+        "k10": {
+          "precision": 0.0,
+          "mrr": 0.0,
+          "ndcg": 0.0
+        }
+      },
+      "cited_author": {
+        "k3": {
+          "precision": 0.0,
+          "mrr": 0.0,
+          "ndcg": 0.0
+        },
+        "k5": {
+          "precision": 0.0,
+          "mrr": 0.0,
+          "ndcg": 0.0
+        },
+        "k10": {
+          "precision": 0.0,
+          "mrr": 0.0,
+          "ndcg": 0.0
+        }
+      }
+    },
+    "held_out_titles": [
+      "A Survey of the Model Transfer Approaches to Cross-Lingual Dependency Parsing",
+      "Transform, Combine, and Transfer",
+      "Transform, combine, and transfer: Delexicalized transfer parser for low-resource languages",
+      "BIOINTMED: integrated biomedical knowledge base with ontologies and clinical trials",
+      "FIRE 2020 EDNIL Track: Event Detection from News in Indian Languages",
+      "The Impact of Flexible Platoon Formation Operations",
+      "Recommendation for Multi-stakeholders and through Neural Review Mining",
+      "Using Communities of Words Derived from Multilingual Word Vectors for Cross-Language Information Retrieval in Indian Languages",
+      "Using communities ofwords derived from multilingual word vectors for cross-language information retrieval in Indian languages",
+      "Drug-drug interactions prediction based on drug embedding and graph auto-encoder"
+    ],
+    "recommendations": [
+      {
+        "title": "Experimental Tracking of Limit-Point Bifurcations and Backbone Curves Using Control-Based Continuation",
+        "year": 2017,
+        "venue": "International Journal of Bifurcation and Chaos",
+        "n_citation": 0,
+        "is_hit": false,
+        "hit_type": null,
+        "scores": {}
+      },
+      {
+        "title": "Myo-Signal Based Intuitive Driving Interface: Development and Evaluation",
+        "year": 2014,
+        "venue": "nan",
+        "n_citation": 0,
+        "is_hit": false,
+        "hit_type": null,
+        "scores": {}
+      },
+      {
+        "title": "SVED: Scanning, Vulnerabilities, Exploits and Detection",
+        "year": 2016,
+        "venue": "nan",
+        "n_citation": 0,
+        "is_hit": false,
+        "hit_type": null,
+        "scores": {}
+      },
+      {
+        "title": "Digital watermarking with local strength adjustment for AVC-compressed HDTV bitstreams",
+        "year": 2013,
+        "venue": "picture coding symposium",
+        "n_citation": 1,
+        "is_hit": false,
+        "hit_type": null,
+        "scores": {}
+      },
+      {
+        "title": "Research literature clustering using diffusion maps",
+        "year": 2013,
+        "venue": "Journal of Informetrics",
+        "n_citation": 2,
+        "is_hit": false,
+        "hit_type": null,
+        "scores": {}
+      },
+      {
+        "title": "Using Communities of Words Derived from Multilingual Word Vectors for Cross-Language Information Retrieval in Indian Languages",
+        "year": 2016,
+        "venue": "ACM Trans. Asian Low Resour. Lang. Inf. Process.",
+        "n_citation": 11,
+        "is_hit": true,
+        "hit_type": "coauthor",
+        "scores": {}
+      },
+      {
+        "title": "Design Illustrations to Make Adoption of Ola Technology More Beneficial for Indian Auto-Rickshaw Drivers",
+        "year": 2016,
+        "venue": "conference on computer supported cooperative work",
+        "n_citation": 0,
+        "is_hit": false,
+        "hit_type": null,
+        "scores": {}
+      },
+      {
+        "title": "A Real Case Analytics on Social Network of Opinion Spammers",
+        "year": 2016,
+        "venue": "information reuse and integration",
+        "n_citation": 0,
+        "is_hit": false,
+        "hit_type": null,
+        "scores": {}
+      },
+      {
+        "title": "Drug-drug interactions prediction based on drug embedding and graph auto-encoder",
+        "year": 2016,
+        "venue": "International Conferences on Biological Information and Biomedical Engineering",
+        "n_citation": 29,
+        "is_hit": true,
+        "hit_type": "coauthor",
+        "scores": {}
+      },
+      {
+        "title": "Using communities ofwords derived from multilingual word vectors for cross-language information retrieval in Indian languages",
+        "year": 2016,
+        "venue": "ACM Trans. Asian Low Resour. Lang. Inf. Process.",
+        "n_citation": 11,
+        "is_hit": true,
+        "hit_type": "coauthor",
+        "scores": {}
+      }
+    ]
+  },
+  {
+    "author": "Yuan-Fang Li",
+    "train_size": 10,
+    "test_size": 10,
+    "n_recommendations": 10,
+    "hits_at_10": 4,
+    "hits_by_type": {
+      "coauthor": 4,
+      "author_cited": 0,
+      "cited_author": 0,
+      "any": 4
+    },
+    "first_hit_position": 2,
+    "mean_pool_size": 44.3,
+    "gold_enriched": 8,
+    "n_author_papers_in_dblp": 0,
+    "validation": {
+      "method": "enriched injection + triangulated (coauthor + citation_fwd + citation_bwd)"
+    },
+    "metrics_by_k": {
+      "k3": {
+        "precision": 0.3333333333333333,
+        "mrr": 0.5,
+        "ndcg": 0.2960819109658652
+      },
+      "k5": {
+        "precision": 0.2,
+        "mrr": 0.5,
+        "ndcg": 0.24630238874073
+      },
+      "k10": {
+        "precision": 0.4,
+        "mrr": 0.5,
+        "ndcg": 0.6213549039708058
+      }
+    },
+    "metrics_by_k_per_proxy": {
+      "coauthor": {
+        "k3": {
+          "precision": 0.3333333333333333,
+          "mrr": 0.5,
+          "ndcg": 0.2960819109658652
+        },
+        "k5": {
+          "precision": 0.2,
+          "mrr": 0.5,
+          "ndcg": 0.24630238874073
+        },
+        "k10": {
+          "precision": 0.4,
+          "mrr": 0.5,
+          "ndcg": 0.6213549039708058
+        }
+      },
+      "author_cited": {
+        "k3": {
+          "precision": 0.0,
+          "mrr": 0.0,
+          "ndcg": 0.0
+        },
+        "k5": {
+          "precision": 0.0,
+          "mrr": 0.0,
+          "ndcg": 0.0
+        },
+        "k10": {
+          "precision": 0.0,
+          "mrr": 0.0,
+          "ndcg": 0.0
+        }
+      },
+      "cited_author": {
+        "k3": {
+          "precision": 0.0,
+          "mrr": 0.0,
+          "ndcg": 0.0
+        },
+        "k5": {
+          "precision": 0.0,
+          "mrr": 0.0,
+          "ndcg": 0.0
+        },
+        "k10": {
+          "precision": 0.0,
+          "mrr": 0.0,
+          "ndcg": 0.0
+        }
+      }
+    },
+    "held_out_titles": [
+      "Normalizing Flow-based Neural Process for Few-Shot Knowledge Graph Completion",
+      "Label-Guided Generative Adversarial Network for Realistic Image Synthesis",
+      "State-Aware Compositional Learning Toward Unbiased Training for Scene Graph Generation",
+      "Toward a Unified Transformer-Based Framework for Scene Graph Generation and Human-Object Interaction Detection",
+      "KGVQL: A knowledge graph visual query language with bidirectional transformations",
+      "Benchmark construction and experimental evaluations for incoherent ontologies",
+      "Less is more: Data-efficient complex question answering over knowledge bases",
+      "Few-Shot Complex Knowledge Base Question Answering via Meta Reinforcement Learning",
+      "Generating Question Titles for Stack Overflow from Mined Code Snippets",
+      "Retrieve, Program, Repeat: Complex Knowledge Base Question Answering via Alternate Meta-learning"
+    ],
+    "recommendations": [
+      {
+        "title": "A study on the effect of multisensory stimulation in behaving rats",
+        "year": 2016,
+        "venue": "international conference of the ieee engineering in medicine and biology society",
+        "n_citation": 1,
+        "is_hit": false,
+        "hit_type": null,
+        "scores": {}
+      },
+      {
+        "title": "Benchmark construction and experimental evaluations for incoherent ontologies",
+        "year": 2016,
+        "venue": "Knowledge-Based Systems",
+        "n_citation": 7,
+        "is_hit": true,
+        "hit_type": "coauthor",
+        "scores": {}
+      },
+      {
+        "title": "Visualization and cell data analysis tool based on XML log files",
+        "year": 2015,
+        "venue": "local computer networks",
+        "n_citation": 0,
+        "is_hit": false,
+        "hit_type": null,
+        "scores": {}
+      },
+      {
+        "title": "LBSizeCleav: improved support vector machine (SVM)-based prediction of Dicer cleavage sites using loop/bulge length",
+        "year": 2016,
+        "venue": "BMC Bioinformatics",
+        "n_citation": 50,
+        "is_hit": false,
+        "hit_type": null,
+        "scores": {}
+      },
+      {
+        "title": "Class-based delta-encoding for high-speed train data stream",
+        "year": 2015,
+        "venue": "international performance computing and communications conference",
+        "n_citation": 1,
+        "is_hit": false,
+        "hit_type": null,
+        "scores": {}
+      },
+      {
+        "title": "Few-Shot Complex Knowledge Base Question Answering via Meta Reinforcement Learning",
+        "year": 2016,
+        "venue": "TestSet",
+        "n_citation": 0,
+        "is_hit": true,
+        "hit_type": "coauthor",
+        "scores": {}
+      },
+      {
+        "title": "InterCriteria Analysis of Parameters Relations in Fermentation Processes Models",
+        "year": 2015,
+        "venue": "international conference on computational collective intelligence",
+        "n_citation": 0,
+        "is_hit": false,
+        "hit_type": null,
+        "scores": {}
+      },
+      {
+        "title": "Less is more: Data-efficient complex question answering over knowledge bases",
+        "year": 2016,
+        "venue": "Journal of Web Semantics",
+        "n_citation": 29,
+        "is_hit": true,
+        "hit_type": "coauthor",
+        "scores": {}
+      },
+      {
+        "title": "CSE database: extended annotations and new recommendations for ECG software testing",
+        "year": 2016,
+        "venue": "Medical & Biological Engineering & Computing",
+        "n_citation": 0,
+        "is_hit": false,
+        "hit_type": null,
+        "scores": {}
+      },
+      {
+        "title": "Retrieve, Program, Repeat: Complex Knowledge Base Question Answering via Alternate Meta-learning",
+        "year": 2016,
+        "venue": "TestSet",
+        "n_citation": 0,
+        "is_hit": true,
+        "hit_type": "coauthor",
+        "scores": {}
+      }
+    ]
+  },
+  {
+    "author": "Gilles Dowek",
+    "train_size": 10,
+    "test_size": 10,
+    "n_recommendations": 10,
+    "hits_at_10": 1,
+    "hits_by_type": {
+      "coauthor": 1,
+      "author_cited": 0,
+      "cited_author": 0,
+      "any": 1
+    },
+    "first_hit_position": 4,
+    "mean_pool_size": 47.2,
+    "gold_enriched": 5,
+    "n_author_papers_in_dblp": 23,
+    "validation": {
+      "method": "enriched injection + triangulated (coauthor + citation_fwd + citation_bwd)"
+    },
+    "metrics_by_k": {
+      "k3": {
+        "precision": 0.0,
+        "mrr": 0.0,
+        "ndcg": 0.0
+      },
+      "k5": {
+        "precision": 0.2,
+        "mrr": 0.25,
+        "ndcg": 0.43067655807339306
+      },
+      "k10": {
+        "precision": 0.1,
+        "mrr": 0.25,
+        "ndcg": 0.43067655807339306
+      }
+    },
+    "metrics_by_k_per_proxy": {
+      "coauthor": {
+        "k3": {
+          "precision": 0.0,
+          "mrr": 0.0,
+          "ndcg": 0.0
+        },
+        "k5": {
+          "precision": 0.2,
+          "mrr": 0.25,
+          "ndcg": 0.43067655807339306
+        },
+        "k10": {
+          "precision": 0.1,
+          "mrr": 0.25,
+          "ndcg": 0.43067655807339306
+        }
+      },
+      "author_cited": {
+        "k3": {
+          "precision": 0.0,
+          "mrr": 0.0,
+          "ndcg": 0.0
+        },
+        "k5": {
+          "precision": 0.0,
+          "mrr": 0.0,
+          "ndcg": 0.0
+        },
+        "k10": {
+          "precision": 0.0,
+          "mrr": 0.0,
+          "ndcg": 0.0
+        }
+      },
+      "cited_author": {
+        "k3": {
+          "precision": 0.0,
+          "mrr": 0.0,
+          "ndcg": 0.0
+        },
+        "k5": {
+          "precision": 0.0,
+          "mrr": 0.0,
+          "ndcg": 0.0
+        },
+        "k10": {
+          "precision": 0.0,
+          "mrr": 0.0,
+          "ndcg": 0.0
+        }
+      }
+    },
+    "held_out_titles": [
+      "Yet Another Bijection between Sequent Calculus and Natural Deduction",
+      "The probability of non-confluent systems",
+      "Causal graph dynamics",
+      "Real numbers, chaos, and the principle of a bounded density of information",
+      "A simple proof that super-consistency implies cut elimination",
+      "A theory independent curry-de bruijn-howard correspondence",
+      "Around the physical church-turing thesis: Cellular automata, formal languages, and the principles of quantum theory",
+      "Natural Computing: Preface",
+      "Nominal semantics for predicate logic: Algebras, substitution, quantifiers, and limits",
+      "PNL to HOL: From the logic of nominal sets to the logic of higher-order functions"
+    ],
+    "recommendations": [
+      {
+        "title": "Integrating population- and patient-level data for secondary use of electronic health records to study overweight and obesity.",
+        "year": 2013,
+        "venue": "nan",
+        "n_citation": 5,
+        "is_hit": false,
+        "hit_type": null,
+        "scores": {}
+      },
+      {
+        "title": "Associative and commutative tree representations for Boolean functions",
+        "year": 2015,
+        "venue": "Theoretical Computer Science",
+        "n_citation": 50,
+        "is_hit": false,
+        "hit_type": null,
+        "scores": {}
+      },
+      {
+        "title": "Armstrong Relations for Ontology Design and Evaluation.",
+        "year": 2016,
+        "venue": "nan",
+        "n_citation": 0,
+        "is_hit": false,
+        "hit_type": null,
+        "scores": {}
+      },
+      {
+        "title": "Causal graph dynamics",
+        "year": 2016,
+        "venue": "TestSet",
+        "n_citation": 0,
+        "is_hit": true,
+        "hit_type": "coauthor",
+        "scores": {}
+      },
+      {
+        "title": "Grid energy consumption of mixed-traffic cellular networks with renewable energy sources",
+        "year": 2016,
+        "venue": "nan",
+        "n_citation": 0,
+        "is_hit": false,
+        "hit_type": null,
+        "scores": {}
+      },
+      {
+        "title": "CDNPatch: a cost-effective failover mechanism for hybrid CDN-P2P live streaming systems",
+        "year": 2016,
+        "venue": "International Journal of Communication Systems",
+        "n_citation": 0,
+        "is_hit": false,
+        "hit_type": null,
+        "scores": {}
+      },
+      {
+        "title": "Exactness of approximate MAP inference in continuous MRFs",
+        "year": 2015,
+        "venue": "neural information processing systems",
+        "n_citation": 1,
+        "is_hit": false,
+        "hit_type": null,
+        "scores": {}
+      },
+      {
+        "title": "i 2 WAP: Improving non-volatile cache lifetime by reducing inter- and intra-set write variations",
+        "year": 2013,
+        "venue": "high-performance computer architecture",
+        "n_citation": 50,
+        "is_hit": false,
+        "hit_type": null,
+        "scores": {}
+      },
+      {
+        "title": "Safety Verification of Hybrid Systems Using Certified Multiple Lyapunov-Like Functions",
+        "year": 2015,
+        "venue": "computer algebra in scientific computing",
+        "n_citation": 0,
+        "is_hit": false,
+        "hit_type": null,
+        "scores": {}
+      },
+      {
+        "title": "Cross-tier interference mitigation for RTDD-based macro-femto networks",
+        "year": 2015,
+        "venue": "personal, indoor and mobile radio communications",
+        "n_citation": 0,
+        "is_hit": false,
+        "hit_type": null,
+        "scores": {}
+      }
+    ]
+  },
+  {
+    "author": "Johan Lilius",
+    "train_size": 10,
+    "test_size": 10,
+    "n_recommendations": 10,
+    "hits_at_10": 3,
+    "hits_by_type": {
+      "coauthor": 3,
+      "author_cited": 0,
+      "cited_author": 0,
+      "any": 3
+    },
+    "first_hit_position": 1,
+    "mean_pool_size": 43.3,
+    "gold_enriched": 8,
+    "n_author_papers_in_dblp": 35,
+    "validation": {
+      "method": "enriched injection + triangulated (coauthor + citation_fwd + citation_bwd)"
+    },
+    "metrics_by_k": {
+      "k3": {
+        "precision": 1.0,
+        "mrr": 1.0,
+        "ndcg": 1.0
+      },
+      "k5": {
+        "precision": 0.6,
+        "mrr": 1.0,
+        "ndcg": 1.0
+      },
+      "k10": {
+        "precision": 0.3,
+        "mrr": 1.0,
+        "ndcg": 1.0
+      }
+    },
+    "metrics_by_k_per_proxy": {
+      "coauthor": {
+        "k3": {
+          "precision": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        },
+        "k5": {
+          "precision": 0.6,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        },
+        "k10": {
+          "precision": 0.3,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        }
+      },
+      "author_cited": {
+        "k3": {
+          "precision": 0.0,
+          "mrr": 0.0,
+          "ndcg": 0.0
+        },
+        "k5": {
+          "precision": 0.0,
+          "mrr": 0.0,
+          "ndcg": 0.0
+        },
+        "k10": {
+          "precision": 0.0,
+          "mrr": 0.0,
+          "ndcg": 0.0
+        }
+      },
+      "cited_author": {
+        "k3": {
+          "precision": 0.0,
+          "mrr": 0.0,
+          "ndcg": 0.0
+        },
+        "k5": {
+          "precision": 0.0,
+          "mrr": 0.0,
+          "ndcg": 0.0
+        },
+        "k10": {
+          "precision": 0.0,
+          "mrr": 0.0,
+          "ndcg": 0.0
+        }
+      }
+    },
+    "held_out_titles": [
+      "Scenario-based Testing of a Ship Collision Avoidance System",
+      "An efficient model for quantifying the interaction between structural properties of software and hardware in the ARM big.LITTLE architecture",
+      "RDF Stores for Enhanced Living Environments: An Overview",
+      "An ontology for wearables data interoperability and ambient assisted living application development",
+      "Efficient Task-Based Code Generation for SDF Graph Execution on Multicore Processors",
+      "Inactivity Benchmarking",
+      "IoT at Sea",
+      "Model-Based Representations for Dataflow Schedules",
+      "Quantifying the Interaction between Structural Properties of Software and Hardware in the ARM Big.LITTLE Architecture",
+      "A method for automatic whoosh sound description"
+    ],
+    "recommendations": [
+      {
+        "title": "A method for automatic whoosh sound description",
+        "year": 2016,
+        "venue": "TestSet",
+        "n_citation": 0,
+        "is_hit": true,
+        "hit_type": "coauthor",
+        "scores": {}
+      },
+      {
+        "title": "An efficient model for quantifying the interaction between structural properties of software and hardware in the ARM big.LITTLE architecture",
+        "year": 2016,
+        "venue": "Concurrency and Computation",
+        "n_citation": 3,
+        "is_hit": true,
+        "hit_type": "coauthor",
+        "scores": {}
+      },
+      {
+        "title": "Model-Based Representations for Dataflow Schedules",
+        "year": 2016,
+        "venue": "Principles of Modeling",
+        "n_citation": 4,
+        "is_hit": true,
+        "hit_type": "coauthor",
+        "scores": {}
+      },
+      {
+        "title": "Signal Processing Research Resonates with Hearing Loss Sufferers [Special Reports]",
+        "year": 2016,
+        "venue": "IEEE Signal Processing Magazine",
+        "n_citation": 0,
+        "is_hit": false,
+        "hit_type": null,
+        "scores": {}
+      },
+      {
+        "title": "Identification of Reconstructed Speech",
+        "year": 2017,
+        "venue": "ACM Transactions on Multimedia Computing, Communications, and Applications",
+        "n_citation": 0,
+        "is_hit": false,
+        "hit_type": null,
+        "scores": {}
+      },
+      {
+        "title": "On Argumentation with Purely Defeasible Rules",
+        "year": 2015,
+        "venue": "scalable uncertainty management",
+        "n_citation": 2,
+        "is_hit": false,
+        "hit_type": null,
+        "scores": {}
+      },
+      {
+        "title": "Leakage Resilient Password Systems",
+        "year": 2015,
+        "venue": "nan",
+        "n_citation": 0,
+        "is_hit": false,
+        "hit_type": null,
+        "scores": {}
+      },
+      {
+        "title": "A hybrid metaheuritic technique developed for hourly load forecasting",
+        "year": 2016,
+        "venue": "Complexity",
+        "n_citation": 0,
+        "is_hit": false,
+        "hit_type": null,
+        "scores": {}
+      },
+      {
+        "title": "Extending rCUDA with Support for P2P Memory Copies between Remote GPUs",
+        "year": 2016,
+        "venue": "high performance computing and communications",
+        "n_citation": 0,
+        "is_hit": false,
+        "hit_type": null,
+        "scores": {}
+      },
+      {
+        "title": "ScoringTalk and WatchingMeter: utterance and gaze visualization for co-located collaboration",
+        "year": 2015,
+        "venue": "international conference on computer graphics and interactive techniques",
+        "n_citation": 0,
+        "is_hit": false,
+        "hit_type": null,
+        "scores": {}
+      }
+    ]
+  },
+  {
+    "author": "José Duato",
+    "train_size": 10,
+    "test_size": 10,
+    "n_recommendations": 10,
+    "hits_at_10": 1,
+    "hits_by_type": {
+      "coauthor": 1,
+      "author_cited": 0,
+      "cited_author": 0,
+      "any": 1
+    },
+    "first_hit_position": 4,
+    "mean_pool_size": 45.1,
+    "gold_enriched": 9,
+    "n_author_papers_in_dblp": 138,
+    "validation": {
+      "method": "enriched injection + triangulated (coauthor + citation_fwd + citation_bwd)"
+    },
+    "metrics_by_k": {
+      "k3": {
+        "precision": 0.0,
+        "mrr": 0.0,
+        "ndcg": 0.0
+      },
+      "k5": {
+        "precision": 0.2,
+        "mrr": 0.25,
+        "ndcg": 0.43067655807339306
+      },
+      "k10": {
+        "precision": 0.1,
+        "mrr": 0.25,
+        "ndcg": 0.43067655807339306
+      }
+    },
+    "metrics_by_k_per_proxy": {
+      "coauthor": {
+        "k3": {
+          "precision": 0.0,
+          "mrr": 0.0,
+          "ndcg": 0.0
+        },
+        "k5": {
+          "precision": 0.2,
+          "mrr": 0.25,
+          "ndcg": 0.43067655807339306
+        },
+        "k10": {
+          "precision": 0.1,
+          "mrr": 0.25,
+          "ndcg": 0.43067655807339306
+        }
+      },
+      "author_cited": {
+        "k3": {
+          "precision": 0.0,
+          "mrr": 0.0,
+          "ndcg": 0.0
+        },
+        "k5": {
+          "precision": 0.0,
+          "mrr": 0.0,
+          "ndcg": 0.0
+        },
+        "k10": {
+          "precision": 0.0,
+          "mrr": 0.0,
+          "ndcg": 0.0
+        }
+      },
+      "cited_author": {
+        "k3": {
+          "precision": 0.0,
+          "mrr": 0.0,
+          "ndcg": 0.0
+        },
+        "k5": {
+          "precision": 0.0,
+          "mrr": 0.0,
+          "ndcg": 0.0
+        },
+        "k10": {
+          "precision": 0.0,
+          "mrr": 0.0,
+          "ndcg": 0.0
+        }
+      }
+    },
+    "held_out_titles": [
+      "Combining Source-adaptive and Oblivious Routing with Congestion Control in High-performance Interconnects using Hybrid and Direct Topologies",
+      "Constructing virtual 5-dimensional tori out of lower-dimensional network cards",
+      "DCFNoC: A delayed conflict-free time division multiplexing network on chip",
+      "Efficient dynamic isolation of congestion in lossless datacenter networks",
+      "Modeling Traffic Workloads in Data-center Network Simulation Tools",
+      "Path2SL: Leveraging InfiniBand Resources to Reduce Head-of-Line Blocking in Fat Trees",
+      "Path2SL: Optimizing Head-of-Line Blocking Reduction in InfiniBand-Based\n               Fat-Tree Networks",
+      "Theoretical scalability analysis of distributed deep convolutional neural networks",
+      "Accurately modeling the on-chip and off-chip GPU memory subsystem",
+      "Feasible enhancements to congestion control in InfiniBand-based networks"
+    ],
+    "recommendations": [
+      {
+        "title": "A price-based approach for voltage regulation and power loss minimization in power distribution networks",
+        "year": 2016,
+        "venue": "conference on decision and control",
+        "n_citation": 0,
+        "is_hit": false,
+        "hit_type": null,
+        "scores": {}
+      },
+      {
+        "title": "Provisioning of Large-Scale Systems: The Interplay Between Network Effects and Strategic Behavior in the User Base",
+        "year": 2016,
+        "venue": "Management Science",
+        "n_citation": 50,
+        "is_hit": false,
+        "hit_type": null,
+        "scores": {}
+      },
+      {
+        "title": "Exploiting Internet of Things and building information modeling framework for management of cognitive buildings",
+        "year": 2016,
+        "venue": "nan",
+        "n_citation": 8,
+        "is_hit": false,
+        "hit_type": null,
+        "scores": {}
+      },
+      {
+        "title": "Efficient dynamic isolation of congestion in lossless datacenter networks",
+        "year": 2016,
+        "venue": "NEAT@SIGCOMM",
+        "n_citation": 6,
+        "is_hit": true,
+        "hit_type": "coauthor",
+        "scores": {}
+      },
+      {
+        "title": "On the Need for a New Generation of Code Review Tools",
+        "year": 2016,
+        "venue": "product focused software process improvement",
+        "n_citation": 1,
+        "is_hit": false,
+        "hit_type": null,
+        "scores": {}
+      },
+      {
+        "title": "Reasoning about security in sensor networks",
+        "year": 2015,
+        "venue": "Concurrency and Computation: Practice and Experience",
+        "n_citation": 1,
+        "is_hit": false,
+        "hit_type": null,
+        "scores": {}
+      },
+      {
+        "title": "Nonlinear discriminant analysis based on vanishing component analysis",
+        "year": 2016,
+        "venue": "Neurocomputing",
+        "n_citation": 0,
+        "is_hit": false,
+        "hit_type": null,
+        "scores": {}
+      },
+      {
+        "title": "Glaucoma detection using entropy sampling and ensemble learning for automatic optic cup and disc segmentation",
+        "year": 2017,
+        "venue": "Computerized Medical Imaging and Graphics",
+        "n_citation": 50,
+        "is_hit": false,
+        "hit_type": null,
+        "scores": {}
+      },
+      {
+        "title": "Assessment of Production System Stability with the Use of the FMEA Analysis and Simulation Models",
+        "year": 2015,
+        "venue": "intelligent data engineering and automated learning",
+        "n_citation": 0,
+        "is_hit": false,
+        "hit_type": null,
+        "scores": {}
+      },
+      {
+        "title": "Modeling the Impact of Requirements Change in the Design of Complex Systems",
+        "year": 2013,
+        "venue": "nan",
+        "n_citation": 50,
+        "is_hit": false,
+        "hit_type": null,
+        "scores": {}
+      }
+    ]
+  }
+]

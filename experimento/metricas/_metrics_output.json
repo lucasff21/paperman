@@ -1,0 +1,1348 @@
+{
+  "agg": {
+    "mrr": {
+      "a": 0.6318783068783069,
+      "b": 0.6601851851851852
+    },
+    "map": {
+      "a": 0.5438742033164432,
+      "b": 0.6022025442550133
+    },
+    "ndcg": {
+      "a": 0.8894545670055424,
+      "b": 0.8550421899460553
+    },
+    "p5": {
+      "a": 0.3851851851851852,
+      "b": 0.5037037037037037
+    },
+    "p10": {
+      "a": 0.4074074074074074,
+      "b": 0.5259259259259259
+    },
+    "media": {
+      "a": 2.325925925925926,
+      "b": 2.781481481481481
+    }
+  },
+  "survey": {
+    "relevancia": {
+      "a": 2.5555555555555554,
+      "b": 3.074074074074074
+    },
+    "diversidade": {
+      "a": 2.7777777777777777,
+      "b": 3.037037037037037
+    },
+    "precisao": {
+      "a": 1.962962962962963,
+      "b": 2.6666666666666665
+    },
+    "atualidade": {
+      "a": 2.5925925925925926,
+      "b": 3.4814814814814814
+    },
+    "surpresa": {
+      "a": 2.1481481481481484,
+      "b": 2.8518518518518516
+    }
+  },
+  "users": {
+    "Frederico Araújo Durão": {
+      "mrr_a": 1.0,
+      "mrr_b": 0.3333333333333333,
+      "ndcg_a": 0.9766241234703441,
+      "ndcg_b": 0.7078723625322543,
+      "map_a": 0.925,
+      "map_b": 0.33134920634920634,
+      "media_a": 2.5,
+      "media_b": 2.0,
+      "notas_a": [
+        5,
+        4,
+        3,
+        4,
+        1,
+        1,
+        1,
+        4,
+        1,
+        1
+      ],
+      "notas_b": [
+        1,
+        1,
+        3,
+        2,
+        1,
+        1,
+        5,
+        3,
+        1,
+        2
+      ],
+      "survey_a": {
+        "relevancia": 3,
+        "diversidade": 5,
+        "precisao": 2,
+        "atualidade": 2,
+        "surpresa": 1
+      },
+      "survey_b": {
+        "relevancia": 3,
+        "diversidade": 5,
+        "precisao": 2,
+        "atualidade": 5,
+        "surpresa": 5
+      }
+    },
+    "Mayana Gitel Portnoi": {
+      "mrr_a": 1.0,
+      "mrr_b": 1.0,
+      "ndcg_a": 0.9439651542071469,
+      "ndcg_b": 0.9571335616895786,
+      "map_a": 0.6666666666666666,
+      "map_b": 0.855952380952381,
+      "media_a": 1.6,
+      "media_b": 3.6,
+      "notas_a": [
+        5,
+        1,
+        1,
+        1,
+        1,
+        3,
+        1,
+        1,
+        1,
+        1
+      ],
+      "notas_b": [
+        5,
+        5,
+        4,
+        4,
+        1,
+        2,
+        1,
+        5,
+        5,
+        4
+      ],
+      "survey_a": {
+        "relevancia": 3,
+        "diversidade": 2,
+        "precisao": 1,
+        "atualidade": 2,
+        "surpresa": 1
+      },
+      "survey_b": {
+        "relevancia": 4,
+        "diversidade": 5,
+        "precisao": 3,
+        "atualidade": 5,
+        "surpresa": 4
+      }
+    },
+    "Guilherme Castro Hora Fontes": {
+      "mrr_a": 0.0,
+      "mrr_b": 1.0,
+      "ndcg_a": 1.0,
+      "ndcg_b": 0.8772832590522289,
+      "map_a": 0.0,
+      "map_b": 0.625,
+      "media_a": 1.0,
+      "media_b": 2.0,
+      "notas_a": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "notas_b": [
+        5,
+        1,
+        1,
+        1,
+        2,
+        1,
+        2,
+        5,
+        1,
+        1
+      ],
+      "survey_a": {
+        "relevancia": 1,
+        "diversidade": 1,
+        "precisao": 1,
+        "atualidade": 1,
+        "surpresa": 1
+      },
+      "survey_b": {
+        "relevancia": 3,
+        "diversidade": 2,
+        "precisao": 2,
+        "atualidade": 3,
+        "surpresa": 2
+      }
+    },
+    "Eduardo Santana Souza": {
+      "mrr_a": 0.5,
+      "mrr_b": 1.0,
+      "ndcg_a": 0.9234178310740944,
+      "ndcg_b": 0.8769812901063765,
+      "map_a": 0.5494047619047618,
+      "map_b": 0.5682539682539682,
+      "media_a": 2.6,
+      "media_b": 2.3,
+      "notas_a": [
+        2,
+        3,
+        2,
+        3,
+        2,
+        3,
+        3,
+        3,
+        2,
+        3
+      ],
+      "notas_b": [
+        3,
+        1,
+        2,
+        2,
+        4,
+        2,
+        3,
+        2,
+        3,
+        1
+      ],
+      "survey_a": {
+        "relevancia": 3,
+        "diversidade": 2,
+        "precisao": 2,
+        "atualidade": 2,
+        "surpresa": 2
+      },
+      "survey_b": {
+        "relevancia": 2,
+        "diversidade": 3,
+        "precisao": 2,
+        "atualidade": 2,
+        "surpresa": 3
+      }
+    },
+    "Lucas França Freitas": {
+      "mrr_a": 1.0,
+      "mrr_b": 1.0,
+      "ndcg_a": 0.9037855571844823,
+      "ndcg_b": 0.9351642831188919,
+      "map_a": 0.9682539682539683,
+      "map_b": 1.0,
+      "media_a": 3.4,
+      "media_b": 4.6,
+      "notas_a": [
+        3,
+        5,
+        3,
+        3,
+        5,
+        5,
+        2,
+        2,
+        4,
+        2
+      ],
+      "notas_b": [
+        3,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        4,
+        4
+      ],
+      "survey_a": {
+        "relevancia": 4,
+        "diversidade": 3,
+        "precisao": 3,
+        "atualidade": 4,
+        "surpresa": 3
+      },
+      "survey_b": {
+        "relevancia": 5,
+        "diversidade": 5,
+        "precisao": 5,
+        "atualidade": 5,
+        "surpresa": 5
+      }
+    },
+    "Luiz Gonzaga Santana Dos Santos": {
+      "mrr_a": 0.2,
+      "mrr_b": 0.3333333333333333,
+      "ndcg_a": 0.6695273461605384,
+      "ndcg_b": 0.7431286862216819,
+      "map_a": 0.225,
+      "map_b": 0.30952380952380953,
+      "media_a": 1.8,
+      "media_b": 1.5,
+      "notas_a": [
+        1,
+        1,
+        1,
+        1,
+        4,
+        2,
+        1,
+        5,
+        1,
+        1
+      ],
+      "notas_b": [
+        1,
+        1,
+        3,
+        1,
+        1,
+        1,
+        4,
+        1,
+        1,
+        1
+      ],
+      "survey_a": {
+        "relevancia": 2,
+        "diversidade": 2,
+        "precisao": 2,
+        "atualidade": 1,
+        "surpresa": 2
+      },
+      "survey_b": {
+        "relevancia": 1,
+        "diversidade": 1,
+        "precisao": 1,
+        "atualidade": 1,
+        "surpresa": 1
+      }
+    },
+    "José Gildásio de Lima Queiroz Júnior": {
+      "mrr_a": 0.0,
+      "mrr_b": 0.0,
+      "ndcg_a": 0.9101811009355408,
+      "ndcg_b": 0.8717547463057782,
+      "map_a": 0.0,
+      "map_b": 0.0,
+      "media_a": 1.4,
+      "media_b": 1.1,
+      "notas_a": [
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        1,
+        2,
+        2
+      ],
+      "notas_b": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        2
+      ],
+      "survey_a": {
+        "relevancia": 2,
+        "diversidade": 2,
+        "precisao": 1,
+        "atualidade": 2,
+        "surpresa": 1
+      },
+      "survey_b": {
+        "relevancia": 1,
+        "diversidade": 1,
+        "precisao": 1,
+        "atualidade": 1,
+        "surpresa": 1
+      }
+    },
+    "Carlos Henrique Oliveira Freitas": {
+      "mrr_a": 1.0,
+      "mrr_b": 0.5,
+      "ndcg_a": 0.8763438469034021,
+      "ndcg_b": 0.7840165364915765,
+      "map_a": 0.7071428571428571,
+      "map_b": 0.5804421768707482,
+      "media_a": 2.3,
+      "media_b": 3.7,
+      "notas_a": [
+        4,
+        4,
+        1,
+        1,
+        1,
+        1,
+        4,
+        1,
+        1,
+        5
+      ],
+      "notas_b": [
+        1,
+        5,
+        1,
+        3,
+        2,
+        5,
+        5,
+        5,
+        5,
+        5
+      ],
+      "survey_a": {
+        "relevancia": 2,
+        "diversidade": 4,
+        "precisao": 1,
+        "atualidade": 2,
+        "surpresa": 1
+      },
+      "survey_b": {
+        "relevancia": 4,
+        "diversidade": 3,
+        "precisao": 3,
+        "atualidade": 3,
+        "surpresa": 2
+      }
+    },
+    "Lucas Sousa da Silva": {
+      "mrr_a": 1.0,
+      "mrr_b": 1.0,
+      "ndcg_a": 0.8544121790547493,
+      "ndcg_b": 0.94059024015551,
+      "map_a": 0.7590136054421769,
+      "map_b": 0.9765432098765433,
+      "media_a": 3.2,
+      "media_b": 3.4,
+      "notas_a": [
+        3,
+        3,
+        2,
+        3,
+        2,
+        2,
+        4,
+        4,
+        4,
+        5
+      ],
+      "notas_b": [
+        3,
+        3,
+        4,
+        4,
+        4,
+        4,
+        4,
+        2,
+        3,
+        3
+      ],
+      "survey_a": {
+        "relevancia": 3,
+        "diversidade": 2,
+        "precisao": 2,
+        "atualidade": 2,
+        "surpresa": 1
+      },
+      "survey_b": {
+        "relevancia": 3,
+        "diversidade": 2,
+        "precisao": 2,
+        "atualidade": 3,
+        "surpresa": 1
+      }
+    },
+    "Marcio dos Santos Junior": {
+      "mrr_a": 1.0,
+      "mrr_b": 1.0,
+      "ndcg_a": 0.945214763246892,
+      "ndcg_b": 0.943994754200463,
+      "map_a": 0.5047619047619047,
+      "map_b": 0.9240362811791382,
+      "media_a": 2.4,
+      "media_b": 2.7,
+      "notas_a": [
+        3,
+        2,
+        2,
+        2,
+        2,
+        2,
+        3,
+        2,
+        3,
+        3
+      ],
+      "notas_b": [
+        3,
+        3,
+        3,
+        3,
+        2,
+        3,
+        4,
+        2,
+        3,
+        1
+      ],
+      "survey_a": {
+        "relevancia": 2,
+        "diversidade": 3,
+        "precisao": 2,
+        "atualidade": 2,
+        "surpresa": 2
+      },
+      "survey_b": {
+        "relevancia": 3,
+        "diversidade": 2,
+        "precisao": 3,
+        "atualidade": 3,
+        "surpresa": 2
+      }
+    },
+    "Fábio Santos Batista": {
+      "mrr_a": 0.5,
+      "mrr_b": 0.5,
+      "ndcg_a": 0.9485579751096731,
+      "ndcg_b": 0.8677519687862048,
+      "map_a": 0.5,
+      "map_b": 0.45,
+      "media_a": 1.3,
+      "media_b": 1.9,
+      "notas_a": [
+        2,
+        3,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "notas_b": [
+        1,
+        3,
+        2,
+        2,
+        3,
+        2,
+        2,
+        2,
+        1,
+        1
+      ],
+      "survey_a": {
+        "relevancia": 1,
+        "diversidade": 1,
+        "precisao": 1,
+        "atualidade": 1,
+        "surpresa": 1
+      },
+      "survey_b": {
+        "relevancia": 2,
+        "diversidade": 2,
+        "precisao": 1,
+        "atualidade": 2,
+        "surpresa": 2
+      }
+    },
+    "Stéfane Oliveira": {
+      "mrr_a": 1.0,
+      "mrr_b": 0.5,
+      "ndcg_a": 0.8840332934525391,
+      "ndcg_b": 0.8494854248295446,
+      "map_a": 0.7260912698412698,
+      "map_b": 0.5327380952380952,
+      "media_a": 3.9,
+      "media_b": 2.9,
+      "notas_a": [
+        4,
+        2,
+        2,
+        5,
+        5,
+        5,
+        3,
+        5,
+        3,
+        5
+      ],
+      "notas_b": [
+        2,
+        3,
+        2,
+        2,
+        3,
+        3,
+        4,
+        4,
+        2,
+        4
+      ],
+      "survey_a": {
+        "relevancia": 5,
+        "diversidade": 4,
+        "precisao": 4,
+        "atualidade": 5,
+        "surpresa": 4
+      },
+      "survey_b": {
+        "relevancia": 3,
+        "diversidade": 3,
+        "precisao": 3,
+        "atualidade": 5,
+        "surpresa": 3
+      }
+    },
+    "Gustavo Ribeiro Trinchão": {
+      "mrr_a": 0.5,
+      "mrr_b": 0.3333333333333333,
+      "ndcg_a": 0.909701941665053,
+      "ndcg_b": 0.80115487493731,
+      "map_a": 0.5,
+      "map_b": 0.3333333333333333,
+      "media_a": 1.4,
+      "media_b": 1.3,
+      "notas_a": [
+        2,
+        4,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "notas_b": [
+        1,
+        1,
+        4,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "survey_a": {
+        "relevancia": 2,
+        "diversidade": 2,
+        "precisao": 1,
+        "atualidade": 2,
+        "surpresa": 1
+      },
+      "survey_b": {
+        "relevancia": 2,
+        "diversidade": 1,
+        "precisao": 2,
+        "atualidade": 1,
+        "surpresa": 1
+      }
+    },
+    "Isys Nogueira de Sant'Anna": {
+      "mrr_a": 1.0,
+      "mrr_b": 0.5,
+      "ndcg_a": 0.9518029977263317,
+      "ndcg_b": 0.8208457662222971,
+      "map_a": 1.0,
+      "map_b": 0.7856701940035273,
+      "media_a": 3.5,
+      "media_b": 4.1,
+      "notas_a": [
+        4,
+        4,
+        4,
+        3,
+        3,
+        3,
+        3,
+        3,
+        5,
+        3
+      ],
+      "notas_b": [
+        1,
+        3,
+        5,
+        5,
+        4,
+        4,
+        4,
+        5,
+        5,
+        5
+      ],
+      "survey_a": {
+        "relevancia": 3,
+        "diversidade": 5,
+        "precisao": 3,
+        "atualidade": 3,
+        "surpresa": 4
+      },
+      "survey_b": {
+        "relevancia": 4,
+        "diversidade": 5,
+        "precisao": 4,
+        "atualidade": 3,
+        "surpresa": 4
+      }
+    },
+    "Matheus Ednei Nepomuceno Souza": {
+      "mrr_a": 0.0,
+      "mrr_b": 0.125,
+      "ndcg_a": 0.9191940415670994,
+      "ndcg_b": 0.830099676799699,
+      "map_a": 0.0,
+      "map_b": 0.125,
+      "media_a": 1.9,
+      "media_b": 2.3,
+      "notas_a": [
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "notas_b": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        5,
+        2,
+        2
+      ],
+      "survey_a": {
+        "relevancia": 2,
+        "diversidade": 1,
+        "precisao": 1,
+        "atualidade": 2,
+        "surpresa": 1
+      },
+      "survey_b": {
+        "relevancia": 2,
+        "diversidade": 2,
+        "precisao": 1,
+        "atualidade": 4,
+        "surpresa": 1
+      }
+    },
+    "David de Oliveira Lima": {
+      "mrr_a": 0.25,
+      "mrr_b": 1.0,
+      "ndcg_a": 0.7149792378935854,
+      "ndcg_b": 0.8904008754947317,
+      "map_a": 0.5304421768707482,
+      "map_b": 0.5746031746031746,
+      "media_a": 2.8,
+      "media_b": 2.6,
+      "notas_a": [
+        1,
+        1,
+        1,
+        3,
+        3,
+        4,
+        4,
+        5,
+        3,
+        3
+      ],
+      "notas_b": [
+        4,
+        1,
+        2,
+        3,
+        2,
+        1,
+        4,
+        2,
+        4,
+        3
+      ],
+      "survey_a": {
+        "relevancia": 3,
+        "diversidade": 4,
+        "precisao": 1,
+        "atualidade": 3,
+        "surpresa": 3
+      },
+      "survey_b": {
+        "relevancia": 3,
+        "diversidade": 4,
+        "precisao": 4,
+        "atualidade": 2,
+        "surpresa": 3
+      }
+    },
+    "Maíra Matos Araujo": {
+      "mrr_a": 1.0,
+      "mrr_b": 1.0,
+      "ndcg_a": 0.8864306283242976,
+      "ndcg_b": 0.997706990535278,
+      "map_a": 0.6211640211640211,
+      "map_b": 1.0,
+      "media_a": 2.9,
+      "media_b": 4.1,
+      "notas_a": [
+        3,
+        2,
+        2,
+        4,
+        2,
+        4,
+        3,
+        2,
+        3,
+        4
+      ],
+      "notas_b": [
+        5,
+        5,
+        5,
+        5,
+        5,
+        3,
+        5,
+        3,
+        3,
+        2
+      ],
+      "survey_a": {
+        "relevancia": 3,
+        "diversidade": 5,
+        "precisao": 2,
+        "atualidade": 3,
+        "surpresa": 4
+      },
+      "survey_b": {
+        "relevancia": 4,
+        "diversidade": 5,
+        "precisao": 4,
+        "atualidade": 5,
+        "surpresa": 5
+      }
+    },
+    "Isabella de Melo Moreira": {
+      "mrr_a": 0.14285714285714285,
+      "mrr_b": 1.0,
+      "ndcg_a": 0.73487316658308,
+      "ndcg_b": 0.8387083346465579,
+      "map_a": 0.14285714285714285,
+      "map_b": 0.6746031746031745,
+      "media_a": 1.3,
+      "media_b": 2.4,
+      "notas_a": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        4,
+        1,
+        1,
+        1
+      ],
+      "notas_b": [
+        3,
+        5,
+        1,
+        1,
+        1,
+        1,
+        3,
+        1,
+        3,
+        5
+      ],
+      "survey_a": {
+        "relevancia": 1,
+        "diversidade": 1,
+        "precisao": 1,
+        "atualidade": 1,
+        "surpresa": 1
+      },
+      "survey_b": {
+        "relevancia": 3,
+        "diversidade": 1,
+        "precisao": 1,
+        "atualidade": 2,
+        "surpresa": 1
+      }
+    },
+    "Mariana Padilha Pereira": {
+      "mrr_a": 0.14285714285714285,
+      "mrr_b": 0.16666666666666666,
+      "ndcg_a": 0.7890694040612835,
+      "ndcg_b": 0.8022834293518672,
+      "map_a": 0.14285714285714285,
+      "map_b": 0.16666666666666666,
+      "media_a": 1.7,
+      "media_b": 1.3,
+      "notas_a": [
+        2,
+        1,
+        1,
+        1,
+        1,
+        2,
+        4,
+        1,
+        2,
+        2
+      ],
+      "notas_b": [
+        1,
+        1,
+        2,
+        1,
+        1,
+        3,
+        1,
+        1,
+        1,
+        1
+      ],
+      "survey_a": {
+        "relevancia": 2,
+        "diversidade": 2,
+        "precisao": 2,
+        "atualidade": 1,
+        "surpresa": 1
+      },
+      "survey_b": {
+        "relevancia": 1,
+        "diversidade": 1,
+        "precisao": 1,
+        "atualidade": 1,
+        "surpresa": 1
+      }
+    },
+    "Renan Santos Abreu de Barros": {
+      "mrr_a": 0.2,
+      "mrr_b": 0.5,
+      "ndcg_a": 0.8355039221869853,
+      "ndcg_b": 0.8028178152491484,
+      "map_a": 0.2888888888888889,
+      "map_b": 0.6231481481481481,
+      "media_a": 2.2,
+      "media_b": 2.4,
+      "notas_a": [
+        1,
+        2,
+        2,
+        2,
+        3,
+        3,
+        2,
+        2,
+        3,
+        2
+      ],
+      "notas_b": [
+        1,
+        3,
+        5,
+        3,
+        1,
+        3,
+        1,
+        1,
+        3,
+        3
+      ],
+      "survey_a": {
+        "relevancia": 2,
+        "diversidade": 2,
+        "precisao": 2,
+        "atualidade": 2,
+        "surpresa": 2
+      },
+      "survey_b": {
+        "relevancia": 3,
+        "diversidade": 3,
+        "precisao": 2,
+        "atualidade": 4,
+        "surpresa": 3
+      }
+    },
+    "Guilherme Oliveira do Valle": {
+      "mrr_a": 1.0,
+      "mrr_b": 1.0,
+      "ndcg_a": 0.9790743697156383,
+      "ndcg_b": 1.0,
+      "map_a": 0.8551587301587301,
+      "map_b": 1.0,
+      "media_a": 3.1,
+      "media_b": 5.0,
+      "notas_a": [
+        5,
+        5,
+        4,
+        2,
+        1,
+        4,
+        3,
+        3,
+        2,
+        2
+      ],
+      "notas_b": [
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5
+      ],
+      "survey_a": {
+        "relevancia": 2,
+        "diversidade": 3,
+        "precisao": 2,
+        "atualidade": 4,
+        "surpresa": 2
+      },
+      "survey_b": {
+        "relevancia": 5,
+        "diversidade": 5,
+        "precisao": 5,
+        "atualidade": 5,
+        "surpresa": 5
+      }
+    },
+    "Fernanda Marques dos Santos Nascimento": {
+      "mrr_a": 1.0,
+      "mrr_b": 1.0,
+      "ndcg_a": 0.8722083986291822,
+      "ndcg_b": 0.9078003819922208,
+      "map_a": 0.8240079365079365,
+      "map_b": 0.9293650793650793,
+      "media_a": 3.4,
+      "media_b": 3.5,
+      "notas_a": [
+        4,
+        3,
+        1,
+        5,
+        3,
+        1,
+        3,
+        5,
+        4,
+        5
+      ],
+      "notas_b": [
+        3,
+        5,
+        5,
+        3,
+        4,
+        1,
+        4,
+        2,
+        5,
+        3
+      ],
+      "survey_a": {
+        "relevancia": 4,
+        "diversidade": 5,
+        "precisao": 4,
+        "atualidade": 4,
+        "surpresa": 5
+      },
+      "survey_b": {
+        "relevancia": 4,
+        "diversidade": 5,
+        "precisao": 5,
+        "atualidade": 5,
+        "surpresa": 5
+      }
+    },
+    "André Luiz de Souza Rocha": {
+      "mrr_a": 0.5,
+      "mrr_b": 1.0,
+      "ndcg_a": 0.8785474229630712,
+      "ndcg_b": 0.8584432362810819,
+      "map_a": 0.7856701940035273,
+      "map_b": 0.7972222222222222,
+      "media_a": 3.4,
+      "media_b": 3.6,
+      "notas_a": [
+        2,
+        3,
+        3,
+        3,
+        4,
+        4,
+        4,
+        4,
+        3,
+        4
+      ],
+      "notas_b": [
+        3,
+        2,
+        4,
+        3,
+        4,
+        4,
+        2,
+        5,
+        5,
+        4
+      ],
+      "survey_a": {
+        "relevancia": 4,
+        "diversidade": 4,
+        "precisao": 3,
+        "atualidade": 4,
+        "surpresa": 3
+      },
+      "survey_b": {
+        "relevancia": 4,
+        "diversidade": 5,
+        "precisao": 3,
+        "atualidade": 5,
+        "surpresa": 4
+      }
+    },
+    "Pedro Luiz Macedo Leiro": {
+      "mrr_a": 1.0,
+      "mrr_b": 0.2,
+      "ndcg_a": 0.9586438366920006,
+      "ndcg_b": 0.6864985431562931,
+      "map_a": 0.7683333333333333,
+      "map_b": 0.36547619047619045,
+      "media_a": 2.6,
+      "media_b": 2.7,
+      "notas_a": [
+        5,
+        2,
+        5,
+        3,
+        3,
+        2,
+        1,
+        3,
+        1,
+        1
+      ],
+      "notas_b": [
+        1,
+        1,
+        1,
+        1,
+        5,
+        5,
+        4,
+        5,
+        2,
+        2
+      ],
+      "survey_a": {
+        "relevancia": 3,
+        "diversidade": 3,
+        "precisao": 3,
+        "atualidade": 4,
+        "surpresa": 4
+      },
+      "survey_b": {
+        "relevancia": 4,
+        "diversidade": 3,
+        "precisao": 3,
+        "atualidade": 4,
+        "surpresa": 4
+      }
+    },
+    "Evilasio de Sousa Junior": {
+      "mrr_a": 1.0,
+      "mrr_b": 1.0,
+      "ndcg_a": 0.9581790466143794,
+      "ndcg_b": 0.9093888014894145,
+      "map_a": 1.0,
+      "map_b": 0.7113945578231293,
+      "media_a": 1.4,
+      "media_b": 2.9,
+      "notas_a": [
+        4,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        2
+      ],
+      "notas_b": [
+        4,
+        1,
+        4,
+        4,
+        1,
+        1,
+        3,
+        4,
+        4,
+        3
+      ],
+      "survey_a": {
+        "relevancia": 1,
+        "diversidade": 2,
+        "precisao": 1,
+        "atualidade": 4,
+        "surpresa": 1
+      },
+      "survey_b": {
+        "relevancia": 3,
+        "diversidade": 3,
+        "precisao": 3,
+        "atualidade": 5,
+        "surpresa": 2
+      }
+    },
+    "Fernanda Vitória Nascimento Lisboa": {
+      "mrr_a": 1.0,
+      "mrr_b": 0.5,
+      "ndcg_a": 0.9042431702986838,
+      "ndcg_b": 0.8207259105345485,
+      "map_a": 0.5688888888888888,
+      "map_b": 0.6595238095238095,
+      "media_a": 2.4,
+      "media_b": 2.6,
+      "notas_a": [
+        5,
+        2,
+        1,
+        1,
+        3,
+        3,
+        1,
+        1,
+        4,
+        3
+      ],
+      "notas_b": [
+        2,
+        3,
+        3,
+        3,
+        2,
+        5,
+        5,
+        1,
+        1,
+        1
+      ],
+      "survey_a": {
+        "relevancia": 4,
+        "diversidade": 3,
+        "precisao": 3,
+        "atualidade": 4,
+        "surpresa": 4
+      },
+      "survey_b": {
+        "relevancia": 4,
+        "diversidade": 2,
+        "precisao": 3,
+        "atualidade": 5,
+        "surpresa": 2
+      }
+    },
+    "Sara Sales Souza": {
+      "mrr_a": 0.125,
+      "mrr_b": 0.3333333333333333,
+      "ndcg_a": 0.8867585534295699,
+      "ndcg_b": 0.7641073783629561,
+      "map_a": 0.125,
+      "map_b": 0.35962301587301587,
+      "media_a": 1.4,
+      "media_b": 2.6,
+      "notas_a": [
+        2,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        3,
+        1,
+        1
+      ],
+      "notas_b": [
+        2,
+        1,
+        5,
+        1,
+        2,
+        1,
+        4,
+        5,
+        3,
+        2
+      ],
+      "survey_a": {
+        "relevancia": 2,
+        "diversidade": 2,
+        "precisao": 2,
+        "atualidade": 3,
+        "surpresa": 2
+      },
+      "survey_b": {
+        "relevancia": 3,
+        "diversidade": 3,
+        "precisao": 3,
+        "atualidade": 5,
+        "surpresa": 5
+      }
+    }
+  }
+}

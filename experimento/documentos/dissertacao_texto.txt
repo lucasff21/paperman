@@ -1,0 +1,2863 @@
+Universidade Federal da Bahia
+Instituto de Computação
+Programa de Pós-Graduação em Ciência da Computação
+PAPERMAN - UM SISTEMA DE
+RECOMENDAÇÃO DE ARTIGOS
+CIENTÍFICOS
+Lucas França Freitas
+DISSERTAÇÃO DE MESTRADO
+Salvador
+05 de junho de 2026
+LUCAS FRANÇA FREITAS
+PAPERMAN - UM SISTEMA DE RECOMENDAÇÃO DE
+ARTIGOS CIENTÍFICOS
+Esta Dissertação de Mestrado foi
+apresentada ao Programa de Pós-
+Graduação em Ciência da Compu-
+tação da Universidade Federal da
+Bahia, como requisito parcial para
+obtenção do grau de Mestre em Ci-
+ência da Computação.
+Orientador: Prof. Dr. Frederico Araújo Durão
+Salvador
+05 de junho de 2026
+RESUMO
+A busca por referências e trabalhos relacionados à pesquisa científica pode ser um processo
+exaustivo, que consome, em média, 4 horas semanais dos pesquisadores. A abundância de
+fontes e repositórios torna ainda mais complexo o desafio de validar a veracidade e a confi-
+abilidade desses trabalhos, de modo a selecionar pesquisas de alta qualidade e relevância.
+Isto ocasiona o descarte de metade das amostras coletadas e impacta negativamente a
+produtividade. Com base neste cenário, o objetivo deste estudo é planejar e desenvolver
+uma plataforma para facilitar as etapas iniciais de pesquisa, por meio de sistemas de
+recomendação, modelos baseados no perfil do pesquisador e pós-processamento de dados.
+O sistema proposto, denominado Paperman, utiliza técnicas de processamento de lingua-
+gem natural e de aprendizado de máquina para analisar o histórico de publicações dos
+pesquisadores e gerar recomendações personalizadas de artigos científicos. A arquitetura
+do sistema inclui uma API para a coleta e o processamento de dados, integrações com
+serviços externos de identificação e de bases bibliográficas, e uma extensão para navega-
+dores que apresenta as recomendações de forma intuitiva. Os resultados experimentais
+demonstram a eficácia do sistema por meio de um Teste A/B cego conduzido com 27 pes-
+quisadores, no qual o modelo multiplicativo proposto alcançou MRR de 0,66 e P@5 de
+0,50, superando a abordagem puramente semântica em cinco das seis métricas avaliadas.
+O estudo contribui para o campo dos sistemas de recomendação educacional ao oferecer
+uma solução prática para otimizar o processo de revisão da literatura e a descoberta de
+trabalhos relacionados na pesquisa científica.
+Palavras-chave:
+Sistemas de Recomendação; Artigos Científicos; API; Extensão para
+Google Chrome; Processamento de Linguagem Natural
+iii
+ABSTRACT
+The search for references and related work in scientific research can be an exhausting
+process, consuming an average of 4 hours per week for researchers. The abundance of
+sources and repositories makes it even more challenging to verify the veracity and reliabi-
+lity of these works, hindering the selection of high-quality, relevant research and leading
+to the disposal of half of the collected samples, negatively impacting productivity. Con-
+sidering this scenario, the objective of this study is to plan and develop a platform to
+facilitate the initial stages of research through recommendation systems, models based
+on the researcher’s profile, and data post-processing. The proposed system, called Paper-
+man, employs natural language processing and machine learning techniques to analyze
+researchers’ publication history and generate personalized recommendations for scientific
+articles. The system architecture includes an API for data collection and processing, inte-
+grations with external identification and bibliographic services, and a browser extension
+that presents recommendations intuitively. Experimental results demonstrate the sys-
+tem’s effectiveness through a blind A/B test conducted with 27 researchers, in which the
+proposed multiplicative model achieved an MRR of 0.66 and P@5 of 0.50, outperforming
+the purely semantic baseline in five out of six evaluated metrics. The study contributes to
+the field of educational recommendation systems, offering a practical solution to optimize
+the literature review process and the discovery of related works in scientific research.
+Keywords:
+Recommender Systems; Scientific Articles; API; Google Chrome Extension;
+Natural Language Processing
+v
+SUMÁRIO
+Capítulo 1—Introdução
+1
+1.1
+Motivação . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+2
+1.2
+Problema
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+3
+1.3
+Objetivo da Solução Proposta . . . . . . . . . . . . . . . . . . . . . . . .
+4
+1.4
+Questões de Pesquisa . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+5
+1.5
+Metodologia . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+5
+1.6
+Estrutura
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+6
+Capítulo 2—Sistemas de Recomendação
+7
+2.1
+Histórico . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+7
+2.2
+Conceitos
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+8
+2.3
+Tarefas de um Sistema de Recomendação . . . . . . . . . . . . . . . . . .
+9
+2.4
+Técnicas de Recomendação . . . . . . . . . . . . . . . . . . . . . . . . . .
+10
+2.4.1
+Filtragem Colaborativa . . . . . . . . . . . . . . . . . . . . . . . .
+11
+2.4.2
+Filtragem Baseada em Conteúdo
+. . . . . . . . . . . . . . . . . .
+14
+2.4.3
+Arquitetura de Sistemas de Recomendação Baseados em Conteúdo
+14
+2.4.4
+Comparação das Técnicas de Recomendação . . . . . . . . . . . .
+15
+2.4.5
+Cálculo de similaridade . . . . . . . . . . . . . . . . . . . . . . . .
+16
+2.5
+Objetivos de Sistemas de Recomendação . . . . . . . . . . . . . . . . . .
+18
+2.5.1
+Acurácia . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+18
+2.6
+Sumário . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+18
+Capítulo 3—Sistemas de Recomendação Educacionais
+19
+3.1
+Introdução . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+19
+3.2
+Objetos de aprendizagem recomendados
+. . . . . . . . . . . . . . . . . .
+20
+3.3
+Arquitetura das aplicações . . . . . . . . . . . . . . . . . . . . . . . . . .
+21
+3.4
+Sistemas de Recomendação para Artigos Científicos . . . . . . . . . . . .
+22
+3.5
+Sumário . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+23
+Capítulo 4—Trabalhos Relacionados
+25
+4.1
+Sistemas de recomendação baseado em similaridade textual desestruturada
+25
+4.2
+Sistemas de recomendação de manuscritos científicos
+. . . . . . . . . . .
+27
+4.3
+Arquitetura de sistemas de recomendação com extração de textos na web
+29
+4.4
+Sumário . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+31
+vii
+viii
+SUMÁRIO
+Capítulo 5—Paperman - Um Sistema de Recomendação de Artigos Científicos 33
+5.1
+Arquitetura . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+34
+5.2
+Perfil do usuário . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+35
+5.3
+Modelo do item a ser recomendado
+. . . . . . . . . . . . . . . . . . . . .
+36
+5.4
+Modelo de recomendação . . . . . . . . . . . . . . . . . . . . . . . . . . .
+36
+5.5
+Interface de Avaliação e Funcionalidades
+. . . . . . . . . . . . . . . . . .
+39
+5.6
+Recomendação em Ação
+. . . . . . . . . . . . . . . . . . . . . . . . . . .
+40
+5.7
+Tecnologias
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+41
+5.8
+Sumário . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+42
+Capítulo 6—Avaliação Experimental Preliminar
+43
+6.1
+Protocolo de Avaliação . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+43
+6.1.1
+Métricas de Avaliação . . . . . . . . . . . . . . . . . . . . . . . . .
+43
+6.2
+Avaliação via Experimento Offline . . . . . . . . . . . . . . . . . . . . . .
+44
+6.2.1
+Conjunto de Dados . . . . . . . . . . . . . . . . . . . . . . . . . .
+44
+6.2.2
+Metodologia . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+45
+6.2.3
+Métricas de Avaliação . . . . . . . . . . . . . . . . . . . . . . . . .
+46
+6.2.4
+Resultados . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+46
+6.2.5
+Comparação de Baselines . . . . . . . . . . . . . . . . . . . . . . .
+47
+6.3
+Experimento Online
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+49
+6.3.1
+Metodologia . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+49
+6.3.2
+Métricas de Avaliação . . . . . . . . . . . . . . . . . . . . . . . . .
+50
+6.3.3
+Conjunto de dados . . . . . . . . . . . . . . . . . . . . . . . . . .
+50
+6.3.4
+Resultados . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+50
+6.3.5
+Discussão
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+51
+6.4
+Sumário . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+52
+Capítulo 7—Progresso e Cronograma
+53
+7.1
+Vida Acadêmica . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+53
+7.1.1
+Disciplinas Cursadas . . . . . . . . . . . . . . . . . . . . . . . . .
+53
+7.2
+Cronograma . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+54
+7.3
+Sumário . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+56
+Referências Bibliográficas
+57
+LISTA DE FIGURAS
+2.1
+Técnicas de recomendação e suas fontes de conhecimento (BURKE, 2007).
+11
+2.2
+Filtragem Colaborativa baseada em usuários. . . . . . . . . . . . . . . . .
+12
+2.3
+Filtragem Colaborativa baseada em itens. . . . . . . . . . . . . . . . . . .
+13
+2.4
+Arquitetura de alto nível de um Sistema de Recomendação Baseado em
+Conteúdo (LOPS; GEMMIS; SEMERARO, 2011). . . . . . . . . . . . . .
+15
+3.1
+Modelo arquitetural para Sistemas de Recomendação (SRs) educacionais.
+21
+5.1
+Diagrama de arquitetura cliente-servidor do sistema Paperman.
+. . . . .
+35
+5.2
+Interface web de avaliação do sistema Paperman utilizada no experimento.
+40
+5.3
+Exemplo de item em lista de recomendações gerada pela Interface de Pro-
+gramação de Aplicação (API) Paperman. . . . . . . . . . . . . . . . . . .
+41
+6.1
+Exemplo de recomendação relevante no início da lista. . . . . . . . . . . .
+48
+ix
+LISTA DE SIGLAS
+xi
+xii
+LISTA DE SIGLAS
+SR
+Sistema de Recomendação . . . . . . . . . . . . . . . . . . . . . . . .
+43
+API
+Interface de Programação de Aplicação . . . . . . . . . . . . . . . . .
+44
+IA
+Inteligência Artificial . . . . . . . . . . . . . . . . . . . . . . . . . . .
+25
+NLP
+Processamento de Linguagem Natural
+. . . . . . . . . . . . . . . . .
+5
+RMSE
+Root Mean Square Error . . . . . . . . . . . . . . . . . . . . . . . . .
+18
+AP
+Aprendizado Profundo . . . . . . . . . . . . . . . . . . . . . . . . . .
+30
+IoT
+Internet das Coisas . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+30
+VPS
+Servidor Virtual Privado . . . . . . . . . . . . . . . . . . . . . . . . .
+42
+DOI
+Identificador de Objeto Digital
+. . . . . . . . . . . . . . . . . . . . .
+36
+LSTM
+Long Short-Term Memory . . . . . . . . . . . . . . . . . . . . . . . .
+22
+MRR
+Mean Reciprocal Rank
+. . . . . . . . . . . . . . . . . . . . . . . . . .
+43
+nDCG
+Normalized Discounted Cumulative Gain . . . . . . . . . . . . . . . .
+44
+MAP
+Mean Average Precision . . . . . . . . . . . . . . . . . . . . . . . . .
+43
+Capítulo
+1
+INTRODUÇÃO
+A Internet facilitou significativamente o acesso à informação. O número de dispositi-
+vos conectados por usuário único se aproxima de 5 bilhões, totalizando mais de 8 bilhões
+(KENDE et al., 2022). Esta característica impulsiona a publicização de conteúdos in-
+formais em diversas fontes, como blogs e redes sociais, como o Twitter1, que produz 375
+milhões de posts diariamente (PFEFFER et al., 2023), mas também expande o alcance
+de acesso a materiais disponibilizados em contextos formais, como manuscritos científi-
+cos. Estes elementos representam a essência do conhecimento acadêmico, encapsulando
+descobertas, metodologias e análises que impulsionam o avanço da ciência. Nas últimas
+décadas, políticas públicas têm sido implementadas nas redes de ensino em nível nacional
+e regional, com o objetivo de integrar a Internet aos processos educacionais. Diversos
+projetos obtiveram resultados positivos e aprofundaram o conhecimento sobre a utiliza-
+ção da tecnologia no âmbito educacional, apesar das dificuldades enfrentadas em relação
+à infraestrutura e à capacitação (FALCADE; FALCADE; ABEGG, 2024). A presença
+destes elementos na Web desempenha um papel fundamental na disseminação global do
+saber, permitindo que pesquisadores compartilhem suas contribuições de forma rápida
+e acessível. Por meio de plataformas online, como repositórios de artigos, periódicos e
+publicações em licença Open Access, o conhecimento científico é disseminado, alcançando
+uma audiência diversificada e possibilitando a colaboração entre pares em escala global.
+Com a popularização da Internet, há uma enorme quantidade de produções científicas
+disponíveis de acesso aberto, armazenadas em repositórios digitais públicos. Este número
+não apresenta indicativos de queda, com mais de 7,5 milhões de publicações por ano
+(BROUWER; HOLLENBACH, 2022), além do aumento no número de journals científicos
+ranqueados, que atingiu uma marca próxima de 49 mil periódicos na plataforma Scopus2.
+Apesar de a popularização dos elementos de pesquisa científica na Web facilitar o acesso
+ao conteúdo e dinamizar sua difusão, também dificulta a seleção de artigos com base na
+qualidade do conteúdo e na relevância das publicações.
+Sistemas de Recomendação (SRs) desempenham um papel crucial na navegação na
+Web atual, em que há uma imensa quantidade de recursos disponíveis. Estes sistemas
+1https://twitter.com
+2https://www.scopus.com/sources
+1
+2
+INTRODUÇÃO
+auxiliam na filtragem e personalização do conteúdo, trazendo melhorias tanto para o
+usuário quanto para as plataformas, aumentando a satisfação do usuário, engajamento
+e conversão (KIM; CHOI; LI, 2021). Existem diversas aplicações de SR em plataformas
+on-line, como recomendações de filmes (Cinematch), jogos digitais (Matchbox), música
+e podcasts (BaRT), entre outras. (ROY; DUTTA, 2022). Os itens recomendados ser-
+vem tanto a propósito de consumo quanto a propósito de funções funcionais (como, por
+exemplo, rotas de navegação) e até mesmo a funções educacionais. No âmbito da educa-
+ção, os SRs emergiram como assistentes de aprendizado e passaram a ser implementados
+desde o processo de aprendizagem até a produção de conteúdo. Sua utilização melhora
+a motivação, o engajamento e a satisfação de seus usuários no exercício de suas tarefas
+e responsabilidades. Uma das principais causas destes benefícios é a personalização das
+experiências em nível individual, possibilitando uma adequação mais natural por parte
+dos usuários (LAMPROPOULOS, 2023).
+No que tange ao uso destes sistemas no âmbito da pesquisa, existem diversas fer-
+ramentas disponíveis no mercado que recomendam artigos com base em seus autores,
+publicações relacionadas ou periódicos, além de trabalhos que utilizam recursos educa-
+cionais (MARUYAMA et al., 2023). Há também estudos que empregam mineração de
+dados aliada a citation networks e collaborative filtering (STERLING; MONTEMORE,
+2022). Apesar de haver esforços para a recuperação dos artigos e sua disponibilização,
+ainda existem lacunas no contexto da oferta passiva, de modo que o usuário não precise re-
+correr à busca por palavras-chave, o que exige ações constantes por parte do usuário final.
+SRs objetivam a oferta ativa de sugestões que podem auxiliar o processo de descoberta
+de artigos relacionados à pesquisa em questão, do mesmo modo que reduzem o esforço
+do pesquisador e aliviam a sobrecarga de informação (PINEDO; LARRAÑAGA; AR-
+RUARTE, 2025), beneficiando-se, dentre outras estratégias, da capacidade de aprender
+correlações refinadas entre múltiplos elementos por meio de mecanismos de autoatenção,
+técnica intrinsecamente menos eficiente por meios humanos (JU et al., 2025), e moldando
+modelos de usuário multifacetados cada vez mais robustos e precisos (ZHANG et al.,
+2024).
+De modo a desenvolver um sistema de recomendação de publicações científicas dispo-
+níveis na Web, este trabalho almeja projetar e implementar uma arquitetura de Interface
+de Programação de Aplicação (API) que gere recomendações com base nas informações
+fornecidas nos perfis cadastrados pelos usuários nas fontes disponíveis, considerando a
+relevância dos periódicos, a idade da publicação, entre outros fatores. Além disso, para
+possibilitar a utilização deste ecossistema de maneira intuitiva, será desenvolvida uma ex-
+tensão para navegadores que se comunicará com a API e apresentará os dados de forma
+legível para o ser humano.
+1.1
+MOTIVAÇÃO
+A revisão da literatura é de suma importância no processo de pesquisa, pois auxilia na
+avaliação dos dados coletados das áreas que compõem o trabalho em questão, fornece
+maior garantia de acesso a informações recentes e fortalece a reputação da pesquisa
+por meio de suas citações (SNYDER, 2019). Galvão e Ricarte (2019) citam também
+a otimização de pesquisas já existentes, refinando e melhorando o resultado final do
+1.2 PROBLEMA
+3
+trabalho, a evolução do campo sobre o qual a revisão discorre, evidenciação de novos
+aspectos que podem ser analisados ou desenvolvidos através de pesquisa, entre outros. Os
+pontos citados consistem em soluções práticas para mitigar a complexidade na coleta de
+trabalhos relacionados, devido ao elevado número de publicações disponíveis. Apesar da
+existência de diversas plataformas de busca, como PubMed3, Scopus4 e Google Scholar5,
+a vantagem da recomendação é apresentar a informação sem necessidade de ação ativa
+(busca por palavra-chave) e constante por parte do usuário. Os sistemas existentes têm
+foco extensivo na recomendação de artigos científicos para pesquisadores individuais, com
+pouca atenção a conjuntos de dados e praticamente nenhuma capacidade de recomendação
+de software (GHANNADRAD et al., 2022). Porém, caso um SR possa unir informações
+de citações com base em similaridade textual no processo de avaliação dos itens, ele pode
+ser mais útil para a comunidade científica e produzir recomendações mais relevantes de
+artigos, conjuntos de dados e software para grupos de pesquisadores de maneira eficiente
+(STERLING; MONTEMORE, 2022).
+Um relatório da Elsevier aponta que pesquisadores leem, em média, de 5 a 6 artigos
+por semana, consumindo cerca de 4 horas na pesquisa desses artigos e cerca de 5 horas
+na leitura. Apesar do esforço considerável, metade destes trabalhos é descartada por
+não possuir utilidade para suas pesquisas e referências, desperdiçando valioso tempo que
+poderia ser utilizado em outras tarefas (ELSEVIER; SCIENCE, 2019).
+A pesquisa por trabalhos relacionados configura-se como um processo fundamental
+na metodologia científica, mas, especialmente na era da sobrecarga de informação e do
+advento de novas tecnologias, apresenta desafios crescentes quanto à validade e à confi-
+abilidade de seus resultados e representa uma parcela significativa e laboriosa da carga
+horária do processo de pesquisa (LI et al., 2025).
+Alguns dos fatores que elevam a
+complexidade da validação de resultados e da confiabilidade incluem a subjetividade na
+interpretação de dados, a limitação de recursos, a falta de padronização de processos ou
+métodos e a qualidade dos recursos estudados (DECLERCQ; POPPEL, 2023).
+A adoção de técnicas de Recuperação de Informação, aliadas ao emprego de mecanis-
+mos inteligentes de recomendação, pode ser realizada na automatização do processo de
+busca por este tipo de trabalho, visando à produtividade e à qualidade.
+1.2
+PROBLEMA
+O problema de pesquisa central desta dissertação consiste na insuficiência de mecanis-
+mos de recomendação de trabalhos relacionados que sejam verdadeiramente integrados
+ao fluxo de trabalho do pesquisador. Atualmente, a busca por literatura relevante é um
+processo reativo e fragmentado, realizado fora do ambiente de escrita e de ideação. Esta
+ausência de ferramentas adequadas manifesta-se por diversos efeitos negativos. Primeira-
+mente, observa-se um notável desperdício de tempo e esforço cognitivo, pois o pesquisador
+é forçado a alternar constantemente entre seu manuscrito e múltiplas bases de dados, o
+que interrompe o raciocínio. Em segundo lugar, essa abordagem manual frequentemente
+3https://pubmed.ncbi.nlm.nih.gov
+4https://www.scopus.com
+5https://scholar.google.com
+4
+INTRODUÇÃO
+resulta na seleção de trabalhos relacionados que são apenas superficialmente relevantes,
+enfraquecendo a fundamentação teórica do estudo. Adicionalmente, nota-se a ausência
+de ferramentas transparentes que considerem critérios de avaliação de qualidade locais,
+como a estratificação Qualis-CAPES, amplamente utilizados no contexto brasileiro. Me-
+canismos de busca frequentemente ignoram essas métricas específicas, o que pode levar o
+pesquisador a perder estudos de alto valor estratégico e reconhecida qualidade pela comu-
+nidade científica nacional. Por fim, a sobrecarga decorrente da necessidade de gerenciar
+buscas complexas e analisar um volume massivo de resultados pode levar a esgotamento
+mental e a significativos lapsos de concentração, comprometendo a qualidade e a profun-
+didade da pesquisa em si (MARUYAMA et al., 2023).
+A ausência de um SR especializado no âmbito acadêmico acarreta consequências ainda
+mais profundas, que podem minar a validade e a inovação de uma pesquisa.
+A de-
+pendência de buscas manuais por palavras-chave pode, inadvertidamente, aprisionar o
+pesquisador em um ciclo vicioso restrito à terminologia exata empregada na consulta,
+levando-o a consumir informações desatualizadas ou a reforçar um viés de confirmação,
+ignorando estudos que apresentem perspectivas contraditórias ou mais recentes. Diante
+do dilúvio de publicações científicas, a análise manual de datasets bibliográficos torna-
+se ineficiente e humanamente impraticável, resultando em distanciamento inevitável do
+estado da arte e no risco de desenvolver pesquisas redundantes. Grande parte dessa di-
+ficuldade decorre da complexidade de traduzir uma linha de pensamento abstrata em
+um conjunto de palavras-chave preciso e eficaz. Essa lacuna semântica entre a intenção
+do pesquisador e a linguagem dos sistemas de busca tradicionais reduz drasticamente a
+probabilidade de recuperar os artigos mais adequados e pertinentes à investigação em
+curso (HANYURWIMFURA et al., 2015).
+Embora os SRs já estejam presentes em alguns repositórios ou índices de artigos, como
+Google Scholar e ResearchGate, as recomendações produzidas por estas implementações
+não levam o perfil do pesquisador em consideração. Além disso, exigem que o pesquisador
+interrompa seu fluxo de trabalho para acessar ativamente a plataforma, segregando o mo-
+mento da descoberta do da escrita, adicionando camadas de complexidade e demandando
+esforço constante para encontrar trabalhos relacionados em periódicos ou eventos de alta
+relevância.
+1.3
+OBJETIVO DA SOLUÇÃO PROPOSTA
+O objetivo deste trabalho é o desenvolvimento de um Sistema de Recomendação para
+artigos científicos, considerando fontes de dados abertas na Web e o histórico de publi-
+cações do usuário. O sistema deverá operar sem gerar esforço adicional ao pesquisador,
+mantendo, ainda assim, um alto padrão de precisão ao considerar seu perfil e trabalhos re-
+centes, de modo a contribuir positivamente para a produtividade do processo de pesquisa.
+Os objetivos específicos são:
+OE1: Propor uma arquitetura Web para desenvolvimento de sistema de recuperação
+de manuscritos
+OE2: Modelar o perfil de usuário a partir do conteúdo de seus trabalhos publicados
+OE3: Desenvolver um algoritmo de recomendação baseado no perfil do usuário e
+1.4 QUESTÕES DE PESQUISA
+5
+implementar a engenharia do sistema
+OE4: Validar a aplicabilidade da solução
+1.4
+QUESTÕES DE PESQUISA
+Após discussão dos problemas e objetivos, é possível elaborar o seguinte conjunto de
+questões:
+QP1:Como modelar implicitamente o perfil de preferências do pesquisador a partir
+de seu histórico acadêmico?
+QP2: Qual estratégia de recomendação apresenta maior precisão e melhor alinha-
+mento ao perfil do pesquisador?
+QP3: Qual é a melhor forma de disponibilizar as recomendações de maneira integrada
+ao fluxo de trabalho do pesquisador?
+1.5
+METODOLOGIA
+Este trabalho contempla o desenvolvimento de um SR que se propõe a preencher uma
+lacuna no mercado, tendo como itens de alta relevância e qualidade na literatura, visando
+aprimorar as tecnologias em estado da arte.
+1. Revisão da literatura: A revisão da literatura apresenta diversos trabalhos rela-
+cionados que contribuem para melhorias de desempenho, segurança e privacidade
+dos dados, mas corrobora a hipótese inicial de ausência de um SR que gere reco-
+mendações com base em trabalhos recentes e no histórico do pesquisador-utilizador
+da ferramenta.
+2. Montagem da preferência de um usuário: Após a análise da literatura, o
+modelo de usuário foi construído com base nas informações necessárias para gerar
+recomendações relevantes e de alta qualidade.
+Dados considerados inicialmente
+incluíam nomes de funções exercidas na indústria e de cursos superiores, porém,
+somente publicações no âmbito acadêmico e científico prosseguiram até o final da
+etapa de montagem.
+3. Design de arquitetura: Com o modelo de usuário pronto, o próximo passo foi
+projetar uma arquitetura com foco em desenvolvimento Web que atendesse aos
+requisitos necessários para integrar o SR a pesquisadores por meio da Internet. A
+solução proposta consiste em uma interface gráfica na forma de uma extensão para
+navegadores, alimentada por uma API.
+4. Desenvolvimento do modelo de recomendação: Seguindo as definições es-
+tabelecidas nas etapas anteriores, o próximo passo foi a construção do modelo de
+recomendações, aplicando técnicas e conceitos como Processamento de Linguagem
+Natural (NLP), word embedding e cosine similarity para alcançar a maior proximi-
+dade possível em relação ao modelo de usuário.
+6
+INTRODUÇÃO
+5. Desenvolvimento de uma interface intuitiva para o usuário: Após finalizar
+o desenvolvimento da API, o próximo passo foi a construção da extensão para na-
+vegadores. Consiste em duas telas simples: uma para apresentar as recomendações
+e outra para conter os parâmetros de configuração (número de identificação da pla-
+taforma ORCiD, frequência de recomendações). As demais funções são executadas
+em segundo plano, eliminando esforço adicional por parte do usuário.
+6. Disponibilização da plataforma para uso público: O próximo passo foi a
+publicação da extensão na loja virtual do navegador Google Chrome, de modo
+a possibilitar o uso gratuito pelo público em geral para a coleta de dados e o
+refinamento do processo de recomendações, com base nas informações disponíveis
+no banco de dados, seguindo o modelo de usuário.
+7. Avaliação de resultados: Com a plataforma operante e disponível publicamente
+para livre utilização, as recomendações eram acompanhadas por um formulário de
+avaliação, seguindo os critérios do usuário, e essa pontuação era utilizada como
+métrica principal de precisão do sistema.
+1.6
+ESTRUTURA
+O capítulo 2 apresenta conceitos teóricos usados neste trabalho, referentes a SRs, como
+cálculos de similaridade, filtragem colaborativa e elementos comuns à arquitetura dos
+sistemas. No capítulo 3, a pesquisa é aprofundada em relação à área de aprendizagem, e
+às suas interações com SRs. Já no capítulo 4, são discutidas propostas correlatas, subdi-
+vididas em temas pertinentes a essa pesquisa e às suas contribuições para a comunidade e
+para o desenvolvimento deste trabalho. O capítulo 5 detalha a estratégia de recomenda-
+ção elaborada e a arquitetura do projeto, apresentando exemplos dos resultados obtidos.
+Durante o capítulo 5, a proposta é detalhada mais a fundo, apresentando decisões arqui-
+teturais e os elementos que compõem o desenho técnico do sistema. Já no capítulo 6,
+a eficácia do sistema é posta à prova por meio de duas avaliações, uma on-line e outra
+off-line, extraídas métricas comumente usadas em SRs. Por fim, o capítulo ?? apresenta
+as contribuições e as limitações obtidas ao longo deste trabalho.
+Capítulo
+2
+SISTEMAS DE RECOMENDAÇÃO
+O excesso de informação, seja ela produzida ou disponibilizada atualmente, pode
+representar um grande peso para o usuário. Por isso, nesse cenário conturbado, muitas
+tecnologias foram criadas para filtrar a informação que o usuário deseja. Este capítulo
+tem o objetivo de mostrar os contornos dos Sistemas de Recomendação, através de uma
+visão geral, introduzindo, ao mesmo tempo, seus principais conceitos, funções, técnicas e
+possíveis propósitos, como acurácia e diversidade.
+2.1
+HISTÓRICO
+Os Sistema de Recomendação (SR), ao menos os iniciais, eram sistemas bem rudimentares
+de filtragem e recuperação de informações, podendo apenas recomendar alguns resultados,
+de acordo com a pesquisa. O primeiro deles foi um sistema experimental de filtragem
+de imagens, o Tapestry (GOLDBERG et al., 1992), criado por pesquisadores do Xerox
+Palo Alto Research Center. Esse sistema foi desenvolvido para atender a uma simples
+motivação: lidar com o aumento do número de e-mails que o centro de pesquisa recebia
+(RESNICK; VARIAN, 1997). O Tapestry apareceu para lidar com filtragem colaborativa
+(eles foram os pioneiros no uso desse termo), além da filtragem de conteúdo. O sistema
+colaborativo filtra e arquiva os e-mails com base no modo como as pessoas reagiam após
+lê-los.
+As recomendações personalizadas, em termos mais simples, são fornecidas como listas
+ranqueadas de itens. Na tentativa de criar uma lista como essa, os SRs procuram predizer
+quais produtos ou serviços são mais convenientes, isto é, quais deles melhor condizem
+com as expectativas do usuário. Como resultado, é realizada a coleta das preferências do
+usuário, que podem ser explicitadas, como, por exemplo, ao avaliar produtos, ou podem
+até mesmo interpretar o comportamento do usuário, como acontece no sistema, já que
+pode considerar um acesso à página de um produto como um sinal implícito de preferência
+(RICCI et al., 2011).
+Normalmente, as pessoas acabam sempre dependendo do que é recomendado por
+outros, seja uma recomendação feita por amigos, reviews de livros e filmes, ou guias de
+restaurantes. Desta forma, o SR apoia e intensifica esse processo natural (RESNICK;
+7
+8
+SISTEMAS DE RECOMENDAÇÃO
+VARIAN, 1997). Os SRs, portanto, são técnicas e ferramentas de software que oferecem
+opções de itens úteis para diferentes tipos de usuários. Nesses mesmos sistemas, o termo
+“item” ainda é bastante genérico, denotando apenas o que é recomendado pelo sistema
+(RICCI et al., 2011).
+Os SR estão por toda parte, principalmente na indústria de serviços, no consumo
+de conteúdo e no comércio eletrônico. Em muitas aplicações modernas, esses sistemas
+também são encontrados, principalmente ao entregar uma coleção enorme de itens, reco-
+mendando opções ao usuário final, ao mesmo tempo em que utilizam uma combinação
+de abordagens baseadas em conhecimento, conteúdo e filtragem colaborativa (RICCI et
+al., 2011). Nesse sentido, a Netflix1, serviço de streaming de filmes, mostra predições de
+classificação para cada vídeo assistido, auxiliando o usuário a escolher qual deles deve ser
+assistido ou não. A Amazon2, uma loja virtual, oferece, na página de um produto, infor-
+mações sobre outras compras feitas por usuários que adquiriram aquele mesmo produto
+(SHANI; GUNAWARDANA, 2009).
+À medida que as informações disponíveis na Web crescem rapidamente, somadas
+ao surgimento de muitos tipos de serviços, acabam por sobrecarregar o usuário (leilão,
+compra e comparação de produtos, entre outros), fazendo-o tomar decisões sem critérios,
+podendo ser pobres ou erradas.
+As opções disponíveis, em vez de serem uma ajuda,
+tornam-se muito mais um obstáculo para o usuário (RICCI et al., 2011). Novos itens são
+oferecidos pelos SRs que não foram vistos antes, como páginas Web, produtos, filmes ou
+livros, e tudo isso com base nas preferências do usuário mantidas em seu perfil. Os SRs,
+na tentativa de resolver o problema de sobrecarga de informações, filtram os itens que
+correspondem aos interesses dos usuários. Ao filtrar as informações irrelevantes, quando
+os usuários pesquisam por informações de interesse, esses sistemas acabam ajudando
+muito (AMINI; IBRAHIM; OTHMAN, 2011).
+Alguns critérios, como “interessante, útil e relevante” ou “individualizada”, diferen-
+ciam os SRs dos motores de busca e dos sistemas de recuperação de informação. Em um
+motor de busca, durante a pesquisa, o sistema retorna tudo o que corresponde ao termo
+pesquisado. Já os motores de busca utilizam técnicas como RR (em inglês, Relevance
+Feedback - RF) para inserir o usuário no processo de pesquisa, garantindo que ele mesmo
+seja capaz de indicar o que é realmente relevante (BURKE, 2002).
+2.2
+CONCEITOS
+O SR, com base nos dados utilizados, normalmente se refere a três tipos de objetos: itens,
+usuários e transações (RICCI et al., 2011).
+• Itens: Eles nada mais são do que os objetos recomendados. São caracterizados
+pela sua utilidade, valores, ou mesmo por sua complexidade. O valor, se positivo,
+é útil ao usuário. Por outro lado, se for negativo, o item é inapropriado, indicando
+que o usuário fez uma escolha errada ao selecioná-lo. Os itens, sem dúvida, podem
+ser representados, principalmente ao se utilizar várias estratégias de representação
+1https://www.netflix.com
+2http://www.amazon.com/
+2.3 TAREFAS DE UM SISTEMA DE RECOMENDAÇÃO
+9
+e informação.
+• Usuários: No SR, os usuários não são homogêneos, podendo apresentar, portanto,
+vários tipos de objetivos e características. Para personalizar as recomendações, os
+SRss investigam muitas das preferências dos usuários. Elas podem ser organiza-
+das de várias formas, sendo que a seleção de quais informações vão ser modeladas
+depende da técnica de recomendação.
+• Transações: As transações são registros de interação entre o Sistema de Recomen-
+dação e o usuário. Lembram muitos dados de log, já que armazenam tudo o que é
+relevante gerado durante a interação humano-computador. Essas mesmas informa-
+ções são úteis para que o algoritmo que o sistema utiliza gere a recomendação.
+2.3
+TAREFAS DE UM SISTEMA DE RECOMENDAÇÃO
+Uma lista de tarefas para um SR foi sugerida (RICCI et al., 2011), com base nos interesses
+do criador do Sistema de Recomendação.
+• Aumentar o número de itens vendidos: Em um SR comercial, esta é, pro-
+vavelmente, a função mais importante.
+Ela precisa ter a capacidade de vender
+um conjunto de itens adicionais, ao mesmo tempo que compara com aqueles que
+venderiam sem qualquer tipo de recomendação.
+• Vender mais itens diferentes: A função que permite ao usuário encontrar itens
+que seriam difíceis de encontrar sem uma recomendação clara, é também muito
+importante dentro do SR.
+• Aumentar a satisfação do usuário: Na tentativa de aumentar a avaliação sub-
+jetiva do usuário sobre o sistema, uma forma é a combinação de recomendações
+precisas e de uma interface bem estruturada. Isso acaba aumentando o fluxo de uso
+do sistema e as chances de as recomendações serem aceitas.
+• Aumentar a fidelidade do usuário: É preciso que o usuário mantenha um grau
+de fidelidade com o site, sendo que este o reconhece como cliente antigo, tratando-o
+com maior relevância. Esse recurso é muito comum em SR, como se pode perceber,
+pois calcula as recomendações, avaliando o que o usuário adquiriu em contatos
+anteriores.
+• Melhor entendimento do que o usuário quer: No SR, muitas coisas podem ser
+reutilizadas para vários objetivos, como, por exemplo, a descrição das preferências
+do usuário, coletadas explicitamente ou preditas pelo sistema.
+Existem onze tarefas em que um SR auxilia no apoio do usuário com seus objetivos
+(HERLOCKER et al., 2004):
+• Anotação em Contexto: Destaca os itens de acordo com as preferências do
+usuário, dada uma certa lista em um contexto.
+10
+SISTEMAS DE RECOMENDAÇÃO
+• Encontrar Bons Itens: Oferece uma lista com um rank dos itens sugeridos,
+antecipando o gosto desses mesmos usuários.
+• Encontrar Todos os Bons Itens: Oferece ao usuário uma lista de itens que
+atendem às suas necessidades. Em alguns casos, contudo, encontram poucos itens
+satisfatórios, o que pode não ser suficiente. Na verdade, o sistema precisa carregar
+uma taxa de “falso negativo” bem reduzida.
+• Recomendar uma Sequência: O objetivo aqui é recomendar uma sequência de
+itens relacionados em determinado sentido.
+• Recomendar um Grupo: Recomendar um conjunto de itens interessantes ao
+usuário.
+• Apenas Navegar: Para aqueles usuários que navegam sem um rumo definido, o
+sistema acaba auxiliando, ao mesmo tempo que navega entre os itens que possam
+ser interessantes naquela sessão específica.
+• Encontrar Sistema de Recomendação Confiável: O Sistema de Recomen-
+dação deve possibilitar que o usuário teste algumas funções, já que ele pode ter
+desconfiança, de início, nesse sistema.
+• Melhorar o Perfil: O sistema deve constituir-se com base nas preferências do
+usuário, sobre o que gosta ou não gosta. Essas informações aperfeiçoam a qualidade
+das recomendações.
+• Expressar-se: O sistema precisa oferecer uma área reservada aos comentários dos
+usuários, já que alguns deles não se importam com as recomendações, mas apenas
+se interessam em contribuir com as qualificações.
+• Ajudar os Outros: Alguns usuários, ao acreditar que a comunidade se beneficia
+com sua avaliação, gostam de compartilhar informações.
+• Influenciar os Outros: Alguns usuários maliciosos podem tentar induzir a escolha
+dos outros ou apenas utilizar o sistema para promover ou penalizar um item.
+2.4
+TÉCNICAS DE RECOMENDAÇÃO
+São utilizadas técnicas para a realização das recomendações, com base na predição das
+informações dos itens e dos usuários. Algumas técnicas foram criadas para atuar como su-
+porte a um SR, como a colaborativa, a baseada em conteúdo, a baseada em conhecimento
+e a demográfica, por exemplo. As técnicas de recomendação se ramificam, dependendo
+das suas fontes de conhecimento. Em certos sistemas, elas se baseiam nas preferências de
+outros usuários (BURKE, 2007).
+O conhecimento que o usuário possui no domínio influencia a utilidade do item, como
+no caso de usuários iniciantes e experientes de uma câmera digital, ou pode depender
+do momento em que a recomendação foi feita. Além disso, o usuário pode pensar de
+2.4 TÉCNICAS DE RECOMENDAÇÃO
+11
+forma mais conveniente, ao ter mais interesse em itens mais próximos de seu lugar atual,
+como um restaurante, por exemplo. Desse modo, a recomendação precisa ser adaptada,
+considerando esses detalhes específicos e adicionais (RICCI et al., 2011).
+Existem quatro diferentes classes de técnicas de recomendação baseadas em fontes de
+conhecimento (BURKE, 2007), como ilustrado na Figura 2.1:
+Figura 2.1 Técnicas de recomendação e suas fontes de conhecimento (BURKE, 2007).
+• Filtragem Colaborativa: A partir de itens de outros usuários, com gostos simi-
+lares, o sistema gera recomendações para certo usuário.
+• Baseada em Conteúdo: O sistema produz duas fontes de recomendação: as
+características associadas ao item e as classificações que os usuários deram a ele.
+• Demográfica: Com base no perfil demográfico do usuário, o sistema fornece reco-
+mendações.
+• Baseada em Conhecimento: Com base em inferências sobre os gostos e necessi-
+dades do usuário, o sistema sugere certos itens.
+Dentre as técnicas de recomendação apresentadas, duas são as mais utilizadas na
+literatura: a Filtragem Colaborativa e a Baseada em Conteúdo. Logo em seguida, essas
+duas técnicas são apresentadas em detalhes.
+2.4.1
+Filtragem Colaborativa
+Na Filtragem Colaborativa, o sistema recomenda itens ao usuário ativo com base no
+gosto de outros usuários no passado. A semelhança das preferências entre os usuários
+é calculada a partir da equivalência do histórico de classificações dos usuários.
+Essa
+12
+SISTEMAS DE RECOMENDAÇÃO
+técnica é considerada uma das mais populares nos Sistemas de Recomendação, e a mais
+amplamente implementada (RICCI et al., 2011).
+O ponto principal é que a classificação de um usuário u, para um novo item i, é
+provável ser similar à de outro usuário v, se u e v têm classificado, de maneira similar,
+outros itens. De forma idêntica, é possível que u classifique dois itens i e j de forma
+equivalente, se outros usuários têm feito classificações semelhantes para esses dois itens
+(RICCI et al., 2011).
+Figura 2.2 Filtragem Colaborativa baseada em usuários.
+Os métodos de filtragem colaborativa podem ser agrupados em duas classes gerais,
+baseadas em vizinhança e em modelo (BURKE, 2002) e (BURKE, 2007). Na baseada
+em vizinhança, as classificações usuário-item, armazenadas no sistema, são utilizadas
+diretamente para prever classificações de novos itens. O user-based (baseado em usuários)
+ou item-based (baseado em itens) é o mais conhecido (RICCI et al., 2011).
+Os sistemas, ao menos aqueles baseados em usuários, avaliam a preferência de um
+usuário u por um item i utilizando as classificações de outros usuários sobre esse item.
+Esses usuários são chamados vizinhos porque possuem os mesmos padrões de classificação.
+Os vizinhos do usuário u são tipicamente os usuários v, cujas classificações, para os itens
+classificados por u e v, isto é, Iuv, são mais correlacionadas com as de u. A Figura 2.2
+ilustra a abordagem baseada em usuários em um cenário de filmes. A Usuária 01 indicou
+que gosta dos 4 filmes, Jurassic Park, Moulin Rouge, Os Croods e Homem Aranha, a
+Usuária 02 mostrou que gosta apenas do filme Moulin Rouge e o Usuário 03 mostrou
+preferência pelos filmes Moulin Rouge e Os Croods.
+O sistema baseado em usuários
+entende que a Usuária 01 é a que possui preferências mais similares às do Usuário 03,
+2.4 TÉCNICAS DE RECOMENDAÇÃO
+13
+logo indicará ao Usuário 03 os filmes Jurassic Park e Homem Aranha pois a Usuária 01
+também gostou desses filmes. Em outras palavras, a Usuária 01 é vizinha do Usuário 03.
+Figura 2.3 Filtragem Colaborativa baseada em itens.
+A abordagem baseada em itens, por outro lado, prediz a classificação de um usuário
+u para um item i a partir das classificações de u para itens similares a i. Nessa linha
+de raciocínio, dois itens são equivalentes se, por acaso, muitos usuários do sistema os
+classificam como equivalentes (RICCI et al., 2011). Um exemplo da abordagem baseada
+em itens é ilustrado na Figura 2.3 em um cenário de filmes. A Usuária 01 gostou dos filmes
+Jurassic Park, Os Croods e Homem Aranha, a Usuária 02 gostou de Jurassic Park e Os
+Croods e o Usuário 03 gostou do filme Os Croods. Assumindo que o sistema deve indicar
+algum filme ao Usuário 03, essa abordagem buscará filmes com avaliações semelhantes
+ao filme Os Croods. Então esse sistema indicará Jurassic Park ao Usuário 03, pois esse
+filme recebeu duas avaliações que o filme Os Croods também recebeu, ou seja, Os Croods
+e Jurassic Park são considerados vizinhos.
+As abordagens baseadas em modelo usam essas classificações para aprender um mo-
+delo de predição, diferente dos sistemas baseados em vizinhança, que utilizam as clas-
+sificações armazenadas diretamente na predição. A proposta principal é reconfigurar as
+relações usuário-item com fatores, representando assim características ocultas dos usuá-
+rios e itens no sistema, como a classe de preferência do usuário e a classe dos itens em
+categoria. Este modelo é treinado, portanto, utilizando aqueles dados à disposição, e
+depois, utilizado para predizer classificações de usuários para itens inéditos (RICCI et
+al., 2011).
+14
+SISTEMAS DE RECOMENDAÇÃO
+2.4.2
+Filtragem Baseada em Conteúdo
+Sistemas que usam a estrutura de recomendação colaborativa identificam usuários que
+apresentam preferências semelhantes e sugerem itens com os quais um certo usuário tenha
+gostado, ao passo que os Sistemas de Recomendação, baseados em conteúdo, tentam
+recomendar itens semelhantes àqueles com os quais um mesmo usuário se identificou no
+passado (LOPS; GEMMIS; SEMERARO, 2011).
+Sistemas que implementam uma estrutura de recomendação baseada em conteúdo ana-
+lisam uma série de documentos e/ou descrições de itens previamente classificados por um
+usuário, construindo um modelo ou perfil de interesses, fundamentado nas características
+dos objetos classificados (MLADENIC, 1999). O perfil é uma representação estruturada
+das preferências do usuário, adaptada para sugerir itens inéditos e interessantes. O pro-
+cesso de recomendar itens nada mais é do que a combinação das similaridades entre os
+atributos do perfil do usuário e os atributos de um objeto de conteúdo. Como conse-
+quência disso, ocorre um julgamento de relevância que representa os níveis de interesse
+do usuário em relação a aquele objeto. Se um perfil descreve, com precisão, as escolhas
+do usuário, isso é uma grande vantagem para que o acesso à informação seja eficaz. Por
+exemplo, poderia ser usado para filtrar os resultados de pesquisa, na tentativa de decidir
+se um usuário tem interesse ou não em uma particular página Web, e, em caso negativo,
+impedir que seja mostrada (LOPS; GEMMIS; SEMERARO, 2011).
+2.4.3
+Arquitetura de Sistemas de Recomendação Baseados em Conteúdo
+Em sistemas baseados em conteúdo, é preciso usar técnicas adequadas para representar
+os itens, produzir o perfil do usuário, além de algumas estratégias para comparar o perfil
+do usuário com a representação do item (LOPS; GEMMIS; SEMERARO, 2011).
+A
+estrutura da recomendação é feita através de três passos, cada um deles manipulado por
+um componente separado:
+• Analisador de Conteúdo: É preciso algum tipo de pré-processamento para ex-
+trair informação relevante e estruturada, principalmente quando a informação não
+tem estrutura, como num texto. A responsabilidade central do componente é repre-
+sentar o conteúdo dos itens (por exemplo, descrição de produtos, notícias, páginas
+Web, documentos, etc.), todos eles originados de informações adequadas para o
+próximo passo de processamento.
+• Aprendiz de Perfil: Para construir o perfil do usuário, este módulo organiza as
+informações representativas dos seus gostos e tenta generalizar estes dados. Nor-
+malmente, a estratégia de generalização é produzida por meio de técnicas de apren-
+dizado de máquina, que têm a capacidade de inferir um modelo de interesses de
+usuário, com base em itens gostados ou não gostados no passado.
+• Componente de Filtragem: Este módulo investiga o perfil do usuário para suge-
+rir itens importantes, combinando, para tanto, a representação do perfil do usuário
+com os itens a serem recomendados.
+A consequência é um binário ou contínuo
+2.4 TÉCNICAS DE RECOMENDAÇÃO
+15
+julgamento de relevância, através de algum tipo de métrica de similaridade (HER-
+LOCKER et al., 2004)). Nesse último caso, resulta em uma lista com um rank de
+itens relevantes potencialmente.
+Figura 2.4 Arquitetura de alto nível de um Sistema de Recomendação Baseado em Conteúdo
+(LOPS; GEMMIS; SEMERARO, 2011).
+Na Figura 2.4 é possível observar a arquitetura de alto nível de um Sistema de Reco-
+mendação baseado em conteúdo. O passo 1 é a descrição dos itens trabalhados por aquele
+sistema, seguido do passo 2, em que esses itens são armazenados de forma estruturada
+após o tratamento pelo Analisador de Conteúdo. Em seguida, o passo 3 corresponde à
+utilização de usuários Uk como exemplos de treino para o Aprendiz de Perfil. Os perfis
+gerados são armazenados no passo 4 para depois serem utilizados pelo Componente de
+Filtragem. Após a realização da filtragem, é gerada uma lista de recomendações para o
+usuário ativo Ui, e o feedback desse usuário é coletado e armazenado no passo 5. Esse
+feedback é então enviado ao componente de aprendizagem para melhorar o funcionamento
+do sistema e iniciar o ciclo de aprendizagem.
+2.4.4
+Comparação das Técnicas de Recomendação
+Existem sempre pontos fortes e fracos em todas as técnicas de recomendação. Alguns
+desses pontos são (BURKE, 2002):
+• Usuário Novo: Através unicamente de um acúmulo de classificações, as recomen-
+dações partem da comparação entre o usuário-alvo e outros usuários, fazendo com
+16
+SISTEMAS DE RECOMENDAÇÃO
+que um usuário com poucas classificações não consiga categorizar bem os itens.
+• Item Novo: De igual maneira, um novo item, que não recebeu muitas classifi-
+cações, também não pode ser facilmente recomendado: essa é a problemática do
+“item novo”. Ele também é conhecido como a problemática do “early rater”, já que
+a primeira pessoa responsável por classificar um item recebe poucos benefícios para
+fazer isso. Isso acaba fazendo com que os Sistemas de Recomendação forneçam
+outros incentivos para motivar usuários a produzir classificações.
+Nos locais onde poucos usuários classificam os mesmos itens, os Sistemas de Reco-
+mendação colaborativos precisam das recomendações entre usuários, já que podem ter
+dificuldades quando o espaço de classificação é esparso.
+Em situações em que a densidade de interesse do usuário é relativamente alta em um
+universo de itens pequeno e estático, esses problemas sugerem que técnicas colaborativas
+puras são melhores para esses casos.
+Se houver alguma mudança abrupta, as velhas
+classificações serão de pouco valor para os usuários mais novos, já que não terão condições
+de compará-las às dos usuários existentes. Segundo (BURKE, 2002), se a quantidade de
+itens é enorme e o gosto do usuário se espalha pouco, a probabilidade de sobreposição
+com outros usuários será bem reduzida.
+Em um nicho com muitos vizinhos de gostos parecidos, os Sistemas de Recomendação
+colaborativos funcionam melhor para um usuário. A técnica não opera muito bem para o
+chamado “gray sheep” (CLAYPOOL et al., 1999), despenca no espaço entre as panelinhas
+de usuários existentes.
+Isso também se aplica aos sistemas demográficos que buscam
+categorizar usuários com base em características pessoais. Por outro lado, o “usuário
+novo” não é um problema para os Sistemas de Recomendação demográficos, e isso porque
+eles não precisam de uma lista de classificações desses usuários. Segundo (BURKE, 2002),
+em vez disso, eles têm o problema de reunir as informações demográficas relevantes.
+2.4.5
+Cálculo de similaridade
+Independentemente da Técnica de Recomendação utilizada, em determinado ponto, o
+Sistema de Recomendação irá efetuar um cálculo de similaridade, seja entre itens, seja
+entre usuários. Na literatura, existem diversos modelos propostos para a realização desse
+cálculo, e alguns deles serão exemplificados aqui. As métricas mais populares no cálculo
+da similaridade entre usuários são as equações da Correlação de Pearson e da Similari-
+dade de Cossenos (ADOMAVICIUS; TUZHILIN; ALEXANDER, 2005). Por outro lado,
+se o interesse for calcularmos a similaridade entre os itens, métricas que comparem as
+características textuais são mais comuns na literatura e geralmente utilizam o método
+Term Frequency/Inverse Document Frequency(TF-IDF) (SALTON, 1988).
+• Correlação de Pearson:
+Na Equação 2.1, sim(u, v) denota a similaridade entre
+os usuários u e v. O termo ru,i é a avaliação atribuída ao item i pelo usuário u
+e ru é a avaliação média dada pelo usuário u sobre todos os n itens avaliados no
+espaço desse usuário.
+Além disso, a predição para um item é feita a partir da
+combinação ponderada das avaliações dos vizinhos selecionados, calculada como o
+desvio ponderado da média dos vizinhos (SARWAR et al., 2001).
+2.4 TÉCNICAS DE RECOMENDAÇÃO
+17
+simPearson(u, v) =
+nP
+i=1(ru,i −ru)(rv,i −rv)
+s
+nP
+i=1(ru,i −ru)2
+s
+nP
+i=1(rv,i −rv)2
+(2.1)
+• Similaridade de Cossenos:
+A similaridade de cossenos é um modelo de espaço
+vetorial baseado na álgebra linear. Esta métrica de similaridade calcula o ângulo
+entre dois vetores i −dimensionais (u e v) e é amplamente utilizada nos cam-
+pos de recuperação de informação e mineração de textos a fim de comparar dois
+documentos; neste caso, os documentos são representados como vetores de termos
+(ISINKAYE; FOLAJIMI; OJOKOH, 2015). Sendo assim, essa métrica é ampla-
+mente utilizada tanto nos sistemas user-based quanto nos item-based, visto que a
+diferença entre tais se dá apenas no domínio que será utilizado na representação
+vetorial. A similaridade entre dois usuários u e v pode ser definida pela Equação
+2.2. O termo Iuv representa os itens em comum entre os usuários u e v.
+simCosine(u, v) =
+P
+i∈Iuv rui · rvi
+qP
+i∈Iuv r2
+u,i
+qP
+i∈Iuv r2
+v,i
+(2.2)
+• Term Frequency/Inverse Document Frequency(TF-IDF): Assumindo que
+existem N documentos que podem ser recomendados a um usuário, e que uma
+palavra-chave ki aparece em ni documentos, e que fij é o número de vezes que ki
+aparece no documento dj. Então, o Term Frequency, TFij, nada mais é do que a
+frequência com que os termos kz apareceram nos N documentos (ADOMAVICIUS;
+TUZHILIN; ALEXANDER, 2005). A Equação 2.3 ilustra esse processo.
+TFij =
+fij
+maxz fzj
+(2.3)
+No entanto, saber apenas a frequência de palavras presentes em um documento
+não basta para determinar sua relevância nesse documento.
+Para tal, utiliza-se
+o método Inverse Document Frequency IDFi combinado com o TFij. O IDFi é
+definido na Equação 2.4.
+IDFi = log N
+ni
+(2.4)
+Portanto, no TF-IDF, o peso do termo ki no documento dj é definido como na
+Equação 2.5.
+pij = TFij × IDFi
+(2.5)
+18
+SISTEMAS DE RECOMENDAÇÃO
+2.5
+OBJETIVOS DE SISTEMAS DE RECOMENDAÇÃO
+Um Sistema de Recomendação é normalmente avaliado em termos de corretude. É normal
+que avaliemos o quão precisas foram as recomendações do sistema. Na literatura, existem
+métricas bem consolidadas que avaliam a precisão das recomendações, dentre elas, a
+Precisão e o Root Mean Square Error (RMSE). No entanto, vêem-se também discutindo
+outros parâmetros, além da acurácia, na avaliação de Sistemas de Recomendação, dentre
+eles o grau de diversidade entre os itens recomendados.
+2.5.1
+Acurácia
+É fundamental em um Sistema de Recomendação avaliarmos se os itens, aqueles do
+conjunto retornado como as recomendações ao usuário, são, de fato, relevantes ou não.
+Nesse sentido, uma das métricas mais utilizadas na literatura é a precisão, pois é utilizada
+para avaliar a qualidade de um método de recomendação (PARRA; SAHEBI, 2013).
+Precisão é a porcentagem dos itens recomendados que são relevantes para o usuário
+(MANNING; RAGHAVAN; SCHüTZE, 2008), definida na Equação 2.6.
+precisao = itens relevantes recomendados
+total de itens recomendados
+(2.6)
+Outra abordagem utilizada para medir a acurácia é a métrica Root Mean Square Error
+(RMSE) que visa calcular a magnitude de erro nas recomendações realizadas. Como
+essa métrica utiliza um termo ao quadrado no somatório, o RMSE penaliza de forma
+desproporcional grandes erros no conjunto de dados. A Equação 2.7 demonstra como o
+cálculo é realizado.
+RMSE =
+sPn
+i=1(ri −pi)2
+n
+,
+(2.7)
+Onde n é o número total de avaliações de todos os usuários, pi é a avaliação prevista
+do usuário i no item p, e ri é a avaliação real desse usuário sobre o item.
+2.6
+SUMÁRIO
+Neste capítulo, foi possível obter uma visão mais ampla dos sistemas de recomendação.
+Primeiramente, um breve histórico. Logo depois, foram apresentados alguns conceitos
+sobre os dados manuseados em um sistema. Então, foi sugerida uma lista de tarefas
+desempenhadas pelos Sistemas de Recomendação. Discutiram-se também as mais fun-
+damentais técnicas de recomendação e algumas métricas de similaridade. Por fim, foram
+apresentados alguns objetivos em Sistemas de Recomendação, como manter a acurácia
+das recomendações e diversificá-las. No capítulo 4, serão apresentados trabalhos com fo-
+cos similares aos desta pesquisa, de modo a fornecer uma base argumentativa e um ponto
+de partida para o desenvolvimento das metas de solução estabelecidas.
+Capítulo
+3
+SISTEMAS DE RECOMENDAÇÃO EDUCACIONAIS
+Os Sistemas de Recomendação (SRs) têm se destacado em diversos contextos, inclu-
+indo o campo educacional, onde desempenham um papel essencial na personalização do
+aprendizado. Ao adaptar conteúdos e recursos educativos às necessidades e preferências
+individuais dos alunos, esses sistemas buscam aumentar a eficácia do aprendizado e o
+engajamento dos estudantes. A personalização promovida pelos SRs permite que cada
+aluno tenha acesso a materiais que melhor se adequem ao seu nível de conhecimento e
+ao seu estilo de aprendizado, seja por meio de livros, artigos, vídeos ou outros objetos de
+aprendizagem (SILVA et al., 2023).
+Em ambientes educacionais, os SRs oferecem uma forma dinâmica e interativa de
+apoiar o processo educativo, ajustando continuamente as recomendações com base no de-
+sempenho do aluno e nas suas interações anteriores com o conteúdo (COSTA; AGUIAR;
+MAGALHãES, 2013).
+Essa adaptabilidade é fundamental para criar experiências de
+aprendizado mais significativas e motivadoras, que não apenas facilitam o acesso a in-
+formações relevantes, mas também promovem uma aprendizagem ativa e personalizada
+(MARUYAMA et al., 2023). Estudos recentes demonstram o potencial dos SRs para in-
+tegrar diversos métodos de ensino e tecnologias emergentes, proporcionando alternativas
+eficazes aos desafios educacionais contemporâneos (CAZELLA et al., 2009).
+No entanto, apesar de seu potencial, os SRs em contextos educacionais enfrentam
+desafios significativos, especialmente quanto à disponibilidade e à qualidade dos conjuntos
+de dados educacionais. Muitos desses conjuntos de dados carecem de variáveis de contexto
+importantes ou apresentam lacunas na captura de preferências multicritérias dos usuários,
+como avaliações detalhadas de conteúdos e facilidade de uso (ZHENG, 2023).
+Essas
+deficiências limitam a capacidade dos algoritmos de recomendação de fornecer sugestões
+precisas e adaptadas, sublinhando a necessidade de desenvolver novas abordagens para a
+coleta e utilização de dados educacionais mais ricos e diversificados.
+3.1
+INTRODUÇÃO
+Acerca das recomendações com foco em aprendizado, há uma deficiência nos conjuntos de
+dados educacionais, como, por exemplo, a ausência de variáveis de contexto ou lacunas no
+19
+20
+SISTEMAS DE RECOMENDAÇÃO EDUCACIONAIS
+preenchimento de preferências multicritérias dos usuários, como avaliações, facilidade de
+uso e qualidade dos conteúdos (ZHENG, 2023). Ainda assim, existem alternativas para
+os mais diversos problemas enfrentados atualmente. Maruyama et al. (2023) fornece
+um exemplo prático de integração entre o mundo real e o virtual, com foco no ambiente
+universitário e a adoção de alternativas que abrangem diversos métodos de aprendizado.
+Além disso, é importante considerar que a diversidade de dados e métodos utilizados
+pode impactar diretamente na eficácia dos SRs educacionais. A personalização das reco-
+mendações pode ser afetada pela qualidade dos dados disponíveis e pela capacidade dos
+algoritmos de recomendação de interpretar e utilizar essas informações de forma eficaz.
+3.2
+OBJETOS DE APRENDIZAGEM RECOMENDADOS
+Na área de recomendações educacionais, as contribuições mais produtivas dos sistemas
+são fornecidas por meio de objetos de aprendizagem. Estes podem ser apresentados de
+diversas formas, como mídias audiovisuais, livros ou textos. Silva et al. (2023) exem-
+plificam métodos diversos para a geração dessas recomendações. A abordagem híbrida,
+que combina diferentes métodos de recomendação, pode ser mais eficaz na personaliza-
+ção de objetos de aprendizagem para atender às necessidades dos alunos, assim como no
+desenvolvimento de sistemas adaptativos, que podem melhorar a experiência por meio da
+utilização de objetos de aprendizagem auxiliares.
+A revisão ajuda ainda na identificação de tendências atuais na pesquisa sobre SRs
+educacionais, direcionando futuros esforços de pesquisa e desenvolvimento, como a inte-
+gração de múltiplas fontes de dados, com o objetivo de melhorar a personalização das
+recomendações e a criação de modelos que considerem fatores afetivos e sociais no pro-
+cesso. Por exemplo, integrar dados sobre o estado emocional do aluno ou seu histórico
+social e cultural pode enriquecer significativamente o processo de personalização, resul-
+tando em recomendações mais relevantes e eficazes.
+Costa, Aguiar e Magalhães (2013) apresentam elementos que melhoram a experiên-
+cia dos SRs educacionais em conjunto com a utilização de sistemas de recomendação
+personalizada, como aprimoramento dos recursos de ensino e suas descobertas, apoio a
+necessidades de aprendizagem diversas, entrega de conteúdo personalizado e aumento
+do engajamento dos estudantes.
+Tais sistemas também permitem que os educadores
+acompanhem o progresso e adaptem as recomendações com base em feedback contínuo,
+aumentando a eficácia do ensino e a satisfação do aluno.
+Cazella et al. (2009) elaboraram um SR de objetos de aprendizagem com base em
+filtragem colaborativa. Esta, quando aplicada no sistema, auxilia no processo de análise
+das preferências e das avaliações dos usuários. O trabalho contribui com alternativas para
+a integração de competências no processo de recomendação, possibilitando uma melhor
+personalização do aprendizado de cada aluno, além de utilizar práticas do estado da arte.
+Estes objetivos visam melhorar a experiência de aprendizado dos alunos, tornando-a mais
+adaptada às suas necessidades e contextos específicos. Além disso, o uso de filtragem
+colaborativa permite capturar padrões emergentes de interesse entre grupos de usuários,
+facilitando a descoberta de novos conteúdos relevantes para comunidades específicas de
+aprendizagem.
+3.3 ARQUITETURA DAS APLICAÇÕES
+21
+3.3
+ARQUITETURA DAS APLICAÇÕES
+Com o objetivo de acelerar o processo de desenvolvimento dos SRs, foram desenvolvi-
+dos diversos frameworks com modelos de arquitetura predefinidos, exemplificados por
+Carvalho et al. (2018) e García e Bellogín (2018), por meio da elaboração de modelos
+flexíveis e escaláveis. Noble e Smith (2015) e Declerq e van Poppel (2023) aprofundam a
+validade e a confiabilidade dos dados que alimentam SRs, e Brouwer e Hollenbach (2022)
+contribuem com parâmetros e implementações para a otimização de motores de busca.
+Estes frameworks são essenciais para permitir que desenvolvedores implementem rapida-
+mente SRs, garantindo, ao mesmo tempo, que estes sejam robustos e capazes de lidar com
+grandes volumes de dados e com diferentes tipos de usuários. Além disso, a arquitetura
+flexível permite a incorporação de novos algoritmos e técnicas à medida que a tecnologia
+evolui e novas necessidades de usuários são identificadas.
+Os SRs educacionais frequentemente enfrentam desafios relacionados à arquitetura
+de suas aplicações, incluindo a necessidade de escalabilidade, flexibilidade e integração
+com múltiplas fontes de dados. Por exemplo, a Revista DNC (2024) discute a imple-
+mentação de um SR de cursos educacionais, destacando o uso de arquiteturas modulares
+que permitem adaptação e extensão facilmente. A arquitetura adotada inclui componen-
+tes de pré-processamento de dados, modelos de recomendação híbridos e um mecanismo
+de feedback de usuários para melhorar continuamente as recomendações. Além disso,
+são exploradas soluções para a integração de dados de diferentes plataformas e para a
+personalização das recomendações com base em múltiplos critérios, como o histórico de
+aprendizagem e as preferências declaradas pelos usuários.
+Figura 3.1 Modelo arquitetural para SRs educacionais.
+Conforme discutido por Costa, Aguiar e Magalhães (2013), uma arquitetura eficiente
+deve combinar técnicas de recomendação para melhor atender às necessidades específicas
+dos usuários. A Figura 3.1 apresenta alguns dos componentes arquiteturais explorados,
+22
+SISTEMAS DE RECOMENDAÇÃO EDUCACIONAIS
+como módulos de personalização e mecanismos de feedback, que permitem ajustes con-
+tínuos nas recomendações fornecidas. A flexibilidade e a escalabilidade da arquitetura
+são cruciais para lidar com a diversidade de dados e de preferências dos usuários em
+ambientes educacionais.
+O artigo de Yazdi, Mahdavi e Yazdi (2024) apresenta um SR educacional dinâmico
+baseado em uma rede neural Long Short-Term Memory (LSTM) aprimorada. Essa arqui-
+tetura é particularmente adequada para aplicações educacionais devido à sua capacidade
+de modelar sequências temporais e de capturar dependências de longo prazo nos dados
+dos usuários. A abordagem proposta utiliza uma combinação de técnicas de aprendi-
+zado supervisionado e não supervisionado para ajustar as recomendações em tempo real,
+adaptando-se continuamente ao comportamento do usuário e às mudanças nas prefe-
+rências de aprendizagem. Essa flexibilidade arquitetural é essencial para construir SRs
+robustos e escaláveis, que podem ser facilmente adaptados a diferentes contextos educa-
+cionais.
+3.4
+SISTEMAS DE RECOMENDAÇÃO PARA ARTIGOS CIENTÍFICOS
+Embora existam alguns trabalhos com foco em recomendações para manuscritos cientí-
+ficos, estes não levam em conta o perfil do pesquisador. Este fator tem o potencial de
+reduzir o esforço na busca de trabalhos relacionados via coleta de dados para elaboração
+do perfil de usuário e fornecimento passivo de recomendações. A consideração do perfil do
+pesquisador, incluindo suas publicações anteriores, interesses de pesquisa e rede de cola-
+boradores, pode significativamente aprimorar a relevância das recomendações fornecidas,
+promovendo descobertas mais alinhadas aos interesses e às necessidades de pesquisa de
+cada usuário.
+Embora o artigo de Costa, Aguiar e Magalhães (2013) tenha foco em recursos edu-
+cacionais mais amplos, ele fornece insights relevantes para a recomendação de artigos
+científicos. Eles destacam a importância de adotar uma abordagem híbrida que combine
+técnicas baseadas em conteúdo e filtragem colaborativa para melhorar a precisão e a rele-
+vância das recomendações. Esse tipo de abordagem é particularmente útil para sistemas
+que recomendam artigos científicos, pois pode aproveitar tanto as características textuais
+dos artigos quanto os padrões de citação e de uso por parte dos pesquisadores.
+Schenkel e Kreutz (2022) apresentam uma revisão da literatura que sinaliza alguns
+destes trabalhos, discorrendo sobre os métodos aplicados, os datasets utilizados e as va-
+riáveis analisadas nas etapas de avaliação. A revisão também destaca a importância de
+adotar abordagens que integrem diferentes tipos de dados, como metadados de publica-
+ções, referências cruzadas e até mesmo métricas de impacto social, para construir SRs
+mais completos e eficazes no contexto científico.
+Embora o artigo de Yazdi, Mahdavi e Yazdi (2024) se concentre principalmente em
+SR educacional, os conceitos de modelagem de sequência com LSTM também podem ser
+aplicados a sistemas de recomendação de artigos científicos. A habilidade das LSTMs
+em capturar padrões temporais complexos torna-as úteis para rastrear as tendências de
+leitura e citação de pesquisadores ao longo do tempo, permitindo um modelo mais sofis-
+ticado de recomendação que leva em conta o histórico de leitura e os interesses evolutivos
+3.5 SUMÁRIO
+23
+dos usuários.
+3.5
+SUMÁRIO
+Neste capítulo, foram explorados os conceitos de SR educacional e seu papel na personali-
+zação do aprendizado. Inicialmente, destacou-se a capacidade desses sistemas de adaptar
+conteúdos às necessidades individuais dos alunos, promovendo maior engajamento e efi-
+cácia educacional. Foram abordados também os desafios enfrentados na elaboração e na
+execução deste tipo de sistema, como a escassez de dados educacionais ricos e as lacunas
+na captura de preferências multicritérias. A seção sobre objetos de aprendizagem reco-
+mendados discutiu o uso de mídias audiovisuais, textos e livros, enfatizando abordagens
+híbridas e sistemas adaptativos para aprimorar a experiência do usuário. Em seguida, a
+arquitetura das aplicações foi apresentada, com foco em frameworks modulares que facili-
+tam o desenvolvimento e integração de novas técnicas. Por fim, o capítulo aborda os SRs
+para artigos científicos, destacando a importância de considerar o perfil do pesquisador
+para gerar recomendações mais relevantes. Técnicas híbridas que combinam filtragem co-
+laborativa e análise textual são sugeridas como estratégias eficazes para aprimorar esses
+sistemas.
+Capítulo
+4
+TRABALHOS RELACIONADOS
+Como mencionado anteriormente, existem diversas alternativas focadas em Sistemas
+de Recomendação (SRs) para a área de pesquisa. O foco destes estudos inclui a criação
+de frameworks para redução do tempo de criação de um SR, combinação de Citation
+Network Informations com similaridade textual para geração de recomendações, soluções
+para ambientes de aprendizado acadêmico, entre outros.
+4.1
+SISTEMAS DE RECOMENDAÇÃO BASEADO EM SIMILARIDADE TEX-
+TUAL DESESTRUTURADA
+Uma das estratégias mais populares para recomendações, a similaridade textual é abor-
+dada por trabalhos das mais diversas áreas e com diferentes objetivos. Sterling e Mon-
+temore (2022) atuaram na construção de uma citation network composta pelos artigos
+do dataset, e utilização de similaridade textual para identificar trabalhos relacionados.
+Este processo é realizado utilizando uma mescla entre aprendizado de máquina e mine-
+ração de dados, similar à abordagem utilizada em Paperman, tendo o mesmo objetivo
+principal enquanto adiciona elementos presentes no perfil do pesquisador na comparação
+de similaridade. A proposta dos autores resultou numa melhoria significativa na busca
+de trabalhos relacionados se comparada ao método tradicional, utilizando palavras-chave
+em motores de busca.
+Zhao et al. (2023) produzem uma revisão sobre o uso de embeddings em SRs. Esta
+técnica é utilizda em Paperman, e é considerada uma grande promessa que surgiu nos
+últimos anos, tendo melhor desempenho se comparado a abordagens tradicionais. Porém,
+esta estratégia mais recente ainda carece de avanços em escalabilidade e compreensibi-
+lidade, e esta pesquisa abre caminho para futuros trabalhos focados na melhoria destes
+aspectos.
+Um esquema personalizado para recomendações de recursos de aprendizagem online
+foi desenvolvido por Wei et al. (2021), sendo baseado em Inteligência Artificials (IAs)
+e teoria da psicologia educacional para aprimorar o aprendizado dos estudantes. O es-
+quema proposto pode alcançar recomendações precisas, reduzindo o risco da exploração
+na experiência dos estudantes e facilitando a evolução de suas capacidades potenciais
+ao fornecer recursos adequados de aprendizagem. O SR utiliza estratégias similares ao
+25
+26
+TRABALHOS RELACIONADOS
+algoritmo de recomendação de Paperman, em especial no que diz respeito à elaboração
+de um coeficiente que combina elementos dos usuários e dos itens, utilizando este como
+métrica de comparação para similaridade.
+Ricci et al. (2022) abordam os problemas enfrentados pelos SRs, como a diversidade
+de preferências dos usuários e a necessidade de personalização das recomendações. Para
+solucionar tais desafios, propõe-se o uso de técnicas avançadas, como a análise de feed-
+back implícito e a identificação de mudanças contextuais relevantes. As contribuições do
+artigo incluem metrificação da importância da personalização e colaboração na melhoria
+dos sistemas, juntamente com a exploração de abordagens inovadoras para recomendações
+contextuais, destacando a interseção com SRs baseados em similaridade textual desestru-
+turada. Estas métricas desenvolvidas auxiliarão na etapa de avaliação do trabalho atual,
+seja em relação às recomendações fornecidas ou à usabilidade da aplicação.
+O conceito de filtragem colaborativa é amplamente utilizado na geração de recomen-
+dações. Usufruindo deste, Chen et al. (2020) desenvolveram um algoritmo baseado na
+correlação do usuário e clustering evolutivo para lidar com problemas de dados esparsos
+e baixa precisão de recomendação. A solução proposta envolve pré-processamento da
+matriz de pontuações para obter dados mais densos, aplicação do conceito de correlação
+do usuário para selecionar nós vizinhos mais próximos na previsão de avaliações e imple-
+mentação de clustering evolutivo dinâmico, sendo estas propostas similares às utilizadas
+em Paperman para comparação dos perfis de pesquisadores com os trabalhos inicialmente
+selecionados. O artigo contribui também com melhorias na precisão das recomendações,
+demonstradas por experimentos comparativos com outros algoritmos em diferentes con-
+juntos de dados, como o do sistema Movielens.
+Alhijawi (2020) apresenta um sistema de recomendação colaborativa que utiliza al-
+goritmos genéticos para melhorar a qualidade das recomendações. Ao combinar essas
+técnicas, o sistema busca encontrar valores de similaridade ótimos entre usuários, abor-
+dando problemas de escassez e cold start. A contribuição do estudo reside na aplicação
+eficaz do algoritmo genético para aprender a similaridade entre usuários, minimizando os
+desafios comuns em sistemas de recomendação colaborativa.
+4.2 SISTEMAS DE RECOMENDAÇÃO DE MANUSCRITOS CIENTÍFICOS
+27
+Tabela 4.1 Comparativo de Sistemas de Recomendação por Similaridade Textual.
+Autor (Ano)
+Método /
+Técnica
+Objetivo Principal
+Relação com Paperman
+Sterling e
+Montemore
+(2022)
+Redes de
+citações e
+similaridade
+textual.
+Identificar trabalhos relaciona-
+dos
+de
+forma
+eficiente,
+su-
+perando buscas por palavras-
+chave.
+Combina similaridade textual
+para
+produzir
+recomendações
+mais relevantes e centradas no
+perfil.
+Zhao et al.
+(2023)
+Revisão sobre
+uso de Word
+Embeddings.
+Demonstrar o desempenho su-
+perior das embeddings frente a
+abordagens tradicionais.
+Corrobora e justifica a escolha
+técnica do uso de Word Embed-
+dings no motor do sistema.
+Wei et al.
+(2021)
+Inteligência
+Artificial e
+psicologia
+educacional.
+Recomendação
+personalizada
+combinando elementos de usu-
+ários e itens.
+Inspira a formulação do coefici-
+ente de recomendação que une
+métricas de usuário e item.
+Ricci et al.
+(2022)
+Análise de
+feedback
+implícito e
+contexto.
+Metrificar
+a
+personalização
+para resolver a diversidade de
+preferências dos usuários.
+Fornece diretrizes de métricas
+de avaliação de usabilidade e re-
+levância das recomendações.
+Chen et al.
+(2020)
+Filtragem
+colaborativa e
+clustering
+evolutivo.
+Lidar com a dispersão de da-
+dos (data sparsity) e aumentar
+a precisão.
+Sustenta propostas de agrupa-
+mento usadas para comparar
+perfis de pesquisadores e traba-
+lhos.
+Alhijawi (2020)
+Algoritmos
+genéticos e
+filtragem
+colaborativa.
+Encontrar valores ótimos de si-
+milaridade para mitigar o pro-
+blema de cold start.
+Fornece embasamento teórico
+para lidar com a escassez de da-
+dos observada nos testes do sis-
+tema.
+4.2
+SISTEMAS DE RECOMENDAÇÃO DE MANUSCRITOS CIENTÍFICOS
+Dando continuidade à análise das estratégias de recomendação, a transição da similari-
+dade textual desestruturada para o domínio específico dos manuscritos científicos permite
+observar como os conceitos de Processamento de Linguagem Natural (NLP) e embeddings
+são aplicados na prática acadêmica. Enquanto as abordagens discutidas na seção anterior
+fornecem o arcabouço técnico para a comparação semântica e recuperação de documentos
+, a seção a seguir foca em sistemas projetados para resolver o desafio da descoberta de lite-
+ratura em um cenário de crescente abundância de recursos digitais. Essa contextualização
+é fundamental para identificar como ferramentas especializadas buscam preencher a la-
+cuna de integração ao perfil individual do pesquisador, aspecto que, conforme observado,
+ainda apresenta carência de soluções robustas no estado da arte.
+Maruyama et al. (2023) apontam que encontrar informações de qualidade é um desa-
+fio, devido ao drástico aumento de recursos disponíveis na rede. Para sanar este problema,
+é proposto o desenvolvimento de um sistema híbrido de recomendações atrelado a uma ar-
+28
+TRABALHOS RELACIONADOS
+quitetura de software (SmartC) composta por 3 camadas, sendo elas acesso (diretamente
+disponibilizada aos usuários, apresentando recomendações, redirecionamentos para ou-
+tros portais da universidade e informações de seus interesses em diversos dispositivos),
+gerenciamento de recomendações (limitada aos desenvolvedores, responsável por cole-
+ta/processamento de dados e envio de informações para banco de dados) e persistência
+(engloba o banco de dados).
+Wang et al. (2018) abordam a crescente submissão de artigos a periódicos e confe-
+rências de Ciência da Computação, destacando a dificuldade dos autores em selecionar
+os locais mais adequados para publicação. Diante desse cenário, a solução proposta é um
+SR baseado em conteúdo, que prioriza periódicos e conferências com base nos resumos
+dos manuscritos. A contribuição significativa do estudo inclui a cobertura de 66 impor-
+tantes locais de publicação, a capacidade de recomendar áreas de pesquisa de ponta em
+tempo real e a implementação de um modelo eficiente de baixa complexidade computa-
+cional, permitindo respostas interativas online e atualizações automáticas do modelo de
+aprendizado.
+A crescente quantidade de publicações científicas demanda sistemas automatizados de
+recomendação de artigos para auxiliar pesquisadores na busca por trabalhos relevantes.
+Schenkel e Kreutz (2022) discorrem acerca de problemas como a necessidade de métodos
+eficazes de recomendação, avaliação de sistemas existentes e identificação de desafios
+em aberto e propõem uma solução baseada na análise crítica de métodos, conjuntos de
+dados, avaliações e desafios encontrados em trabalhos publicados entre janeiro de 2019 e
+outubro de 2021. As contribuições do artigo incluem uma visão abrangente e atualizada
+dos sistemas de recomendação de artigos científicos, fornecendo insights valiosos para
+pesquisadores interessados em SRs baseados em similaridade textual desestruturada.
+Um contexto é apresentado por Afsar, Crump e Far (2021), no qual a provisão de infor-
+mações para pacientes com câncer, especialmente para pacientes com câncer de próstata,
+é essencial para educá-los sobre suas condições de saúde e envolvê-los ativamente no pro-
+cesso de tomada de decisão compartilhada. Identifica-se a falta de recursos educacionais
+apropriados para esses pacientes, o que leva à proposta do sistema KERS (Knowledge-
+based Exploration on-demand article Recommender System), um SR de artigos sob de-
+manda baseado em conhecimento. A solução proposta visa minimizar a exploração ao
+mesmo tempo em que maximiza a satisfação a longo prazo dos usuários, aprendendo
+rapidamente os seus interesses e recomendando os melhores artigos. As contribuições do
+artigo incluem uma abordagem inovadora para a recomendação de informações baseada
+em conhecimento, aplicável a sistemas de recomendação de manuscritos científicos, ar-
+quiteturas de sistemas de recomendação com extração de textos na web e sistemas de
+recomendação baseados em similaridade textual desestruturada.
+4.3 ARQUITETURA DE SISTEMAS DE RECOMENDAÇÃO COM EXTRAÇÃO DE TEXTOS NA WEB29
+Tabela 4.2 Comparativo de Sistemas de Recomendação de Manuscritos Científicos.
+Autor (Ano)
+Método /
+Técnica
+Objetivo Principal
+Relação com Paperman
+Maruyama et
+al. (2023)
+Processamento
+ativo e online.
+Desenvolvimento de um sistema
+para
+fornecimento
+online
+de
+acesso às recomendações.
+Alinha-se à estratégia de dis-
+ponibilização ativa e em tempo
+real das recomendações geradas
+pelo motor.
+Wang et al.
+(2018)
+Baseado em
+conteúdo
+(análise de
+resumos).
+Sistema de recomendação que
+tem como base a análise de re-
+sumos dos manuscritos.
+Fundamenta o fluxo de proces-
+samento online para o forneci-
+mento de atualizações automá-
+ticas nas recomendações do sis-
+tema.
+Schenkel e
+Kreutz (2022)
+Revisão de
+métodos e
+datasets
+científicos.
+Análise comparativa de méto-
+dos de recomendação e consoli-
+dação de métricas de avaliação
+da literatura científica.
+Subsidia a seleção e a definição
+das métricas de avaliação utili-
+zadas na validação experimen-
+tal do Paperman.
+Afsar et al.
+(2021)
+Recomendação
+baseada em
+conhecimento.
+Sistema KERS voltado para o
+engajamento de usuários na to-
+mada de decisão baseada em
+evidências.
+Ilustra a aplicação de recomen-
+dação sob demanda para a re-
+dução do esforço de busca ativa
+em sistemas de informação.
+A partir da análise comparativa exposta na Tabela 4.2, é possível observar que, embora
+o campo de SRs científicos conte com propostas robustas para tarefas específicas (como
+a seleção criteriosa de veículos de publicação ou a utilização estratégica de redes de
+citações), ainda persiste uma lacuna no que tange à integração profunda com o perfil
+multifacetado do pesquisador e à oferta de itens que transcendam o artigo textual, como
+software e conjuntos de dados.
+Essa contextualização técnica e acadêmica fundamenta a necessidade do sistema Pa-
+perman, que busca preencher tais lacunas ao automatizar a descoberta de trabalhos
+relevantes, sem exigir esforço ativo constante por parte do usuário final. Desta forma, os
+trabalhos analisados fornecem o embasamento necessário para a consolidação das metas
+de solução estabelecidas neste estudo.
+4.3
+ARQUITETURA DE SISTEMAS DE RECOMENDAÇÃO COM EXTRAÇÃO
+DE TEXTOS NA WEB
+No contexto deste trabalho, a ausência de consenso acerca das métricas necessárias para
+a avaliação de SRs gera divergências. Para sanar este problema, Carvalho et al. (2018)
+propuseram o desenvolvimento de um framework para auxiliar no processo, utilizando
+as métricas mais populares e identificando características dos conjuntos de dados que
+possam afetar o desempenho dos sistemas. Fatores que diferem a pesquisa em questão de
+trabalhos anteriores relacionados incluem a possibilidade de caracterização dos datasets
+e a capacidade de se manter extensível à adição de novas métricas.
+30
+TRABALHOS RELACIONADOS
+Zhang et al.
+(2019) oferecem uma revisão abrangente dos avanços em SRs com
+Aprendizado Profundo (AP), categorizando e resumindo mais de 100 estudos para orien-
+tar pesquisadores e profissionais interessados neste campo. Além de influenciar a arqui-
+tetura de SRs baseados em extração da Web, através da análise das vantagens e desvan-
+tagens das técnicas de AP para tarefas de recomendação, a proposta de uma classificação
+e esquema de organização dos estudos existentes e enfatização da importância de consi-
+derar a diversidade de fontes de dados como aprimoramento da eficácia destes sistemas,
+a pesquisa destaca as vantagens e desvantagens das técnicas de AP, fornecendo um guia
+para a escolha de redes neurais profundas. Com o objetivo de expandir os horizontes da
+pesquisa em SR, o artigo contribui para avanços contínuos na área, promovendo inovações
+e orientando futuras investigações.
+No contexto de sistemas de recomendação baseados em dados extraídos da web, a
+dispersão de informações (data sparsity) representa um desafio arquitetural crítico, visto
+que os perfis dos pesquisadores frequentemente apresentam lacunas ou dados incomple-
+tos. YU (2023) aborda este problema ao propor soluções para mitigar a dispersão em
+ambientes não-supervisionados, fornecendo um toolkit projetado para otimizar a extração
+e a representação estruturada de matrizes esparsas. No escopo do Paperman, os concei-
+tos levantados por YU (2023) fundamentam a arquitetura de processamento no back-end,
+justificando a implementação de mecanismos de agregação e armazenamento em cache na
+API REST. Essa abordagem permite que o servidor do sistema lide de forma eficiente com
+dados ruidosos provenientes da web, reduzindo a latência nas requisições e garantindo o
+desempenho do motor de recomendação sem onerar o lado do cliente.
+Desafios de segurança e privacidade enfrentados pelos SRs foram abordados, des-
+tacando a importância de tecnologias como blockchain, IA explicável e computação de
+borda. Himeur et al. (2022) oferecem uma revisão abrangente das pesquisas recentes
+nesse campo, discutindo frameworks existentes, aplicações práticas e direções futuras.
+As contribuições incluem a análise de questões como confiança, autenticação, ataques
+maliciosos, justiça e viés, além de abordar a importância da preservação da privacidade
+e segurança em diferentes cenários de aplicação, como e-commerce, saúde, Internet das
+Coisas (IoT) e redes sociais.
+Segurança e privacidade em SRs são aspectos de crescente preocupação, e um trabalho
+apresenta uma revisão abrangente das últimas tendências em ataques e defesas nesses
+sistemas, destacando a importância desses aspectos. García e Bellogín (2018) propõem
+uma visão abrangente das questões de segurança e privacidade, identificando direções
+futuras de pesquisa e contribuindo por meio da análise de ataques e defesas atuais, bem
+como a identificação de lacunas e desafios a serem abordados na área de SR.
+A Tabela 4.3 apresenta uma análise com o objetivo de explicitar os dados trabalhados
+pelos sistemas, passando inicialmente pela identificação de características específicas dos
+datasets que podem impactar diretamente o desempenho dos algoritmos. Para maximizar
+a eficácia de modelos baseados em aprendizado profundo, a literatura enfatiza a impor-
+tância de integrar uma ampla diversidade de fontes de dados. No entanto, o tratamento
+dessas informações deve enfrentar desafios críticos, como a escassez de dados (data spar-
+sity), recorrente em modelos de aprendizado não supervisionado. Além disso, a gestão
+dos dados exige atenção rigorosa à segurança e à preservação da privacidade do usuário,
+4.4 SUMÁRIO
+31
+garantindo a integridade das informações em domínios como saúde, IoT e redes sociais.
+Tabela 4.3 Comparativo de Arquitetura de Sistemas e Tratamento de Dados.
+Autor (Ano)
+Método /
+Técnica
+Objetivo Principal
+Relação com Paperman
+Carvalho et al.
+(2018)
+Análise de
+impacto de
+datasets.
+Criar um framework extensível
+focado nas métricas populares
+que afetam o desempenho dos
+algoritmos.
+A identificação de caracterís-
+ticas dos datasets que afetam
+o desempenho dos SRs funda-
+menta a decisão do Paperman
+de construir um conjunto de da-
+dos personalizado.
+Zhang et al.
+(2019)
+Diversidade de
+fontes de
+extração.
+Categorizar vantagens e desvan-
+tagens de redes neurais e ressal-
+tar a importância de fontes di-
+versificadas.
+Embasamento para o uso de
+múltiplas fontes na construção
+do pool
+temático (ORCID e
+DBLP operando em conjunto).
+Yu (2023)
+Gerenciamento
+de data sparsity.
+Propor soluções baseadas em
+um toolkit para mitigar a dis-
+persão de dados em ambientes
+não-supervisionados.
+Fundamenta a arquitetura de
+agregação e o uso de cache
+na API (back-end), garantindo
+eficiência no processamento de
+perfis com dados incompletos.
+Himeur et al.
+(2022)
+Privacidade,
+viés e
+segurança.
+Revisar tecnologias como IA
+Explicável
+e
+computação
+de
+borda na mitigação de acessos
+não autorizados.
+Direciona as diretrizes de priva-
+cidade e segurança na API do
+Paperman, orientando a mani-
+pulação anônima e o armazena-
+mento seguro dos perfis no ser-
+vidor.
+García e
+Bellogín (2018)
+Segurança em
+frameworks de
+recomendação.
+Investigar vetores de ataque,
+defesas contemporâneas e falhas
+em estruturas que não preser-
+vam a privacidade.
+Guia o planejamento arquitetu-
+ral da API REST contra vetores
+de ataque em requisições online,
+garantindo a integridade do mo-
+tor de recomendação.
+4.4
+SUMÁRIO
+Neste capítulo, foram apresentados diversos projetos em três áreas relacionadas a sistemas
+de recomendação. Na busca pela obtenção de trabalhos relacionados, foi possível perceber
+que existem diversas iniciativas na área educacional e científica, porém, nota-se uma
+escassez no que diz respeito à consideração do perfil de pesquisador para elaborar as
+recomendações. Com isso, foi possível adotar as melhores práticas tanto no sentido de
+arquitetura quanto nos algoritmos de recomendação e sua parametrização.
+Capítulo
+5
+PAPERMAN - UM SISTEMA DE RECOMENDAÇÃO
+DE ARTIGOS CIENTÍFICOS
+Neste capítulo, apresenta-se a arquitetura do sistema proposto para recomendação de
+artigos científicos relacionados à linha de pesquisa do pesquisador, marcando a transição
+crucial da teoria para a prática. Os conceitos de Sistema de Recomendação (SR) e a
+análise de trabalhos correlatos, explorados nos capítulos anteriores, se consolidam em
+uma solução concreta de engenharia de software. A proposta abrange a definição de um
+modelo de usuário, baseado em suas publicações e áreas de interesse, e de um modelo
+de recomendação híbrido capaz de identificar os artigos mais relevantes. Discutimos as
+principais funcionalidades e ferramentas tecnológicas utilizadas, incluindo as Interfaces
+de Programação de Aplicações (APIs) ORCID para a coleta de dados e uma API de
+metadados bibliográficos para a consulta de artigos relacionados em larga escala global.
+Ao final, são apresentados exemplos de uso da interface desenvolvida, bem como as
+tecnologias empregadas para garantir eficiência no processo de recomendação e enfrentar
+diretamente o desafio da sobrecarga de informação.
+Para facilitar a compreensão da modelagem formal e da lógica de ranqueamento dis-
+tribuídas ao longo das próximas seções, a Tabela 5.1 consolida as principais notações,
+símbolos e variáveis empregados neste trabalho.
+33
+34
+PAPERMAN - UM SISTEMA DE RECOMENDAÇÃO DE ARTIGOS CIENTÍFICOS
+Tabela 5.1 Tabela de Notações utilizadas na Modelagem do Sistema Paperman.
+Símbolo
+Descrição
+U
+Conjunto de todos os usuários (pesquisadores) no sistema.
+P
+Conjunto de itens (publicações científicas candidatas à recomendação).
+P(u)
+Perfil de um usuário u ∈U, representado por um vetor de pesos de palavras-chave.
+tp, ap, yp, rp
+Atributos fundamentais de uma publicação p (Título, Autores, Ano e Tipo, respectiva-
+mente).
+Pt
+Subconjunto de publicações candidatas recuperadas em uma rodada de busca.
+pmelhor
+Artigo candidato pertencente a Pt que maximiza o escore final de recomendação.
+Sem(p, t)
+Componente do escore que avalia a similaridade semântica (via Word2Vec).
+Ano(p)
+Componente do escore que avalia a atualidade temporal via decaimento logarítmico.
+Cit(p)
+Componente do escore que avalia o impacto por meio do volume normalizado de citações.
+Rel(p)
+Componente do escore que avalia o fator de relevância ou prestígio do veículo de publicação.
+Wt, Wp
+Conjunto de termos extraídos do tópico do pesquisador e do título do artigo, respectiva-
+mente.
+sim(ru, rv)
+Medida de proximidade vetorial entre dois vetores de representação de palavras.
+∆max
+Janela temporal máxima considerada para a penalização de publicações antigas.
+CPY (p)
+Taxa de citações por ano de vida de uma publicação p (Citations Per Year).
+5.1
+ARQUITETURA
+Para a apresentação das informações e coleta de feedbacks dos usuários, foi desenvol-
+vida uma interface web responsiva, configurada como um painel de avaliação dinâmico.
+Este recurso possibilita a exibição estruturada e humanamente legível das recomendações
+geradas, permitindo que os participantes avaliem a relevância de cada artigo de forma
+instantânea. A aplicação interage diretamente com os serviços de back-end para autenti-
+cação e consulta do perfil do usuário por meio do seu identificador ORCID, registrando
+as avaliações diretamente na base de dados do sistema. A Figura 5.1 exibe as etapas
+percorridas pelo fluxo, iniciando na etapa 1, em que ocorre a requisição de perfil do usu-
+ário a partir da interface web, e finalizando o ciclo com o retorno e apresentação das
+publicações recomendadas na etapa 9.
+A escolha da plataforma ORCID como fonte primária para a modelagem do perfil
+do pesquisador, em detrimento da Plataforma Lattes, fundamentou-se em critérios de
+viabilidade técnica e de acessibilidade à integração. Enquanto a ORCID disponibiliza
+uma API pública, com documentação clara e um processo de autenticação simplificado
+para desenvolvedores, a Plataforma Lattes não oferece uma interface de programação
+aberta, exigindo processos de credenciamento que configuram barreiras significativas de
+tempo e esforço, incompatíveis com o escopo deste projeto. A ausência de uma API
+pública no Lattes implicaria na necessidade de adoção de técnicas de web scraping, o que
+elevaria substancialmente a complexidade do sistema em comparação à estrutura de dados
+padronizada da ORCID. Adicionalmente, a interface web do Lattes emprega mecanismos
+de verificação (CAPTCHAs) para impedir o acesso automatizado; a tentativa de contorná-
+5.2 PERFIL DO USUÁRIO
+35
+los demandaria recursos computacionais excessivos e acarretaria conflitos éticos, uma vez
+que violaria as diretrizes de proteção deliberadamente implementadas pela plataforma.
+Figura 5.1 Diagrama de arquitetura cliente-servidor do sistema Paperman.
+As operações lógicas centrais ocorrem no back-end entre as etapas 3 e 8, nas quais o
+servidor centraliza o processamento: realiza a requisição do perfil do pesquisador, extrai
+os conceitos-chave de sua linha de pesquisa, consulta a base de dados global para a coleta
+de artigos candidatos, aplica o motor de pontuação multiplicativo e executa as técnicas
+de normalização e re-ranking. Este intervalo também abrange as integrações com serviços
+e bases de dados de organizações externas, bem como as estruturas de armazenamento
+de dados persistentes. Com o objetivo de reduzir o tempo de resposta, a quantidade de
+requisições efetuadas para as dependências externas e o custo geral de processamento,
+foi implementado um cache baseado em estruturas de chave-valor (utilizando o Redis), o
+qual armazena temporariamente as respostas de consultas realizadas às APIs ORCID e
+a bases de dados bibliográficas.
+5.2
+PERFIL DO USUÁRIO
+De modo a fornecer recomendações mais próximas das linhas de pesquisa recentes, o
+perfil do usuário é construído com base em informações dos trabalhos e publicações em
+que participou. Essas informações são coletadas principalmente pela API ORCID, onde
+registros detalhados de publicações e colaborações dos usuários são centralizados. Utili-
+zando esses dados, o sistema pode buscar artigos com temáticas e abordagens similares,
+o que permite gerar recomendações de artigos mais relevantes para o usuário. Esse per-
+fil é ajustado continuamente para refletir os novos interesses e descobertas do usuário
+ao longo do tempo, proporcionando uma experiência de recomendação alinhada ao seu
+desenvolvimento acadêmico.
+O perfil de usuário não é salvo em banco de dados, e suas informações são recuperadas
+através das integrações em cada fluxo de recomendação. Essa escolha foi feita para garan-
+tir que as recomendações sejam sempre baseadas nos dados mais atualizados, eliminando
+36
+PAPERMAN - UM SISTEMA DE RECOMENDAÇÃO DE ARTIGOS CIENTÍFICOS
+a necessidade de sincronização manual. Essa característica traz a vantagem de flexibilizar
+o modelo, ao mesmo tempo em que reduz a possibilidade de informações desatualizadas
+afetarem as recomendações. No entanto, isso também constitui um ponto de falha em
+caso de erro na comunicação com as integrações, o que pode interromper o processo de
+geração de recomendações em tempo real e exigir que o sistema implemente estratégias
+de recuperação.
+Seja U o conjunto de todos os usuários, I o conjunto de itens (publicações científicas),
+e P(u) o perfil de um usuário u ∈U, construído com base em suas interações passadas
+com itens de I. O perfil do usuário é definido por um vetor de características P(u) =
+(w1, w2, . . . , wn), em que cada wi representa o peso de uma palavra-chave extraída de suas
+publicações (obtidas pela API ORCID). O sistema calcula a similaridade entre o perfil de
+um usuário e os itens recomendados utilizando uma métrica de proximidade semântica.
+5.3
+MODELO DO ITEM A SER RECOMENDADO
+Para gerar uma lista de recomendações com as publicações, além de construir o perfil do
+usuário, também é necessário construir o modelo do item, que representa uma publicação
+científica. Esse item possui um subconjunto de atributos obrigatórios e outro de atributos
+opcionais, que são incorporados quando disponíveis, tais como o nome do periódico ou da
+conferência, a editora, o tipo de acesso (aberto ou fechado) e a Identificador de Objeto
+Digital (DOI).
+Formalmente, cada item (p ∈P) é representado por uma tupla de atributos que
+descrevem suas propriedades essenciais e complementares:
+p = ⟨tp, ap, yp, lp, τp, pp, ep, αp, dp, ...⟩,
+em que tp é o título da publicação; ap é a lista de autores; yp é o ano de publicação;
+lp é olink de acesso à publicação; τp é o tipo de publicação, indicando se se trata de
+artigo de periódico, conferência, livro, capítulo ou outro formato científico. Como campos
+opcionais, são pp que é o nome do periódico ou conferência onde o trabalho foi publicado;
+ep é a editora responsável pela publicação; αp é o tipo de acesso; e dp é o DOI. Poderá
+haver outros atributos opcionais além dos mencionados.
+5.4
+MODELO DE RECOMENDAÇÃO
+De acordo com o Algoritmo 1, o processo de recomendação se inicia com a obtenção dos
+dados do usuário (linha 1) e com a inicialização das variáveis de controle (linhas 2-3).
+O sistema itera pelas fontes de dados (linha 4) e, para cada uma, verifica se provêm
+do serviço ORCID (linha 5). Em caso positivo, um resumo dos tópicos de interesse é
+gerado (linha 6). Caso a lista de tópicos não esteja vazia (linha 7), para cada tópico
+identificado (linha 8), consultas de busca são construídas (linha 9) e executadas contra
+a API OpenAlex para coletar publicações candidatas (linha 12). O conjunto obtido é
+unificado e, posteriormente, sanitizado (linha 14), removendo itens inválidos. Se houver
+candidatos disponíveis (linha 16), a função de seleção é acionada para identificar a “melhor
+publicação” (linha 17). Se a publicação escolhida for válida e inédita (linha 18), ela é
+5.4 MODELO DE RECOMENDAÇÃO
+37
+Algoritmo 1: Recomendação de trabalhos relacionados
+Input: id ∈Z (identificador do usuário)
+Output: P (lista de publicações)
+1 U ←usuário(id);
+2 S ←∅;
+3 P ←∅;
+4 foreach s ∈U.fontes do
+5
+if sserviço = ORCID then
+6
+S ←resumo_usuário(surl);
+7 if S ̸= ∅then
+8
+foreach t ∈S do
+9
+T (t) ←construir_consulta(t);
+10
+Pt ←∅;
+11
+foreach q ∈T (t) do
+12
+Pq ←buscar_publicações(q);
+13
+Pt ←Pt ∪Pq;
+14
+Pt ←{p ∈Pt : publicações_válidas(p)};
+15
+pmelhor ←∅;
+16
+if Pt ̸= ∅then
+17
+pmelhor ←selecionar_melhor(Pt, t, U);
+18
+if pmelhor ̸= ∅then
+19
+P ←P ∪{pmelhor};
+20
+if |P| = 10 then
+21
+return P;
+22 return P;
+38
+PAPERMAN - UM SISTEMA DE RECOMENDAÇÃO DE ARTIGOS CIENTÍFICOS
+adicionada à lista de recomendações (linha 19). O processo verifica se o limite de dez
+sugestões foi atingido (linha 20) para retorno imediato (linha 21), ou continua até finalizar
+as fontes, retornando a lista final na linha 22.
+Para garantir a seleção das publicações mais próximas do perfil do pesquisador, o mé-
+tricas de proximidade vetorial foram utilizadas, de modo a selecionar palavras-chave com
+o maior nível de proximidade semântica entre as publicações retornadas pelas integrações
+e os trabalhos realizados pelo usuário.
+simCosine(u, v) =
+P
+i∈Iuv rui · rvi
+qP
+i∈Iuv r2
+u,i
+qP
+i∈Iuv r2
+v,i
+(5.1)
+Na etapa selecionar_melhor do algoritmo de recomendação, a seleção da melhor
+publicação, pmelhor, é realizada ao identificar, no conjunto de candidatas Pt, a publicação
+que maximiza um score composto por quatro componentes normalizados no intervalo
+[0, 1]: similaridade semântica (Sem), ano de publicação (Ano), impacto por citações
+(Cit) e prestígio do veículo de publicação (Rel).
+A combinação multiplicativa desses
+fatores garante que uma publicação só obtenha pontuação elevada se for simultaneamente
+relevante, recente, impactante e publicada em veículo de qualidade:
+pmelhor = arg max
+p∈Pt
+Sem(p, t) ∗Ano(p) ∗Cit(p) ∗Rel(p)
+(5.2)
+O componente de similaridade semântica Sem(p, t) é calculado por meio da com-
+paração par a par entre os termos extraídos do tópico do pesquisador, Wt, e os termos
+do título do artigo candidato, Wp, utilizando modelos de word embedding. O valor final
+corresponde à média das métricas de similaridade todos os pares de palavras:
+Sem(p, t) =
+1
+|Wt| · |Wp|
+X
+wt∈Wt
+X
+wp∈Wp
+sim(wt, wp)
+(5.3)
+onde sim(ru, rv) representa a similaridade de cosseno entre os vetores de duas palavras
+ru e rv:
+sim(ru, rv) =
+ru · rv
+∥ru∥∥rv∥=
+Pn
+i=1 rui · rvi
+qPn
+i=1 r2
+ui
+qPn
+i=1 r2
+vi
+(5.4)
+O componente de ano de publicação Ano(p) penaliza artigos mais antigos por meio
+de um decaimento logarítmico, normalizando a idade da publicação em relação à janela
+temporal máxima considerada (∆max):
+Ano(p) = max
+ 
+0, 1 −ln(idade(p) + 1)
+ln(∆max + 1)
+!
+(5.5)
+O componente de impacto por citações Cit(p) normaliza o número de citações
+por ano de vida da publicação (CPY) utilizando normalização Min-Max local em rela-
+ção ao conjunto de candidatos da rodada, eliminando a necessidade de limiares globais
+arbitrários:
+5.5 INTERFACE DE AVALIAÇÃO E FUNCIONALIDADES
+39
+CPY(p) =
+ncitações(p)
+max(1, ano_atual −ano(p) + 1)
+Cit(p) = CPY(p) −CPYmin
+CPYmax −CPYmin
+(5.6)
+Por fim, o componente de fator de relevância do veículo de publicação (Rel)
+avalia o prestígio acadêmico do periódico ou conferência onde o artigo foi publicado. Esta
+variável confere flexibilidade à arquitetura, podendo ser instanciada por diferentes métri-
+cas globais de impacto, como o Impact Factor (JCR) ou o SCImago Journal Rank (SJR).
+No escopo de validação deste trabalho, optou-se por instanciar Rel(p) retornando uma
+pontuação proporcional ao estrato Qualis CAPES do veículo, de acordo com o registro
+mantido pelo Programa de Pós-Graduação em Ciência da Computação da PUCRS1, com
+valores mapeados linearmente em [0, 1].
+A natureza multiplicativa do score final (Equação 5.2) é uma escolha de design de-
+liberada: qualquer componente com valor próximo de zero, seja por baixa relevância
+semântica, ano de publicação distante da janela temporal considerada, ausência de cita-
+ções ou publicação em veículo sem classificação, reduz o score geral à proximidade de zero,
+independentemente do desempenho dos demais fatores. Isso impede que artigos muito
+citados, porém semanticamente irrelevantes, dominem o ranking de recomendações.
+O método de obtenção e avaliação de itens do sistema pode ser adaptado para uti-
+lizar diversas métricas de proximidade semântica, conforme as necessidades específicas
+do contexto de aplicação. A arquitetura do sistema Paperman foi projetada com essa
+flexibilidade em vista, permitindo ajustar o componente de similaridade semântica a di-
+ferentes tipos de conteúdo acadêmico, como artigos, livros, datasets ou pré-publicações, e
+a variados perfis de usuários, considerando suas áreas de interesse, histórico de pesquisa
+e padrões de leitura.
+Por fim, a arquitetura do sistema Paperman foi projetada para ser flexível, permi-
+tindo a incorporação de diferentes métricas de similaridade, como a cosine similarity, a
+distância euclidiana ou a correlação de Pearson, conforme as necessidades específicas do
+contexto de aplicação. Essa modularidade permite ajustar o sistema a diferentes tipos
+de conteúdo acadêmico, como artigos, livros, datasets ou pré-publicações, e a variados
+perfis de usuários, considerando suas áreas de interesse, histórico de pesquisa e padrões
+de leitura. Além disso, a adaptação das métricas de similaridade e dos algoritmos de
+recomendação permite refinar continuamente a precisão das sugestões, tornando-as mais
+relevantes e personalizadas, o que pode aumentar a eficiência na descoberta de novos
+trabalhos e apoiar, de forma mais eficaz, a tomada de decisão acadêmica.
+5.5
+INTERFACE DE AVALIAÇÃO E FUNCIONALIDADES
+Para a coleta de dados do experimento, foi desenvolvida uma interface web de avaliação2,
+acessível diretamente pelo navegador, sem necessidade de instalação de componentes
+adicionais. A aplicação foi construída com HTML, CSS e JavaScript, integrada ao back-
+1<https://ppgcc.github.io/discentesPPGCC/pt-BR/qualis>
+2<https://paperman-omega.vercel.app/>
+40
+PAPERMAN - UM SISTEMA DE RECOMENDAÇÃO DE ARTIGOS CIENTÍFICOS
+end Python via API REST, e disponibilizada publicamente durante o período de coleta
+de dados.
+O fluxo de interação do participante ocorre em duas etapas. Na primeira, ilustrada
+na Figura 5.2, o usuário informa seu identificador ORCID no formulário disponível e
+aciona a geração de recomendações. O sistema consulta o perfil do pesquisador via API
+ORCID, extrai os conceitos-chave de suas publicações, realiza buscas na API bibliográfica
+e aplica o motor de pontuação multiplicativo, retornando uma lista com até dez artigos
+recomendados.
+Figura 5.2 Interface web de avaliação do sistema Paperman utilizada no experimento.
+Na segunda etapa, os artigos recomendados são exibidos com título clicável (redireci-
+onando para o DOI do artigo), lista de autores, veículo de publicação e ano. Para cada
+artigo, o participante atribui uma nota de relevância em uma escala de 1 a 5, em que
+1 representa ausência de relevância e 5 representa relevância máxima em relação à sua
+linha de pesquisa. Ao finalizar, opcionalmente, deixa comentários sobre as recomenda-
+ções recebidas. As avaliações são registradas diretamente na base de dados MongoDB do
+sistema.
+5.6
+RECOMENDAÇÃO EM AÇÃO
+O processo de recomendação é iniciado pelo participante ao informar seu identificador
+ORCID na interface web de avaliação. A requisição é enviada ao back-end, que autentica
+o usuário e recupera, por meio da API ORCID, os títulos das publicações às quais o
+pesquisador contribuiu.
+A partir dos títulos recuperados, o sistema extrai bigramas representativos, utilizados
+como consultas de busca na API bibliográfica. Para cada consulta, uma lista de artigos
+candidatos é retornada e acumulada. Os parâmetros utilizados nas buscas e seus resul-
+tados são armazenados em cache no Redis, o que proporciona ganhos de escalabilidade e
+5.7 TECNOLOGIAS
+41
+reduz a latência para usuários com perfis de pesquisa similares.
+Após o retorno das listas de publicações candidatas, cada uma passa por uma etapa
+de pós-processamento, que inclui a normalização dos dados, a remoção de entradas em
+idiomas não suportados, a filtragem de artigos já recomendados anteriormente ao usuário
+e a limpeza de stopwords. Os artigos remanescentes são então pontuados pelo motor de
+scoring multiplicativo descrito na Equação 5.2, composto pelos fatores de similaridade
+semântica, ano de publicação, impacto por citações e prestígio do veículo. A Figura 5.3
+apresenta um exemplo das informações manipuladas e processadas pela API durante este
+fluxo.
+Figura 5.3 Exemplo de item em lista de recomendações gerada pela API Paperman.
+Ao final do processamento, os dez artigos com maior score são selecionados e retor-
+nados à interface web, onde são exibidos ao participante de forma estruturada e hu-
+manamente legível, conforme descrito na Seção 5.5. O participante então avalia cada
+recomendação em uma escala de 1 a 5, e as avaliações são registradas diretamente na
+base de dados MongoDB do sistema para posterior análise.
+5.7
+TECNOLOGIAS
+A aplicação foi construída com base em um back-end Python 3.11, utilizando o framework
+FastAPI para a criação e estruturação de uma API que obedece aos princípios da arqui-
+tetura de software REST. Dentre as bibliotecas de maior relevância para os fluxos do
+sistema, destacam-se Pandas, NLTK, Gensim e Pydantic. O projeto também conta com
+42
+PAPERMAN - UM SISTEMA DE RECOMENDAÇÃO DE ARTIGOS CIENTÍFICOS
+integrações a serviços externos. Para comunicação com o back-end e para a exibição dos
+componentes, a extensão utiliza HTML, CSS e JavaScript. A persistência de dados foi
+projetada com base em um banco de dados MongoDB, que consiste em duas coleções.
+Uma delas possui dados dos usuários, como fontes para recuperação de informações que
+montarão o perfil utilizado nas recomendações e seus resultados. A outra contém infor-
+mações sobre locais de publicação, como periódicos e conferências. Estas informações
+também alimentam o cache do Redis. Toda a estrutura foi hospedada em um Servidor
+Virtual Privado (VPS) rodando o sistema operacional Ubuntu, em sua versão 22.04.
+5.8
+SUMÁRIO
+Neste capítulo foram expostos os detalhes acerca da estratégia de recomendação elabo-
+rada, da arquitetura do projeto e das tecnologias empregadas, das equações utilizadas
+no processo e dos exemplos dos resultados produzidos pela API e pela extensão. Tam-
+bém foram expostas algumas notações matemáticas comumente aplicadas na criação e
+no aperfeiçoamento de SRs, as quais foram utilizadas no desenvolvimento da plataforma
+e na construção dos modelos de usuário e de objeto de recomendação.
+Capítulo
+6
+AVALIAÇÃO EXPERIMENTAL PRELIMINAR
+Este capítulo apresenta a validação experimental do Sistema de Recomendação (SR)
+Paperman sob duas perspectivas complementares: um experimento offline controlado,
+utilizando o corpus DBLP-v10 com 49 autores, e um experimento online no formato de
+Teste A/B cego com 27 pesquisadores reais. Ambos os experimentos visam investigar a
+eficácia do sistema em gerar recomendações precisas e alinhadas ao perfil acadêmico dos
+usuários.
+6.1
+PROTOCOLO DE AVALIAÇÃO
+Ambos os experimentos compartilham o mesmo conjunto de métricas de avaliação quanti-
+tativa. Para o cálculo das métricas, definem-se dois conjuntos fundamentais: g representa
+o conjunto de artigos relevantes (gabarito, ou ground truth); e r representa o conjunto
+de artigos efetivamente recomendados pelo sistema.
+6.1.1
+Métricas de Avaliação
+A precisão é calculada como a proporção de artigos recomendados que são de fato rele-
+vantes:
+precision = |g ∩r|
+|r|
+(6.1)
+O Mean Reciprocal Rank (MRR) mede a posição média do primeiro artigo relevante
+na lista de recomendações:
+MRR = 1
+m
+m
+X
+i=1
+1
+ranki
+(6.2)
+onde m representa o total de consultas e ranki indica a posição do primeiro artigo relevante
+na i-ésima recomendação. O Mean Average Precision (MAP) agrega a precisão em cada
+posição relevante da lista:
+MAP = 1
+m
+m
+X
+i=1
+1
+|gi|
+|gi|
+X
+j=1
+P@kij
+(6.3)
+43
+44
+AVALIAÇÃO EXPERIMENTAL PRELIMINAR
+onde |gi| é o número de artigos relevantes para o i-ésimo usuário e P@kij corresponde
+à precisão até a posição do j-ésimo artigo relevante. Por fim, o Normalized Discounted
+Cumulative Gain (nDCG) avalia a qualidade do ordenamento, penalizando artigos re-
+levantes em posições mais baixas,s valores próximos de 1 indicam que os artigos mais
+relevantes estão consistentemente no topo da lista.
+6.2
+AVALIAÇÃO VIA EXPERIMENTO OFFLINE
+Para complementar os resultados da Avaliação Experimental, formando uma classifica-
+ção quantitativa e controlada do sistema de recomendação, conduziu-se um experimento
+offline. Esta abordagem permite validar a eficácia do modelo sem a necessidade de inte-
+ração direta com o usuário final, utilizando um conjunto de dados históricos como base
+para simular o processo de recomendação e aferir sua performance. O processo pode
+ser dividido em quatro etapas principais: definição do conjunto de dados, geração de
+recomendações, cálculo de métricas de avaliação e análise dos resultados.
+6.2.1
+Conjunto de Dados
+A primeira fase do experimento consistiu na criação de um conjunto de dados de teste
+robusto, utilizando o DBLP-v101 com aproximadamente 1,38 GB de registros de pu-
+blicações. O corpus foi utilizado localmente em formato CSV, estratégia adotada para
+possibilitar a manipulação em larga escala sem a necessidade de mecanismos de rate li-
+miting ou acesso a Interfaces de Programação de Aplicações (APIs) externas durante a
+fase de busca por candidatos.
+Para a composição do conjunto experimental, foram selecionados 49 autores com
+mais de 30 publicações registradas no corpus, critério adotado para garantir que cada
+perfil dispusesse de dados suficientes para o protocolo Hold-Out com margem de segu-
+rança. O experimento foi estruturado sob o protocolo Hold-Out com Candidate Injection:
+para cada autor, os primeiros 20 trabalhos publicados no período considerado foram uti-
+lizados como conjunto de treino, servindo de base para a construção do perfil de interesse
+do pesquisador. Os 10 trabalhos seguintes foram injetados artificialmente na lista de
+candidatos como gabarito (ground truth), permitindo mensurar com precisão a capaci-
+dade do sistema de recuperar publicações relevantes. A janela temporal do experimento
+foi delimitada entre 2013 e 2017, de modo a simular um cenário controlado de avaliação
+retroativa.
+1https://www.kaggle.com/datasets/nechbamohammed/research-papers-dataset
+6.2 AVALIAÇÃO VIA EXPERIMENTO OFFLINE
+45
+Tabela 6.1 Configuração do Experimento Offline.
+Parâmetro
+Valor
+Corpus
+DBLP-v10
+Tamanho do corpus
+≈1,38 GB (formato CSV)
+Critério de seleção de autores
+Mínimo de 30 publicações no corpus
+Autores avaliados
+49
+Protocolo
+Hold-Out com Candidate Injection
+Conjunto de treino (por autor)
+20 publicações
+Conjunto de gabarito (por autor)
+10 publicações
+Candidatos por pool
+≈100 (90 aleatórios + 10 gabarito)
+Janela temporal
+2013–2017
+Idiomas considerados
+Português e inglês
+Modelos avaliados
+4 (Baseline Aleatório, Baseline Semântico, Multiplicativo, Paperman
+v1)
+Critério de relevância
+Coautoria, citação direta ou citação inversa
+6.2.2
+Metodologia
+Uma vez estabelecido o conjunto de autores para a avaliação, o sistema Paperman con-
+duziu um processo metodológico rigoroso para gerar recomendações personalizadas. Os
+perfis temáticos de cada autor foram construídos a partir de seus títulos de publicações
+pré-carregados em memória a partir do arquivo de dados experimental, dispensando cha-
+madas à API do ORCID durante esta etapa. Esta escolha garantiu a reprodutibilidade
+do experimento e a eliminação de variáveis externas relacionadas à disponibilidade de
+serviços de terceiros.
+Com o perfil temático estabelecido, o sistema construiu, para cada título de treino,
+um pool de candidatos por meio de amostragem aleatória: 90 artigos foram sorteados uni-
+formemente do corpus DBLP-v10, aos quais foram adicionados os 10 artigos do gabarito,
+formando um pool de aproximadamente 100 candidatos. Essa estratégia elimina o viés de
+pré-filtragem textual e simula um cenário de descoberta mais desafiador, no qual o motor
+de scoring precisa identificar os artigos relevantes exclusivamente por meio da fórmula de
+ranqueamento. O pool foi filtrado pela janela temporal definida (2013–2017) e por idioma
+(português e inglês) para assegurar que os candidatos representassem publicações válidas
+no período avaliado.
+Na etapa de ranqueamento, quatro estratégias de pontuação foram comparadas, defi-
+nidas a partir de um processo incremental de composição do modelo. Partiu-se de uma
+abordagem puramente semântica e, progressivamente, foram incorporados os fatores de
+Ano, Cit e Rel, até alcançar a fórmula multiplicativa completa adotada pelo sistema. A
+Tabela 6.2 descreve cada estratégia avaliada.
+46
+AVALIAÇÃO EXPERIMENTAL PRELIMINAR
+Tabela 6.2 Estratégias de pontuação avaliadas no experimento offline.
+Estratégia
+Componentes
+Descrição
+Baseline Aleatório
+—
+Ordenação randômica dos candidatos; piso de comparação
+Baseline Semântico
+Sem
+Proximidade vetorial entre perfil do autor e artigo candi-
+dato
+Sem*Ano*Cit*Qualis
+Sem, Ano, Cit, Rel
+Fórmula multiplicativa completa (proposta deste trabalho)
+Paperman v1
+Sem, Ano, Rel
+Fórmula aditiva com Semântica, Ano e Rel, sem o compo-
+nente Citação
+Uma limitação metodológica relevante diz respeito ao componente de citações. O
+corpus DBLP-v10 não disponibiliza contagens de citações para os artigos indexados,
+de modo que este fator foi zerado em todos os modelos avaliados. Em consequência,
+o modelo Sem*Ano*Cit*Qualis comportou-se de forma equivalente ao componente
+semântico isolado nesta etapa. A validação do componente de citações foi conduzida
+exclusivamente no experimento online, no qual os artigos candidatos foram recuperados
+via API de metadados bibliográficos, que fornece métricas de citação em tempo real.
+6.2.3
+Métricas de Avaliação
+A etapa final do experimento offline consistiu em calcular métricas de performance para
+avaliar a qualidade das recomendações. Para isso, foi estabelecida uma heurística de
+relevância fundamental, segundo a qual uma recomendação era considerada relevante se
+o autor-alvo estivesse listado como autor principal ou como um dos coautores do artigo
+recomendado. Complementarmente, foram utilizados dois proxies adicionais de relevância
+para triangulação: (i) o autor-alvo já ter citado o artigo recomendado em algum de seus
+trabalhos anteriores e (ii) o artigo recomendado citar pelo menos um trabalho do autor-
+alvo. O critério primário de acerto considerou a união dos três proxies. As métricas
+quantitativas utilizadas para mensurar a qualidade das recomendações estão definidas na
+Seção 6.1.1.
+6.2.4
+Resultados
+Os resultados do experimento offline são apresentados na Tabela 6.3, que consolida as
+métricas de P@K, MRR@K e nDCG@10 para os quatro modelos avaliados sobre os 49
+autores do corpus DBLP-v10.
+6.2 AVALIAÇÃO VIA EXPERIMENTO OFFLINE
+47
+Tabela 6.3 Comparativo de métricas dos modelos de scoring — Experimento Offline (N = 49).
+Modelo
+P@3
+MRR@3
+P@5
+MRR@5
+P@10
+nDCG@10 Hits
+Baseline Aleatório
+0,231
+0,374
+0,216
+0,416
+0,198
+0,556
+47/49
+Baseline Semântico
+0,265
+0,449
+0,224
+0,483
+0,192
+0,568
+42/49
+Multiplicativo
+0,197
+0,371
+0,180
+0,403
+0,135
+0,446
+34/49
+Paperman v1
+0,163
+0,296
+0,135
+0,320
+0,112
+0,392
+30/49
+O modelo Multiplicativo superou o Paperman v1 em todas as métricas avaliadas,
+com ganhos de 20,9% em P@3 (0,197 contra 0,163) e 25,3% em MRR@3 (0,371 contra
+0,296), evidenciando que a combinação de similaridade semântica com recência temporal e
+classificação Qualis produz recomendações mais precisas mesmo em ambiente controlado.
+O Baseline Aleatório registrou o maior número de acertos absolutos (47/49 autores),
+fenômeno explicado pelo Efeito Pool Denso: com 10 artigos gabarito injetados em um
+pool médio de 44 candidatos, aproximadamente 22% do pool já corresponde ao gabarito,
+inflando artificialmente os acertos do modelo aleatório. Este efeito tende a desaparecer
+em cenários com corpora abertos e pools de candidatos de maior escala.
+O modelo Baseline Semântico, baseado exclusivamente em similaridade semântica,
+obteve os melhores resultados entre os modelos não-aleatórios nesta etapa, com P@3
+de 0,265 e MRR@3 de 0,449.
+Este resultado é explicado pela ausência de dados de
+citação no corpus DBLP-v10: sem o componente de citações, os fatores adicionais de
+recência e Qualis introduzem ruído ao ranqueamento em vez de refiná-lo. No experimento
+online (Seção 6.3), onde os artigos candidatos foram recuperados via API OpenAlex
+com métricas de citação em tempo real, o modelo Multiplicativo superou o Baseline
+Semântico em cinco das seis métricas avaliadas, confirmando que a contribuição dos
+fatores acadêmicos depende da disponibilidade de dados completos.
+O desempenho inferior do Multiplicativo em relação ao esperado nesta etapa é expli-
+cado pela ausência de dados de citação no corpus DBLP-v10, conforme descrito na seção
+de metodologia. A validação efetiva da contribuição do fator de citações foi conduzida
+exclusivamente no experimento online.
+6.2.5
+Comparação de Baselines
+A partir da releitura dos trabalhos utilizados como base de fundamentação deste estudo,
+realizou-se uma consulta à literatura para fins comparativos, dados os respectivos con-
+textos de cada implementação. Alguns destes não possuíam detalhamento das posições
+calculadas para suas métricas ou tinham critérios de avaliação muito distintos para serem
+considerados nesta comparação.
+48
+AVALIAÇÃO EXPERIMENTAL PRELIMINAR
+Tabela 6.4 Comparativo de Métricas entre o Algoritmo Paperman e Baselines.
+Algoritmo
+Baseline
+Dataset/Contexto MRR
+P@K
+nDCG
+Observações
+Random
+News RecSys 2024
+0,31
+N/A
+0,35
+K não informado para MRR e
+P. K = 5 para nDCG.
+Collab. Filtering
+(BPR)
+MovieLens
+(ml-100k)
+0,39
+0,16
+0,23
+K=10.
+CB (TF-IDF +
+Cosine)
+Academic Collab.
+N/A
+0,78
+0,89
+K = 10 para as métricas dispo-
+níveis.
+Content-Based
+(TF-IDF)
+General Rec.
+N/A
+N/A
+0,76
+K não especificado.
+Paperman
+(Multiplicativo)
+DBLP-v10
+0,371
+0,197
+0,446
+K=3 para MRR e P. K=10
+para nDCG.
+A Tabela 6.4 ilustra os estudos que podem ser comparados com a implementação de
+Paperman, tanto a nível de algoritmo quanto em configurações de experimento e métricas
+de avaliação. Nela estão dispostos o nome de cada algoritmo, o dataset ou contexto em
+que ele foi aplicado, os valores obtidos para cada uma das métricas em uma posição K e
+possíveis observações que facilitem a compreensão dos dados apresentados.
+Dados os resultados apresentados, é possível afirmar que o algoritmo aplicado em
+Paperman apresenta desempenho competitivo em relação aos baselines da literatura, no
+contexto de recomendação de artigos científicos avaliado. Os resultados indicam que o
+modelo Multiplicativo do Paperman apresenta desempenho competitivo frente aos baseli-
+nes da literatura, superando abordagens tradicionais de filtragem colaborativa e igualando
+sistemas baseados em conteúdo no contexto de recomendação de artigos científicos. A
+Figura 6.1 ilustra um exemplo de pesquisador que recebeu uma recomendação relevante
+no início da lista, localizada no primeiro índice.
+Figura 6.1 Exemplo de recomendação relevante no início da lista.
+6.3 EXPERIMENTO ONLINE
+49
+6.3
+EXPERIMENTO ONLINE
+O experimento teve como objetivo avaliar a efetividade do sistema proposto, retomando
+as questões de pesquisa enunciadas na Seção ?? e verificando em que medida o sistema
+Paperman é capaz de gerar recomendações precisas, alinhadas ao perfil do pesquisador e
+sustentadas dinamicamente a partir do histórico de publicações do usuário.
+6.3.1
+Metodologia
+O processo de avaliação inicia-se com a geração de recomendações personalizadas para
+cada pesquisador participante. O sistema utiliza o perfil do pesquisador, construído com
+base em seu histórico de publicações no ORCID, para gerar uma lista de artigos científicos.
+Estas recomendações são apresentadas por meio da interface do sistema, exibindo título,
+autores, ano de publicação, venue e tipo de acesso.
+Para capturar a percepção de cada sugestão, o pesquisador avalia a relevância de cada
+artigo em uma escala Likert de 5 pontos, em que 1 indica “Nada relevante” e 5 indica
+“Muito relevante”, conforme ilustrado na Figura 5.2. Opcionalmente, o participante pode
+fornecer comentários qualitativos sobre a utilidade das recomendações. As avaliações e
+metadados são armazenados para análise posterior.
+Com o objetivo de avaliar comparativamente o impacto da estratégia de pontuação
+adotada, o experimento foi conduzido sob o formato de Teste A/B cego com 27 pesqui-
+sadores recrutados por formulário voluntário. Cada participante forneceu seu nome e o
+título de sua principal linha de pesquisa e recebeu dois lotes de 10 recomendações: a
+Lista 1 (abordagem multiplicativa, combinando proximidade semântica, Qualis e atuali-
+dade temporal) e a Lista 2 (Baseline Semântico, baseada exclusivamente em proximidade
+vetorial). A apresentação foi realizada de forma cega, garantindo a imparcialidade das
+avaliações.
+Tabela 6.5 Configuração do Experimento Online (Teste A/B).
+Parâmetro
+Valor
+Participantes
+27 pesquisadores
+Recrutamento
+Formulário voluntário
+Entrada do usuário
+Nome e título da principal linha de pesquisa
+Formato
+Teste A/B cego
+Recomendações por lista
+10 artigos
+Listas por participante
+2 (Lista 1 e Lista 2)
+Modelos avaliados
+Multiplicativo e Baseline Semântico
+Fonte dos candidatos
+Preenchimento de planilha
+Critério de relevância
+Avaliação Likert ≥3 (escala de 1 a 5)
+Coleta de dados
+Formulário de avaliação + feedback qualitativo
+50
+AVALIAÇÃO EXPERIMENTAL PRELIMINAR
+6.3.2
+Métricas de Avaliação
+Para o experimento online, a relevância de cada recomendação foi determinada com base
+na avaliação atribuída pelo participante em escala Likert de 1 a 5, sendo considerados
+relevantes os artigos com nota igual ou superior a 3. As métricas quantitativas utilizadas
+para mensurar a qualidade das recomendações estão definidas na Seção 6.1.1.
+6.3.3
+Conjunto de dados
+Para avaliar o SR Paperman, utilizou-se um conjunto de dados dinâmico e personalizado,
+construído com base no histórico de publicações de cada pesquisador cadastrado na pla-
+taforma ORCID. Esta abordagem permite que o sistema gere recomendações altamente
+relevantes e específicas para cada usuário, com base em seu perfil acadêmico.O conjunto
+de dados de cada pesquisador depende das informações cadastradas por ele, mas possui
+uma estrutura predefinida. As publicações em periódicos apresentam seu título, subtítulo
+e título traduzido (se aplicável), o nome do veículo, a visibilidade (público ou privado),
+a data de publicação e a URL do artigo, se disponível. Relatórios ou capítulos de livros
+incluem as páginas referentes ao trabalho, e papers de conferências informam a localidade
+em caso de evento presencial.
+6.3.4
+Resultados
+Os resultados do experimento são apresentados em duas dimensões complementares: as
+métricas automáticas de ranqueamento, calculadas com base nas avaliações Likert atri-
+buídas pelos participantes (considerando nota ≥3 como relevante), e as médias do ques-
+tionário pós-avaliação, que capturam a percepção subjetiva dos pesquisadores sobre cada
+lista de recomendações.
+A Tabela 6.6 apresenta as métricas agregadas de ranqueamento para as duas aborda-
+gens avaliadas no experimento.
+Tabela 6.6 Métricas de ranqueamento agregadas do Teste A/B (n = 27).
+Métrica
+Lista 1
+Multiplicativo
+Lista 2
+Baseline Semântico
+MRR
+0,6602
+0,6319
+MAP
+0,6022
+0,5439
+nDCG
+0,8550
+0,8895
+P@5
+0,5037
+0,3852
+P@10
+0,5259
+0,4074
+Média Likert (1–5)
+2,78
+2,33
+A Tabela 6.7 apresenta as médias por dimensão do questionário pós-avaliação aplicado
+ao final do experimento, em escala Likert de 1 a 5.
+6.3 EXPERIMENTO ONLINE
+51
+Tabela 6.7 Médias do questionário de percepção subjetiva por dimensão (n = 27).
+Dimensão
+Lista 1 —
+Multiplicativo
+Lista 2 — Cosseno
+Relevância
+3,07
+2,56
+Diversidade
+3,04
+2,78
+Precisão
+2,67
+1,96
+Atualidade
+3,48
+2,59
+Surpresa
+2,85
+2,15
+Conforme evidenciado nas Tabelas 6.6 e 6.7, a Lista 1 (abordagem multiplicativa)
+obteve desempenho superior em cinco das seis métricas automáticas de ranqueamento,
+com destaque para P@5 (0,5037 contra 0,3852) e MAP (0,6022 contra 0,5439). A única
+exceção foi o nDCG, no qual a abordagem baseada em similaridade de cosseno registrou
+valor superior (0,8895 contra 0,8550). Na dimensão subjetiva, a Lista 1 superou a Lista 2
+em todas as cinco dimensões do questionário, com diferença mais expressiva na atualidade
+(3,48 contra 2,59) e na precisão (2,67 contra 1,96).
+6.3.5
+Discussão
+Os resultados do Teste A/B indicam que a abordagem multiplicativa (Lista 1) apresentou
+desempenho superior à abordagem baseada exclusivamente em similaridade de cosseno
+(Lista 2) na maioria das métricas avaliadas. A melhoria mais expressiva foi observada na
+precisão das primeiras posições da lista: a P@5 da Lista 1 foi 30,8% superior à da Lista
+2 (0,5037 contra 0,3852), o que indica que a fórmula multiplicativa posiciona artigos
+genuinamente relevantes no topo das recomendações com maior frequência.
+O MRR
+superior da Lista 1 (0,6602 contra 0,6319) reforça essa constatação, evidenciando que o
+primeiro item relevante tende a aparecer em posições mais altas quando os critérios de
+Qualis e atualidade temporal são incorporados à pontuação.
+Na dimensão subjetiva, a Lista 1 superou a Lista 2 em todas as cinco dimensões
+do questionário pós-avaliação. A diferença mais acentuada foi observada na atualidade
+(3,48 contra 2,59), o que valida diretamente a contribuição do fator temporal presente na
+fórmula multiplicativa: ao penalizar artigos mais antigos, o sistema tende a recomendar
+publicações mais recentes, percebidas pelos pesquisadores como mais relevantes ao estado
+da arte de suas áreas. A dimensão precisão também apresentou diferença expressiva (2,67
+contra 1,96), corroborando os resultados das métricas automáticas de P@5 e MAP.
+A única métrica na qual a abordagem de cosseno (Lista 2) obteve valor superior
+foi o nDCG (0,8895 contra 0,8550). Este resultado pode ser explicado pelo fenômeno
+de atração semântica: ao basear-se exclusivamente na similaridade textual, a Lista 2
+tende a ranquear nos primeiros lugares artigos com alta sobreposição de vocabulário em
+relação ao título de pesquisa fornecido pelo participante. Esse comportamento inflaciona
+artificialmente o nDCG, visto que a métrica penaliza itens relevantes em posições mais
+baixas, mas não distingue a diversidade temática ou a qualidade do veículo de publicação.
+52
+AVALIAÇÃO EXPERIMENTAL PRELIMINAR
+A abordagem multiplicativa, ao equilibrar múltiplos critérios, distribui os artigos de forma
+mais heterogênea ao longo da lista, o que reduz marginalmente o nDCG sem comprometer
+— e, na prática, melhorando — a percepção de qualidade pelos usuários.
+Em relação às limitações identificadas, a dependência de plataformas externas para a
+geração de recomendações representa um fator de risco para a disponibilidade do sistema.
+Em caso de intermitência nos serviços consultados, o fluxo de recomendações pode ser
+interrompido, salvo quando as informações estiverem presentes no cache. Adicionalmente,
+o problema de cold start afeta o sistema Paperman: participantes cujo título de pesquisa
+apresenta terminologia muito restrita ou pouco representada no corpus tendem a receber
+recomendações menos alinhadas ao seu perfil acadêmico. Esses aspectos apontam para
+oportunidades de aprimoramento em iterações futuras do sistema.
+6.4
+SUMÁRIO
+Neste capítulo, a eficácia do sistema Paperman foi validada sob duas perspectivas com-
+plementares: um experimento offline controlado utilizando o corpus DBLP-v10 com 49
+autores e um experimento online no formato de Teste A/B cego com 27 pesquisado-
+res. Os resultados de ambas as avaliações confirmaram a superioridade do modelo de
+ranqueamento multiplicativo, que integra proximidade semântica, classificação Qualis,
+atualidade temporal e impacto por citações, frente a abordagens baseadas puramente
+em representação vetorial. No experimento online, o modelo multiplicativo superou o
+Baseline Semântico em todas as dimensões do questionário de percepção do usuário e na
+maioria das métricas de precisão (P@5 de 0,5037 e MAP@10 de 0,6022). As evidências
+empíricas sustentam a hipótese central deste estudo: a incorporação de métricas acadêmi-
+cas como fatores moduladores produz recomendações de artigos científicos mais robustas,
+relevantes e melhor alinhadas às expectativas dos pesquisadores.
+Capítulo
+7
+PROGRESSO E CRONOGRAMA
+Este capítulo apresenta os passos percorridos durante a pesquisa até o estágio atual,
+incluindo as disciplinas cursadas, o estado de implementação e os resultados obtidos, bem
+como os próximos passos e o cronograma a ser seguido até a defesa da dissertação.
+7.1
+VIDA ACADÊMICA
+Ao longo do mestrado, foram desenvolvidas atividades voltadas à formação teórica, ao
+desenvolvimento técnico do sistema e à condução dos experimentos de avaliação.
+A
+pesquisa concentrou-se no desenvolvimento de um sistema de recomendação de artigos
+científicos personalizado, denominado Paperman, abrangendo desde a modelagem do per-
+fil do pesquisador até a avaliação experimental por meio de experimentos online e offline.
+Entre disciplinas obrigatórias e optativas, foram cumpridas as cargas necessárias para a
+conclusão do curso.
+7.1.1
+Disciplinas Cursadas
+• PGCOMP/IC0028 — Seminários Científicos: Disciplina obrigatória na qual
+foram apresentados trabalhos desenvolvidos pelos diferentes grupos de pesquisa do
+programa de pós-graduação. A disciplina proporcionou uma visão ampla das linhas
+de pesquisa em Ciência da Computação, além de contribuir para o desenvolvimento
+da capacidade de síntese e comunicação científica. Esta disciplina foi ministrada
+pelo professor Manoel Gomes de Mendonça Neto.
+• PGCOMP/IC0029 — Fundamentos de Pesquisa em Ciência da Com-
+putação I: Disciplina obrigatória voltada ao processo de pesquisa científica em
+Computação. Abordou temas como metodologia científica, revisão sistemática da
+literatura, escrita acadêmica e ética em pesquisa, fornecendo a base metodológica
+para a condução desta dissertação. O responsável pela disciplina foi o professor
+Frederico Araújo Durão.
+• PGCOMP/IC0004 — Algoritmos e Grafos: Disciplina obrigatória que abor-
+dou os fundamentos dos algoritmos clássicos, noções de complexidade, algoritmos
+53
+54
+PROGRESSO E CRONOGRAMA
+gulosos, programação dinâmica, recursividade e técnicas de divisão e conquista. Os
+conhecimentos adquiridos contribuíram para a análise de eficiência dos componen-
+tes do sistema proposto. O responsável por essa disciplina foi o professor George
+Marconi de Araújo Lima.
+• PGCOMP/IC0007 — Tópicos em Banco de Dados I: Disciplina optativa
+que, apesar do título, aprofundou conceitos de Processamento de Linguagem Na-
+tural (PLN! (PLN!)), incluindo técnicas de representação vetorial de palavras e
+modelos de embedding. Os conhecimentos adquiridos foram diretamente aplicados
+no componente de similaridade semântica do sistema Paperman, responsável por
+calcular a proximidade entre o perfil do pesquisador e os artigos candidatos. O
+responsável por essa disciplina foi a professora Daniela Barreiro Claro.
+• PGCOMP/IC0045 — Tópicos em Sistemas de Informação e Web I: Dis-
+ciplina optativa com foco em arquitetura de sistemas web, integração de serviços
+e boas práticas de desenvolvimento de software. Como projeto principal, foi de-
+senvolvido um sistema de acompanhamento de desempenho acadêmico voltado à
+administração do PGCOMP/IC, permitindo o monitoramento de indicadores rele-
+vantes dos docentes para avaliação da CAPES! (CAPES!). O responsável pela
+disciplina foi o professor Frederico Araújo Durão.
+• PGCOMP/IC0036 — Inteligência Artificial: Disciplina optativa que abor-
+dou os fundamentos e técnicas de Inteligência Artificial, incluindo representação do
+conhecimento, busca heurística e aprendizado de máquina. Os conceitos estudados
+aprofundaram a compreensão dos modelos de representação vetorial utilizados no
+componente de similaridade semântica do sistema. O responsável por essa disciplina
+foi a professora Tatiane Nogueira Rios.
+• MATA31 — Pesquisa Orientada: Atividade de acompanhamento contínuo da
+pesquisa junto ao orientador, cursada ao longo de múltiplos semestres. Permitiu
+o desenvolvimento iterativo da proposta, refinamento da metodologia e elaboração
+dos capítulos da dissertação.
+• MATA32 — Estágio Docente Orientado: Disciplina na qual foram apoiadas as
+atividades da disciplina de graduação Introdução à Lógica de Programação. A atua-
+ção consistiu no acompanhamento dos discentes no desenvolvimento das atividades
+práticas submetidas ao sistema Judge, uma plataforma de avaliação automática
+de código que testa e valida as soluções enviadas pelos estudantes. A experiên-
+cia contribuiu para o desenvolvimento de habilidades de comunicação, didática e
+acompanhamento pedagógico. O responsável pela disciplina foi o professor Cláudio
+Nogueira Sant’Anna.
+7.2
+CRONOGRAMA
+O sistema proposto encontra-se completamente implementado e os experimentos de ava-
+liação foram integralmente conduzidos. Os resultados foram obtidos e analisados, es-
+7.2 CRONOGRAMA
+55
+tando documentados nos Capítulos 5 e 6 desta dissertação.
+As atividades pendentes
+concentram-se na incorporação das contribuições da banca de qualificação, na escrita de
+artigo científico e na defesa da dissertação.
+1. A01 — Cursar disciplinas obrigatórias: Cursar e obter aprovação nas disci-
+plinas obrigatórias do mestrado (Seminários Científicos, Fundamentos de Pesquisa
+e Algoritmos e Grafos). Concluída.
+2. A02 — Cursar disciplinas optativas: Cursar disciplinas complementares à
+pesquisa (Banco de Dados I, Sistemas de Informação e Web I, Inteligência Artificial).
+Em andamento.
+3. A03 — Definição do tema da pesquisa: Identificação da linha de pesquisa em
+sistemas de recomendação de artigos científicos e definição do escopo do sistema
+Paperman. Concluída.
+4. A04 — Levantamento de trabalhos relacionados: Pesquisa e estudo de traba-
+lhos nas áreas de Sistemas de Recomendação, Processamento de Linguagem Natural
+e Recuperação de Informação. Concluída.
+5. A05 — Desenvolvimento do sistema Paperman: Implementação da API
+REST, do motor de recomendação e da extensão para navegadores. Concluída.
+6. A06 — Experimento online (Teste A/B): Condução do experimento com 27
+pesquisadores reais utilizando a interface web de avaliação. Concluída.
+7. A07 — Experimento offline (DBLP-v10): Condução do experimento contro-
+lado com 49 autores do corpus DBLP-v10. Concluída.
+8. A08 — Estágio Docente Orientado: Participação como monitor em disciplina
+de graduação, apoiando discentes em atividades práticas. Concluída.
+9. A09 — Escrita da qualificação: Elaboração do texto submetido à banca de
+qualificação. Concluída.
+10. A10 — Qualificação do mestrado: Apresentação da pesquisa à banca de qua-
+lificação. Concluída.
+11. A11 — Incorporação das críticas recebidas: Revisão e aprimoramento da
+dissertação com base nas contribuições da banca de qualificação. Em andamento.
+12. A12 — Escrita de artigo científico: Elaboração de artigo com base nos re-
+sultados experimentais obtidos, com foco em publicação em evento ou periódico
+qualificado. A realizar.
+13. A13 — Adaptação para a dissertação final: Consolidação do texto revisado
+para a versão definitiva da dissertação. Em andamento.
+14. A14 — Defesa da dissertação: Apresentação final da dissertação de mestrado.
+A realizar.
+56
+PROGRESSO E CRONOGRAMA
+7.3
+SUMÁRIO
+Este capítulo apresentou um resumo das atividades realizadas durante o mestrado, com
+foco no desenvolvimento de um sistema de recomendação de artigos científicos persona-
+lizado. Foram cursadas disciplinas obrigatórias e optativas que embasaram o desenvol-
+vimento técnico e a fundamentação científica da pesquisa. O cronograma evidencia que
+os experimentos de avaliação foram integralmente conduzidos e que as atividades rema-
+nescentes concentram-se na incorporação das contribuições da banca, na publicação de
+artigos e na defesa da dissertação.
+REFERÊNCIAS BIBLIOGRÁFICAS
+ADOMAVICIUS, G.; TUZHILIN; ALEXANDER. Toward the next generation of recom-
+mender systems: a survey of the state-of-the-art and possible extensions. IEEE Transacti-
+ons on Knowledge and Data Engineering, Institute of Electrical and Electronics Engineers
+(IEEE), v. 17, n. 6, p. 734–749, jun 2005.
+AFSAR, M. M.; CRUMP, T.; FAR, B. An exploration on-demand article recommender
+system for cancer patients information provisioning. The International FLAIRS Confe-
+rence Proceedings, v. 34, Apr. 2021. Disponível em: <https://journals.flvc.org/FLAIRS/
+article/view/128339>.
+ALHIJAWI, B.; KILANI, Y. A collaborative filtering recommender system using ge-
+netic algorithm. Information Processing & Management, v. 57, n. 6, p. 102310, 2020.
+ISSN 0306-4573. Disponível em:
+<https://www.sciencedirect.com/science/article/pii/
+S0306457320308050>.
+AMINI, B.; IBRAHIM, R.; OTHMAN, M. S. Discovering the impact of knowledge in
+recommender systems: A comparative study. CoRR, abs/1109.0166, 2011. Disponível
+em: <http://arxiv.org/abs/1109.0166>.
+BROUWER, W.; HOLLENBACH, M. Search engine optimization for scientific publica-
+tions: How one can find your needle in the haystack. United European Gastroenterology
+Journal, v. 10, p. 906 – 908, 2022.
+BURKE, R. Hybrid recommender systems: Survey and experiments. User Modeling and
+User-Adapted Interaction, Kluwer Academic Publishers, Hingham, MA, USA, v. 12, n. 4,
+p. 331–370, nov. 2002. ISSN 0924-1868. Disponível em: <http://dx.doi.org/10.1023/A:
+1021240730564>.
+BURKE, R. Hybrid web recommender systems. In: BRUSILOVSKY, P.; KOBSA, A.;
+NEJDL, W. (Ed.). The adaptive web: methods and strategies of web personalization. Ber-
+lin, Heidelberg: Springer-Verlag, 2007. p. 377–408. ISBN 978-3-540-72078-2. Disponível
+em: <http://dl.acm.org/citation.cfm?id=1768197.1768211>.
+CARVALHO, D. et al. Fair: A framework for analyses and evaluations on recommender
+systems. In: Computational Science and Its Applications – ICCSA 2018. Cham: Springer
+International Publishing, 2018. p. 383–397. ISBN 978-3-319-95168-3.
+CAZELLA, S. C. et al. Recomendação de objetos de aprendizagem empregando filtragem
+colaborativa e competências. In: XX Simpósio Brasileiro de Informática na Educação.
+[s.n.], 2009. Disponível em:
+<https://www.semanticscholar.org/paper/Recomenda%
+57
+58
+REFERÊNCIAS BIBLIOGRÁFICAS
+C3%A7%C3%A3o-de-Objetos-de-Aprendizagem-Empregando-Cazella-Reategui/
+ca85252192a52882e10426bb7778457d6e5f3ab3>.
+CHEN, J. et al. Collaborative filtering recommendation algorithm based on user corre-
+lation and evolutionary clustering. Complex Intell. Syst., Springer Science and Business
+Media LLC, v. 6, n. 1, p. 147–156, abr. 2020.
+CLAYPOOL, M. et al. Combining content-based and collaborative filters in an online
+newspaper. In: Proceedings of the ACM SIGIR ’99 Workshop on Recommender Systems:
+Algorithms and Evaluation. Berkeley, California: ACM, 1999.
+COSTA, E.; AGUIAR, J.; MAGALHãES, J. Sistemas de recomendação de recursos
+educacionais:
+Conceitos, técnicas e aplicações. In:
+. [s.n.], 2013. p. 57–78.
+ISBN 9788576692836. Disponível em:
+<https://www.researchgate.net/publication/
+275345110_Sistemas_de_Recomendacao_de_Recursos_Educacionais_Conceitos_
+Tecnicas_e_Aplicacoes>.
+DECLERCQ, J.; POPPEL, L. van. Coding metaphors in interaction: A study protocol
+and reflection on validity and reliability challenges. International Journal of Qualitative
+Methods, v. 22, 2023. Disponível em: <https://doi.org/10.1177/16094069231164608>.
+DNC,
+E.
+Implementando
+um
+sistema
+de
+recomendação
+de
+cur-
+sos:
+análise
+e
+aplicação.
+2024.
+<https://www.escoladnc.com.br/blog/
+implementando-um-sistema-de-recomendacao-de-cursos-analise-e-aplicacao/>.
+ELSEVIER; SCIENCE, S. A. Trust in Research Report. 2019. Disponível em:
+<https://web.archive.org/web/20230223060917/https://www.elsevier.com/__data/
+assets/pdf_file/0011/908435/Trust_evidence_report_summary_Final.pdf>.
+FALCADE, L.; FALCADE, A.; ABEGG, I. Linha do tempo das políticas públicas
+voltadas para a informática educativa. SciELO Preprints, set. 2024. Disponível em:
+<https://preprints.scielo.org/index.php/scielo/preprint/view/10081>.
+GALVÃO, M. C. B.; RICARTE, I. L. M. Revisão sistemática da literatura: Conceituação,
+produção e publicação. Logeion: Filosofia da Informação, v. 6, n. 1, p. 57–73, set. 2019.
+Disponível em: <https://revista.ibict.br/fiinf/article/view/4835>.
+GARCÍA, I.; BELLOGÍN, A. Towards an open, collaborative rest api for recommender
+systems. In: Proceedings of the 12th ACM Conference on Recommender Systems. New
+York, NY, USA: Association for Computing Machinery, 2018. (RecSys ’18), p. 504–505.
+ISBN 9781450359016. Disponível em: <https://doi.org/10.1145/3240323.3241615>.
+GHANNADRAD, A. et al. Recommender systems for science: A basic taxonomy. In: Ita-
+lian Research Conference on Digital Library Management Systems. [s.n.], 2022. Disponível
+em: <https://api.semanticscholar.org/CorpusID:251008452>.
+REFERÊNCIAS BIBLIOGRÁFICAS
+59
+GOLDBERG, D. et al. Using collaborative filtering to weave an information tapestry.
+Commun. ACM, ACM, New York, NY, USA, v. 35, n. 12, p. 61–70, dez. 1992. ISSN
+0001-0782. Disponível em: <http://doi.acm.org/10.1145/138859.138867>.
+HANYURWIMFURA, D. et al. An effective academic research papers recommendation
+for non-profiled users. International Journal of Hybrid Information Technology, v. 8, p.
+255–272, 03 2015.
+HERLOCKER, J. L. et al. Evaluating collaborative filtering recommender systems. ACM
+Trans. Inf. Syst., ACM, New York, NY, USA, v. 22, n. 1, p. 5–53, jan. 2004. ISSN 1046-
+8188. Disponível em: <http://doi.acm.org/10.1145/963770.963772>.
+HIMEUR, Y. et al. Latest trends of security and privacy in recommender systems: A
+comprehensive review and future perspectives. Computers & Security, v. 118, p. 102746,
+2022. ISSN 0167-4048. Disponível em: <https://www.sciencedirect.com/science/article/
+pii/S0167404822001419>.
+ISINKAYE, F.; FOLAJIMI, Y.; OJOKOH, B. Recommendation systems: Principles,
+methods and evaluation. Egyptian Informatics Journal, Elsevier BV, v. 16, n. 3, p.
+261–273, nov 2015. Disponível em: <http://www.sciencedirect.com/science/article/pii/
+S1110866515000341>.
+JU, C. M. et al. Revisiting Self-attention for Cross-domain Sequential Recommendation.
+2025. Disponível em: <https://arxiv.org/abs/2505.21811>.
+KENDE, M. et al. Global connectivity report 2022. chapter 1. universal and meaningful
+connectivity: The new imperative. SYNCHROINFO JOURNAL, Media-Publisher, v. 8,
+n. 2, p. 35–45, 2022.
+KIM, J. K.; CHOI, I.-Y.; LI, Q. Customer satisfaction of recommender system: Exa-
+mining accuracy and diversity in several types of recommendation approaches. Sus-
+tainability, v. 13, p. 6165, May 2021. Disponível em: <https://www.researchgate.net/
+publication/351994770>.
+KREUTZ, C.; SCHENKEL, R. Scientific paper recommendation systems: a literature
+review of recent publications. International Journal on Digital Libraries, Springer, p.
+335–369, 2022. Disponível em: <https://doi.org/10.1007/s00799-022-00339-w>.
+LAMPROPOULOS, G. Recommender systems in education: A literature review and
+bibliometric analysis. Adv. Mobile Learn. Educ. Res., Syncsci Publishing Pte., Ltd., v. 3,
+n. 2, p. 829–850, set. 2023.
+LI, Y. et al. Enhancing systematic literature reviews with generative artificial intelligence:
+development, applications, and performance evaluation. J. Am. Med. Inform. Assoc.,
+v. 32, n. 4, p. 616–625, abr. 2025.
+60
+REFERÊNCIAS BIBLIOGRÁFICAS
+LOPS, P.; GEMMIS, M. de; SEMERARO, G. Content-based recommender systems:
+State of the art and trends. In: RICCI, F. et al. (Ed.). Recommender Systems Handbook.
+Springer US, 2011. p. 73–105. ISBN 978-0-387-85819-7. Disponível em: <http://dx.doi.
+org/10.1007/978-0-387-85820-3_3>.
+MANNING, C. D.; RAGHAVAN, P.; SCHüTZE, H. Introduction to Information Re-
+trieval. New York, NY, USA: Cambridge University Press, 2008. ISBN 0521865719,
+9780521865715.
+MARUYAMA, M. et al. Hybrid recommender system for educational resources to the
+smart university campus domain. In: INSTICC. Proceedings of the 15th International
+Conference on Computer Supported Education - Volume 1: CSEDU. [S.l.]: SciTePress,
+2023. p. 47–56. ISBN 978-989-758-641-5. ISSN 2184-5026.
+MLADENIC, D. Text-learning and related intelligent agents: A survey. IEEE Intelligent
+Systems, IEEE Educational Activities Department, Piscataway, NJ, USA, v. 14, n. 4,
+p. 44–54, jul. 1999. ISSN 1541-1672. Disponível em: <http://dx.doi.org/10.1109/5254.
+784084>.
+NOBLE, H.; SMITH, J. Issues of validity and reliability in qualitative research. Evidence-
+Based Nursing, Royal College of Nursing, Apr 2015. Disponível em: <https://ebn.bmj.
+com/content/18/2/34>.
+PARRA, D.; SAHEBI, S. Recommender systems: Sources of knowledge and evalua-
+tion metrics. In:
+VELáSQUEZ, J. D.; PALADE, V.; JAIN, L. C. (Ed.). Advanced
+Techniques in Web Intelligence-2. Springer Berlin Heidelberg, 2013, (Studies in Com-
+putational Intelligence, v. 452). p. 149–175. ISBN 978-3-642-33325-5. Disponível em:
+<http://dx.doi.org/10.1007/978-3-642-33326-2_7>.
+PFEFFER, J. et al. Just another day on twitter: A complete 24 hours of twitter data. In:
+International Conference on Web and Social Media. [s.n.], 2023. Disponível em: <https:
+//api.semanticscholar.org/CorpusID:256358700>.
+PINEDO, I.; LARRAÑAGA, M.; ARRUARTE, A. Recent Advances and Trends in Re-
+search Paper Recommender Systems: A Comprehensive Survey. 2025. Disponível em:
+<https://arxiv.org/abs/2508.08828>.
+RESNICK, P.; VARIAN, H. R. Recommender systems. Commun. ACM, ACM, New
+York, NY, USA, v. 40, n. 3, p. 56–58, mar. 1997. ISSN 0001-0782. Disponível em: <http:
+//doi.acm.org/10.1145/245108.245121>.
+RICCI, F.; ROKACH, L.; SHAPIRA, B. Recommender systems: Techniques, appli-
+cations, and challenges. In:
+. Recommender Systems Handbook. Springer US,
+2022. p. 1–35. ISBN 978-1-0716-2197-4. Disponível em:
+<https://doi.org/10.1007/
+978-1-0716-2197-4_1>.
+RICCI, F. et al. (Ed.). Recommender Systems Handbook. Springer, 2011. ISBN 978-0-387-
+85819-7. Disponível em: <http://www.springerlink.com/content/978-0-387-85819-7>.
+REFERÊNCIAS BIBLIOGRÁFICAS
+61
+ROY, D.; DUTTA, M. A systematic review and research perspective on recommender
+systems. J. Big Data, Springer Science and Business Media LLC, v. 9, n. 1, dez. 2022.
+SALTON, G. (Ed.). Automatic Text Processing. Boston, MA, USA: Addison-Wesley Long-
+man Publishing Co., Inc., 1988. ISBN 0-2:1-1227-8.
+SARWAR, B. et al. Item-based collaborative filtering recommendation algorithms. In:
+Proceedings of the tenth international conference on World Wide Web - WWW '01. ACM
+Press, 2001. (WWW ’01), p. 285–295. ISBN 1-58113-348-0. Disponível em: <http://doi.
+acm.org/10.1145/371920.372071>.
+SHANI, G.; GUNAWARDANA, A. Evaluating Recommender Systems. [S.l.], 2009. Dis-
+ponível em: <http://research.microsoft.com/apps/pubs/default.aspx?id=115396>.
+SILVA, F. L. da et al. A systematic literature review on educational recommender systems
+for teaching and learning: research trends, limitations and opportunities. Education and
+Information Technologies, v. 28, n. 3, p. 3289–3328, Mar 2023. ISSN 1573-7608. Disponível
+em: <https://doi.org/10.1007/s10639-022-11341-9>.
+SNYDER, H. Literature review as a research methodology: An overview and guidelines.
+Journal of Business Research, v. 104, p. 333–339, 2019. ISSN 0148-2963. Disponível em:
+<https://www.sciencedirect.com/science/article/pii/S0148296319304564>.
+STERLING, J. A.; MONTEMORE, M. M. Combining citation network information and
+text similarity for research article recommender systems. IEEE Access, v. 10, p. 16–23,
+2022. Disponível em: <https://ieeexplore.ieee.org/document/9661321>.
+WANG, D. et al. A content-based recommender system for computer science publications.
+Knowledge-Based Systems, v. 157, p. 1–9, 2018. ISSN 0950-7051.
+WEI, X. et al. Personalized online learning resource recommendation based on artifi-
+cial intelligence and educational psychology. Frontiers in Psychology, v. 12, 2021. ISSN
+1664-1078. Disponível em: <https://www.frontiersin.org/journals/psychology/articles/
+10.3389/fpsyg.2021.767837>.
+YAZDI, H. A.; MAHDAVI, S. J. S.; YAZDI, H. A. Dynamic educational recommen-
+der system based on improved lstm neural network. Scientific Reports, Nature Pu-
+blishing Group, v. 14, p. 54729, 2024. Disponível em:
+<https://www.nature.com/
+articles/s41598-024-54729-y>.
+YU, J. Enhancing recommender systems with self-supervised learning. Tese (Doutorado)
+— School of Information Technology and Electrical Engineering - The University of Que-
+ensland, 2023. Disponível em: <https://doi.org/10.14264/9b4b38b>.
+ZHANG, C. et al. Multifaceted User Modeling in Recommendation: A Federated Founda-
+tion Models Approach. 2024. Disponível em: <https://arxiv.org/abs/2412.16969>.
+62
+REFERÊNCIAS BIBLIOGRÁFICAS
+ZHANG, S. et al. Deep learning based recommender system: A survey and new pers-
+pectives. ACM Computing Surveys, Association for Computing Machinery (ACM), v. 52,
+n. 1, p. 1–38, fev. 2019. ISSN 1557-7341. Disponível em: <http://dx.doi.org/10.1145/
+3285029>.
+ZHAO, X. et al. Embedding in Recommender Systems: A Survey. 2023.
+ZHENG, Y. ITM-Rec: An Open Data Set for Educational Recommender Systems. 2023.
+Disponível em: <https://arxiv.org/abs/2303.10230>.

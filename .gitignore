@@ -18,4 +18,24 @@ resultados/
 preview_interface.html
 
 # Cache Python nas subpastas
-offline_evaluation/__pycache__/
+offline_evaluation/__pycache__/
+
+# ─────────────────────────────────────────────────────────────────────────────
+# DADOS PESSOAIS DOS PARTICIPANTES — NÃO VERSIONAR
+# Contêm nome completo, ORCID, linha de pesquisa e notas por pessoa.
+# Enquanto a pendência de CEP/LGPD não for tratada, ficam apenas em local.
+# Para publicar, gerar antes uma versão anonimizada (P01..P29).
+# ─────────────────────────────────────────────────────────────────────────────
+CANDIDATOS.xlsx
+candidatos_reais.json
+recomendacoes_online_multiplicative.json
+recomendacoes_online_sem_only.json
+resultado_avaliacao_online.json
+resultado_avaliacao_online.html
+
+# Arquivos grandes (excedem o limite do GitHub)
+*.npy
+dblp-v10.csv
+data.json
+data_apt.json
+data_enriched.json

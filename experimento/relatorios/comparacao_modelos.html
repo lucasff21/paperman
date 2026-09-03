@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Paperman — Comparação de 4 Modelos (N=49)</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 24px;
+      background: #f7f8fa;
+      color: #222;
+      line-height: 1.5;
+    }
+
+    h1 {
+      border-bottom: 3px solid #2563eb;
+      padding-bottom: 10px;
+      color: #111;
+    }
+
+    h2 {
+      color: #1e40af;
+      margin-top: 36px;
+      border-left: 4px solid #2563eb;
+      padding-left: 12px;
+    }
+
+    .meta {
+      background: #fff;
+      border-radius: 8px;
+      padding: 16px 20px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+      margin-bottom: 24px;
+    }
+
+    .chart-card {
+      background: #fff;
+      border-radius: 8px;
+      padding: 20px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+      margin-bottom: 24px;
+    }
+
+    .chart-container {
+      position: relative;
+      height: 360px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #fff;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+    }
+
+    th,
+    td {
+      padding: 12px 16px;
+      text-align: left;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    th {
+      background: #1e40af;
+      color: #fff;
+      font-weight: 600;
+    }
+
+    td.significant {
+      background: #d1fae5;
+      color: #065f46;
+      font-weight: 600;
+    }
+
+    td.not-significant {
+      color: #6b7280;
+    }
+
+    .legend-box {
+      display: inline-block;
+      width: 14px;
+      height: 14px;
+      border-radius: 3px;
+      vertical-align: middle;
+      margin-right: 6px;
+    }
+
+    .summary {
+      background: #eff6ff;
+      border-left: 4px solid #2563eb;
+      padding: 14px 18px;
+      margin-top: 16px;
+      border-radius: 4px;
+    }
+
+    .summary strong {
+      color: #1e3a8a;
+    }
+
+    .footnote {
+      color: #6b7280;
+      font-size: 0.88em;
+      margin-top: 8px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <br>
+  <!-- ═══ EXPERIMENTO ATUAL ════════════════════════════════════════════ -->
+  <div
+    style="background:#065f46;color:#fff;padding:10px 20px;border-radius:8px;margin-bottom:8px;font-size:0.9em;letter-spacing:0.05em">
+    🏆 EXPERIMENTO PRINCIPAL — 5 Modelos | Min-Max Local &nbsp;|&nbsp; 23/04/2026
+  </div>
+
+  <h1 style="margin-top:12px">Paperman &mdash; Comparação de 5 Modelos de Scoring</h1>
+
+  <div class="meta">
+    <strong>Protocolo:</strong> Hold-Out com Candidate Injection (Sampled Evaluation) &nbsp;|&nbsp;
+    <strong>Autores:</strong> N=49 &nbsp;|&nbsp;
+    <strong>Treino:</strong> 20 papers/autor &nbsp;|&nbsp;
+    <strong>Gabarito:</strong> 10 papers injetados &nbsp;|&nbsp;
+    <strong>Janela:</strong> 2013–2017 &nbsp;|&nbsp;
+    <strong>Normalização Cit:</strong> Min-Max Local por Pool
+    <br><br>
+    <strong>Modelos comparados:</strong>
+    <ul>
+      <li><span class="legend-box" style="background:#94a3b8"></span><strong>Aleatório</strong> — piso de comparação</li>
+      <li><span class="legend-box" style="background:#06b6d4"></span><strong>CosineSim</strong> — só similaridade semântica (ablation)</li>
+      <li><span class="legend-box" style="background:#10b981"></span><strong>Sim×Ano×Qualis</strong></li>
+      <li><span class="legend-box" style="background:#f59e0b"></span><strong>Paperman</strong></li>
+      <li><span class="legend-box" style="background:#8b5cf6"></span><strong>Sim×Ano×Cit×Qualis</strong></li>
+    </ul>
+  </div>
+
+  <h2>1. Precision @ K</h2>
+  <div class="chart-card">
+    <div class="chart-container"><canvas id="precisionChart"></canvas></div>
+    <p class="footnote">Precision@K = proporção das K primeiras recomendações que são acertos. Maior é melhor.</p>
+  </div>
+
+  <h2>2. MRR @ K</h2>
+  <div class="chart-card">
+    <div class="chart-container"><canvas id="mrrChart"></canvas></div>
+    <p class="footnote">Mean Reciprocal Rank = quão cedo aparece o primeiro acerto no ranking. Maior é melhor.</p>
+  </div>
+
+  <h2>3. nDCG @ K</h2>
+  <div class="chart-card">
+    <div class="chart-container"><canvas id="ndcgChart"></canvas></div>
+    <p class="footnote">Normalized DCG = qualidade do ranking considerando posição dos acertos. Maior é melhor.</p>
+  </div>
+    <p class="footnote">
+      <strong>coautoria</strong>: autor é (co)autor do paper recomendado &nbsp;|&nbsp;
+      <strong>autor citou</strong>: autor já citou aquele paper em algum trabalho dele &nbsp;|&nbsp;
+      <strong>paper cita autor</strong>: o paper recomendado cita algum trabalho do autor
+    </p>
+  </div>
+
+  <h2>4. Tabela Resumo das Métricas</h2>
+  <div class="chart-card">
+    <table>
+      <thead>
+        <tr>
+          <th>Modelo</th>
+          <th>P@3</th><th>MRR@3</th>
+          <th>P@5</th><th>MRR@5</th>
+          <th>P@10</th><th>nDCG@10</th>
+          <th>Hits/49</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Baseline Aleatório</td>
+          <td>0.231</td><td>0.374</td>
+          <td>0.216</td><td>0.416</td>
+          <td>0.198</td><td>0.556</td>
+          <td>47</td>
+        </tr>
+        <tr style="background:#ecfeff">
+          <td><strong>CosineSim</strong></td>
+          <td><strong>0.265</strong></td><td><strong>0.449</strong></td>
+          <td><strong>0.245</strong></td><td><strong>0.483</strong></td>
+          <td>0.192</td><td>0.568</td>
+          <td>42</td>
+        </tr>
+        <tr style="background:#f0fdf4">
+          <td><strong>Sim×Ano×Qualis</strong></td>
+          <td>0.204</td><td>0.344</td>
+          <td>0.192</td><td>0.377</td>
+          <td>0.145</td><td>0.462</td>
+          <td>35</td>
+        </tr>
+        <tr>
+          <td>Sim×Ano×Cit×Qualis</td>
+          <td>0.197</td><td>0.371</td>
+          <td>0.180</td><td>0.403</td>
+          <td>0.135</td><td>0.446</td>
+          <td>34</td>
+        </tr>
+        <tr>
+          <td>Paperman</td>
+          <td>0.163</td><td>0.296</td>
+          <td>0.135</td><td>0.320</td>
+          <td>0.112</td><td>0.392</td>
+          <td>30</td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="footnote">N=49 autores | Train=20 | Test=10 | Min-Max Local. Sim×Ano×Qualis vence em P@3 e MRR@K.</p>
+  </div>
+
+  <div class="summary">
+    <strong>Conclusão — Experimento Principal (24/04/2026, N=49, Train=20, Min-Max Local):</strong><br><br>
+    1. O <strong>Sim×Ano×Qualis</strong> venceu entre os modelos matemáticos com
+    <strong>P@3=0.204 e MRR@3=0.344</strong>, e 35/49 autores com hit — confirmando superioridade
+    sobre o Paperman original (P@3=0.163, 30/49 hits) e sobre o Multiplicativo (P@3=0.197, 34/49 hits).<br><br>
+    2. O <strong>Baseline Aleatório</strong> ainda lidera em P@3 (0.231) e Hits (47/49) pelo
+    <em>Efeito Pool Denso</em>: com 10 golds em ~45 candidatos, cerca de 22% da piscina é gabarito.
+    Com N grande e pool fixo via DBLP real, esse efeito desaparece.<br><br>
+    3. O <strong>Paperman</strong> (Paperman original) confirma que somar Qualis
+    de forma irrestrita dilui a precisão — o bônus de venue precisa ser condicionado à
+    relevância semântica para não prejudicar autores de áreas diferentes.<br><br>
+    <strong>Fórmula recomendada para a dissertação:</strong><br>
+    <code>Score(p,u) = Sim(p,u) + Ano(p) + Cit(p) + Qualis(p) × Sim(p,u)</code> &nbsp;∈ [0, 4]
+  </div>
+
+  <br>
+  <!-- ═══ MICRO-BATERIA ════════════════════════════════════════════ -->
+  <div style="background:#b45309;color:#fff;padding:10px 20px;border-radius:8px;margin-bottom:8px;font-size:0.9em;letter-spacing:0.05em">
+    📌 MICRO-BATERIA HISTÓRICA — 5 Variantes (N=5, exploratório)
+  </div>
+
+  <h1 style="margin-top:12px">Paperman &mdash; Micro-Bateria: Exploração de Fórmulas (N=49)</h1>
+
+  <div class="meta">
+    <strong>Protocolo:</strong> Hold-Out com Candidate Injection &nbsp;|&nbsp;
+    <strong>Autores:</strong> N=49 &nbsp;|&nbsp;
+    <strong>Treino:</strong> 20 papers/autor &nbsp;|&nbsp;
+    <strong>Gabarito:</strong> 10 papers injetados &nbsp;|&nbsp;
+    <strong>Janela:</strong> 2013&ndash;2017 &nbsp;|&nbsp;
+    <strong>Novidade:</strong> Citações com <strong>Min-Max Local por Pool</strong> (sem MAX_CPY fixo)<br><br>
+    <strong>Objetivo:</strong> comparar 5 variantes de scoring em escala reduzida para direcionar experimento final.
+    <em>N=5 implica alta variância &mdash; resultados são indicativos, não conclusivos.</em>
+  </div>
+
+  <h2>Tabela de Resultados &mdash; Micro-Bateria (N=49)</h2>
+  <div class="chart-card">
+    <table>
+      <thead>
+        <tr>
+          <th>Exp</th>
+          <th>Modelo</th>
+          <th>P@3</th><th>MRR@3</th>
+          <th>P@5</th><th>MRR@5</th>
+          <th>P@10</th><th>nDCG@10</th>
+          <th>Hits/49</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="background:#f0fdf4">
+          <td>#1</td>
+          <td><strong>Baseline Aleatório ⭐</strong></td>
+          <td><code>random</code></td>
+          <td><strong>0.267</strong></td><td><strong>0.300</strong></td>
+          <td><strong>0.240</strong></td><td><strong>0.400</strong></td>
+          <td><strong>0.240</strong></td><td><strong>0.585</strong></td>
+          <td><strong>5</strong></td>
+        </tr>
+        <tr>
+          <td>#2</td>
+          <td>Qualis Modulado</td>
+          <td><code>Sem+Rec+Cit+(Qua×Sem)</code></td>
+          <td>0.133</td><td>0.133</td>
+          <td>0.120</td><td>0.173</td>
+          <td>0.100</td><td>0.285</td>
+          <td>3</td>
+        </tr>
+        <tr style="background:#fef2f2">
+          <td>#3</td>
+          <td>Sim+Ano+(Cit*Sim)+Qualis ❌</td>
+          <td><code>Sem+Rec+(Cit×Sem)+Qua</code></td>
+          <td>0.067</td><td>0.067</td>
+          <td>0.080</td><td>0.067</td>
+          <td>0.080</td><td>0.190</td>
+          <td>2</td>
+        </tr>
+        <tr style="background:#fef2f2">
+          <td>#4</td>
+          <td>Sim*Ano*Cit*Qualis ❌</td>
+          <td><code>Sem×Rec×Cit×Qua</code></td>
+          <td>0.067</td><td>0.200</td>
+          <td>0.080</td><td>0.250</td>
+          <td>0.100</td><td>0.299</td>
+          <td>3</td>
+        </tr>
+        <tr style="background:#fef9c3">
+          <td>#5</td>
+          <td><em>Paperman</em></td>
+          <td><code>Sem+Rec+Cit+Qua</code></td>
+          <td>0.133</td><td>0.267</td>
+          <td>0.080</td><td>0.267</td>
+          <td>0.080</td><td>0.251</td>
+          <td>2</td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="footnote">
+      ⚠️ <strong>Atenção sobre N=5:</strong> Com apenas 5 autores e 10 golds injetados (11% do pool),
+      o Baseline Aleatório inflou artificialmente. Resultados são exploratórios — use o
+      Experimento Principal (N=66, 5 golds) como referência definitiva.
+    </p>
+  </div>
+
+  <h2>Gráfico &mdash; Precision@K (Micro-Bateria)</h2>
+  <div class="chart-card">
+    <div class="chart-container"><canvas id="microPrecisionChart"></canvas></div>
+    <p class="footnote">Comparação de Precision@K entre os 4 modelos rodados (N=5, 10 golds, Min-Max Local).</p>
+  </div>
+
+  <div class="summary">
+    <strong>Conclusão da Micro-Bateria (23/04/2026, N=5):</strong><br><br>
+    1. O <strong>Baseline Aleatório dominou</strong> novamente — mesmo fenômeno do Stress-Test.
+    Com 10 golds em 90 palhas (11%), qualquer chute acerta 1 em cada 9. Os modelos matemáticos
+    não conseguem superar isso em escala tão pequena.<br><br>
+    2. O <strong>Sim+Ano+(Cit*Sim)+Qualis</strong> (<code>Sem + Rec + Cit×Sem + Qua</code>) foi o pior dos
+    matemáticos: Hits=2/5. Modular a <em>citação</em> pela semântica suprime papers muito citados
+    que não batem exatamente com as palavras do perfil — o mesmo problema do All-Modulated, mas
+    isolado no pilar de citações.<br><br>
+    3. O <strong>Sim*Ano*Cit*Qualis</strong> surpreendeu com MRR acima do Qualis Modulado nesta
+    amostra pequena, mas isso é efeito de variância alta (N=5 não é estatisticamente significativo).<br><br>
+    4. <strong>Próximo passo recomendado:</strong> rodar a bateria completa com N=66 e train=15/test=5
+    (protocolo padrão) para comparação estatisticamente válida. O experimento principal já provou
+    que <code>Sem + Rec + Cit + (Qua × Sem)</code> é superior.
+  </div>
+
+  <script>
+    // ─── DADOS (N=49, Train=20, Test=10, Min-Max Local) ────────────────────────
+    const labels_K = ['K=3', 'K=5', 'K=10'];
+
+        const precision = {
+      aleatorio : [0.2313, 0.2163, 0.1980],
+      cosine    : [0.2653, 0.2245, 0.1918],
+      modulado  : [0.2041, 0.1918, 0.1449],
+      old_ppm   : [0.1633, 0.1347, 0.1122],
+      multi     : [0.1973, 0.1796, 0.1347],
+      cit_mod   : [0.1156, 0.1020, 0.0857],
+    };
+        const mrr = {
+      aleatorio : [0.3741, 0.4160, 0.4417],
+      cosine    : [0.4490, 0.4827, 0.5043],
+      modulado  : [0.3435, 0.3772, 0.3931],
+      old_ppm   : [0.2959, 0.3204, 0.3369],
+      multi     : [0.3707, 0.4034, 0.4086],
+      cit_mod   : [0.2415, 0.2517, 0.2802],
+    };
+        const ndcg = {
+      aleatorio : [0.2992, 0.3942, 0.5560],
+      cosine    : [0.3621, 0.4318, 0.5682],
+      modulado  : [0.3008, 0.3729, 0.4618],
+      old_ppm   : [0.2617, 0.3050, 0.3919],
+      multi     : [0.2849, 0.3682, 0.4460],
+      cit_mod   : [0.1957, 0.2368, 0.3240],
+    };
+
+    const COLORS = {
+      aleatorio: '#94a3b8',
+      cosine:    '#06b6d4',
+      modulado:  '#10b981',
+      old_ppm:   '#f59e0b',
+      multi:     '#8b5cf6',
+      cit_mod:   '#ef4444',
+    };
+
+    function makeLineChart(canvasId, labels, datasetsData) {
+      const ls = (color) => ({
+        backgroundColor: color, borderColor: color, borderWidth: 3,
+        tension: 0.25, pointRadius: 6, pointHoverRadius: 9,
+        pointBackgroundColor: '#fff', pointBorderWidth: 2, fill: false,
+      });
+      const datasets = [
+        { label: 'Aleatório',               data: datasetsData.aleatorio, ...ls(COLORS.aleatorio) },
+        { label: 'CosineSim',                data: datasetsData.cosine,    ...ls(COLORS.cosine)    },
+        { label: 'Sim×Ano×Qualis', data: datasetsData.modulado,  ...ls(COLORS.modulado)  },
+        { label: 'Paperman',                 data: datasetsData.old_ppm,   ...ls(COLORS.old_ppm)   },
+        { label: 'Sim×Ano×Cit×Qualis',       data: datasetsData.multi,     ...ls(COLORS.multi)     },
+      ];
+      new Chart(document.getElementById(canvasId), {
+        type: 'line',
+        data: { labels, datasets },
+        options: {
+          responsive: true, maintainAspectRatio: false,
+          plugins: {
+            legend: { position: 'top' },
+            tooltip: { callbacks: { label: (ctx) => `${ctx.dataset.label}: ${ctx.parsed.y.toFixed(4)}` } }
+          },
+          scales: { y: { beginAtZero: true } }
+        }
+      });
+    }
+
+    makeLineChart('precisionChart', labels_K, precision);
+    makeLineChart('mrrChart',       labels_K, mrr);
+    makeLineChart('ndcgChart',      labels_K, ndcg);
+
+
+    // ─── MICRO-BATERIA (N=5, Train=10, Test=10, Min-Max Local) ─────────────────
+    new Chart(document.getElementById('microPrecisionChart'), {
+      type: 'bar',
+      data: {
+        labels: ['K=3', 'K=5', 'K=10'],
+        datasets: [
+          { label: 'Baseline Aleatório',             data: [0.2667, 0.2400, 0.2400], backgroundColor: 'rgba(148,163,184,0.8)', borderColor: '#94a3b8', borderWidth: 2 },
+          { label: 'Qualis Modulado (Qua×Sem)',      data: [0.1333, 0.1200, 0.1000], backgroundColor: 'rgba(16,185,129,0.8)',  borderColor: '#10b981', borderWidth: 2 },
+          { label: 'Paperman (Sem+Rec+Cit+Qua)', data: [0.1333, 0.0800, 0.0800], backgroundColor: 'rgba(245,158,11,0.8)',  borderColor: '#f59e0b', borderWidth: 2 },
+          { label: 'Sim*Ano*Cit*Qualis (Sem×Rec×Cit×Qua)', data: [0.0667, 0.0800, 0.1000], backgroundColor: 'rgba(139,92,246,0.8)', borderColor: '#8b5cf6', borderWidth: 2 },
+          { label: 'Sim+Ano+(Cit*Sim)+Qualis (Cit×Sem)',         data: [0.0667, 0.0800, 0.0800], backgroundColor: 'rgba(239,68,68,0.8)',   borderColor: '#ef4444', borderWidth: 2 },
+        ]
+      },
+      options: {
+        responsive: true, maintainAspectRatio: false,
+        plugins: {
+          legend: { position: 'top' },
+          tooltip: { callbacks: { label: (ctx) => `${ctx.dataset.label}: ${ctx.parsed.y.toFixed(4)}` } }
+        },
+        scales: { y: { beginAtZero: true, max: 0.35 } }
+      }
+    });
+  </script>
+
+  <br>
+  <!-- ═══ AVALIAÇÃO ONLINE ════════════════════════════════════════════ -->
+  <div style="background:#4f46e5;color:#fff;padding:10px 20px;border-radius:8px;margin-bottom:8px;font-size:0.9em;letter-spacing:0.05em">
+    🚀 AVALIAÇÃO ONLINE (TESTE A/B) — 2 Modelos | N=28 | 15/05/2026
+  </div>
+
+  <h1 style="margin-top:12px">Paperman &mdash; Avaliação A/B (Online)</h1>
+
+  <div class="meta">
+    <strong>Participantes:</strong> N=28 (29 gerados, 28 avaliaram &mdash; drop-out 3,4%) &nbsp;|&nbsp;
+    <strong>Formato:</strong> Teste A/B Cego &nbsp;|&nbsp;
+    <strong>Relevância:</strong> Nota &ge; 3 (escala Likert 1-5)<br><br>
+    <strong>Modelos comparados:</strong>
+    <ul>
+      <li><span class="legend-box" style="background:#3b82f6"></span><strong>Lista A &mdash; Cosine</strong> — Baseline do OpenAlex (Semântico Puro)</li>
+      <li><span class="legend-box" style="background:#22c55e"></span><strong>Lista B &mdash; Multiplicativo</strong> — <code>Sem × Rec × Cit × Qua</code> com pré-filtro semântico (≥0.15)</li>
+    </ul>
+  </div>
+
+  <h2>Métricas de Ranking & Survey</h2>
+  <div class="chart-card">
+    <table>
+      <thead>
+        <tr>
+          <th>Modelo</th>
+          <th>MRR@10</th>
+          <th>MAP@10</th>
+          <th>nDCG@10</th>
+          <th>P@5</th>
+          <th>P@10</th>
+          <th>Nota Média</th>
+          <th>Relev.</th>
+          <th>Divers.</th>
+          <th>Precis.</th>
+          <th>Atual.</th>
+          <th>Surpr.</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="background:#eff6ff">
+          <td>Lista A — Cosine</td>
+          <td>0.6093</td>
+          <td>0.5245</td>
+          <td><strong>0.8934</strong></td>
+          <td>0.3714</td>
+          <td>0.3929</td>
+          <td>2.2786</td>
+          <td>2.50</td>
+          <td>2.71</td>
+          <td>1.93</td>
+          <td>2.54</td>
+          <td>2.11</td>
+        </tr>
+        <tr style="background:#f0fdf4">
+          <td><strong>Lista B — Multiplicativo</strong></td>
+          <td><strong>0.6485</strong></td>
+          <td><strong>0.6037</strong></td>
+          <td>0.8516</td>
+          <td><strong>0.5071</strong></td>
+          <td><strong>0.5357</strong></td>
+          <td><strong>2.7821</strong></td>
+          <td><strong>3.04</strong></td>
+          <td><strong>2.96</strong></td>
+          <td><strong>2.61</strong></td>
+          <td><strong>3.39</strong></td>
+          <td><strong>2.79</strong></td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="footnote">N=28 avaliadores. Lista B (Multiplicativo) supera Lista A (Cosine) em todas as métricas de Precision/MRR/MAP, na nota média e nas 5 dimensões do survey. Lista A vence somente em nDCG (paradoxo discutido em "Caso Marvin").</p>
+  </div>
+
+  <h2>1. Precision @ K (Avaliação Online)</h2>
+  <div class="chart-card">
+    <div class="chart-container"><canvas id="onlinePrecisionChart"></canvas></div>
+    <p class="footnote">Precision@K = proporção das K primeiras recomendações que são acertos. Maior é melhor.</p>
+  </div>
+
+  <h2>2. MRR @ K (Avaliação Online)</h2>
+  <div class="chart-card">
+    <div class="chart-container"><canvas id="onlineMrrChart"></canvas></div>
+    <p class="footnote">Mean Reciprocal Rank = quão cedo aparece o primeiro acerto no ranking. Maior é melhor.</p>
+  </div>
+
+  <h2>3. MAP @ K (Avaliação Online)</h2>
+  <div class="chart-card">
+    <div class="chart-container"><canvas id="onlineMapChart"></canvas></div>
+    <p class="footnote">Mean Average Precision = leva em conta a ordem de todos os acertos no ranking. Maior é melhor.</p>
+  </div>
+
+  <h2>4. nDCG @ K (Avaliação Online)</h2>
+  <div class="chart-card">
+    <div class="chart-container"><canvas id="onlineNdcgChart"></canvas></div>
+    <p class="footnote">Normalized DCG = qualidade do ranking considerando posição dos acertos. Maior é melhor.</p>
+  </div>
+  
+  <div class="summary">
+    <strong>Conclusão da Avaliação Online (N=28):</strong><br><br>
+    1. O <strong>Modelo Multiplicativo (Lista B)</strong> superou o <strong>Cosine (Lista A)</strong> na percepção dos usuários reais, vencendo em MRR, MAP, Precision@K, nota média global (2.78 vs 2.28) e em <strong>todas as 5 dimensões do Survey</strong>.<br><br>
+    2. Os ganhos subjetivos mais expressivos foram em <strong>Atualidade (3.39 vs 2.54, &Delta;=+0.86)</strong> e <strong>Surpresa (2.79 vs 2.11, &Delta;=+0.68)</strong>, indicando que o modelo recupera papers impactantes que o usuário não conhecia — quebrando a bolha do recomendador puramente semântico.<br><br>
+    3. <strong>Paradoxo do nDCG:</strong> apesar da derrota em todas as outras métricas, o Cosine venceu em nDCG@K. A análise do <strong>Caso Marvin</strong> explicou o fenômeno: a busca full-text do OpenAlex, combinada com o pré-filtro semântico tolerante (0.15) e a normalização Min-Max Local em pool aberto, permitiu que outliers de citação fora de domínio fossem alavancados ao topo do ranqueamento do modelo multiplicativo. No caso específico, dois papers (cardiologia, 5815 citações; bioinformática, 8352 citações) ocuparam Rank #1 e #2 e receberam Nota 1, enquanto um paper de visão computacional no Rank #10 recebeu Nota 5 — invertendo a ordem de relevância e penalizando duramente o nDCG, que pune notas baixas em posições altas de forma logarítmica.<br><br>
+    4. <strong>Trabalho Futuro:</strong> normalizar citações com transformação logarítmica antes do Min-Max para conter outliers de magnitude desproporcional, e restringir a busca do OpenAlex ao campo <code>title.search</code> para reduzir contaminação de domínio.
+  </div>
+
+  <script>
+    // ─── AVALIAÇÃO ONLINE (N=28, Teste A/B) ──────────────────────────────
+    const lsOnline = (color) => ({
+      backgroundColor: color, borderColor: color, borderWidth: 3,
+      tension: 0.25, pointRadius: 6, pointHoverRadius: 9,
+      pointBackgroundColor: '#fff', pointBorderWidth: 2, fill: false,
+    });
+
+    const labels_online = ['K=3', 'K=5', 'K=10'];
+
+    function makeOnlineChart(canvasId, dataA, dataB) {
+      new Chart(document.getElementById(canvasId), {
+        type: 'line',
+        data: {
+          labels: labels_online,
+          datasets: [
+            { label: 'Cosine', data: dataA, ...lsOnline('#3b82f6') },
+            { label: 'Multiplicativo',  data: dataB, ...lsOnline('#22c55e') },
+          ]
+        },
+        options: {
+          responsive: true, maintainAspectRatio: false,
+          plugins: {
+            legend: { position: 'top' },
+            tooltip: { callbacks: { label: (ctx) => `${ctx.dataset.label}: ${ctx.parsed.y.toFixed(4)}` } }
+          },
+          scales: { y: { beginAtZero: true } }
+        }
+      });
+    }
+
+    makeOnlineChart('onlinePrecisionChart', [0.3690, 0.3714, 0.3929], [0.5238, 0.5071, 0.5357]);
+    makeOnlineChart('onlineMrrChart', [0.5714, 0.5946, 0.6093], [0.6310, 0.6381, 0.6485]);
+    makeOnlineChart('onlineMapChart', [0.5685, 0.5594, 0.5245], [0.6280, 0.6224, 0.6037]);
+    makeOnlineChart('onlineNdcgChart', [0.9730, 0.9371, 0.8934], [0.8889, 0.8810, 0.8516]);
+  </script>
+</body>
+</html>

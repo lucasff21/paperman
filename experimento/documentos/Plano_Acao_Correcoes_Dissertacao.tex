@@ -1,0 +1,113 @@
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[scaled=0.94]{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage[brazil]{babel}
+\usepackage[a4paper,margin=1.9cm]{geometry}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{parskip}
+\usepackage{titlesec}
+\usepackage{amssymb}
+\usepackage{fancyhdr}
+
+\definecolor{accent}{HTML}{1F7A5F}
+\definecolor{crit}{HTML}{B42318}
+\definecolor{muted}{HTML}{5A655F}
+\definecolor{diogo}{HTML}{1D4ED8}
+\definecolor{danilo}{HTML}{9333EA}
+\definecolor{nosso}{HTML}{B45309}
+\definecolor{notebg}{HTML}{EEF2F0}
+
+\titleformat{\section}{\large\bfseries\color{accent}}{}{0em}{}[\vspace{-5pt}\rule{\textwidth}{0.7pt}]
+\titlespacing{\section}{0pt}{12pt}{5pt}
+\newcommand{\sub}[1]{\vspace{5pt}\noindent\textbf{\color{muted}#1}\par\vspace{-3pt}}
+
+\pagestyle{fancy}\fancyhf{}
+\fancyhead[L]{\small\color{muted}Plano de Ação — Correções da Dissertação}
+\fancyhead[R]{\small\color{muted}\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\setlength{\parskip}{2pt}
+
+\newcommand{\tgd}{{\footnotesize\bfseries\color{diogo}[Diogo]}}
+\newcommand{\tgn}{{\footnotesize\bfseries\color{danilo}[Danilo]}}
+\newcommand{\tgo}{{\footnotesize\bfseries\color{nosso}[nosso]}}
+
+\begin{document}
+
+\begin{center}
+{\LARGE\bfseries\color{accent} Plano de Ação — Correções da Dissertação}\\[2pt]
+{\large\bfseries Recademy --- pós-qualificação (aprovado)}\\[6pt]
+{\small\color{muted} Consolidado dos feedbacks do Prof. Diogo e do Prof. Danilo. Marque cada item ao aplicar.\\
+Legenda: \tgd\ ponto do Prof. Diogo \quad \tgn\ ponto do Prof. Danilo \quad \tgo\ análise/trabalho nosso}
+\end{center}
+\vspace{2pt}\hrule\vspace{4pt}
+
+\section{Balde 1 --- Já feito (a confirmar no PDF)}
+{\small\color{muted}Trabalho nosso da conversa anterior, não pedido dos professores.}
+\begin{itemize}[label=$\checkmark$,leftmargin=1.5em,itemsep=1pt,topsep=2pt]
+\item Números do offline honestos (o multiplicativo perde, sem falso ``sem citação'') \tgo
+\item n = 27 com exclusão do autor \tgo
+\item Dados das tabelas 6.4 / 6.5 / 6.6 \tgo
+\item OE1--OE4 / QP1--QP3 \tgo
+\item Wilcoxon --- elogiado como escolha correta \tgd{\footnotesize\color{muted} (elogio, não correção)}
+\end{itemize}
+
+\section{Balde 2 --- Corrigir agora (versão final)}
+
+\sub{Texto / formatação}
+\begin{itemize}[label=$\square$,leftmargin=1.5em,itemsep=2pt,topsep=2pt]
+\item Resumo p.iii --- trocar pela frase que ele forneceu \tgd
+\item p.4 ``do da'' $\to$ ``e da'' \tgd
+\item p.1 ``estes elementos'' $\to$ explicitar ``manuscritos científicos'' \tgd
+\item p.9 SRss $\to$ SRs \quad p.23 SRsao $\to$ SRs voltados \tgd
+\item p.27 tirar espaço antes da vírgula \quad p.28 pôr espaço antes do parêntese \tgd
+\item Adicionar \texttt{\textbackslash listoftables} (Lista de Tabelas) \tgd
+\item Lista de Siglas: juntar NLP/PLN, ordem alfabética, páginas da 1ª ocorrência, p.xi \tgd
+\item Cabeçalho curto na p.29 (título abreviado) \tgd
+\item Referências cruzadas com maiúscula (Capítulo, Tabela, Figura) \tgn
+\item Espaçamento no LaTeX: 1ª subseção colada ao texto do capítulo \tgn
+\end{itemize}
+
+\sub{Estrutura}
+\begin{itemize}[label=$\square$,leftmargin=1.5em,itemsep=2pt,topsep=2pt]
+\item Remover o item 6 redundante da metodologia (plataforma já está no item 7) \tgn
+\item Renomear ou unir Cap.3 e Cap.4 (ex.: Cap.4 = ``Sistemas de Recomendação de Textos'') \tgn
+\item Fig 5.1 --- traduzir os rótulos (estão em inglês) \tgd
+\item Fig 3.1 --- remover o ``6'' solto perto de ``Dados de contexto'' \tgd
+\item Legendas: ``Traduzido/Adaptado de [Ref]'' + checar copyright das Fig 2.2 e 2.3 \tgn
+\end{itemize}
+
+\sub{Textos a acrescentar (eu redijo, você cola)}
+\begin{itemize}[label=$\square$,leftmargin=1.5em,itemsep=2pt,topsep=2pt]
+\item nDCG explicado no Cap.6 (IDCG, ordenação interna, o que permite concluir) \tgd
+\item Abstract $\times$ Título: abstract foi usado só na busca no OpenAlex, não no perfil; + dificuldades da API \tgn
+\item Janela temporal fixa, 5 anos (2013--2017), no Cap.6 p.38 \tgn
+\item Tabela 6.2: tratar o aditivo também como proposta do trabalho \tgn
+\item Posicionamento em revisões sistemáticas: apoia etapas ou substitui? \tgd
+\end{itemize}
+
+\sub{Tabelas / gráficos}
+\begin{itemize}[label=$\square$,leftmargin=1.5em,itemsep=2pt,topsep=2pt]
+\item Tabela 6.3: tirar o negrito do multiplicativo (ele perdeu; negrito = melhor valor) \tgn
+\item Levar os gráficos dos slides pro corpo do texto (sem texto de eixo na vertical) \tgn
+\end{itemize}
+
+\section{Balde 3 --- Planos maiores (decisão + rodar)}
+\begin{itemize}[label=$\square$,leftmargin=1.5em,itemsep=3pt,topsep=2pt]
+\item Suavização do zeramento (constante $>$ 0 para veículo sem prestígio) \tgn \\
+      {\small\color{muted}Usar \textbf{0.5}, não 1.0 (1.0 vira ``passe livre'') \tgo\ $\cdot$ implica \textbf{re-rodar o offline} \tgo}
+\item JCR / SJR no lugar do Qualis (evita viés regional, abre publicação internacional) \tgn
+\item Experimento de revisões sistemáticas: medir o recall dos estudos incluídos \tgd
+\end{itemize}
+
+\section{À parte --- Urgente}
+\begin{itemize}[label=$\square$,leftmargin=1.5em,itemsep=2pt,topsep=2pt]
+\item {\color{crit}\textbf{CEP / ética / LGPD}} --- verificar com UFBA + Fred se é exigido para a defesa \tgd
+\end{itemize}
+
+\vspace{6pt}\hrule\vspace{3pt}
+\noindent{\small\color{muted} Quase tudo o que falta fazer veio dos professores. O único conteúdo nosso pendente é o refinamento ``0.5 em vez de 1.0'' na suavização. Sequência sugerida: acionar o CEP já $\to$ despachar o texto/formatação do Balde 2 $\to$ eu redijo os textos a acrescentar $\to$ decidir os experimentos do Balde 3.}
+
+\end{document}

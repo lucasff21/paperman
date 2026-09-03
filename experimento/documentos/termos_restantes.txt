@@ -1,0 +1,63 @@
+[L554] cosine: recomendações, aplicando técnicas e conceitos como Processamento de Linguagem Natural (NLP), word embedding e cosine similarity para alcançar a maior proximi- dade possível em relação ao modelo de usu
+
+[L923] cosseno: da similaridade entre usuários são as equações da Correlação de Pearson e da Similari- dade de Cossenos (ADOMAVICIUS; TUZHILIN; ALEXANDER, 2005). Por outro lado, se o interesse for calcularmos a simil
+
+[L947] cosseno: (2.1) • Similaridade de Cossenos: A similaridade de cossenos é um modelo de espaço
+
+[L948] cosseno: • Similaridade de Cossenos: A similaridade de cossenos é um modelo de espaço vetorial baseado na álgebra linear. Esta métrica de similaridade calcula o ângulo
+
+[L958] cosine: 2.2. O termo Iuv representa os itens em comum entre os usuários u e v. simCosine(u, v) = P
+
+[L1680] Word2Vec: Sem(p, t) Componente do escore que avalia a similaridade semântica (via Word2Vec). Ano(p)
+
+[L1691] cosseno: sim(ru, rv) Medida de Similaridade de Cossenos entre dois vetores de representação de palavras. ∆max
+
+[L1762] cosseno: publicações (obtidas pela API ORCID). O sistema calcula a similaridade entre o perfil de um usuário e os itens recomendados utilizando a métrica de Similaridade de Cossenos. 5.3
+
+[L1788] OpenAlex: identificado (linha 8), consultas de busca são construídas (linha 9) e executadas contra a API OpenAlex para coletar publicações candidatas (linha 12). O conjunto obtido é unificado e, posteriormente,
+
+[L1841] cosseno: Para garantir a seleção das publicações mais próximas do perfil do pesquisador, o con- ceito de Similaridade de Cossenos foi utilizado, de modo a selecionar palavras-chave com o maior nível de proximi
+
+[L1844] cosine: e os trabalhos realizados pelo usuário. simCosine(u, v) = P
+
+[L1879] cosseno: (5.3) onde sim(ru, rv) representa a similaridade de cosseno entre os vetores de duas palavras ru e rv:
+
+[L1928] cosseno: citados, porém semanticamente irrelevantes, dominem o ranking de recomendações. Embora esta proposta tenha se baseado na similaridade por cosseno e possa ter uma estrutura que se beneficia de suas car
+
+[L1931] cosine: itens do sistema pode ser adaptado para utilizar diversos outros métodos ou métricas de similaridade. A recomendação de uso do Cosine Similarity justifica-se porque essa métrica foca no padrão de pref
+
+[L1937] cosine: correlação de Pearson depende fortemente da sobreposição de itens avaliados e pode ser instável com poucos dados comuns, a Cosine Similarity captura de forma mais robusta a semelhança real de interess
+
+[L1940] cosine: Por fim, a arquitetura do sistema Paperman foi projetada para ser flexível, permi- tindo a incorporação de diferentes métricas de similaridade, como a cosine similarity, a distância euclidiana ou a co
+
+[L2098] Word2Vec: com base na proximidade vetorial entre o perfil do pesquisador e os artigos candidatos, utilizando um modelo de representação de palavras (nesta implementação, o Word2Vec). Esta metodologia permite um
+
+[L2223] cosseno: Multiplicativo Lista 2 — Cosseno MRR
+
+[L2250] cosseno: Multiplicativo Lista 2 — Cosseno Relevância
+
+[L2269] cosseno: com destaque para P@5 (0,5037 contra 0,3852) e MAP (0,6022 contra 0,5439). A única exceção foi o nDCG, no qual a abordagem baseada em similaridade de cosseno registrou valor superior (0,8895 contra 0,
+
+[L2276] cosseno: Os resultados do Teste A/B indicam que a abordagem multiplicativa (Lista 1) apresentou desempenho superior à abordagem baseada exclusivamente em similaridade de cosseno (Lista 2) na maioria das métric
+
+[L2292] cosseno: contra 1,96), corroborando os resultados das métricas automáticas de P@5 e MAP. A única métrica na qual a abordagem de cosseno (Lista 2) obteve valor superior foi o nDCG (0,8895 contra 0,8550). Este r
+
+[L2366] cosine: comparação. 2. CosineSim: pontuação baseada exclusivamente na similaridade semântica entre o perfil do autor e o título do artigo candidato, por meio do modelo Word2Vec.
+
+[L2367] Word2Vec: 2. CosineSim: pontuação baseada exclusivamente na similaridade semântica entre o perfil do autor e o título do artigo candidato, por meio do modelo Word2Vec. 3. Sim×Ano×Qualis: combina similaridade se
+
+[L2378] OpenAlex: nesta etapa. A validação do componente de citações foi conduzida exclusivamente no experimento online, no qual os artigos candidatos foram recuperados via API OpenAlex, que fornece métricas de citação
+
+[L2420] cosine: 47/49 CosineSim 0,265
+
+[L2453] cosine: em cenários com corpora abertos e pools de candidatos de maior escala. O modelo CosineSim, baseado exclusivamente em similaridade semântica, obteve os melhores resultados entre os modelos não-aleatóri
+
+[L2460] OpenAlex: Qualis introduzem ruído ao ranqueamento em vez de refiná-lo. No experimento online (Seção 6.1), onde os artigos candidatos foram recuperados via API OpenAlex com métri- cas de citação em tempo real, o
+
+[L2461] cosine: (Seção 6.1), onde os artigos candidatos foram recuperados via API OpenAlex com métri- cas de citação em tempo real, o modelo Multiplicativo superou o CosineSim em cinco das seis métricas avaliadas, co
+
+[L2498] cosine: CB (TF-IDF + Cosine) Academic Collab.
+
+[L2564] cosseno: lização do perfil do pesquisador como base para as recomendações, por meio de técnicas como Similaridade de Cossenos, word embeddings e Processamento de Linguagem Natu- ral (NLP). Os métodos de avalia
+
+[L2611] cosseno: de aproximadamente 22 segundos por pesquisador para ambos os modelos avalia- dos (Multiplicativo e Cosseno), com picos de até 37 segundos em perfis com maior volume de publicações.
